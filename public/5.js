@@ -1,6 +1,6 @@
 webpackJsonp([5],{
 
-/***/ 50:
+/***/ 59:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -110,15 +110,15 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 66:
+/***/ 76:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(50)
+var normalizeComponent = __webpack_require__(59)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(67)
+var __vue_template__ = __webpack_require__(77)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -135,7 +135,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\Login.vue"
+Component.options.__file = "resources\\assets\\js\\components\\IndexPage.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -144,9 +144,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-01e7f602", Component.options)
+    hotAPI.createRecord("data-v-05eed89a", Component.options)
   } else {
-    hotAPI.reload("data-v-01e7f602", Component.options)
+    hotAPI.reload("data-v-05eed89a", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -158,103 +158,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 67:
+/***/ 77:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "v-container",
-    { attrs: { fluid: "", "fill-height": "" } },
-    [
-      _c(
-        "v-layout",
-        { attrs: { "align-center": "", "justify-center": "" } },
-        [
-          _c(
-            "v-flex",
-            { attrs: { xs12: "", sm8: "", md4: "" } },
-            [
-              _c(
-                "v-card",
-                { staticClass: "elevation-12" },
-                [
-                  _c(
-                    "v-toolbar",
-                    { attrs: { dark: "", color: "primary" } },
-                    [
-                      _c("v-toolbar-title", [_vm._v("Вход")]),
-                      _vm._v(" "),
-                      _c("v-spacer")
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-text",
-                    [
-                      _c(
-                        "v-form",
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              outline: "",
-                              label: "Login or E-mail",
-                              "append-icon": "person"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("v-text-field", {
-                            attrs: {
-                              outline: "",
-                              label: "Password",
-                              "append-icon": "https"
-                            }
-                          })
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-actions",
-                    [
-                      _c("v-spacer"),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: {
-                            flat: "",
-                            color: "primary",
-                            to: "/registration"
-                          }
-                        },
-                        [_vm._v("Регистрация")]
-                      ),
-                      _vm._v(" "),
-                      _c("v-btn", { attrs: { color: "primary" } }, [
-                        _vm._v("Отправить")
-                      ])
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
+  return _c("div", [_vm._v("\n    1\n")])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -262,7 +173,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-01e7f602", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-05eed89a", module.exports)
   }
 }
 

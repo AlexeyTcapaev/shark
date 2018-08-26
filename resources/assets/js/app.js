@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -14,6 +13,9 @@ import Vuetify from 'vuetify'
 import VueProgressBar from 'vue-progressbar'
 import Meta from 'vue-meta'
 import VeeValidate from 'vee-validate'
+import store from './store/index'
+import Axios from 'axios';
+import * as Cookies from 'js-cookie'
 Vue.use(VueRouter)
 Vue.use(Vuex)
 Vue.use(Meta)
@@ -42,15 +44,20 @@ Vue.use(VeeValidate);
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
+if (store.state.user) {
+    axios.defaults.headers.common['Authorization'] = store.state.user.token.token_type + " " + store.state.user.token.access_token
+}
 const App = () =>
-    import('./components/App.vue');
+    import ('./components/App.vue');
 const Registration = () =>
-    import('./components/Registration.vue');
+    import ('./components/Registration.vue');
 const Login = () =>
-    import('./components/Login.vue');
-const routes = [
-    {
+    import ('./components/Login.vue');
+const Home = () =>
+    import ('./components/Home.vue');
+const IndexPage = () =>
+    import ('./components/IndexPage.vue');
+const routes = [{
         path: "/registration",
         name: "registration",
         component: Registration,
@@ -59,7 +66,28 @@ const routes = [
         path: "/login",
         name: "login",
         component: Login,
-    }
+    },
+    {
+        path: "/app",
+        name: "app",
+        component: Home,
+        beforeEnter: (to, from, next) => {
+            axios.get('/api/auth/user').then(function (resp) {
+                store.state.user = resp.data
+                Cookies.set('user', JSON.stringify(store.state.user), {
+                    expires: 2,
+                    domain: location.hostname
+                });
+            })
+            next();
+        }
+
+    },
+    {
+        path: "/",
+        name: "IndexPage",
+        component: IndexPage,
+    },
 ]
 export const router = new VueRouter({
     routes,
@@ -68,5 +96,6 @@ export const router = new VueRouter({
 const app = new Vue({
     el: '#app',
     router,
+    store,
     render: h => h(App)
 });
