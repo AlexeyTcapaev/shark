@@ -223,6 +223,11 @@ export default {
 }
 .news li {
   padding: 15px 0;
+  min-width: 40vw;
+  max-width: 100%;
+}
+.news{
+  width: 100%;
 }
 .wrapper{
   overflow-y: scroll!important;
