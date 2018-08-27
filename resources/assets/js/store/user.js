@@ -2,23 +2,31 @@ import * as Cookies from 'js-cookie'
 export default {
     namespaced: true,
     state: {
-        token: Cookies.getJSON('token') || {},
-        user: Cookies.getJSON('user') || {}
+        token: Cookies.getJSON('token') || undefined,
+        user: Cookies.getJSON('user') || undefined
     },
     mutations: {
         SetToken(state, input_data) {
-            state = input_data
-            Cookies.set('token', JSON.stringify(state), {
+            state.token = input_data
+            axios.defaults.headers.common['Authorization'] = state.token.token_type + " " + state.token.access_token
+            Cookies.set('token', JSON.stringify(state.token), {
                 expires: 2,
                 domain: location.hostname
             });
         },
         SetUser(state, input_data) {
             state.user = input_data
-            Cookies.set('user', JSON.stringify(state), {
+            Cookies.set('user', JSON.stringify(state.user), {
                 expires: 2,
                 domain: location.hostname
             });
+        },
+        ResetState(state) {
+            state.token = {}
+            state.user = {}
+            axios.defaults.headers.common['Authorization'] = null
+            Cookies.remove('user');
+            Cookies.remove('token');
         }
     },
     actions: {
@@ -28,5 +36,8 @@ export default {
         SetUser(state, input_data) {
             state.commit('SetUser', input_data)
         },
+        ResetState(state) {
+            state.commit('ResetState')
+        }
     },
 }

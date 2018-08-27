@@ -1,6 +1,58 @@
 webpackJsonp([0],{
 
-/***/ 59:
+/***/ 57:
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(68)
+}
+var normalizeComponent = __webpack_require__(61)
+/* script */
+var __vue_script__ = __webpack_require__(70)
+/* template */
+var __vue_template__ = __webpack_require__(71)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-6c0a33b2"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/views/Home.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-6c0a33b2", Component.options)
+  } else {
+    hotAPI.reload("data-v-6c0a33b2", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 61:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -373,63 +425,56 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 74:
+/***/ 68:
 /***/ (function(module, exports, __webpack_require__) {
 
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(79)
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(69);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(62)("dacd05b4", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6c0a33b2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Home.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6c0a33b2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Home.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
 }
-var normalizeComponent = __webpack_require__(59)
-/* script */
-var __vue_script__ = __webpack_require__(78)
-/* template */
-var __vue_template__ = __webpack_require__(81)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-85ef4954"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\Home.vue"
 
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-85ef4954", Component.options)
-  } else {
-    hotAPI.reload("data-v-85ef4954", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
+/***/ }),
 
-module.exports = Component.exports
+/***/ 69:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(14)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.logo[data-v-6c0a33b2] {\r\n  color: #ffffff;\r\n  text-decoration: none;\n}\n.nav-btn[data-v-6c0a33b2] {\r\n  color: #ffffff !important;\r\n  height: 100%;\n}\n.v-menu[data-v-6c0a33b2]{\r\n  height: 100%;\n}\n.v-content[data-v-6c0a33b2]{\r\n  padding-top:0px!important;\n}\n.wrapper[data-v-6c0a33b2]{\r\n  height: calc(100vh - 120px);\r\n  padding: 0!important;\n}\n.container.fill-height > .layout[data-v-6c0a33b2]{\r\n  -webkit-box-align: baseline;\r\n      -ms-flex-align: baseline;\r\n          align-items: baseline;\n}\n.news li[data-v-6c0a33b2] {\r\n  padding: 15px 0;\n}\n.wrapper[data-v-6c0a33b2]{\r\n  overflow-y: scroll!important;\n}\n.v-bottom-nav[data-v-6c0a33b2]{\r\n  -webkit-box-shadow:9px 3px 14px 2px rgba(0, 0, 0, 0.12);\r\n          box-shadow:9px 3px 14px 2px rgba(0, 0, 0, 0.12)\n}\r\n", ""]);
+
+// exports
 
 
 /***/ }),
 
-/***/ 78:
+/***/ 70:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 //
 //
 //
@@ -513,12 +558,79 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       dialog: false,
-      drawer: null,
+      drawer: false,
+      bottomNav: "recent",
       items: [{ icon: "contacts", text: "Contacts" }, { icon: "history", text: "Frequently contacted" }, { icon: "content_copy", text: "Duplicates" }, {
         icon: "keyboard_arrow_up",
         "icon-alt": "keyboard_arrow_down",
@@ -537,56 +649,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   props: {
     source: String
   },
-  methods: {
-    logout: function logout() {}
-  }
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({ ResetState: "user/ResetState" }), {
+    logout: function logout() {
+      var init = this;
+      axios.get("/api/auth/logout").then(function (resp) {
+        init.ResetState();
+        init.$router.push("/login");
+      });
+    }
+  })
 });
 
 /***/ }),
 
-/***/ 79:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(80);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(62)("1ea1b3e8", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-85ef4954\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Home.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-85ef4954\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Home.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 80:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(12)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.logo[data-v-85ef4954] {\r\n  color: #ffffff;\r\n  text-decoration: none;\n}\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 81:
+/***/ 71:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -687,14 +763,15 @@ var render = function() {
               _c(
                 "v-btn",
                 {
-                  attrs: { slot: "activator", color: "primary", dark: "" },
+                  staticClass: "nav-btn",
+                  attrs: { slot: "activator", dark: "", flat: "" },
                   slot: "activator"
                 },
                 [
                   _c("v-icon", [_vm._v("account_circle")]),
                   _vm._v(
                     "\r\n            " +
-                      _vm._s(_vm.$store.state.user.name) +
+                      _vm._s(_vm.$store.state.user.user.name) +
                       "\r\n        "
                   )
                 ],
@@ -722,15 +799,226 @@ var render = function() {
       _vm._v(" "),
       _c(
         "v-content",
+        { staticClass: "wrapper" },
         [
           _c(
             "v-container",
-            { attrs: { fluid: "", "fill-height": "" } },
             [
               _c(
                 "v-layout",
                 { attrs: { "justify-center": "", "align-center": "" } },
-                [_c("v-flex", { attrs: { "text-xs-center": "" } })],
+                [
+                  _c(
+                    "v-flex",
+                    { attrs: { "text-xs-center": "" } },
+                    [
+                      _c("v-container", [
+                        _c("h3", [_vm._v("Новости")]),
+                        _vm._v(" "),
+                        _c("ul", { staticClass: "news" }, [
+                          _c(
+                            "li",
+                            [
+                              _c(
+                                "v-card",
+                                [
+                                  _c("v-card-media", {
+                                    attrs: {
+                                      src:
+                                        "https://cdn.vuetifyjs.com/images/cards/desert.jpg",
+                                      height: "200px"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card-title",
+                                    { attrs: { "primary-title": "" } },
+                                    [
+                                      _c("div", [
+                                        _c(
+                                          "h3",
+                                          { staticClass: "headline mb-0" },
+                                          [_vm._v("Kangaroo Valley Safari")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("div", [
+                                          _vm._v(
+                                            "Located two hours south of Sydney in the "
+                                          ),
+                                          _c("br"),
+                                          _vm._v(
+                                            "Southern Highlands of New South Wales, ..."
+                                          )
+                                        ])
+                                      ])
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card-actions",
+                                    [
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: { flat: "", color: "orange" }
+                                        },
+                                        [_vm._v("Share")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: { flat: "", color: "orange" }
+                                        },
+                                        [_vm._v("Explore")]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "li",
+                            [
+                              _c(
+                                "v-card",
+                                [
+                                  _c("v-card-media", {
+                                    attrs: {
+                                      src:
+                                        "https://cdn.vuetifyjs.com/images/cards/desert.jpg",
+                                      height: "200px"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card-title",
+                                    { attrs: { "primary-title": "" } },
+                                    [
+                                      _c("div", [
+                                        _c(
+                                          "h3",
+                                          { staticClass: "headline mb-0" },
+                                          [_vm._v("Kangaroo Valley Safari")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("div", [
+                                          _vm._v(
+                                            "Located two hours south of Sydney in the "
+                                          ),
+                                          _c("br"),
+                                          _vm._v(
+                                            "Southern Highlands of New South Wales, ..."
+                                          )
+                                        ])
+                                      ])
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card-actions",
+                                    [
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: { flat: "", color: "orange" }
+                                        },
+                                        [_vm._v("Share")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: { flat: "", color: "orange" }
+                                        },
+                                        [_vm._v("Explore")]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "li",
+                            [
+                              _c(
+                                "v-card",
+                                [
+                                  _c("v-card-media", {
+                                    attrs: {
+                                      src:
+                                        "https://cdn.vuetifyjs.com/images/cards/desert.jpg",
+                                      height: "200px"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card-title",
+                                    { attrs: { "primary-title": "" } },
+                                    [
+                                      _c("div", [
+                                        _c(
+                                          "h3",
+                                          { staticClass: "headline mb-0" },
+                                          [_vm._v("Kangaroo Valley Safari")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("div", [
+                                          _vm._v(
+                                            "Located two hours south of Sydney in the "
+                                          ),
+                                          _c("br"),
+                                          _vm._v(
+                                            "Southern Highlands of New South Wales, ..."
+                                          )
+                                        ])
+                                      ])
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card-actions",
+                                    [
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: { flat: "", color: "orange" }
+                                        },
+                                        [_vm._v("Share")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: { flat: "", color: "orange" }
+                                        },
+                                        [_vm._v("Explore")]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ])
+                      ])
+                    ],
+                    1
+                  )
+                ],
                 1
               )
             ],
@@ -801,7 +1089,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-85ef4954", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-6c0a33b2", module.exports)
   }
 }
 

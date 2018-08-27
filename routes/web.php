@@ -11,6 +11,4 @@
 |
 */
 
-Route::get('{uri}', function () {
-    return view('app');
-})->where('uri', '.*');
+Route::get('/{any}', 'SpaController@index')->where('any', '.*');
