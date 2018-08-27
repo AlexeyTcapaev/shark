@@ -29,7 +29,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		5: 0
+/******/ 		6: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -26175,19 +26175,22 @@ var Home = function Home() {
     return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 57));
 };
 var Registration = function Registration() {
-    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 58));
+    return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 58));
 };
 var Login = function Login() {
-    return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 59));
+    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 59));
 };
 var IndexPage = function IndexPage() {
-    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 60));
+    return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 60));
+};
+var Feed = function Feed() {
+    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 61));
 };
 var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
     mode: 'history',
     routes: [{
         path: "/app",
-        name: "app",
+
         component: Home,
         beforeEnter: function beforeEnter(to, from, next) {
             axios.get('/api/auth/user').then(function (resp) {
@@ -26200,7 +26203,12 @@ var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
             }).catch(function (error) {
                 router.push("/login");
             });
-        }
+        },
+        children: [{
+            path: "",
+            component: Feed,
+            name: "app"
+        }]
     }, {
         path: '/',
         name: 'IndexPage',

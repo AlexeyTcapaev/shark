@@ -1,0 +1,78 @@
+<template>
+    <v-container>
+        <v-layout justify-center align-center>
+            <v-flex xs6>
+                    <h3>Новости</h3>
+                    <ul class="news">
+                        <li>
+                            <v-card>
+                                <v-card-media src="https://cdn.vuetifyjs.com/images/cards/desert.jpg" height="200px"></v-card-media>
+
+                                <v-card-title primary-title>
+                                    <div>
+                                        <h3 class="headline mb-0">Kangaroo Valley Safari</h3>
+                                        <div>Located two hours south of Sydney in the <br>Southern Highlands of New South Wales, ...</div>
+                                    </div>
+                                </v-card-title>
+
+                                <v-card-actions>
+                                    <v-btn flat color="orange">Share</v-btn>
+                                    <v-btn flat color="orange">Explore</v-btn>
+                                </v-card-actions>
+                            </v-card>
+                        </li>
+                        <li>
+                            <v-card>
+                                <v-card-media src="https://cdn.vuetifyjs.com/images/cards/desert.jpg" height="200px"></v-card-media>
+
+                                <v-card-title primary-title>
+                                    <div>
+                                        <h3 class="headline mb-0">Kangaroo Valley Safari</h3>
+                                        <div>Located two hours south of Sydney in the <br>Southern Highlands of New South Wales, ...</div>
+                                    </div>
+                                </v-card-title>
+
+                                <v-card-actions>
+                                    <v-btn flat color="orange">Share</v-btn>
+                                    <v-btn flat color="orange">Explore</v-btn>
+                                </v-card-actions>
+                            </v-card>
+                        </li>
+                        <li>
+                            <v-card>
+                                <v-card-media src="https://cdn.vuetifyjs.com/images/cards/desert.jpg" height="200px"></v-card-media>
+
+                                <v-card-title primary-title>
+                                    <div>
+                                        <h3 class="headline mb-0">Kangaroo Valley Safari</h3>
+                                        <div>Located two hours south of Sydney in the <br>Southern Highlands of New South Wales, ...</div>
+                                    </div>
+                                </v-card-title>
+
+                                <v-card-actions>
+                                    <v-btn flat color="orange">Share</v-btn>
+                                    <v-btn flat color="orange">Explore</v-btn>
+                                </v-card-actions>
+                            </v-card>
+                        </li>
+                    </ul>
+            </v-flex>
+        </v-layout>
+     </v-container>
+</template>
+
+<style scoped>
+    .container.fill-height>.layout {
+        align-items: baseline;
+    }
+
+    .news li {
+        padding: 15px 0;
+        min-width: 40vw;
+        max-width: 100%;
+    }
+
+    .news {
+        width: 100%;
+    }
+</style>

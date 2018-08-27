@@ -2,12 +2,12 @@
 <main>
     <v-navigation-drawer fixed v-model="drawer" app>
       <v-list dense>
-        <v-list-tile @click="">
+        <v-list-tile @click="" to="/app">
           <v-list-tile-action>
             <v-icon>home</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Home</v-list-tile-title>
+            <v-list-tile-title>Домашняя страница</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
         <v-list-tile @click="">
@@ -38,76 +38,7 @@
     </v-toolbar>
     <v-content class="wrapper">
       <v-container>
-        <v-layout justify-center align-center>
-          <v-flex text-xs-center>
-            <v-container>
-              <h3>Новости</h3>
-              <ul class="news">
-                <li>
-                  <v-card>
-                    <v-card-media
-                      src="https://cdn.vuetifyjs.com/images/cards/desert.jpg"
-                      height="200px"
-                    ></v-card-media>
-      
-                    <v-card-title primary-title>
-                      <div>
-                        <h3 class="headline mb-0">Kangaroo Valley Safari</h3>
-                        <div>Located two hours south of Sydney in the <br>Southern Highlands of New South Wales, ...</div>
-                      </div>
-                    </v-card-title>
-      
-                    <v-card-actions>
-                      <v-btn flat color="orange">Share</v-btn>
-                      <v-btn flat color="orange">Explore</v-btn>
-                    </v-card-actions>
-                  </v-card>
-                </li>
-                <li>
-                  <v-card>
-                    <v-card-media
-                      src="https://cdn.vuetifyjs.com/images/cards/desert.jpg"
-                      height="200px"
-                    ></v-card-media>
-      
-                    <v-card-title primary-title>
-                      <div>
-                        <h3 class="headline mb-0">Kangaroo Valley Safari</h3>
-                        <div>Located two hours south of Sydney in the <br>Southern Highlands of New South Wales, ...</div>
-                      </div>
-                    </v-card-title>
-      
-                    <v-card-actions>
-                      <v-btn flat color="orange">Share</v-btn>
-                      <v-btn flat color="orange">Explore</v-btn>
-                    </v-card-actions>
-                  </v-card>
-                </li>
-                  <li>
-                  <v-card>
-                    <v-card-media
-                      src="https://cdn.vuetifyjs.com/images/cards/desert.jpg"
-                      height="200px"
-                    ></v-card-media>
-      
-                    <v-card-title primary-title>
-                      <div>
-                        <h3 class="headline mb-0">Kangaroo Valley Safari</h3>
-                        <div>Located two hours south of Sydney in the <br>Southern Highlands of New South Wales, ...</div>
-                      </div>
-                    </v-card-title>
-      
-                    <v-card-actions>
-                      <v-btn flat color="orange">Share</v-btn>
-                      <v-btn flat color="orange">Explore</v-btn>
-                    </v-card-actions>
-                  </v-card>
-                </li>
-              </ul>
- 
-           </v-container>
-          </v-flex>
-        </v-layout>
+        <router-view></router-view>
       </v-container>
     </v-content>
                        <v-bottom-nav
@@ -124,7 +55,7 @@
           <span>Recent</span>
           <v-icon>history</v-icon>
         </v-btn>
-  
+
         <v-btn
           color="teal"
           flat
@@ -133,7 +64,7 @@
           <span>Favorites</span>
           <v-icon>favorite</v-icon>
         </v-btn>
-  
+
         <v-btn
           color="teal"
           flat
@@ -208,31 +139,26 @@ export default {
   color: #ffffff !important;
   height: 100%;
 }
-.v-menu{
+.v-menu {
   height: 100%;
 }
-.v-content{
-  padding-top:0px!important;
+.v-content {
+  padding-top: 0px !important;
 }
-.wrapper{
+.wrapper {
   height: calc(100vh - 120px);
-  padding: 0!important;
+  padding: 0 !important;
 }
-.container.fill-height > .layout{
-  align-items: baseline;
+.wrapper {
+  overflow-y: scroll !important;
 }
-.news li {
-  padding: 15px 0;
-  min-width: 40vw;
-  max-width: 100%;
+.v-bottom-nav {
+  box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
-.news{
-  width: 100%;
+.v-navigation-drawer > .v-list .v-list__tile--active .v-list__tile__title {
+  color: #f80b37 !important;
 }
-.wrapper{
-  overflow-y: scroll!important;
-}
-.v-bottom-nav{
-  box-shadow:9px 3px 14px 2px rgba(0, 0, 0, 0.12)
+.v-list__tile--active .v-list__tile__action:first-of-type .v-icon {
+  color: #f80b37 !important;
 }
 </style>

@@ -6,13 +6,13 @@ webpackJsonp([0],{
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(68)
+  __webpack_require__(69)
 }
-var normalizeComponent = __webpack_require__(61)
+var normalizeComponent = __webpack_require__(62)
 /* script */
-var __vue_script__ = __webpack_require__(70)
+var __vue_script__ = __webpack_require__(71)
 /* template */
-var __vue_template__ = __webpack_require__(71)
+var __vue_template__ = __webpack_require__(72)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52,7 +52,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 61:
+/***/ 62:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -162,7 +162,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 62:
+/***/ 63:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -181,7 +181,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(63)
+var listToStyles = __webpack_require__(64)
 
 /*
 type StyleObject = {
@@ -391,7 +391,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 63:
+/***/ 64:
 /***/ (function(module, exports) {
 
 /**
@@ -425,17 +425,17 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 68:
+/***/ 69:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(69);
+var content = __webpack_require__(70);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(62)("dacd05b4", content, false, {});
+var update = __webpack_require__(63)("dacd05b4", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 69:
+/***/ 70:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
@@ -460,14 +460,14 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.logo[data-v-6c0a33b2] {\r\n  color: #ffffff;\r\n  text-decoration: none;\n}\n.nav-btn[data-v-6c0a33b2] {\r\n  color: #ffffff !important;\r\n  height: 100%;\n}\n.v-menu[data-v-6c0a33b2]{\r\n  height: 100%;\n}\n.v-content[data-v-6c0a33b2]{\r\n  padding-top:0px!important;\n}\n.wrapper[data-v-6c0a33b2]{\r\n  height: calc(100vh - 120px);\r\n  padding: 0!important;\n}\n.container.fill-height > .layout[data-v-6c0a33b2]{\r\n  -webkit-box-align: baseline;\r\n      -ms-flex-align: baseline;\r\n          align-items: baseline;\n}\n.news li[data-v-6c0a33b2] {\r\n  padding: 15px 0;\n}\n.wrapper[data-v-6c0a33b2]{\r\n  overflow-y: scroll!important;\n}\n.v-bottom-nav[data-v-6c0a33b2]{\r\n  -webkit-box-shadow:9px 3px 14px 2px rgba(0, 0, 0, 0.12);\r\n          box-shadow:9px 3px 14px 2px rgba(0, 0, 0, 0.12)\n}\r\n", ""]);
+exports.push([module.i, "\n.logo[data-v-6c0a33b2] {\n  color: #ffffff;\n  text-decoration: none;\n}\n.nav-btn[data-v-6c0a33b2] {\n  color: #ffffff !important;\n  height: 100%;\n}\n.v-menu[data-v-6c0a33b2] {\n  height: 100%;\n}\n.v-content[data-v-6c0a33b2] {\n  padding-top: 0px !important;\n}\n.wrapper[data-v-6c0a33b2] {\n  height: calc(100vh - 120px);\n  padding: 0 !important;\n}\n.wrapper[data-v-6c0a33b2] {\n  overflow-y: scroll !important;\n}\n.v-bottom-nav[data-v-6c0a33b2] {\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n.v-navigation-drawer > .v-list .v-list__tile--active .v-list__tile__title[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n.v-list__tile--active .v-list__tile__action:first-of-type .v-icon[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 70:
+/***/ 71:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -475,75 +475,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -662,7 +593,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 /***/ }),
 
-/***/ 71:
+/***/ 72:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -691,13 +622,13 @@ var render = function() {
             [
               _c(
                 "v-list-tile",
-                { on: { click: function($event) {} } },
+                { attrs: { to: "/app" }, on: { click: function($event) {} } },
                 [
                   _c("v-list-tile-action", [_c("v-icon", [_vm._v("home")])], 1),
                   _vm._v(" "),
                   _c(
                     "v-list-tile-content",
-                    [_c("v-list-tile-title", [_vm._v("Home")])],
+                    [_c("v-list-tile-title", [_vm._v("Домашняя страница")])],
                     1
                   )
                 ],
@@ -770,9 +701,9 @@ var render = function() {
                 [
                   _c("v-icon", [_vm._v("account_circle")]),
                   _vm._v(
-                    "\r\n            " +
+                    "\n            " +
                       _vm._s(_vm.$store.state.user.user.name) +
-                      "\r\n        "
+                      "\n        "
                   )
                 ],
                 1
@@ -800,231 +731,7 @@ var render = function() {
       _c(
         "v-content",
         { staticClass: "wrapper" },
-        [
-          _c(
-            "v-container",
-            [
-              _c(
-                "v-layout",
-                { attrs: { "justify-center": "", "align-center": "" } },
-                [
-                  _c(
-                    "v-flex",
-                    { attrs: { "text-xs-center": "" } },
-                    [
-                      _c("v-container", [
-                        _c("h3", [_vm._v("Новости")]),
-                        _vm._v(" "),
-                        _c("ul", { staticClass: "news" }, [
-                          _c(
-                            "li",
-                            [
-                              _c(
-                                "v-card",
-                                [
-                                  _c("v-card-media", {
-                                    attrs: {
-                                      src:
-                                        "https://cdn.vuetifyjs.com/images/cards/desert.jpg",
-                                      height: "200px"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-card-title",
-                                    { attrs: { "primary-title": "" } },
-                                    [
-                                      _c("div", [
-                                        _c(
-                                          "h3",
-                                          { staticClass: "headline mb-0" },
-                                          [_vm._v("Kangaroo Valley Safari")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c("div", [
-                                          _vm._v(
-                                            "Located two hours south of Sydney in the "
-                                          ),
-                                          _c("br"),
-                                          _vm._v(
-                                            "Southern Highlands of New South Wales, ..."
-                                          )
-                                        ])
-                                      ])
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-card-actions",
-                                    [
-                                      _c(
-                                        "v-btn",
-                                        {
-                                          attrs: { flat: "", color: "orange" }
-                                        },
-                                        [_vm._v("Share")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-btn",
-                                        {
-                                          attrs: { flat: "", color: "orange" }
-                                        },
-                                        [_vm._v("Explore")]
-                                      )
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "li",
-                            [
-                              _c(
-                                "v-card",
-                                [
-                                  _c("v-card-media", {
-                                    attrs: {
-                                      src:
-                                        "https://cdn.vuetifyjs.com/images/cards/desert.jpg",
-                                      height: "200px"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-card-title",
-                                    { attrs: { "primary-title": "" } },
-                                    [
-                                      _c("div", [
-                                        _c(
-                                          "h3",
-                                          { staticClass: "headline mb-0" },
-                                          [_vm._v("Kangaroo Valley Safari")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c("div", [
-                                          _vm._v(
-                                            "Located two hours south of Sydney in the "
-                                          ),
-                                          _c("br"),
-                                          _vm._v(
-                                            "Southern Highlands of New South Wales, ..."
-                                          )
-                                        ])
-                                      ])
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-card-actions",
-                                    [
-                                      _c(
-                                        "v-btn",
-                                        {
-                                          attrs: { flat: "", color: "orange" }
-                                        },
-                                        [_vm._v("Share")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-btn",
-                                        {
-                                          attrs: { flat: "", color: "orange" }
-                                        },
-                                        [_vm._v("Explore")]
-                                      )
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "li",
-                            [
-                              _c(
-                                "v-card",
-                                [
-                                  _c("v-card-media", {
-                                    attrs: {
-                                      src:
-                                        "https://cdn.vuetifyjs.com/images/cards/desert.jpg",
-                                      height: "200px"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-card-title",
-                                    { attrs: { "primary-title": "" } },
-                                    [
-                                      _c("div", [
-                                        _c(
-                                          "h3",
-                                          { staticClass: "headline mb-0" },
-                                          [_vm._v("Kangaroo Valley Safari")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c("div", [
-                                          _vm._v(
-                                            "Located two hours south of Sydney in the "
-                                          ),
-                                          _c("br"),
-                                          _vm._v(
-                                            "Southern Highlands of New South Wales, ..."
-                                          )
-                                        ])
-                                      ])
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-card-actions",
-                                    [
-                                      _c(
-                                        "v-btn",
-                                        {
-                                          attrs: { flat: "", color: "orange" }
-                                        },
-                                        [_vm._v("Share")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-btn",
-                                        {
-                                          attrs: { flat: "", color: "orange" }
-                                        },
-                                        [_vm._v("Explore")]
-                                      )
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ])
-                      ])
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
+        [_c("v-container", [_c("router-view")], 1)],
         1
       ),
       _vm._v(" "),

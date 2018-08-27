@@ -14159,34 +14159,23 @@ table.v-table tfoot tr td {
   }
 }
 
-.navbar-laravel {
-  background-color: #fff;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+.application .theme--light.v-list .v-list__group__header:hover,
+.application .theme--light.v-list .v-list__tile--highlighted,
+.application .theme--light.v-list .v-list__tile--link:hover,
+.theme--light .v-list .v-list__group__header:hover,
+.theme--light .v-list .v-list__tile--highlighted,
+.theme--light .v-list .v-list__tile--link:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.application {
+  position: fixed;
+  width: 100%;
 }
 
 ul {
   list-style-type: none;
   padding: 0;
-}
-
-.container {
-  margin: 0 auto;
-  max-width: 1280px;
-  width: 90%;
-  min-width: 1280px;
-}
-
-@media only screen and (min-width: 601px) {
-  .container {
-    width: 85%;
-  }
-}
-
-@media only screen and (min-width: 993px) {
-  .container {
-    width: 70%;
-  }
 }
 
 html {

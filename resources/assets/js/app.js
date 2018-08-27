@@ -27,12 +27,14 @@ const Login = () =>
     import('./views/Login.vue');
 const IndexPage = () =>
     import('./views/IndexPage.vue');
+    const Feed = () =>
+    import('./views/Feed.vue');
 const router = new VueRouter({
     mode: 'history',
     routes: [
         {
             path: "/app",
-            name: "app",
+           
             component: Home,
             beforeEnter: (to, from, next) => {
                 axios.get('/api/auth/user').then(function (resp) {
@@ -46,7 +48,14 @@ const router = new VueRouter({
                     router.push("/login");
                 })
 
-            }
+            },
+            children:[
+                {
+                path: "",
+                component:Feed,
+                 name: "app",
+                }
+            ]
         },
         {
             path: '/',
