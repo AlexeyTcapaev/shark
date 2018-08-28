@@ -11,6 +11,7 @@ Vue.use(Vuex)
 Vue.use(Vuetify, {
     theme: {
         primary: "#46547d",
+        secondary:"#f80b37"
     }
 })
 Vue.use(VueRouter)
@@ -27,14 +28,16 @@ const Login = () =>
     import('./views/Login.vue');
 const IndexPage = () =>
     import('./views/IndexPage.vue');
-    const Feed = () =>
+const Feed = () =>
     import('./views/Feed.vue');
+const AddCompany = () =>
+    import('./views/AddCompany.vue');
 const router = new VueRouter({
     mode: 'history',
     routes: [
         {
             path: "/app",
-           
+
             component: Home,
             beforeEnter: (to, from, next) => {
                 axios.get('/api/auth/user').then(function (resp) {
@@ -49,11 +52,16 @@ const router = new VueRouter({
                 })
 
             },
-            children:[
+            children: [
                 {
-                path: "",
-                component:Feed,
-                 name: "app",
+                    path: "",
+                    component: Feed,
+                    name: "app",
+                },
+                {
+                    path: "add_company",
+                    component: AddCompany,
+                    name: "add_company",
                 }
             ]
         },

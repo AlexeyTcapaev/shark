@@ -26161,7 +26161,8 @@ __webpack_require__(17);
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_4_vuex__["a" /* default */]);
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vuetify___default.a, {
     theme: {
-        primary: "#46547d"
+        primary: "#46547d",
+        secondary: "#f80b37"
     }
 });
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]);
@@ -26169,22 +26170,25 @@ if (__WEBPACK_IMPORTED_MODULE_5__store_index__["a" /* default */].state.user.tok
     axios.defaults.headers.common['Authorization'] = __WEBPACK_IMPORTED_MODULE_5__store_index__["a" /* default */].state.user.token.token_type + " " + __WEBPACK_IMPORTED_MODULE_5__store_index__["a" /* default */].state.user.token.access_token;
 }
 var App = function App() {
-    return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 56));
+    return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 56));
 };
 var Home = function Home() {
-    return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 57));
+    return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 57));
 };
 var Registration = function Registration() {
-    return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 58));
+    return __webpack_require__.e/* import() */(10).then(__webpack_require__.bind(null, 58));
 };
 var Login = function Login() {
-    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 59));
+    return __webpack_require__.e/* import() */(11).then(__webpack_require__.bind(null, 59));
 };
 var IndexPage = function IndexPage() {
-    return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 60));
+    return __webpack_require__.e/* import() */(12).then(__webpack_require__.bind(null, 60));
 };
 var Feed = function Feed() {
-    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 61));
+    return __webpack_require__.e/* import() */(9).then(__webpack_require__.bind(null, 61));
+};
+var AddCompany = function AddCompany() {
+    return __webpack_require__.e/* import() */(13).then(__webpack_require__.bind(null, 82));
 };
 var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
     mode: 'history',
@@ -26208,6 +26212,10 @@ var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
             path: "",
             component: Feed,
             name: "app"
+        }, {
+            path: "add_company",
+            component: AddCompany,
+            name: "add_company"
         }]
     }, {
         path: '/',

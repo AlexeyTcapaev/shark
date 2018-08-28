@@ -167,7 +167,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [_c("router-link", { attrs: { to: "/login" } }, [_vm._v("login")])],
+    [
+      _c("router-link", { attrs: { to: "/login" } }, [_vm._v("login")]),
+      _vm._v(" "),
+      _c("router-link", { attrs: { to: "/app" } }, [_vm._v("app")])
+    ],
     1
   )
 }

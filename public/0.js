@@ -460,7 +460,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.logo[data-v-6c0a33b2] {\n  color: #ffffff;\n  text-decoration: none;\n}\n.nav-btn[data-v-6c0a33b2] {\n  color: #ffffff !important;\n  height: 100%;\n}\n.v-menu[data-v-6c0a33b2] {\n  height: 100%;\n}\n.v-content[data-v-6c0a33b2] {\n  padding-top: 0px !important;\n}\n.wrapper[data-v-6c0a33b2] {\n  height: calc(100vh - 120px);\n  padding: 0 !important;\n}\n.wrapper[data-v-6c0a33b2] {\n  overflow-y: scroll !important;\n}\n.v-bottom-nav[data-v-6c0a33b2] {\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n.v-navigation-drawer > .v-list .v-list__tile--active .v-list__tile__title[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n.v-list__tile--active .v-list__tile__action:first-of-type .v-icon[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n", ""]);
+exports.push([module.i, "\n.logo[data-v-6c0a33b2] {\r\n  color: #ffffff;\r\n  text-decoration: none;\n}\n.nav-btn[data-v-6c0a33b2] {\r\n  color: #ffffff !important;\r\n  height: 100%;\n}\n.v-menu[data-v-6c0a33b2] {\r\n  height: 100%;\n}\n.v-content[data-v-6c0a33b2] {\r\n  padding-top: 0px !important;\n}\n.wrapper[data-v-6c0a33b2] {\r\n  height: calc(100vh - 120px);\r\n  padding: 0 !important;\n}\n.wrapper[data-v-6c0a33b2] {\r\n  overflow-y: scroll !important;\n}\n.v-bottom-nav[data-v-6c0a33b2] {\r\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\r\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n.v-navigation-drawer > .v-list .v-list__tile--active .v-list__tile__title[data-v-6c0a33b2] {\r\n  color: #f80b37 !important;\n}\n.v-list__tile--active .v-list__tile__action:first-of-type .v-icon[data-v-6c0a33b2] {\r\n  color: #f80b37 !important;\n}\r\n", ""]);
 
 // exports
 
@@ -637,17 +637,17 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "v-list-tile",
-                { on: { click: function($event) {} } },
+                { attrs: { to: { name: "add_company" } } },
                 [
                   _c(
                     "v-list-tile-action",
-                    [_c("v-icon", [_vm._v("contact_mail")])],
+                    [_c("v-icon", [_vm._v("add_circle_outline")])],
                     1
                   ),
                   _vm._v(" "),
                   _c(
                     "v-list-tile-content",
-                    [_c("v-list-tile-title", [_vm._v("Contact")])],
+                    [_c("v-list-tile-title", [_vm._v("Создать компанию")])],
                     1
                   )
                 ],
@@ -701,9 +701,9 @@ var render = function() {
                 [
                   _c("v-icon", [_vm._v("account_circle")]),
                   _vm._v(
-                    "\n            " +
+                    "\r\n            " +
                       _vm._s(_vm.$store.state.user.user.name) +
-                      "\n        "
+                      "\r\n        "
                   )
                 ],
                 1

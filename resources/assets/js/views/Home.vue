@@ -2,7 +2,7 @@
 <main>
     <v-navigation-drawer fixed v-model="drawer" app>
       <v-list dense>
-        <v-list-tile @click="" to="/app">
+        <v-list-tile @click="" to="/app" exact-active-class="target-link">
           <v-list-tile-action>
             <v-icon>home</v-icon>
           </v-list-tile-action>
@@ -10,12 +10,16 @@
             <v-list-tile-title>Домашняя страница</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile @click="">
+        <v-list-tile :to="{name:'add_company'}" exact-active-class="target-link">
           <v-list-tile-action>
-            <v-icon>contact_mail</v-icon>
+            <v-icon>add_circle_outline</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Contact</v-list-tile-title>
+            <v-badge color="secondary">
+            <span slot="badge">6</span>
+             <v-list-tile-title>Создать компанию</v-list-tile-title>
+          </v-badge>
+           
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -52,8 +56,8 @@
           flat
           value="recent"
         >
-          <span>Recent</span>
-          <v-icon>history</v-icon>
+          <span>Dashboard</span>
+          <v-icon>dashboard</v-icon>
         </v-btn>
 
         <v-btn
@@ -61,8 +65,8 @@
           flat
           value="favorites"
         >
-          <span>Favorites</span>
-          <v-icon>favorite</v-icon>
+          <span>News</span>
+          <v-icon>description</v-icon>
         </v-btn>
 
         <v-btn
@@ -70,8 +74,8 @@
           flat
           value="nearby"
         >
-          <span>Nearby</span>
-          <v-icon>place</v-icon>
+          <span>Бизнес площадка</span>
+          <v-icon>business</v-icon>
         </v-btn>
       </v-bottom-nav>
   </main>
@@ -115,9 +119,6 @@ export default {
       { icon: "keyboard", text: "Go to the old version" }
     ]
   }),
-  props: {
-    source: String
-  },
   methods: {
     ...mapActions({ ResetState: "user/ResetState" }),
     logout() {
@@ -155,10 +156,11 @@ export default {
 .v-bottom-nav {
   box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
-.v-navigation-drawer > .v-list .v-list__tile--active .v-list__tile__title {
+.target-link .v-list__tile__content .v-list__tile__title {
   color: #f80b37 !important;
 }
-.v-list__tile--active .v-list__tile__action:first-of-type .v-icon {
+.target-link .v-icon {
   color: #f80b37 !important;
 }
+
 </style>

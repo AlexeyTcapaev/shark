@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitfa2e697d17c04c80d95e72554765acc6
+class ComposerStaticInitd7bd789c3d81905ada9c22956971dc59
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -22,12 +22,12 @@ class ComposerStaticInitfa2e697d17c04c80d95e72554765acc6
         '40360c0b9b437e69bcbb7f1349ce029e' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/parse_cookie_header.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
-        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -149,8 +149,8 @@ class ComposerStaticInitfa2e697d17c04c80d95e72554765acc6
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
         ),
         'Zend\\Diactoros\\' => 
         array (
@@ -4098,10 +4098,10 @@ class ComposerStaticInitfa2e697d17c04c80d95e72554765acc6
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitfa2e697d17c04c80d95e72554765acc6::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitfa2e697d17c04c80d95e72554765acc6::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitfa2e697d17c04c80d95e72554765acc6::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitfa2e697d17c04c80d95e72554765acc6::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitd7bd789c3d81905ada9c22956971dc59::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitd7bd789c3d81905ada9c22956971dc59::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitd7bd789c3d81905ada9c22956971dc59::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitd7bd789c3d81905ada9c22956971dc59::$classMap;
 
         }, null, ClassLoader::class);
     }

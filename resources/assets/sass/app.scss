@@ -9,10 +9,7 @@
 
 .application .theme--light.v-list .v-list__group__header:hover, .application .theme--light.v-list .v-list__tile--highlighted, .application .theme--light.v-list .v-list__tile--link:hover, .theme--light .v-list .v-list__group__header:hover, .theme--light .v-list .v-list__tile--highlighted, .theme--light .v-list .v-list__tile--link:hover {
     background: rgba(0, 0, 0, 0.1);
-}
-.application{
-   position: fixed;
-    width: 100%; 
+    transition: 0.2s linear;
 }
 
 ul{
@@ -35,5 +32,8 @@ h3{
 }
 div{
   text-align: center;
+}
+.v-navigation-drawer > .v-list .v-list__tile {
+  height: 64px!important;
 }
 

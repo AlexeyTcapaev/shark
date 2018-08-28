@@ -460,7 +460,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\ni {\n  -webkit-user-select: none !important;\n     -moz-user-select: none !important;\n      -ms-user-select: none !important;\n          user-select: none !important;\n}\nbutton.primary{\n    background-color: #f80b37!important\n}\nbutton.v-btn--flat{\n    color: #f80b37!important\n}\n.primary-text{\ncolor: #f80b37!important\n}\n", ""]);
+exports.push([module.i, "\ni {\r\n  -webkit-user-select: none !important;\r\n     -moz-user-select: none !important;\r\n      -ms-user-select: none !important;\r\n          user-select: none !important;\n}\nbutton.primary{\r\n    background-color: #f80b37!important\n}\nbutton.v-btn--flat{\r\n    color: #f80b37!important\n}\n.primary-text{\r\ncolor: #f80b37!important\n}\r\n", ""]);
 
 // exports
 
