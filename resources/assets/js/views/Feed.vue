@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-layout justify-center align-center>
-            <v-flex xs6>
+            <v-flex :xs6="mobile">
                 <h3>Новости</h3>
                 <ul class="news">
                     <li>
@@ -63,6 +63,33 @@
         </v-layout>
     </v-container>
 </template>
+<script>
+export default {
+  data: () => ({
+    windowWidth: document.documentElement.clientWidth
+  }),
+
+  computed: {
+    mobile() {
+      if (this.windowWidth > 993) return true;
+      else return false;
+    }
+  },
+  methods: {
+    // whenever the document is resized, re-set the 'fullHeight' variable
+    handleResize(event) {
+      this.windowWidth = document.documentElement.clientWidth;
+    }
+  },
+  mounted: function() {
+    window.addEventListener("resize", this.handleResize);
+  },
+  beforeDestroy: function() {
+    window.removeEventListener("resize", this.handleResize);
+  }
+};
+</script>
+
 <style scoped>
 .container.fill-height > .layout {
   align-items: baseline;

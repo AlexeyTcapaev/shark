@@ -1,18 +1,18 @@
 webpackJsonp([2],{
 
-/***/ 62:
+/***/ 63:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(80)
+  __webpack_require__(81)
 }
-var normalizeComponent = __webpack_require__(64)
+var normalizeComponent = __webpack_require__(65)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(86)
 /* template */
-var __vue_template__ = __webpack_require__(82)
+var __vue_template__ = __webpack_require__(83)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52,7 +52,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 64:
+/***/ 65:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -162,7 +162,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 65:
+/***/ 66:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -181,7 +181,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(66)
+var listToStyles = __webpack_require__(67)
 
 /*
 type StyleObject = {
@@ -391,7 +391,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 66:
+/***/ 67:
 /***/ (function(module, exports) {
 
 /**
@@ -425,17 +425,17 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 80:
+/***/ 81:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(81);
+var content = __webpack_require__(82);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(65)("f755a266", content, false, {});
+var update = __webpack_require__(66)("f755a266", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 81:
+/***/ 82:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
@@ -467,7 +467,7 @@ exports.push([module.i, "\n.container.fill-height > .layout[data-v-7d94acf1] {\r
 
 /***/ }),
 
-/***/ 82:
+/***/ 83:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -481,7 +481,7 @@ var render = function() {
         "v-layout",
         { attrs: { "justify-center": "", "align-center": "" } },
         [
-          _c("v-flex", { attrs: { xs6: "" } }, [
+          _c("v-flex", { attrs: { xs6: _vm.mobile } }, [
             _c("h3", [_vm._v("Новости")]),
             _vm._v(" "),
             _c("ul", { staticClass: "news" }, [
@@ -664,6 +664,105 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-7d94acf1", module.exports)
   }
 }
+
+/***/ }),
+
+/***/ 86:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      windowWidth: document.documentElement.clientWidth
+    };
+  },
+
+  computed: {
+    mobile: function mobile() {
+      if (this.windowWidth > 993) return true;else return false;
+    }
+  },
+  methods: {
+    // whenever the document is resized, re-set the 'fullHeight' variable
+    handleResize: function handleResize(event) {
+      this.windowWidth = document.documentElement.clientWidth;
+    }
+  },
+  mounted: function mounted() {
+    window.addEventListener("resize", this.handleResize);
+  },
+  beforeDestroy: function beforeDestroy() {
+    window.removeEventListener("resize", this.handleResize);
+  }
+});
 
 /***/ })
 
