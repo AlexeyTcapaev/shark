@@ -44,7 +44,7 @@
         </v-toolbar>
         <div class="wrapper" v-bar>
           <div>
-            <transition name="fade" mode="out-in">  
+            <transition name="fade" mode="out-in">
               <router-view></router-view>
             </transition>
           </div>
@@ -136,6 +136,13 @@ export default {
   height: calc(100vh - 120px);
   padding: 0 !important;
   overflow: hidden;
+
+
+}
+@media only screen and (max-width: 992px) {
+  .wrapper {
+      height: calc(100vh - 112px);
+  }
 }
 .v-bottom-nav {
   box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);

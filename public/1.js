@@ -1,24 +1,24 @@
 webpackJsonp([1],{
 
-/***/ 58:
+/***/ 63:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(68)
+  __webpack_require__(81)
 }
 var normalizeComponent = __webpack_require__(65)
 /* script */
-var __vue_script__ = __webpack_require__(70)
+var __vue_script__ = __webpack_require__(83)
 /* template */
-var __vue_template__ = __webpack_require__(71)
+var __vue_template__ = __webpack_require__(84)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-7d94acf1"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -29,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/App.vue"
+Component.options.__file = "resources/assets/js/views/Feed.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -38,9 +38,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-50e73d1e", Component.options)
+    hotAPI.createRecord("data-v-7d94acf1", Component.options)
   } else {
-    hotAPI.reload("data-v-50e73d1e", Component.options)
+    hotAPI.reload("data-v-7d94acf1", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -425,23 +425,23 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 68:
+/***/ 81:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(69);
+var content = __webpack_require__(82);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(66)("7751e016", content, false, {});
+var update = __webpack_require__(66)("f755a266", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-50e73d1e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./App.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-50e73d1e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./App.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7d94acf1\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Feed.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7d94acf1\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Feed.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 69:
+/***/ 82:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
@@ -460,14 +460,14 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\ni {\r\n  -webkit-user-select: none !important;\r\n     -moz-user-select: none !important;\r\n      -ms-user-select: none !important;\r\n          user-select: none !important;\n}\nbutton.primary {\r\n  background-color: #f80b37 !important;\n}\nbutton.v-btn--flat {\r\n  color: #f80b37 !important;\n}\n.primary-text {\r\n  color: #f80b37 !important;\n}\n.fade-enter-active,\r\n.fade-leave-active {\r\n  -webkit-transition-duration: 0.3s;\r\n          transition-duration: 0.3s;\r\n  -webkit-transition-property: opacity;\r\n  transition-property: opacity;\r\n  -webkit-transition-timing-function: ease;\r\n          transition-timing-function: ease;\n}\n.fade-enter,\r\n.fade-leave-active {\r\n  opacity: 0\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.container.fill-height > .layout[data-v-7d94acf1] {\r\n  -webkit-box-align: baseline;\r\n      -ms-flex-align: baseline;\r\n          align-items: baseline;\n}\n.news li[data-v-7d94acf1] {\r\n  padding: 15px 0;\r\n  min-width: 40vw;\r\n  max-width: 100%;\n}\n.news[data-v-7d94acf1] {\r\n  width: 100%;\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 70:
+/***/ 83:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -483,41 +483,90 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  metaInfo: {
-    titleTemplate: "%s"
-  },
   data: function data() {
     return {
-      transitionName: "slide-left"
+      windowWidth: document.documentElement.clientWidth
     };
   },
-  mounted: function mounted() {
-    this.$Progress.finish();
+
+  computed: {
+    mobile: function mobile() {
+      if (this.windowWidth > 993) return true;else return false;
+    }
   },
-  created: function created() {
-    var _this = this;
-
-    this.$Progress.start();
-    this.$router.beforeEach(function (to, from, next) {
-      if (to.meta.progress !== undefined) {
-        var meta = to.meta.progress;
-        _this.$Progress.parseMeta(meta);
-      }
-      _this.$Progress.start();
-
-      next();
-    });
-    this.$router.afterEach(function (to, from) {
-      _this.$Progress.finish();
-    });
+  methods: {
+    // whenever the document is resized, re-set the 'fullHeight' variable
+    handleResize: function handleResize(event) {
+      this.windowWidth = document.documentElement.clientWidth;
+    }
+  },
+  mounted: function mounted() {
+    window.addEventListener("resize", this.handleResize);
+  },
+  beforeDestroy: function beforeDestroy() {
+    window.removeEventListener("resize", this.handleResize);
   }
 });
 
 /***/ }),
 
-/***/ 71:
+/***/ 84:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -525,22 +574,182 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-app",
+    "v-container",
     [
       _c(
-        "v-content",
+        "v-layout",
+        { attrs: { "justify-center": "", "align-center": "" } },
         [
-          _c(
-            "transition",
-            { attrs: { name: "fade", mode: "out-in" } },
-            [_c("router-view")],
-            1
-          )
+          _c("v-flex", { attrs: { xs6: _vm.mobile } }, [
+            _c("h3", [_vm._v("Новости")]),
+            _vm._v(" "),
+            _c("ul", { staticClass: "news" }, [
+              _c(
+                "li",
+                [
+                  _c(
+                    "v-card",
+                    [
+                      _c("v-card-media", {
+                        attrs: {
+                          src:
+                            "https://cdn.vuetifyjs.com/images/cards/desert.jpg",
+                          height: "200px"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-card-title", { attrs: { "primary-title": "" } }, [
+                        _c("div", [
+                          _c("h3", { staticClass: "headline mb-0" }, [
+                            _vm._v("Kangaroo Valley Safari")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _vm._v("Located two hours south of Sydney in the "),
+                            _c("br"),
+                            _vm._v(
+                              "Southern Highlands of New South Wales,\n                                    ..."
+                            )
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-actions",
+                        [
+                          _c(
+                            "v-btn",
+                            { attrs: { flat: "", color: "orange" } },
+                            [_vm._v("Share")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            { attrs: { flat: "", color: "orange" } },
+                            [_vm._v("Explore")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "li",
+                [
+                  _c(
+                    "v-card",
+                    [
+                      _c("v-card-media", {
+                        attrs: {
+                          src:
+                            "https://cdn.vuetifyjs.com/images/cards/desert.jpg",
+                          height: "200px"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-card-title", { attrs: { "primary-title": "" } }, [
+                        _c("div", [
+                          _c("h3", { staticClass: "headline mb-0" }, [
+                            _vm._v("Kangaroo Valley Safari")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _vm._v("Located two hours south of Sydney in the "),
+                            _c("br"),
+                            _vm._v(
+                              "Southern Highlands of New South Wales,\n                                    ..."
+                            )
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-actions",
+                        [
+                          _c(
+                            "v-btn",
+                            { attrs: { flat: "", color: "orange" } },
+                            [_vm._v("Share")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            { attrs: { flat: "", color: "orange" } },
+                            [_vm._v("Explore")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "li",
+                [
+                  _c(
+                    "v-card",
+                    [
+                      _c("v-card-media", {
+                        attrs: {
+                          src:
+                            "https://cdn.vuetifyjs.com/images/cards/desert.jpg",
+                          height: "200px"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-card-title", { attrs: { "primary-title": "" } }, [
+                        _c("div", [
+                          _c("h3", { staticClass: "headline mb-0" }, [
+                            _vm._v("Kangaroo Valley Safari")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _vm._v("Located two hours south of Sydney in the "),
+                            _c("br"),
+                            _vm._v(
+                              "Southern Highlands of New South Wales,\n                                    ..."
+                            )
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-actions",
+                        [
+                          _c(
+                            "v-btn",
+                            { attrs: { flat: "", color: "orange" } },
+                            [_vm._v("Share")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            { attrs: { flat: "", color: "orange" } },
+                            [_vm._v("Explore")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ])
+          ])
         ],
         1
-      ),
-      _vm._v(" "),
-      _c("vue-progress-bar")
+      )
     ],
     1
   )
@@ -551,7 +760,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-50e73d1e", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-7d94acf1", module.exports)
   }
 }
 

@@ -26190,7 +26190,7 @@ if (__WEBPACK_IMPORTED_MODULE_5__store_index__["a" /* default */].state.user.tok
     axios.defaults.headers.common['Authorization'] = __WEBPACK_IMPORTED_MODULE_5__store_index__["a" /* default */].state.user.token.token_type + " " + __WEBPACK_IMPORTED_MODULE_5__store_index__["a" /* default */].state.user.token.access_token;
 }
 var App = function App() {
-    return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 58));
+    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 58));
 };
 var Home = function Home() {
     return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 59));
@@ -26205,7 +26205,7 @@ var IndexPage = function IndexPage() {
     return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 62));
 };
 var Feed = function Feed() {
-    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 63));
+    return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 63));
 };
 var AddCompany = function AddCompany() {
     return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 64));
