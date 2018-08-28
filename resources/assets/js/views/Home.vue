@@ -1,86 +1,72 @@
 <template>
-<main>
-    <v-navigation-drawer fixed v-model="drawer" app>
-      <v-list dense>
-        <v-list-tile @click="" to="/app" exact-active-class="target-link">
-          <v-list-tile-action>
-            <v-icon>home</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Домашняя страница</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-        <v-list-tile :to="{name:'add_company'}" exact-active-class="target-link">
-          <v-list-tile-action>
-            <v-icon>add_circle_outline</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-badge color="secondary">
-            <span slot="badge">6</span>
-             <v-list-tile-title>Создать компанию</v-list-tile-title>
-          </v-badge>
-           
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-toolbar color="primary" dark fixed app>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title><router-link to="/home" class="logo">Бизнес - Акула</router-link></v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-menu offset-y>
-        <v-btn slot="activator" dark flat class="nav-btn">
-         <v-icon>account_circle</v-icon>
-            {{$store.state.user.user.name}}
-        </v-btn>
-        <v-list>
-          <v-list-tile @click="logout">
-            <v-list-tile-title>Выход</v-list-tile-title>
-          </v-list-tile>
-        </v-list>
-      </v-menu>
-    </v-toolbar>
-    <v-content class="wrapper">
-      <v-container>
-        <router-view></router-view>
-      </v-container>
-    </v-content>
-                       <v-bottom-nav
-        :active.sync="bottomNav"
-        :value="true"
-        absolute
-        color="transparent"
-      >
-        <v-btn
-          color="teal"
-          flat
-          value="recent"
-        >
-          <span>Dashboard</span>
-          <v-icon>dashboard</v-icon>
-        </v-btn>
+    <main>
+        <v-navigation-drawer fixed v-model="drawer" app>
+            <v-list dense>
+                <v-list-tile @click="" to="/app" exact-active-class="target-link">
+                    <v-list-tile-action>
+                        <v-icon>home</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                        <v-list-tile-title>Домашняя страница</v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile>
+                <v-list-tile :to="{name:'add_company'}" exact-active-class="target-link">
+                    <v-list-tile-action>
+                        <v-icon>add_circle_outline</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                        <v-badge color="secondary">
+                            <span slot="badge">6</span>
+                            <v-list-tile-title>Создать компанию</v-list-tile-title>
+                        </v-badge>
 
-        <v-btn
-          color="teal"
-          flat
-          value="favorites"
-        >
-          <span>News</span>
-          <v-icon>description</v-icon>
-        </v-btn>
+                    </v-list-tile-content>
+                </v-list-tile>
+            </v-list>
+        </v-navigation-drawer>
+        <v-toolbar color="primary" dark fixed app>
+            <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+            <v-toolbar-title>
+                <router-link to="/home" class="logo">Бизнес - Акула</router-link>
+            </v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-menu offset-y>
+                <v-btn slot="activator" dark flat class="nav-btn">
+                    <v-icon>account_circle</v-icon>
+                    {{$store.state.user.user.name}}
+                </v-btn>
+                <v-list>
+                    <v-list-tile @click="logout">
+                        <v-list-tile-title>Выход</v-list-tile-title>
+                    </v-list-tile>
+                </v-list>
+            </v-menu>
+        </v-toolbar>
+        <div class="wrapper" v-bar>
+          <div>
+            <transition name="fade" mode="out-in">  
+              <router-view></router-view>
+            </transition>
+          </div>
+        </div>
+        <v-bottom-nav :active.sync="bottomNav" :value="true" absolute color="transparent">
+            <v-btn color="teal" flat value="recent">
+                <span>Dashboard</span>
+                <v-icon>dashboard</v-icon>
+            </v-btn>
 
-        <v-btn
-          color="teal"
-          flat
-          value="nearby"
-        >
-          <span>Бизнес площадка</span>
-          <v-icon>business</v-icon>
-        </v-btn>
-      </v-bottom-nav>
-  </main>
+            <v-btn color="teal" flat value="favorites">
+                <span>News</span>
+                <v-icon>description</v-icon>
+            </v-btn>
+
+            <v-btn color="teal" flat value="nearby">
+                <span>Бизнес площадка</span>
+                <v-icon>business</v-icon>
+            </v-btn>
+        </v-bottom-nav>
+    </main>
 </template>
-
 <script>
 import { mapActions } from "vuex";
 export default {
@@ -149,9 +135,7 @@ export default {
 .wrapper {
   height: calc(100vh - 120px);
   padding: 0 !important;
-}
-.wrapper {
-  overflow-y: scroll !important;
+  overflow: hidden;
 }
 .v-bottom-nav {
   box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);
@@ -161,6 +145,17 @@ export default {
 }
 .target-link .v-icon {
   color: #f80b37 !important;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.3s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0
 }
 
 </style>

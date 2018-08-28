@@ -1,18 +1,18 @@
 webpackJsonp([1],{
 
-/***/ 56:
+/***/ 57:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(65)
+  __webpack_require__(67)
 }
-var normalizeComponent = __webpack_require__(62)
+var normalizeComponent = __webpack_require__(64)
 /* script */
-var __vue_script__ = __webpack_require__(67)
+var __vue_script__ = __webpack_require__(69)
 /* template */
-var __vue_template__ = __webpack_require__(68)
+var __vue_template__ = __webpack_require__(70)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52,7 +52,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 62:
+/***/ 64:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -162,7 +162,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 63:
+/***/ 65:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -181,7 +181,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(64)
+var listToStyles = __webpack_require__(66)
 
 /*
 type StyleObject = {
@@ -391,7 +391,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 64:
+/***/ 66:
 /***/ (function(module, exports) {
 
 /**
@@ -425,17 +425,17 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 65:
+/***/ 67:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(66);
+var content = __webpack_require__(68);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(63)("7751e016", content, false, {});
+var update = __webpack_require__(65)("7751e016", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 66:
+/***/ 68:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
@@ -460,18 +460,19 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\ni {\r\n  -webkit-user-select: none !important;\r\n     -moz-user-select: none !important;\r\n      -ms-user-select: none !important;\r\n          user-select: none !important;\n}\nbutton.primary{\r\n    background-color: #f80b37!important\n}\nbutton.v-btn--flat{\r\n    color: #f80b37!important\n}\n.primary-text{\r\ncolor: #f80b37!important\n}\r\n", ""]);
+exports.push([module.i, "\ni {\r\n  -webkit-user-select: none !important;\r\n     -moz-user-select: none !important;\r\n      -ms-user-select: none !important;\r\n          user-select: none !important;\n}\nbutton.primary {\r\n  background-color: #f80b37 !important;\n}\nbutton.v-btn--flat {\r\n  color: #f80b37 !important;\n}\n.primary-text {\r\n  color: #f80b37 !important;\n}\n.fade-enter-active,\r\n.fade-leave-active {\r\n  -webkit-transition-duration: 0.3s;\r\n          transition-duration: 0.3s;\r\n  -webkit-transition-property: opacity;\r\n  transition-property: opacity;\r\n  -webkit-transition-timing-function: ease;\r\n          transition-timing-function: ease;\n}\n.fade-enter,\r\n.fade-leave-active {\r\n  opacity: 0\n}\r\n\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 67:
+/***/ 69:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -492,13 +493,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       transitionName: "slide-left"
     };
   },
+  mounted: function mounted() {
+    this.$Progress.finish();
+  },
+  created: function created() {
+    var _this = this;
 
-  computed: {}
+    this.$Progress.start();
+    this.$router.beforeEach(function (to, from, next) {
+      if (to.meta.progress !== undefined) {
+        var meta = to.meta.progress;
+        _this.$Progress.parseMeta(meta);
+      }
+      _this.$Progress.start();
+
+      next();
+    });
+    this.$router.afterEach(function (to, from) {
+      _this.$Progress.finish();
+    });
+  }
 });
 
 /***/ }),
 
-/***/ 68:
+/***/ 70:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -519,7 +538,9 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("vue-progress-bar")
     ],
     1
   )

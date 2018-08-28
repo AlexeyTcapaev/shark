@@ -1,18 +1,18 @@
 webpackJsonp([2],{
 
-/***/ 61:
+/***/ 62:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(78)
+  __webpack_require__(80)
 }
-var normalizeComponent = __webpack_require__(62)
+var normalizeComponent = __webpack_require__(64)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(80)
+var __vue_template__ = __webpack_require__(82)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52,7 +52,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 62:
+/***/ 64:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -162,7 +162,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 63:
+/***/ 65:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -181,7 +181,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(64)
+var listToStyles = __webpack_require__(66)
 
 /*
 type StyleObject = {
@@ -391,7 +391,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 64:
+/***/ 66:
 /***/ (function(module, exports) {
 
 /**
@@ -425,17 +425,17 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 78:
+/***/ 80:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(79);
+var content = __webpack_require__(81);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(63)("f755a266", content, false, {});
+var update = __webpack_require__(65)("f755a266", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 79:
+/***/ 81:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
@@ -460,14 +460,14 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.container.fill-height>.layout[data-v-7d94acf1] {\n    -webkit-box-align: baseline;\n        -ms-flex-align: baseline;\n            align-items: baseline;\n}\n.news li[data-v-7d94acf1] {\n    padding: 15px 0;\n    min-width: 40vw;\n    max-width: 100%;\n}\n.news[data-v-7d94acf1] {\n    width: 100%;\n}\n", ""]);
+exports.push([module.i, "\n.container.fill-height > .layout[data-v-7d94acf1] {\r\n  -webkit-box-align: baseline;\r\n      -ms-flex-align: baseline;\r\n          align-items: baseline;\n}\n.news li[data-v-7d94acf1] {\r\n  padding: 15px 0;\r\n  min-width: 40vw;\r\n  max-width: 100%;\n}\n.news[data-v-7d94acf1] {\r\n  width: 100%;\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 80:
+/***/ 82:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -508,7 +508,9 @@ var render = function() {
                           _c("div", [
                             _vm._v("Located two hours south of Sydney in the "),
                             _c("br"),
-                            _vm._v("Southern Highlands of New South Wales, ...")
+                            _vm._v(
+                              "Southern Highlands of New South Wales,\n                                    ..."
+                            )
                           ])
                         ])
                       ]),
@@ -560,7 +562,9 @@ var render = function() {
                           _c("div", [
                             _vm._v("Located two hours south of Sydney in the "),
                             _c("br"),
-                            _vm._v("Southern Highlands of New South Wales, ...")
+                            _vm._v(
+                              "Southern Highlands of New South Wales,\n                                    ..."
+                            )
                           ])
                         ])
                       ]),
@@ -612,7 +616,9 @@ var render = function() {
                           _c("div", [
                             _vm._v("Located two hours south of Sydney in the "),
                             _c("br"),
-                            _vm._v("Southern Highlands of New South Wales, ...")
+                            _vm._v(
+                              "Southern Highlands of New South Wales,\n                                    ..."
+                            )
                           ])
                         ])
                       ]),

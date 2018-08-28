@@ -7,14 +7,30 @@ import Vuetify from 'vuetify'
 import Vuex from 'vuex'
 import store from './store/index'
 import * as Cookies from 'js-cookie'
+import Vuebar from 'vuebar';
+import VueProgressBar from 'vue-progressbar'
+Vue.use(Vuebar);
 Vue.use(Vuex)
 Vue.use(Vuetify, {
     theme: {
         primary: "#46547d",
-        secondary:"#f80b37"
+        secondary: "#f80b37"
     }
 })
 Vue.use(VueRouter)
+Vue.use(VueProgressBar, {
+    color: '#f80b37',
+    failedColor: '#874b4b',
+    thickness: '3px',
+    transition: {
+        speed: '0.4s',
+        opacity: '0.6s',
+        termination: 300
+    },
+    autoRevert: true,
+    location: 'top',
+    inverse: false
+})
 if (store.state.user.token !== undefined) {
     axios.defaults.headers.common['Authorization'] = store.state.user.token.token_type + " " + store.state.user.token.access_token
 }
