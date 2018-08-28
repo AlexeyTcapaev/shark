@@ -460,7 +460,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.logo[data-v-6c0a33b2] {\n  color: #ffffff;\n  text-decoration: none;\n}\n.nav-btn[data-v-6c0a33b2] {\n  color: #ffffff !important;\n  height: 100%;\n}\n.v-menu[data-v-6c0a33b2] {\n  height: 100%;\n}\n.v-content[data-v-6c0a33b2] {\n  padding-top: 0px !important;\n}\n.wrapper[data-v-6c0a33b2] {\n  height: calc(100vh - 120px);\n  padding: 0 !important;\n  overflow: hidden;\n}\n@media only screen and (max-width: 992px) {\n.wrapper[data-v-6c0a33b2] {\n      height: calc(100vh - 112px);\n}\n}\n.v-bottom-nav[data-v-6c0a33b2] {\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n.target-link .v-list__tile__content .v-list__tile__title[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n.target-link .v-icon[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n.fade-enter-active[data-v-6c0a33b2],\n.fade-leave-active[data-v-6c0a33b2] {\n  -webkit-transition-duration: 0.3s;\n          transition-duration: 0.3s;\n  -webkit-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-timing-function: ease;\n          transition-timing-function: ease;\n}\n.fade-enter[data-v-6c0a33b2],\n.fade-leave-active[data-v-6c0a33b2] {\n  opacity: 0\n}\n\n", ""]);
+exports.push([module.i, "\n.logo[data-v-6c0a33b2] {\n  color: #ffffff;\n  text-decoration: none;\n}\n.nav-btn[data-v-6c0a33b2] {\n  color: #ffffff !important;\n  height: 100%;\n}\n.v-menu[data-v-6c0a33b2] {\n  height: 100%;\n}\n.v-content[data-v-6c0a33b2] {\n  padding-top: 0px !important;\n}\n.wrapper[data-v-6c0a33b2] {\n  overflow: hidden;\n}\n.v-navigation-drawer[data-v-6c0a33b2]{\n    z-index:6;\n}\n.v-bottom-nav[data-v-6c0a33b2] {\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n.target-link .v-list__tile__content .v-list__tile__title[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n.target-link .v-icon[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n.fade-enter-active[data-v-6c0a33b2],\n.fade-leave-active[data-v-6c0a33b2] {\n  -webkit-transition-duration: 0.3s;\n          transition-duration: 0.3s;\n  -webkit-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-timing-function: ease;\n          transition-timing-function: ease;\n}\n.fade-enter[data-v-6c0a33b2],\n.fade-leave-active[data-v-6c0a33b2] {\n  opacity: 0\n}\n\n", ""]);
 
 // exports
 
@@ -546,6 +546,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -575,6 +576,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         init.$router.push("/login");
       });
     }
+  }),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+    windowWidth: 'config/windowWidth',
+    windowHeight: 'config/windowHeight' }), {
+    page: function page() {
+      if (this.windowWidth > 993) return this.windowHeight - 120;else return this.windowHeight - 112;
+    }
   })
 });
 
@@ -589,6 +597,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "main",
+    { staticClass: "fullheight" },
     [
       _c(
         "v-navigation-drawer",
@@ -742,7 +751,8 @@ var render = function() {
         "div",
         {
           directives: [{ name: "bar", rawName: "v-bar" }],
-          staticClass: "wrapper"
+          staticClass: "wrapper",
+          style: { height: _vm.page + "px" }
         },
         [
           _c(
@@ -763,12 +773,7 @@ var render = function() {
       _c(
         "v-bottom-nav",
         {
-          attrs: {
-            active: _vm.bottomNav,
-            value: true,
-            absolute: "",
-            color: "transparent"
-          },
+          attrs: { active: _vm.bottomNav, fixed: "", value: true },
           on: {
             "update:active": function($event) {
               _vm.bottomNav = $event

@@ -36,6 +36,7 @@ export default {
   }),
   methods: {
     ...mapActions({ SetToken: "user/SetToken" }),
+
     submit() {
       const init = this;
       if (this.login.indexOf("@") > -1)

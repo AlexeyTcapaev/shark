@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
+import {mapActions} from 'vuex'
 export default {
   metaInfo: {
     titleTemplate: "%s"
@@ -19,8 +21,25 @@ export default {
       transitionName: "slide-left"
     };
   },
+  methods:{
+    ...mapActions({
+      SetWindowWidth:'config/SetWindowWidth',
+      SetWindowHeight:'config/SetWindowHeight'
+    })
+  },
   mounted() {
     this.$Progress.finish();
+    const init = this
+     window.addEventListener("resize", function(event) {
+       init.SetWindowHeight(document.documentElement.clientHeight);
+      init.SetWindowWidth(document.documentElement.clientWidth);
+     });
+  },
+  computed:{
+    ...mapGetters({
+      windowHeight:'config/windowHeight',
+      windowWidth:'config/windowWidth'
+    })
   },
   created() {
     this.$Progress.start();

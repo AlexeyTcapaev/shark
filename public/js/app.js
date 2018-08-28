@@ -11561,7 +11561,7 @@ module.exports = Vue;
 /* unused harmony export install */
 /* unused harmony export mapState */
 /* unused harmony export mapMutations */
-/* unused harmony export mapGetters */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return mapGetters; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return mapActions; });
 /* unused harmony export createNamespacedHelpers */
 /**
@@ -71872,13 +71872,16 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_vue__;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__user__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config__ = __webpack_require__(87);
+
 
 
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */]);
 /* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
     modules: {
-        user: __WEBPACK_IMPORTED_MODULE_2__user__["a" /* default */]
+        user: __WEBPACK_IMPORTED_MODULE_2__user__["a" /* default */],
+        config: __WEBPACK_IMPORTED_MODULE_3__config__["a" /* default */]
     }
 }));
 
@@ -72837,6 +72840,73 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+    namespaced: true,
+    state: {
+        windowWidth: document.documentElement.clientWidth,
+        windowHeight: document.documentElement.clientHeight
+    },
+    getters: {
+        windowWidth: function windowWidth(state) {
+            return state.windowWidth;
+        },
+        windowHeight: function windowHeight(state) {
+            return state.windowHeight;
+        }
+    },
+    mutations: {
+        SetWindowWidth: function SetWindowWidth(state, value) {
+            state.windowWidth = value;
+        },
+        SetWindowHeight: function SetWindowHeight(state, value) {
+            state.windowHeight = value;
+        }
+    },
+    actions: {
+        SetWindowWidth: function SetWindowWidth(state, value) {
+            state.commit('SetWindowWidth', value);
+        },
+        SetWindowHeight: function SetWindowHeight(state, value) {
+            state.commit('SetWindowHeight', value);
+        }
+
+    }
+});
 
 /***/ })
 /******/ ]);

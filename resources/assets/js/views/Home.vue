@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <main class="fullheight">
         <v-navigation-drawer fixed v-model="drawer" app>
             <v-list dense>
                 <v-list-tile @click="" to="/app" exact-active-class="target-link">
@@ -42,33 +42,34 @@
                 </v-list>
             </v-menu>
         </v-toolbar>
-        <div class="wrapper" v-bar>
+        <div class="wrapper" v-bar :style=" { height: page + 'px' } ">
           <div>
             <transition name="fade" mode="out-in">
               <router-view></router-view>
             </transition>
-          </div>
+          </div>         
         </div>
-        <v-bottom-nav :active.sync="bottomNav" :value="true" absolute color="transparent">
-            <v-btn color="teal" flat value="recent">
-                <span>Dashboard</span>
-                <v-icon>dashboard</v-icon>
-            </v-btn>
+         <v-bottom-nav :active.sync="bottomNav" fixed :value="true">
+                <v-btn color="teal" flat value="recent">
+                    <span>Dashboard</span>
+                    <v-icon>dashboard</v-icon>
+                </v-btn>
 
-            <v-btn color="teal" flat value="favorites">
-                <span>News</span>
-                <v-icon>description</v-icon>
-            </v-btn>
+                <v-btn color="teal" flat value="favorites">
+                    <span>News</span>
+                    <v-icon>description</v-icon>
+                </v-btn>
 
-            <v-btn color="teal" flat value="nearby">
-                <span>Бизнес площадка</span>
-                <v-icon>business</v-icon>
-            </v-btn>
-        </v-bottom-nav>
+                <v-btn color="teal" flat value="nearby">
+                    <span>Бизнес площадка</span>
+                    <v-icon>business</v-icon>
+                </v-btn>
+            </v-bottom-nav>
     </main>
 </template>
 <script>
 import { mapActions } from "vuex";
+import { mapGetters } from 'vuex'
 export default {
   data: () => ({
     dialog: false,
@@ -103,7 +104,7 @@ export default {
       { icon: "help", text: "Help" },
       { icon: "phonelink", text: "App downloads" },
       { icon: "keyboard", text: "Go to the old version" }
-    ]
+    ],
   }),
   methods: {
     ...mapActions({ ResetState: "user/ResetState" }),
@@ -113,8 +114,18 @@ export default {
         init.ResetState();
         init.$router.push("/login");
       });
-    }
-  }
+    },
+  },
+  computed:{
+      ...mapGetters({
+          windowWidth:'config/windowWidth',
+          windowHeight:'config/windowHeight'}),
+      page(){ 
+          if(this.windowWidth > 993)
+            return this.windowHeight - 120;
+        else return this.windowHeight - 112;
+      }
+  },
 };
 </script>
 <style scoped>
@@ -133,16 +144,10 @@ export default {
   padding-top: 0px !important;
 }
 .wrapper {
-  height: calc(100vh - 120px);
-  padding: 0 !important;
   overflow: hidden;
-
-
 }
-@media only screen and (max-width: 992px) {
-  .wrapper {
-      height: calc(100vh - 112px);
-  }
+.v-navigation-drawer{
+    z-index:6;
 }
 .v-bottom-nav {
   box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);
@@ -150,6 +155,7 @@ export default {
 .target-link .v-list__tile__content .v-list__tile__title {
   color: #f80b37 !important;
 }
+
 .target-link .v-icon {
   color: #f80b37 !important;
 }

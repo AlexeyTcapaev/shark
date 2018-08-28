@@ -64,29 +64,22 @@
     </v-container>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data: () => ({
     windowWidth: document.documentElement.clientWidth
   }),
-
+    computed:{
+        ...mapGetters({
+            windowWidth:'config/windowWidth'
+        })
+    },
   computed: {
     mobile() {
       if (this.windowWidth > 993) return true;
       else return false;
     }
   },
-  methods: {
-    // whenever the document is resized, re-set the 'fullHeight' variable
-    handleResize(event) {
-      this.windowWidth = document.documentElement.clientWidth;
-    }
-  },
-  mounted: function() {
-    window.addEventListener("resize", this.handleResize);
-  },
-  beforeDestroy: function() {
-    window.removeEventListener("resize", this.handleResize);
-  }
 };
 </script>
 

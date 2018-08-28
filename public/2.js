@@ -472,6 +472,9 @@ exports.push([module.i, "\ni {\r\n  -webkit-user-select: none !important;\r\n   
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 //
 //
 //
@@ -484,6 +487,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   metaInfo: {
     titleTemplate: "%s"
@@ -493,9 +498,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       transitionName: "slide-left"
     };
   },
+
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
+    SetWindowWidth: 'config/SetWindowWidth',
+    SetWindowHeight: 'config/SetWindowHeight'
+  })),
   mounted: function mounted() {
     this.$Progress.finish();
+    var init = this;
+    window.addEventListener("resize", function (event) {
+      init.SetWindowHeight(document.documentElement.clientHeight);
+      init.SetWindowWidth(document.documentElement.clientWidth);
+    });
   },
+
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+    windowHeight: 'config/windowHeight',
+    windowWidth: 'config/windowWidth'
+  })),
   created: function created() {
     var _this = this;
 

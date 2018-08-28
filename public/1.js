@@ -472,6 +472,11 @@ exports.push([module.i, "\n.container.fill-height > .layout[data-v-7d94acf1] {\r
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -538,31 +543,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+
+/* harmony default export */ __webpack_exports__["default"] = (_defineProperty({
   data: function data() {
     return {
       windowWidth: document.documentElement.clientWidth
     };
   },
-
-  computed: {
-    mobile: function mobile() {
-      if (this.windowWidth > 993) return true;else return false;
-    }
-  },
-  methods: {
-    // whenever the document is resized, re-set the 'fullHeight' variable
-    handleResize: function handleResize(event) {
-      this.windowWidth = document.documentElement.clientWidth;
-    }
-  },
-  mounted: function mounted() {
-    window.addEventListener("resize", this.handleResize);
-  },
-  beforeDestroy: function beforeDestroy() {
-    window.removeEventListener("resize", this.handleResize);
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+    windowWidth: 'config/windowWidth'
+  }))
+}, 'computed', {
+  mobile: function mobile() {
+    if (this.windowWidth > 993) return true;else return false;
   }
-});
+}));
 
 /***/ }),
 
