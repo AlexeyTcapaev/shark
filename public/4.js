@@ -233,7 +233,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   },
   beforeCreate: function beforeCreate() {
     if (this.$store.state.user.token) {
-      this.$router.push('/app');
+      if (Object.keys(this.$store.state.user.token).length > 0) this.$router.push("/app");
     }
   }
 });

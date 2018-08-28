@@ -26210,11 +26210,23 @@ var Feed = function Feed() {
 var AddCompany = function AddCompany() {
     return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 63));
 };
+
 var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
     mode: 'history',
     routes: [{
+        path: '/',
+        name: 'IndexPage',
+        component: IndexPage
+    }, {
+        path: "/registration",
+        name: "registration",
+        component: Registration
+    }, {
+        path: "/login",
+        name: "login",
+        component: Login
+    }, {
         path: "/app",
-
         component: Home,
         beforeEnter: function beforeEnter(to, from, next) {
             axios.get('/api/auth/user').then(function (resp) {
@@ -26238,23 +26250,14 @@ var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
             name: "add_company"
         }]
     }, {
-        path: '/',
-        name: 'IndexPage',
-        component: IndexPage
-    }, {
-        path: "/registration",
-        name: "registration",
-        component: Registration
-    }, {
-        path: "/login",
-        name: "login",
-        component: Login
-    }, {
         path: '*',
         redirect: '/'
     }]
 });
-
+router.beforeEach(function (to, from, next) {
+    console.log("i see u");
+    next();
+});
 var app = new __WEBPACK_IMPORTED_MODULE_1_vue___default.a({
     el: '#app',
     router: router,

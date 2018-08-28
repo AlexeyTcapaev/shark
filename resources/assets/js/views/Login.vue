@@ -31,7 +31,7 @@ export default {
     remember_me: false,
     login: "",
     password: "",
-    show1:false,
+    show1: false,
     passwordRules: [v => !!v || "Password is required"]
   }),
   methods: {
@@ -68,9 +68,10 @@ export default {
       else return false;
     }
   },
-  beforeCreate(){
-    if(this.$store.state.user.token){
-      this.$router.push('/app')
+  beforeCreate() {
+    if (this.$store.state.user.token) {
+      if (Object.keys(this.$store.state.user.token).length > 0)
+        this.$router.push("/app");
     }
   }
 };

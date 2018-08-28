@@ -48,39 +48,10 @@ const Feed = () =>
     import('./views/Feed.vue');
 const AddCompany = () =>
     import('./views/AddCompany.vue');
+    
 const router = new VueRouter({
     mode: 'history',
     routes: [
-        {
-            path: "/app",
-
-            component: Home,
-            beforeEnter: (to, from, next) => {
-                axios.get('/api/auth/user').then(function (resp) {
-                    store.state.user.user = resp.data
-                    Cookies.set('user', JSON.stringify(store.state.user.user), {
-                        expires: 2,
-                        domain: location.hostname
-                    });
-                    next();
-                }).catch(error => {
-                    router.push("/login");
-                })
-
-            },
-            children: [
-                {
-                    path: "",
-                    component: Feed,
-                    name: "app",
-                },
-                {
-                    path: "add_company",
-                    component: AddCompany,
-                    name: "add_company",
-                }
-            ]
-        },
         {
             path: '/',
             name: 'IndexPage',
@@ -97,12 +68,43 @@ const router = new VueRouter({
             component: Login,
         },
         {
+            path: "/app",
+            component: Home,
+            beforeEnter: (to, from, next) => {
+                axios.get('/api/auth/user').then(function (resp) {
+                    store.state.user.user = resp.data
+                    Cookies.set('user', JSON.stringify(store.state.user.user), {
+                        expires: 2,
+                        domain: location.hostname
+                    });
+                    next();
+                }).catch(error => {
+                    router.push("/login");
+                })
+            },
+            children: [
+                {
+                    path: "",
+                    component: Feed,
+                    name: "app",
+                },
+                {
+                    path: "add_company",
+                    component: AddCompany,
+                    name: "add_company",
+                }
+            ]
+        },
+        {
             path: '*',
             redirect: '/'
         }
     ],
 });
-
+router.beforeEach((to, from, next) => {
+   console.log("i see u")
+   next();
+  })
 const app = new Vue({
     el: '#app',
     router,
