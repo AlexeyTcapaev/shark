@@ -1,18 +1,18 @@
 webpackJsonp([1],{
 
-/***/ 63:
+/***/ 64:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(81)
+  __webpack_require__(82)
 }
-var normalizeComponent = __webpack_require__(65)
+var normalizeComponent = __webpack_require__(66)
 /* script */
-var __vue_script__ = __webpack_require__(83)
+var __vue_script__ = __webpack_require__(84)
 /* template */
-var __vue_template__ = __webpack_require__(84)
+var __vue_template__ = __webpack_require__(85)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52,7 +52,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 65:
+/***/ 66:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -162,7 +162,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 66:
+/***/ 67:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -181,7 +181,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(67)
+var listToStyles = __webpack_require__(68)
 
 /*
 type StyleObject = {
@@ -391,7 +391,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 67:
+/***/ 68:
 /***/ (function(module, exports) {
 
 /**
@@ -425,17 +425,17 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 81:
+/***/ 82:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(82);
+var content = __webpack_require__(83);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(66)("f755a266", content, false, {});
+var update = __webpack_require__(67)("f755a266", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 82:
+/***/ 83:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
@@ -467,7 +467,7 @@ exports.push([module.i, "\n.container.fill-height > .layout[data-v-7d94acf1] {\r
 
 /***/ }),
 
-/***/ 83:
+/***/ 84:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -475,93 +475,118 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
-
-/* harmony default export */ __webpack_exports__["default"] = (_defineProperty({
+/* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      windowWidth: document.documentElement.clientWidth
+      show: false
     };
   },
   computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-    windowWidth: 'config/windowWidth'
-  }))
-}, 'computed', {
-  mobile: function mobile() {
-    if (this.windowWidth > 993) return true;else return false;
-  }
-}));
+    windowWidth: "config/windowWidth"
+  }), {
+    mobile: function mobile() {
+      if (this.windowWidth > 993) return false;else return true;
+    }
+  })
+});
 
 /***/ }),
 
-/***/ 84:
+/***/ 85:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -575,7 +600,7 @@ var render = function() {
         "v-layout",
         { attrs: { "justify-center": "", "align-center": "" } },
         [
-          _c("v-flex", { attrs: { xs6: _vm.mobile } }, [
+          _c("v-flex", { attrs: { xs6: !_vm.mobile } }, [
             _c("h3", [_vm._v("Новости")]),
             _vm._v(" "),
             _c("ul", { staticClass: "news" }, [
@@ -585,26 +610,22 @@ var render = function() {
                   _c(
                     "v-card",
                     [
-                      _c("v-card-media", {
+                      _c("v-img", {
                         attrs: {
                           src:
-                            "https://cdn.vuetifyjs.com/images/cards/desert.jpg",
+                            "https://cdn.vuetifyjs.com/images/cards/sunshine.jpg",
                           height: "200px"
                         }
                       }),
                       _vm._v(" "),
                       _c("v-card-title", { attrs: { "primary-title": "" } }, [
                         _c("div", [
-                          _c("h3", { staticClass: "headline mb-0" }, [
-                            _vm._v("Kangaroo Valley Safari")
+                          _c("div", { staticClass: "headline" }, [
+                            _vm._v("Top western road trips")
                           ]),
                           _vm._v(" "),
-                          _c("div", [
-                            _vm._v("Located two hours south of Sydney in the "),
-                            _c("br"),
-                            _vm._v(
-                              "Southern Highlands of New South Wales,\n                                    ..."
-                            )
+                          _c("span", { staticClass: "grey--text" }, [
+                            _vm._v("1,000 miles of wonder")
                           ])
                         ])
                       ]),
@@ -612,16 +633,164 @@ var render = function() {
                       _c(
                         "v-card-actions",
                         [
-                          _c(
-                            "v-btn",
-                            { attrs: { flat: "", color: "orange" } },
-                            [_vm._v("Share")]
-                          ),
+                          _c("v-btn", { attrs: { flat: "" } }, [
+                            _vm._v("Share")
+                          ]),
                           _vm._v(" "),
                           _c(
                             "v-btn",
-                            { attrs: { flat: "", color: "orange" } },
+                            { attrs: { flat: "", color: "purple" } },
                             [_vm._v("Explore")]
+                          ),
+                          _vm._v(" "),
+                          _c("v-spacer"),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { icon: "" },
+                              on: {
+                                click: function($event) {
+                                  _vm.show = !_vm.show
+                                }
+                              }
+                            },
+                            [
+                              _c("v-icon", [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.show
+                                      ? "keyboard_arrow_down"
+                                      : "keyboard_arrow_up"
+                                  )
+                                )
+                              ])
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-slide-y-transition",
+                        [
+                          _c(
+                            "v-card-text",
+                            {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: _vm.show,
+                                  expression: "show"
+                                }
+                              ]
+                            },
+                            [
+                              _vm._v(
+                                "\n                                I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier,\n                                not with all the bed making you'll be doing. Then we'll go with that data file! Hey,\n                                you add a one and two zeros to that or we walk! You're going to do his laundry? I've\n                                got to find a way to escape.\n                            "
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "li",
+                [
+                  _c(
+                    "v-card",
+                    [
+                      _c("v-img", {
+                        attrs: {
+                          src:
+                            "https://cdn.vuetifyjs.com/images/cards/sunshine.jpg",
+                          height: "200px"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-card-title", { attrs: { "primary-title": "" } }, [
+                        _c("div", [
+                          _c("div", { staticClass: "headline" }, [
+                            _vm._v("Top western road trips")
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "grey--text" }, [
+                            _vm._v("1,000 miles of wonder")
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-actions",
+                        [
+                          _c("v-btn", { attrs: { flat: "" } }, [
+                            _vm._v("Share")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            { attrs: { flat: "", color: "purple" } },
+                            [_vm._v("Explore")]
+                          ),
+                          _vm._v(" "),
+                          _c("v-spacer"),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { icon: "" },
+                              on: {
+                                click: function($event) {
+                                  _vm.show = !_vm.show
+                                }
+                              }
+                            },
+                            [
+                              _c("v-icon", [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.show
+                                      ? "keyboard_arrow_down"
+                                      : "keyboard_arrow_up"
+                                  )
+                                )
+                              ])
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-slide-y-transition",
+                        [
+                          _c(
+                            "v-card-text",
+                            {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: _vm.show,
+                                  expression: "show"
+                                }
+                              ]
+                            },
+                            [
+                              _vm._v(
+                                "\n                                I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier,\n                                not with all the bed making you'll be doing. Then we'll go with that data file! Hey,\n                                you add a one and two zeros to that or we walk! You're going to do his laundry? I've\n                                got to find a way to escape.\n                            "
+                              )
+                            ]
                           )
                         ],
                         1
@@ -657,61 +826,7 @@ var render = function() {
                             _vm._v("Located two hours south of Sydney in the "),
                             _c("br"),
                             _vm._v(
-                              "Southern Highlands of New South Wales,\n                                    ..."
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "v-card-actions",
-                        [
-                          _c(
-                            "v-btn",
-                            { attrs: { flat: "", color: "orange" } },
-                            [_vm._v("Share")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-btn",
-                            { attrs: { flat: "", color: "orange" } },
-                            [_vm._v("Explore")]
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                [
-                  _c(
-                    "v-card",
-                    [
-                      _c("v-card-media", {
-                        attrs: {
-                          src:
-                            "https://cdn.vuetifyjs.com/images/cards/desert.jpg",
-                          height: "200px"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("v-card-title", { attrs: { "primary-title": "" } }, [
-                        _c("div", [
-                          _c("h3", { staticClass: "headline mb-0" }, [
-                            _vm._v("Kangaroo Valley Safari")
-                          ]),
-                          _vm._v(" "),
-                          _c("div", [
-                            _vm._v("Located two hours south of Sydney in the "),
-                            _c("br"),
-                            _vm._v(
-                              "Southern Highlands of New South Wales,\n                                    ..."
+                              "Southern Highlands of New South Wales,\n                                    ...\n                                "
                             )
                           ])
                         ])

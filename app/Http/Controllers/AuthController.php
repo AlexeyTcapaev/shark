@@ -56,7 +56,7 @@ class AuthController extends Controller
             $credentials = request(['email', 'password']);
             if (!Auth::attempt($credentials))
                 return response()->json([
-                'message' => 'Unauthorized'
+                'message' => 'Ошибка входа'
             ], 401);
         } else {
             $request->validate([
@@ -67,7 +67,7 @@ class AuthController extends Controller
             $credentials = request(['name', 'password']);
             if (!Auth::attempt($credentials))
                 return response()->json([
-                'message' => 'Unauthorized'
+                'message' => 'Ошибка входа'
             ], 401);
 
         }

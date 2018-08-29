@@ -8,6 +8,7 @@
                 <v-spacer></v-spacer>
               </v-toolbar>
               <v-card-text>
+                <v-alert v-model="alert.enable" type="error" dismissible>{{alert.message}}</v-alert>
                 <v-form>
                     <v-text-field outline label="Login or E-mail" append-icon="person" v-model="login"></v-text-field>
                      <v-text-field outline label="Password" @click:append="show1 = !show1" :append-icon="show1 ? 'visibility_off' : 'visibility'" :type="show1 ? 'text' : 'password'" required v-model="password" :rules="passwordRules"></v-text-field>
@@ -31,6 +32,9 @@ export default {
     remember_me: false,
     login: "",
     password: "",
+    alert: {
+      enable: false
+    },
     show1: false,
     passwordRules: [v => !!v || "Password is required"]
   }),
@@ -49,6 +53,10 @@ export default {
           .then(function(resp) {
             init.SetToken(resp.data);
             init.$router.push("/app");
+          })
+          .catch(error => {
+            init.alert.message = error.response.data.message;
+            init.alert.enable = true;
           });
       else
         axios

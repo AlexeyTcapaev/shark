@@ -1,14 +1,14 @@
 webpackJsonp([4],{
 
-/***/ 61:
+/***/ 62:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(65)
+var normalizeComponent = __webpack_require__(66)
 /* script */
-var __vue_script__ = __webpack_require__(78)
+var __vue_script__ = __webpack_require__(79)
 /* template */
-var __vue_template__ = __webpack_require__(79)
+var __vue_template__ = __webpack_require__(80)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -48,7 +48,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 65:
+/***/ 66:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -158,7 +158,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 78:
+/***/ 79:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -166,6 +166,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
 //
 //
 //
@@ -200,6 +201,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       remember_me: false,
       login: "",
       password: "",
+      alert: {
+        enable: false
+      },
       show1: false,
       passwordRules: [function (v) {
         return !!v || "Password is required";
@@ -216,6 +220,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       }).then(function (resp) {
         init.SetToken(resp.data);
         init.$router.push("/app");
+      }).catch(function (error) {
+        init.alert.message = error.response.data.message;
+        init.alert.enable = true;
       });else axios.post("/api/auth/login", {
         name: init.login,
         password: init.password,
@@ -240,7 +247,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 /***/ }),
 
-/***/ 79:
+/***/ 80:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -277,6 +284,21 @@ var render = function() {
                   _c(
                     "v-card-text",
                     [
+                      _c(
+                        "v-alert",
+                        {
+                          attrs: { type: "error", dismissible: "" },
+                          model: {
+                            value: _vm.alert.enable,
+                            callback: function($$v) {
+                              _vm.$set(_vm.alert, "enable", $$v)
+                            },
+                            expression: "alert.enable"
+                          }
+                        },
+                        [_vm._v(_vm._s(_vm.alert.message))]
+                      ),
+                      _vm._v(" "),
                       _c(
                         "v-form",
                         [
