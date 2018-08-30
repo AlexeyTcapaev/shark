@@ -48,7 +48,7 @@ const Feed = () =>
     import('./views/Feed.vue');
 const AddCompany = () =>
     import('./views/AddCompany.vue');
-    
+
 const router = new VueRouter({
     mode: 'history',
     routes: [
@@ -77,6 +77,10 @@ const router = new VueRouter({
                         expires: 2,
                         domain: location.hostname
                     });
+                    axios.get("/api/auth/company/"+store.state.user.user.id).then(function (resp) {
+                        console.log(resp.data)
+                        store.state.user.company = resp.data
+                    });
                     next();
                 }).catch(error => {
                     router.push("/login");
@@ -102,9 +106,9 @@ const router = new VueRouter({
     ],
 });
 router.beforeEach((to, from, next) => {
-   console.log("i see u")
-   next();
-  })
+    console.log("i see u")
+    next();
+})
 const app = new Vue({
     el: '#app',
     router,

@@ -22,11 +22,26 @@
 
                     </v-list-tile-content>
                 </v-list-tile>
+                <v-list-tile exact-active-class="target-link" v-for="comp in company" :key="comp.id">
+                    <v-list-tile-action>
+                        <img :src="'/storage/'+comp.logo">
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                        <v-badge color="secondary">
+                            <span slot="badge"></span>
+                            <v-list-tile-title>{{comp.name}}</v-list-tile-title>
+                        </v-badge>
+
+                    </v-list-tile-content>
+                </v-list-tile>
             </v-list>
         </v-navigation-drawer>
         <v-toolbar color="primary" dark fixed app>
             <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-            <v-toolbar-title>
+            <v-list-tile-avatar>
+              <img class="img_logo" src="/storage/logo/temp_shark_logo.png" alt="Бизнес - Акула">
+            </v-list-tile-avatar>
+            <v-toolbar-title v-if="windowWidth > 993">
                 <router-link to="/home" class="logo">Бизнес - Акула</router-link>
             </v-toolbar-title>
             <v-spacer></v-spacer>
@@ -51,12 +66,12 @@
         </div>
          <v-bottom-nav :active.sync="bottomNav" fixed :value="true">
                 <v-btn color="teal" flat value="recent">
-                    <span>Dashboard</span>
+                    <span>ERP</span>
                     <v-icon>dashboard</v-icon>
                 </v-btn>
 
                 <v-btn color="teal" flat value="favorites">
-                    <span>News</span>
+                    <span>Новости</span>
                     <v-icon>description</v-icon>
                 </v-btn>
 
@@ -119,7 +134,8 @@ export default {
   computed:{
       ...mapGetters({
           windowWidth:'config/windowWidth',
-          windowHeight:'config/windowHeight'}),
+          windowHeight:'config/windowHeight',
+          company:'user/GetCompany'}),
       page(){ 
           if(this.windowWidth > 993)
             return this.windowHeight - 120;
@@ -165,7 +181,7 @@ export default {
   transition-property: opacity;
   transition-timing-function: ease;
 }
-
+.v-avatar
 .fade-enter,
 .fade-leave-active {
   opacity: 0

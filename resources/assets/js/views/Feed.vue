@@ -6,9 +6,6 @@
                 <ul class="news">
                     <li>
                         <v-card>
-                            <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" height="200px">
-                            </v-img>
-
                             <v-card-title primary-title>
                                 <div>
                                     <div class="headline">Top western road trips</div>
@@ -37,9 +34,6 @@
                     </li>
                     <li>
                         <v-card>
-                            <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" height="200px">
-                            </v-img>
-
                             <v-card-title primary-title>
                                 <div>
                                     <div class="headline">Top western road trips</div>

@@ -561,12 +561,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -610,14 +604,6 @@ var render = function() {
                   _c(
                     "v-card",
                     [
-                      _c("v-img", {
-                        attrs: {
-                          src:
-                            "https://cdn.vuetifyjs.com/images/cards/sunshine.jpg",
-                          height: "200px"
-                        }
-                      }),
-                      _vm._v(" "),
                       _c("v-card-title", { attrs: { "primary-title": "" } }, [
                         _c("div", [
                           _c("div", { staticClass: "headline" }, [
@@ -709,14 +695,6 @@ var render = function() {
                   _c(
                     "v-card",
                     [
-                      _c("v-img", {
-                        attrs: {
-                          src:
-                            "https://cdn.vuetifyjs.com/images/cards/sunshine.jpg",
-                          height: "200px"
-                        }
-                      }),
-                      _vm._v(" "),
                       _c("v-card-title", { attrs: { "primary-title": "" } }, [
                         _c("div", [
                           _c("div", { staticClass: "headline" }, [

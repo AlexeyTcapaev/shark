@@ -3,7 +3,16 @@ export default {
     namespaced: true,
     state: {
         token: Cookies.getJSON('token') || undefined,
-        user: Cookies.getJSON('user') || undefined
+        user: Cookies.getJSON('user') || undefined,
+        company: undefined
+    },
+    getters: {
+        GetUserId(state) {
+            return state.user.id;
+        },
+        GetCompany(state){
+            return state.company;
+        }
     },
     mutations: {
         SetToken(state, input_data) {

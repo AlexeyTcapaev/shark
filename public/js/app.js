@@ -26196,19 +26196,19 @@ var Home = function Home() {
     return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 60));
 };
 var Registration = function Registration() {
-    return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 61));
+    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 61));
 };
 var Login = function Login() {
-    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 62));
+    return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 62));
 };
 var IndexPage = function IndexPage() {
-    return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 63));
+    return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 63));
 };
 var Feed = function Feed() {
     return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 64));
 };
 var AddCompany = function AddCompany() {
-    return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 65));
+    return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 65));
 };
 
 var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
@@ -26234,6 +26234,10 @@ var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
                 __WEBPACK_IMPORTED_MODULE_6_js_cookie__["set"]('user', JSON.stringify(__WEBPACK_IMPORTED_MODULE_5__store_index__["a" /* default */].state.user.user), {
                     expires: 2,
                     domain: location.hostname
+                });
+                axios.get("/api/auth/company/" + __WEBPACK_IMPORTED_MODULE_5__store_index__["a" /* default */].state.user.user.id).then(function (resp) {
+                    console.log(resp.data);
+                    __WEBPACK_IMPORTED_MODULE_5__store_index__["a" /* default */].state.user.company = resp.data;
                 });
                 next();
             }).catch(function (error) {
@@ -71897,7 +71901,16 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
     namespaced: true,
     state: {
         token: __WEBPACK_IMPORTED_MODULE_0_js_cookie__["getJSON"]('token') || undefined,
-        user: __WEBPACK_IMPORTED_MODULE_0_js_cookie__["getJSON"]('user') || undefined
+        user: __WEBPACK_IMPORTED_MODULE_0_js_cookie__["getJSON"]('user') || undefined,
+        company: undefined
+    },
+    getters: {
+        GetUserId: function GetUserId(state) {
+            return state.user.id;
+        },
+        GetCompany: function GetCompany(state) {
+            return state.company;
+        }
     },
     mutations: {
         SetToken: function SetToken(state, input_data) {

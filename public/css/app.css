@@ -14192,6 +14192,10 @@ ul {
   height: 100%;
 }
 
+.v-list .v-list__tile--active {
+  color: #f80b37 !important;
+}
+
 html,
 body {
   overflow: auto;

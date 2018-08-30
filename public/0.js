@@ -460,7 +460,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.logo[data-v-6c0a33b2] {\r\n  color: #ffffff;\r\n  text-decoration: none;\n}\n.nav-btn[data-v-6c0a33b2] {\r\n  color: #ffffff !important;\r\n  height: 100%;\n}\n.v-menu[data-v-6c0a33b2] {\r\n  height: 100%;\n}\n.v-content[data-v-6c0a33b2] {\r\n  padding-top: 0px !important;\n}\n.wrapper[data-v-6c0a33b2] {\r\n  overflow: hidden;\n}\n.v-navigation-drawer[data-v-6c0a33b2]{\r\n    z-index:6;\n}\n.v-bottom-nav[data-v-6c0a33b2] {\r\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\r\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n.target-link .v-list__tile__content .v-list__tile__title[data-v-6c0a33b2] {\r\n  color: #f80b37 !important;\n}\n.target-link .v-icon[data-v-6c0a33b2] {\r\n  color: #f80b37 !important;\n}\n.fade-enter-active[data-v-6c0a33b2],\r\n.fade-leave-active[data-v-6c0a33b2] {\r\n  -webkit-transition-duration: 0.3s;\r\n          transition-duration: 0.3s;\r\n  -webkit-transition-property: opacity;\r\n  transition-property: opacity;\r\n  -webkit-transition-timing-function: ease;\r\n          transition-timing-function: ease;\n}\n.fade-enter[data-v-6c0a33b2],\r\n.fade-leave-active[data-v-6c0a33b2] {\r\n  opacity: 0\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.logo[data-v-6c0a33b2] {\r\n  color: #ffffff;\r\n  text-decoration: none;\n}\n.nav-btn[data-v-6c0a33b2] {\r\n  color: #ffffff !important;\r\n  height: 100%;\n}\n.v-menu[data-v-6c0a33b2] {\r\n  height: 100%;\n}\n.v-content[data-v-6c0a33b2] {\r\n  padding-top: 0px !important;\n}\n.wrapper[data-v-6c0a33b2] {\r\n  overflow: hidden;\n}\n.v-navigation-drawer[data-v-6c0a33b2]{\r\n    z-index:6;\n}\n.v-bottom-nav[data-v-6c0a33b2] {\r\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\r\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n.target-link .v-list__tile__content .v-list__tile__title[data-v-6c0a33b2] {\r\n  color: #f80b37 !important;\n}\n.target-link .v-icon[data-v-6c0a33b2] {\r\n  color: #f80b37 !important;\n}\n.fade-enter-active[data-v-6c0a33b2],\r\n.fade-leave-active[data-v-6c0a33b2] {\r\n  -webkit-transition-duration: 0.3s;\r\n          transition-duration: 0.3s;\r\n  -webkit-transition-property: opacity;\r\n  transition-property: opacity;\r\n  -webkit-transition-timing-function: ease;\r\n          transition-timing-function: ease;\n}\n.v-avatar\r\n.fade-enter[data-v-6c0a33b2],\r\n.fade-leave-active[data-v-6c0a33b2] {\r\n  opacity: 0\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -475,6 +475,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -579,7 +594,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   }),
   computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
     windowWidth: 'config/windowWidth',
-    windowHeight: 'config/windowHeight' }), {
+    windowHeight: 'config/windowHeight',
+    company: 'user/GetCompany' }), {
     page: function page() {
       if (this.windowWidth > 993) return this.windowHeight - 120;else return this.windowHeight - 112;
     }
@@ -671,9 +687,45 @@ var render = function() {
                   )
                 ],
                 1
-              )
+              ),
+              _vm._v(" "),
+              _vm._l(_vm.company, function(comp) {
+                return _c(
+                  "v-list-tile",
+                  {
+                    key: comp.id,
+                    attrs: { "exact-active-class": "target-link" }
+                  },
+                  [
+                    _c("v-list-tile-action", [
+                      _c("img", { attrs: { src: "/storage/" + comp.logo } })
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "v-list-tile-content",
+                      [
+                        _c(
+                          "v-badge",
+                          { attrs: { color: "secondary" } },
+                          [
+                            _c("span", {
+                              attrs: { slot: "badge" },
+                              slot: "badge"
+                            }),
+                            _vm._v(" "),
+                            _c("v-list-tile-title", [_vm._v(_vm._s(comp.name))])
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              })
             ],
-            1
+            2
           )
         ],
         1
@@ -692,17 +744,29 @@ var render = function() {
             }
           }),
           _vm._v(" "),
-          _c(
-            "v-toolbar-title",
-            [
-              _c(
-                "router-link",
-                { staticClass: "logo", attrs: { to: "/home" } },
-                [_vm._v("Бизнес - Акула")]
+          _c("v-list-tile-avatar", [
+            _c("img", {
+              staticClass: "img_logo",
+              attrs: {
+                src: "/storage/logo/temp_shark_logo.png",
+                alt: "Бизнес - Акула"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _vm.windowWidth > 993
+            ? _c(
+                "v-toolbar-title",
+                [
+                  _c(
+                    "router-link",
+                    { staticClass: "logo", attrs: { to: "/home" } },
+                    [_vm._v("Бизнес - Акула")]
+                  )
+                ],
+                1
               )
-            ],
-            1
-          ),
+            : _vm._e(),
           _vm._v(" "),
           _c("v-spacer"),
           _vm._v(" "),
@@ -785,7 +849,7 @@ var render = function() {
             "v-btn",
             { attrs: { color: "teal", flat: "", value: "recent" } },
             [
-              _c("span", [_vm._v("Dashboard")]),
+              _c("span", [_vm._v("ERP")]),
               _vm._v(" "),
               _c("v-icon", [_vm._v("dashboard")])
             ],
@@ -796,7 +860,7 @@ var render = function() {
             "v-btn",
             { attrs: { color: "teal", flat: "", value: "favorites" } },
             [
-              _c("span", [_vm._v("News")]),
+              _c("span", [_vm._v("Новости")]),
               _vm._v(" "),
               _c("v-icon", [_vm._v("description")])
             ],
