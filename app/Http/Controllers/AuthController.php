@@ -30,9 +30,10 @@ class AuthController extends Controller
             'password' => bcrypt($request->password)
         ]);
         $user->save();
+        App\Jobs\MailSendler::dispatch($user);
         return response()->json([
             'message' => 'Successfully created user!'
-        ], 201);
+        ], 201);    
     }
 
     /**
