@@ -79,18 +79,18 @@
                 </transition>
             </div>
         </div>
-        <v-bottom-nav :active.sync="bottomNav" fixed :value="true">
-            <v-btn color="teal" flat value="recent">
+        <v-bottom-nav :active.sync="bottomNav" fixed :value="true" app>
+            <v-btn  flat value="recent" :to="{name:'app'}" exact-active-class="target-link-bottom" active-class="active-link-bottom">
                 <span>ERP</span>
                 <v-icon>dashboard</v-icon>
             </v-btn>
 
-            <v-btn color="teal" flat value="favorites">
+            <v-btn  flat value="favorites" :to="{name:'news'}" exact-active-class="target-link-bottom" active-class="active-link-bottom">
                 <span>Новости</span>
                 <v-icon>description</v-icon>
             </v-btn>
 
-            <v-btn color="teal" flat value="nearby">
+            <v-btn color="black"  flat value="nearby" to="2">
                 <span>Бизнес площадка</span>
                 <v-icon>business</v-icon>
             </v-btn>
@@ -195,6 +195,7 @@ export default {
 .v-bottom-nav {
   box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
+
 .target-link .v-list__tile__content .v-list__tile__title {
   color: #f80b37 !important;
 }
@@ -218,5 +219,4 @@ export default {
 .company {
   background: rgba(0, 0, 0, 0.1);
 }
-
 </style>

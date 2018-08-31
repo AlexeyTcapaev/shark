@@ -14229,6 +14229,35 @@ h3 {
   text-align: left;
 }
 
+.v-list__tile__content .v-input {
+  width: 100%;
+}
+
+.v-bottom-nav .v-btn {
+  opacity: 1 !important;
+}
+
+.v-bottom-nav .v-btn:not(.v-btn--active) {
+  -webkit-filter: none !important;
+          filter: none !important;
+}
+
+.target-link-bottom {
+  color: #f80b37 !important;
+  border-bottom: 2px solid #f80b37;
+}
+
+.target-link {
+  border-left: 2px solid #f80b37;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.v-navigation-drawer > .v-list .v-list__tile {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 div {
   text-align: center;
 }

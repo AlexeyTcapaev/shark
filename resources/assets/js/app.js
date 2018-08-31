@@ -48,6 +48,8 @@ const Feed = () =>
     import('./views/Feed.vue');
 const AddCompany = () =>
     import('./views/AddCompany.vue');
+const Dashboard = () =>
+    import('./views/Dashboard.vue');
 
 const router = new VueRouter({
     mode: 'history',
@@ -77,7 +79,7 @@ const router = new VueRouter({
                         expires: 2,
                         domain: location.hostname
                     });
-                    axios.get("/api/auth/company/"+store.state.user.user.id).then(function (resp) {
+                    axios.get("/api/auth/company/" + store.state.user.user.id).then(function (resp) {
                         store.state.user.company = resp.data
                     });
                     next();
@@ -88,14 +90,20 @@ const router = new VueRouter({
             children: [
                 {
                     path: "",
-                    component: Feed,
+                    component: Dashboard,
                     name: "app",
                 },
                 {
                     path: "add_company",
                     component: AddCompany,
                     name: "add_company",
-                }
+                },
+                {
+                    path: "news",
+                    component: Feed,
+                    name: "news",
+                },
+
             ]
         },
         {
