@@ -10,7 +10,7 @@ export default {
         GetUserId(state) {
             return state.user.id;
         },
-        GetCompany(state){
+        GetCompany(state) {
             return state.company;
         }
     },
@@ -36,6 +36,9 @@ export default {
             axios.defaults.headers.common['Authorization'] = null
             Cookies.remove('user');
             Cookies.remove('token');
+        },
+        AddCompany(state, data) {
+            state.company.push(data)
         }
     },
     actions: {
@@ -47,6 +50,9 @@ export default {
         },
         ResetState(state) {
             state.commit('ResetState')
+        },
+        AddCompany(state, data) {
+            state.commit('AddCompany', data)
         }
     },
 }

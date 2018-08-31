@@ -11,6 +11,17 @@
     background: rgba(0, 0, 0, 0.1);
     transition: 0.2s linear;
 }
+.for-icon span.v-badge__badge{
+  top: -5px;
+  right: -2px;
+}
+.v-list__tile__sub-title{
+  text-align: left;
+}
+.list-for-icon span.v-badge__badge{
+  top: -11px;
+  right: 0;
+}
 .vb-content{
   display:flex!important;
 }
@@ -20,6 +31,9 @@
 ul{
   list-style-type: none;
   padding: 0;
+}
+.v-input__control .v-input__slot{
+  width: initial!important;
 }
 .application{
     position: fixed;

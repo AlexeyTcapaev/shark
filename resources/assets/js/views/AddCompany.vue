@@ -2,7 +2,7 @@
     <v-container>
         <v-layout justify-center align-center>
             <v-flex :xs6="!mobile">
-                <v-card>
+                <v-card >
                    <v-avatar
                     :tile="tile"
                     :size="avatarSize"
@@ -13,7 +13,8 @@
                     <img v-else :src="Company.logo">
                     </v-avatar>
                     <v-card-title primary-title>
-                        <v-flex xs12 row>
+                        <v-flex row>
+                            <v-alert v-model="alert.enable" type="error" dismissible>{{alert.message}}</v-alert>
                             <v-text-field outline label="Название компании" append-icon="business" v-model="Company.name"></v-text-field>
                             <v-text-field outline label="Сайт компании" append-icon="web" v-model="Company.website"></v-text-field>
                             <v-autocomplete v-if="switch1 == false"
@@ -81,6 +82,7 @@
 </template>
 <script>
 import { mapGetters } from "vuex";
+import { mapActions } from "vuex";
 export default {
   data: () => ({
     show: false,
@@ -91,6 +93,9 @@ export default {
       name: "",
       activities: [],
       logo: undefined
+    },
+    alert: {
+      enable: false
     },
     NewActivity: "",
     activities: [
@@ -103,6 +108,7 @@ export default {
     ]
   }),
   methods: {
+    ...mapActions({ AddCompany: "user/AddCompany" }),
     remove(item) {
       console.log(item);
       const index = this.Company.activities.indexOf(item.name);
@@ -135,10 +141,11 @@ export default {
       axios
         .post("/api/auth/company", data)
         .then(function(resp) {
-          console.log(resp);
+          init.AddCompany(resp.data);
         })
-        .catch(function(resp) {
-          console.log(resp);
+        .catch(function(error) {
+          init.alert.message = error.response.data.message;
+          init.alert.enable = true;
         });
     }
   },
@@ -188,8 +195,8 @@ export default {
 .v-card__title {
   padding-top: 84px !important;
 }
-.v-card{
-    margin: 64px 0 0 0 ;
+.v-card {
+  margin: 64px 0 0 0;
 }
 .v-card .v-avatar {
   cursor: pointer;

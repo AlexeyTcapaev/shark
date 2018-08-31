@@ -14170,6 +14170,20 @@ table.v-table tfoot tr td {
   transition: 0.2s linear;
 }
 
+.for-icon span.v-badge__badge {
+  top: -5px;
+  right: -2px;
+}
+
+.v-list__tile__sub-title {
+  text-align: left;
+}
+
+.list-for-icon span.v-badge__badge {
+  top: -11px;
+  right: 0;
+}
+
 .vb-content {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
@@ -14184,6 +14198,10 @@ table.v-table tfoot tr td {
 ul {
   list-style-type: none;
   padding: 0;
+}
+
+.v-input__control .v-input__slot {
+  width: initial !important;
 }
 
 .application {
@@ -14230,8 +14248,8 @@ div {
   backface-visibility: hidden;
   -webkit-transform: rotate3d(0, 0, 0, 0);
   transform: rotate3d(0, 0, 0, 0);
-  -webkit-transition: background-color 100ms ease-out, margin 100ms ease-out, height 100ms ease-out;
-  transition: background-color 100ms ease-out, margin 100ms ease-out, height 100ms ease-out;
+  -webkit-transition: background-color 100ms ease-out, margin 100ms ease-out, height 100ms ease-out;
+  transition: background-color 100ms ease-out, margin 100ms ease-out, height 100ms ease-out;
   background-color: rgba(248, 11, 55, 0.1);
   margin: 5px 5px 5px 0;
   height: calc(100% - 10px);

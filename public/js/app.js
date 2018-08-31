@@ -71933,6 +71933,9 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
             axios.defaults.headers.common['Authorization'] = null;
             __WEBPACK_IMPORTED_MODULE_0_js_cookie__["remove"]('user');
             __WEBPACK_IMPORTED_MODULE_0_js_cookie__["remove"]('token');
+        },
+        AddCompany: function AddCompany(state, data) {
+            state.company.push(data);
         }
     },
     actions: {
@@ -71944,6 +71947,9 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
         },
         ResetState: function ResetState(state) {
             state.commit('ResetState');
+        },
+        AddCompany: function AddCompany(state, data) {
+            state.commit('AddCompany', data);
         }
     }
 });

@@ -460,7 +460,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.v-avatar[data-v-bc5e96a2] {\n  position: absolute;\n  left: 25px;\n  border-radius: 64px;\n  height: 128px;\n  width: 128px;\n  overflow: hidden;\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n  top: -64px;\n  border-radius: 50% !important;\n  -webkit-transition: 0.2s linear;\n  transition: 0.2s linear;\n}\n.v-avatar img[data-v-bc5e96a2] {\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n}\n.file[data-v-bc5e96a2] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 64px;\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n  top: 0;\n  left: 0;\n  cursor: pointer;\n  z-index: 4;\n  opacity: 0;\n}\n.v-card__title[data-v-bc5e96a2] {\n  padding-top: 84px !important;\n}\n.v-card[data-v-bc5e96a2]{\n    margin: 64px 0 0 0 ;\n}\n.v-card .v-avatar[data-v-bc5e96a2] {\n  cursor: pointer;\n}\n", ""]);
+exports.push([module.i, "\n.v-avatar[data-v-bc5e96a2] {\r\n  position: absolute;\r\n  left: 25px;\r\n  border-radius: 64px;\r\n  height: 128px;\r\n  width: 128px;\r\n  overflow: hidden;\r\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n  top: -64px;\r\n  border-radius: 50% !important;\r\n  -webkit-transition: 0.2s linear;\r\n  transition: 0.2s linear;\n}\n.v-avatar img[data-v-bc5e96a2] {\r\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n}\n.file[data-v-bc5e96a2] {\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 100%;\r\n  border-radius: 64px;\r\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n  top: 0;\r\n  left: 0;\r\n  cursor: pointer;\r\n  z-index: 4;\r\n  opacity: 0;\n}\n.v-card__title[data-v-bc5e96a2] {\r\n  padding-top: 84px !important;\n}\n.v-card[data-v-bc5e96a2] {\r\n  margin: 64px 0 0 0;\n}\n.v-card .v-avatar[data-v-bc5e96a2] {\r\n  cursor: pointer;\n}\r\n", ""]);
 
 // exports
 
@@ -556,6 +556,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -570,6 +572,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         activities: [],
         logo: undefined
       },
+      alert: {
+        enable: false
+      },
       NewActivity: "",
       activities: [{
         name: "IT"
@@ -578,7 +583,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       }]
     };
   },
-  methods: {
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({ AddCompany: "user/AddCompany" }), {
     remove: function remove(item) {
       console.log(item);
       var index = this.Company.activities.indexOf(item.name);
@@ -610,12 +615,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       data.append("activities", JSON.stringify(this.Company.activities));
       var init = this;
       axios.post("/api/auth/company", data).then(function (resp) {
-        console.log(resp);
-      }).catch(function (resp) {
-        console.log(resp);
+        init.AddCompany(resp.data);
+      }).catch(function (error) {
+        init.alert.message = error.response.data.message;
+        init.alert.enable = true;
       });
     }
-  },
+  }),
   computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
     windowWidth: "config/windowWidth",
     user: "user/GetUserId"
@@ -684,8 +690,23 @@ var render = function() {
                     [
                       _c(
                         "v-flex",
-                        { attrs: { xs12: "", row: "" } },
+                        { attrs: { row: "" } },
                         [
+                          _c(
+                            "v-alert",
+                            {
+                              attrs: { type: "error", dismissible: "" },
+                              model: {
+                                value: _vm.alert.enable,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.alert, "enable", $$v)
+                                },
+                                expression: "alert.enable"
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.alert.message))]
+                          ),
+                          _vm._v(" "),
                           _c("v-text-field", {
                             attrs: {
                               outline: "",

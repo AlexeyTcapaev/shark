@@ -2,7 +2,7 @@
     <main class="fullheight">
         <v-navigation-drawer fixed v-model="drawer" app>
             <v-list dense>
-                <v-list-tile @click="" to="/app" exact-active-class="target-link">
+                <v-list-tile @click="" to="/app" exact-active-class="target-link" active-class="active-link">
                     <v-list-tile-action>
                         <v-icon>home</v-icon>
                     </v-list-tile-action>
@@ -10,38 +10,36 @@
                         <v-list-tile-title>Домашняя страница</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
+                <v-divider dark></v-divider>
+                <v-subheader>Мои компании</v-subheader>
                 <v-list-tile class="search-bar">
-                     <v-list-tile-content>
-                         <v-text-field outline label="Поиск по компаниям" append-icon="search" v-model="search"></v-text-field>
-                     </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile to="/" exact-active-class="target-link" v-for="(comp,index) in FiltredCompany" :key="index">
-                    <v-list-tile-action>
-                        <v-avatar class="company">
-                            <img  :src="'/storage/uploads/'+comp.logo">
-                        </v-avatar>
-                    </v-list-tile-action>
                     <v-list-tile-content>
-                        <v-badge color="secondary">
-                            <span slot="badge">6</span>
-                            <v-list-tile-title>{{comp.name}}</v-list-tile-title>
-                        </v-badge>
-
+                        <v-text-field outline label="Поиск по компаниям" append-icon="search" v-model="search"></v-text-field>
                     </v-list-tile-content>
+                </v-list-tile>               
+                <v-list-tile to="/" exact-active-class="target-link" avatar v-for="(comp,index) in FiltredCompany" :key="index">
+                    <v-list-tile-avatar>
+                        <img :src="'/storage/uploads/'+comp.logo" :alt="comp.name">
+                    </v-list-tile-avatar>
+
+                    <v-list-tile-content>
+                        <v-list-tile-title>{{comp.name}}</v-list-tile-title>
+                        <v-list-tile-sub-title>Владелец</v-list-tile-sub-title>
+                    </v-list-tile-content>
+
+                    <v-list-tile-action>
+                        <v-badge color="secondary" class="list-for-icon">
+                            <span slot="badge">6</span>
+                        </v-badge>
+                    </v-list-tile-action>
                 </v-list-tile>
-
-
-
+                <v-divider dark></v-divider>
                 <v-list-tile :to="{name:'add_company'}" exact-active-class="target-link">
                     <v-list-tile-action>
                         <v-icon>add_circle_outline</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-content>
-                        <v-badge color="secondary">
-                            <span slot="badge">6</span>
-                            <v-list-tile-title>Создать компанию</v-list-tile-title>
-                        </v-badge>
-
+                      <v-list-tile-title>Создать компанию</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
             </v-list>
@@ -49,7 +47,7 @@
         <v-toolbar color="primary" dark fixed app>
             <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
             <v-list-tile-avatar>
-              <img class="img_logo" src="/storage/logo/temp_shark_logo.png" alt="Бизнес - Акула">
+                <img class="img_logo" src="/storage/logo/temp_shark_logo.png" alt="Бизнес - Акула">
             </v-list-tile-avatar>
             <v-toolbar-title v-if="windowWidth > 993">
                 <router-link to="/home" class="logo">Бизнес - Акула</router-link>
@@ -66,30 +64,37 @@
                     </v-list-tile>
                 </v-list>
             </v-menu>
+            <v-badge color="secondary" class="for-icon">
+                <span slot="badge">6</span>
+                <v-btn icon>
+                    <v-icon>notifications</v-icon>
+                </v-btn>
+            </v-badge>
+
         </v-toolbar>
         <div class="wrapper" v-bar :style=" { height: page + 'px' } ">
-          <div>
-            <transition name="fade" mode="out-in">
-              <router-view></router-view>
-            </transition>
-          </div>
+            <div>
+                <transition name="fade" mode="out-in">
+                    <router-view></router-view>
+                </transition>
+            </div>
         </div>
-         <v-bottom-nav :active.sync="bottomNav" fixed :value="true">
-                <v-btn color="teal" flat value="recent">
-                    <span>ERP</span>
-                    <v-icon>dashboard</v-icon>
-                </v-btn>
+        <v-bottom-nav :active.sync="bottomNav" fixed :value="true">
+            <v-btn color="teal" flat value="recent">
+                <span>ERP</span>
+                <v-icon>dashboard</v-icon>
+            </v-btn>
 
-                <v-btn color="teal" flat value="favorites">
-                    <span>Новости</span>
-                    <v-icon>description</v-icon>
-                </v-btn>
+            <v-btn color="teal" flat value="favorites">
+                <span>Новости</span>
+                <v-icon>description</v-icon>
+            </v-btn>
 
-                <v-btn color="teal" flat value="nearby">
-                    <span>Бизнес площадка</span>
-                    <v-icon>business</v-icon>
-                </v-btn>
-            </v-bottom-nav>
+            <v-btn color="teal" flat value="nearby">
+                <span>Бизнес площадка</span>
+                <v-icon>business</v-icon>
+            </v-btn>
+        </v-bottom-nav>
     </main>
 </template>
 <script>
@@ -168,6 +173,9 @@ export default {
   color: #ffffff;
   text-decoration: none;
 }
+.active-link .v-icon {
+  color: rgba(0, 0, 0, 0.54) !important;
+}
 .nav-btn {
   color: #ffffff !important;
   height: 100%;
@@ -210,4 +218,5 @@ export default {
 .company {
   background: rgba(0, 0, 0, 0.1);
 }
+
 </style>
