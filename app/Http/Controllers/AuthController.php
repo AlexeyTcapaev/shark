@@ -29,7 +29,7 @@ class AuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
-            'email_token' => bcrypt($request->email)
+            'email_token' => base64_encode($request->email)
         ]);
         $user->save();
         dispatch(new SendVerificationEmail($user));
