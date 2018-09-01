@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-layout justify-center align-center>
-            <v-flex :xs6="!mobile">
+            <v-flex xl6 lg6 md6 sm12 xs12>
                 <v-card >
                    <v-avatar
                     :tile="tile"
@@ -151,13 +151,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      windowWidth: "config/windowWidth",
       user: "user/GetUserId"
-    }),
-    mobile() {
-      if (this.windowWidth > 993) return false;
-      else return true;
-    }
+    })
   }
 };
 </script>

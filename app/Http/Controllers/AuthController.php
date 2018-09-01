@@ -37,9 +37,9 @@ class AuthController extends Controller
             'message' => 'Пользователь успешно зарегестрирован'
         ], 201);
     }
-    public function verify($token)
+    public function verify(Request $request)
     {
-        $user = User::where('email_token', $token)->first();
+        $user = User::where('email_token', $request->token)->first();
         $user->verified = 1;
         if ($user->save()) {
             return response()->json([

@@ -16,7 +16,7 @@
                     <v-list-tile-content>
                         <v-text-field outline label="Поиск по компаниям" append-icon="search" v-model="search"></v-text-field>
                     </v-list-tile-content>
-                </v-list-tile>               
+                </v-list-tile>
                 <v-list-tile to="/" exact-active-class="target-link" avatar v-for="(comp,index) in FiltredCompany" :key="index">
                     <v-list-tile-avatar>
                         <img :src="'/storage/uploads/'+comp.logo" :alt="comp.name">

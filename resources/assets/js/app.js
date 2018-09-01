@@ -50,11 +50,13 @@ const AddCompany = () =>
     import('./views/AddCompany.vue');
 const Dashboard = () =>
     import('./views/Dashboard.vue');
+const VerifyEmail = () =>
+    import('./views/VerifyEmail.vue');
+
 
 const router = new VueRouter({
     mode: 'history',
-    routes: [
-        {
+    routes: [{
             path: '/',
             name: 'IndexPage',
             component: IndexPage
@@ -87,11 +89,15 @@ const router = new VueRouter({
                     router.push("/login");
                 })
             },
-            children: [
-                {
+            children: [{
                     path: "",
                     component: Dashboard,
                     name: "app",
+                },
+                {
+                    path: 'verifyemail/:token',
+                    name: "verifyemail",
+                    component: VerifyEmail,
                 },
                 {
                     path: "add_company",

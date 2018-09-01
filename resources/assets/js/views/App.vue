@@ -1,7 +1,7 @@
 <template>
 <v-app>
   <v-content>
-    <transition name="fade" mode="out-in">     
+    <transition name="fade" mode="out-in">
         <router-view></router-view>
     </transition>
   </v-content>
@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
-import {mapActions} from 'vuex'
+import { mapGetters } from "vuex";
+import { mapActions } from "vuex";
 export default {
   metaInfo: {
     titleTemplate: "%s"
@@ -21,24 +21,24 @@ export default {
       transitionName: "slide-left"
     };
   },
-  methods:{
+  methods: {
     ...mapActions({
-      SetWindowWidth:'config/SetWindowWidth',
-      SetWindowHeight:'config/SetWindowHeight'
+      SetWindowWidth: "config/SetWindowWidth",
+      SetWindowHeight: "config/SetWindowHeight"
     })
   },
   mounted() {
     this.$Progress.finish();
-    const init = this
-     window.addEventListener("resize", function(event) {
-       init.SetWindowHeight(document.documentElement.clientHeight);
+    const init = this;
+    window.addEventListener("resize", function(event) {
+      init.SetWindowHeight(document.documentElement.clientHeight);
       init.SetWindowWidth(document.documentElement.clientWidth);
-     });
+    });
   },
-  computed:{
+  computed: {
     ...mapGetters({
-      windowHeight:'config/windowHeight',
-      windowWidth:'config/windowWidth'
+      windowHeight: "config/windowHeight",
+      windowWidth: "config/windowWidth"
     })
   },
   created() {
@@ -81,7 +81,6 @@ button.v-btn--flat {
 
 .fade-enter,
 .fade-leave-active {
-  opacity: 0
+  opacity: 0;
 }
-
 </style>
