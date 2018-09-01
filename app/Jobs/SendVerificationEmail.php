@@ -7,19 +7,24 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Support\Facades\Mail;
+use App\User;
+use App\Mail\EmailVerification;
 
-class MailSendler implements ShouldQueue
+class SendVerificationEmail implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    public $tries = 3;
     protected $user;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($user)
+
+    public function __construct(User $user)
     {
-       $this->user = $user;
+        $this->user = $user;
     }
 
     /**
@@ -29,6 +34,7 @@ class MailSendler implements ShouldQueue
      */
     public function handle()
     {
-        info($user->name);
+        $email = new EmailVerification($this->user);
+        Mail::to($this->user->email)->send($email);
     }
 }

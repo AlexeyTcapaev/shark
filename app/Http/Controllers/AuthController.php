@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\User;
+use App\Jobs\SendVerificationEmail;
 
 class AuthController extends Controller
 {
@@ -27,15 +28,25 @@ class AuthController extends Controller
         $user = new User([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => bcrypt($request->password)
+            'password' => bcrypt($request->password),
+            'email_token' => bcrypt($request->email)
         ]);
         $user->save();
-        App\Jobs\MailSendler::dispatch($user);
+        dispatch(new SendVerificationEmail($user));
         return response()->json([
-            'message' => 'Successfully created user!'
-        ], 201);    
+            'message' => 'Пользователь успешно зарегестрирован'
+        ], 201);
     }
-
+    public function verify($token)
+    {
+        $user = User::where('email_token', $token)->first();
+        $user->verified = 1;
+        if ($user->save()) {
+            return response()->json([
+                'message' => 'Почта успешно подтверждена'
+            ], 201);
+        }
+    }
     /**
      * Login user and create token
      *

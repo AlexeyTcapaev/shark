@@ -6,13 +6,13 @@ webpackJsonp([0],{
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(73)
+  __webpack_require__(74)
 }
-var normalizeComponent = __webpack_require__(66)
+var normalizeComponent = __webpack_require__(67)
 /* script */
-var __vue_script__ = __webpack_require__(75)
+var __vue_script__ = __webpack_require__(76)
 /* template */
-var __vue_template__ = __webpack_require__(76)
+var __vue_template__ = __webpack_require__(77)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52,7 +52,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 66:
+/***/ 67:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -162,7 +162,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 67:
+/***/ 68:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -181,7 +181,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(68)
+var listToStyles = __webpack_require__(69)
 
 /*
 type StyleObject = {
@@ -391,7 +391,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 68:
+/***/ 69:
 /***/ (function(module, exports) {
 
 /**
@@ -425,17 +425,17 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 73:
+/***/ 74:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(74);
+var content = __webpack_require__(75);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(67)("dacd05b4", content, false, {});
+var update = __webpack_require__(68)("dacd05b4", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 74:
+/***/ 75:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
@@ -467,7 +467,7 @@ exports.push([module.i, "\n.logo[data-v-6c0a33b2] {\r\n  color: #ffffff;\r\n  te
 
 /***/ }),
 
-/***/ 75:
+/***/ 76:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -628,7 +628,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 /***/ }),
 
-/***/ 76:
+/***/ 77:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -922,7 +922,7 @@ var render = function() {
       _c(
         "v-bottom-nav",
         {
-          attrs: { active: _vm.bottomNav, fixed: "", value: true },
+          attrs: { active: _vm.bottomNav, fixed: "", value: true, app: "" },
           on: {
             "update:active": function($event) {
               _vm.bottomNav = $event
@@ -932,7 +932,15 @@ var render = function() {
         [
           _c(
             "v-btn",
-            { attrs: { color: "teal", flat: "", value: "recent" } },
+            {
+              attrs: {
+                flat: "",
+                value: "recent",
+                to: { name: "app" },
+                "exact-active-class": "target-link-bottom",
+                "active-class": "active-link-bottom"
+              }
+            },
             [
               _c("span", [_vm._v("ERP")]),
               _vm._v(" "),
@@ -943,7 +951,15 @@ var render = function() {
           _vm._v(" "),
           _c(
             "v-btn",
-            { attrs: { color: "teal", flat: "", value: "favorites" } },
+            {
+              attrs: {
+                flat: "",
+                value: "favorites",
+                to: { name: "news" },
+                "exact-active-class": "target-link-bottom",
+                "active-class": "active-link-bottom"
+              }
+            },
             [
               _c("span", [_vm._v("Новости")]),
               _vm._v(" "),
@@ -954,7 +970,7 @@ var render = function() {
           _vm._v(" "),
           _c(
             "v-btn",
-            { attrs: { color: "teal", flat: "", value: "nearby" } },
+            { attrs: { color: "black", flat: "", value: "nearby", to: "2" } },
             [
               _c("span", [_vm._v("Бизнес площадка")]),
               _vm._v(" "),
