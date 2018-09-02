@@ -39,7 +39,7 @@ class AuthController extends Controller
     }
     public function verify(Request $request)
     {
-        $user = User::where('email_token', $request->token)->first();
+        $user = User::where('email_token', $request->token)->where('verified', 0)->first();
         $user->verified = 1;
         if ($user->save()) {
             return response()->json([
