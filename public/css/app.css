@@ -14175,6 +14175,14 @@ table.v-table tfoot tr td {
   right: -2px;
 }
 
+aside .v-list {
+  padding-top: 0;
+}
+
+* {
+  outline: none !important;
+}
+
 .v-list__tile__sub-title {
   text-align: left;
 }

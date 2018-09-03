@@ -52,70 +52,77 @@ const Dashboard = () =>
     import('./views/Dashboard.vue');
 const VerifyEmail = () =>
     import('./views/VerifyEmail.vue');
+const CompanyProfile = () =>
+    import('./views/CompanyProfile.vue');
 
 
 const router = new VueRouter({
     mode: 'history',
     routes: [{
-            path: '/',
-            name: 'IndexPage',
-            component: IndexPage
+        path: '/',
+        name: 'IndexPage',
+        component: IndexPage
+    },
+    {
+        path: "/registration",
+        name: "registration",
+        component: Registration,
+    },
+    {
+        path: "/login",
+        name: "login",
+        component: Login,
+    },
+    {
+        path: "/app",
+        component: Home,
+        beforeEnter: (to, from, next) => {
+            axios.get('/api/auth/user').then(function (resp) {
+                store.state.user.user = resp.data
+                Cookies.set('user', JSON.stringify(store.state.user.user), {
+                    expires: 2,
+                    domain: location.hostname
+                });
+                axios.get("/api/auth/company/" + store.state.user.user.id).then(function (resp) {
+                    store.state.user.company = resp.data
+                });
+                next();
+            }).catch(error => {
+                router.push("/login");
+            })
+        },
+        children: [{
+            path: "",
+            component: Dashboard,
+            name: "app",
         },
         {
-            path: "/registration",
-            name: "registration",
-            component: Registration,
+            path: 'company/:slug',
+            name: "company-profile",
+            component: CompanyProfile,
         },
         {
-            path: "/login",
-            name: "login",
-            component: Login,
+            path: 'verifyemail/:token',
+            name: "verifyemail",
+            component: VerifyEmail,
         },
         {
-            path: "/app",
-            component: Home,
-            beforeEnter: (to, from, next) => {
-                axios.get('/api/auth/user').then(function (resp) {
-                    store.state.user.user = resp.data
-                    Cookies.set('user', JSON.stringify(store.state.user.user), {
-                        expires: 2,
-                        domain: location.hostname
-                    });
-                    axios.get("/api/auth/company/" + store.state.user.user.id).then(function (resp) {
-                        store.state.user.company = resp.data
-                    });
-                    next();
-                }).catch(error => {
-                    router.push("/login");
-                })
-            },
-            children: [{
-                    path: "",
-                    component: Dashboard,
-                    name: "app",
-                },
-                {
-                    path: 'verifyemail/:token',
-                    name: "verifyemail",
-                    component: VerifyEmail,
-                },
-                {
-                    path: "add_company",
-                    component: AddCompany,
-                    name: "add_company",
-                },
-                {
-                    path: "news",
-                    component: Feed,
-                    name: "news",
-                },
+            path: "add_company",
+            component: AddCompany,
+            name: "add_company",
+        },
+        {
+            path: "news",
+            component: Feed,
+            name: "news",
+        },
 
-            ]
-        },
-        {
-            path: '*',
-            redirect: '/'
-        }
+        ]
+    },
+    {
+        path: '*',
+        redirect: '/'
+    }
     ],
 });
 router.beforeEach((to, from, next) => {

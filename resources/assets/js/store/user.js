@@ -12,6 +12,14 @@ export default {
         },
         GetCompany(state) {
             return state.company;
+        },
+        GetCompanyBySlug: state => slug => {
+            if (state.company != undefined)
+                return state.company.find(comp => {
+                    if (comp.slug === slug) {
+                        return comp;
+                    }
+                })
         }
     },
     mutations: {

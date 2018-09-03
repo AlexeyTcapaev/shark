@@ -17,8 +17,8 @@
                         <v-text-field outline label="Поиск по компаниям" append-icon="search" v-model="search"></v-text-field>
                     </v-list-tile-content>
                 </v-list-tile>
-                <v-list-tile to="/" exact-active-class="target-link" avatar v-for="(comp,index) in FiltredCompany" :key="index">
-                    <v-list-tile-avatar>
+                <v-list-tile :to="{name:'company-profile',params:{slug:comp.slug}}" exact-active-class="target-link" avatar v-for="(comp,index) in FiltredCompany" :key="index">
+                    <v-list-tile-avatar v-if="comp.logo">
                         <img :src="'/storage/uploads/'+comp.logo" :alt="comp.name">
                     </v-list-tile-avatar>
 
@@ -74,15 +74,15 @@
         </v-toolbar>
         <div class="wrapper" v-bar :style=" { height: page + 'px' } ">
             <div>
-                <transition name="fade" mode="out-in">
-                    <router-view></router-view>
+                <transition name="fade" mode="out-in" appear>
+                    <router-view :key="$route.fullPath"></router-view>
                 </transition>
             </div>
         </div>
         <v-bottom-nav :active.sync="bottomNav" fixed :value="true" app>
             <v-btn  flat value="recent" :to="{name:'app'}" exact-active-class="target-link-bottom" active-class="active-link-bottom">
-                <span>ERP</span>
-                <v-icon>dashboard</v-icon>
+                <span>Общение</span>
+                <v-icon>chat_bubble</v-icon>
             </v-btn>
 
             <v-btn  flat value="favorites" :to="{name:'news'}" exact-active-class="target-link-bottom" active-class="active-link-bottom">

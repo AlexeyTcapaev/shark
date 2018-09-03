@@ -2,7 +2,7 @@
     <v-container>
         <v-layout justify-center align-center>
             <v-flex xl6 lg6 md6 sm12 xs12>
-                <v-card >
+                <v-card>
                    <v-avatar
                     :tile="tile"
                     :size="avatarSize"
@@ -86,7 +86,7 @@ import { mapActions } from "vuex";
 export default {
   data: () => ({
     show: false,
-    avatarSize: 128,
+    avatarSize: 256,
     tile: true,
     switch1: false,
     Company: {
@@ -136,6 +136,7 @@ export default {
       data.append("logo", this.$refs.file.files[0]);
       data.append("name", this.Company.name);
       data.append("creator", this.user);
+      data.append("website", this.Company.website);
       data.append("activities", JSON.stringify(this.Company.activities));
       const init = this;
       axios
@@ -160,13 +161,10 @@ export default {
 .v-avatar {
   position: absolute;
   left: 25px;
-  border-radius: 64px;
-  height: 128px;
-  width: 128px;
   overflow: hidden;
   box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
     0 1px 3px 0 rgba(0, 0, 0, 0.12);
-  top: -64px;
+  top: -128px;
   border-radius: 50% !important;
   transition: 0.2s linear;
 }
@@ -188,10 +186,10 @@ export default {
   opacity: 0;
 }
 .v-card__title {
-  padding-top: 84px !important;
+  padding-top: 148px !important;
 }
 .v-card {
-  margin: 64px 0 0 0;
+  margin: 128px 0 0 0;
 }
 .v-card .v-avatar {
   cursor: pointer;
