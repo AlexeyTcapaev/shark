@@ -1,26 +1,51 @@
 <template>
     <v-container>
         <v-layout justify-center align-center>
-            <v-flex xl6 lg6 md6 sm12 xs12>
-                <v-card class="elevation-12">
+            <v-flex xl8 lg8 md10 sm12 xs12>
+                <v-card class="company-profile" v-if="Company">
+                    <v-avatar :tile="tile" :size="avatarSize" color="grey lighten-4">
+                        <input type="file" @change="onFileChange" accept="image/jpeg,image/png,image/gif" class="file"
+                            ref="file">
+                        <v-icon v-if="!Company.logo" alt="avatar">add_circle_outline</v-icon>
+                        <img v-else :src="'/storage/uploads/' + Company.logo">
+                    </v-avatar>
+                    <v-card-title primary-title>
+                        <v-flex row>
+                            <v-alert v-model="alert.enable" type="error" dismissible>{{alert.message}}</v-alert>
+                            <v-text-field outline label="Название компании" append-icon="business" v-model="Company.name"></v-text-field>
+                            <v-text-field outline label="Сайт компании" append-icon="web" v-model="Company.website"></v-text-field>
+                        </v-flex>
+                    </v-card-title>
+                </v-card>
+                <v-card>
                     <v-toolbar dark color="primary">
-                        <v-toolbar-title>Вход</v-toolbar-title>
+                        <v-toolbar-title>Структура</v-toolbar-title>
                         <v-spacer></v-spacer>
                     </v-toolbar>
-                    <v-card-text>
-                        <v-alert v-model="alert.enable" type="error" dismissible>{{alert.message}}</v-alert>
-                        <v-form>
-                            <v-text-field outline label="Login or E-mail" append-icon="person" v-model="login"></v-text-field>
-                            <v-text-field outline label="Password" @click:append="show1 = !show1" :append-icon="show1 ? 'visibility_off' : 'visibility'"
-                                :type="show1 ? 'text' : 'password'" required v-model="password" :rules="passwordRules"></v-text-field>
-                            <v-switch v-model="remember_me" label="Запомнить меня"></v-switch>
-                        </v-form>
-                    </v-card-text>
-                    <v-card-actions>
+                </v-card>
+                <v-card>
+                    <v-toolbar dark color="primary">
+                        <v-toolbar-title>Сотрудники</v-toolbar-title>
                         <v-spacer></v-spacer>
-                        <v-btn flat color="primary" to="/registration">Регистрация</v-btn>
-                        <v-btn :disabled="!valid" color="primary" @click="submit">Отправить</v-btn>
-                    </v-card-actions>
+
+                    </v-toolbar>
+                </v-card>
+                <v-card>
+                    <v-toolbar dark color="primary">
+                        <v-toolbar-title>Поручения</v-toolbar-title>
+                        <v-spacer></v-spacer>
+
+                    </v-toolbar>
+                </v-card>
+                <v-card>
+                    <v-toolbar dark color="primary">
+                        <v-toolbar-title>Трудозатраты</v-toolbar-title>
+                        <v-spacer></v-spacer>
+
+                    </v-toolbar>
+                </v-card>
+                <v-card v-if="Company == undefined">
+                    <h1>Компания не найдена.</h1>
                 </v-card>
             </v-flex>
         </v-layout>

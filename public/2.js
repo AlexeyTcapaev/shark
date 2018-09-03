@@ -1,24 +1,24 @@
 webpackJsonp([2],{
 
-/***/ 59:
+/***/ 68:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(71)
+  __webpack_require__(96)
 }
-var normalizeComponent = __webpack_require__(68)
+var normalizeComponent = __webpack_require__(69)
 /* script */
-var __vue_script__ = __webpack_require__(73)
+var __vue_script__ = __webpack_require__(98)
 /* template */
-var __vue_template__ = __webpack_require__(74)
+var __vue_template__ = __webpack_require__(99)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-455c5e02"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -29,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/App.vue"
+Component.options.__file = "resources/assets/js/views/CompanyProfile.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -38,9 +38,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-50e73d1e", Component.options)
+    hotAPI.createRecord("data-v-455c5e02", Component.options)
   } else {
-    hotAPI.reload("data-v-50e73d1e", Component.options)
+    hotAPI.reload("data-v-455c5e02", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -52,7 +52,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 68:
+/***/ 69:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -162,7 +162,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 69:
+/***/ 70:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -181,7 +181,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(70)
+var listToStyles = __webpack_require__(71)
 
 /*
 type StyleObject = {
@@ -391,7 +391,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 70:
+/***/ 71:
 /***/ (function(module, exports) {
 
 /**
@@ -425,23 +425,23 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 71:
+/***/ 96:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(72);
+var content = __webpack_require__(97);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(69)("7751e016", content, false, {});
+var update = __webpack_require__(70)("23f2ed99", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-50e73d1e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./App.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-50e73d1e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./App.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-455c5e02\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CompanyProfile.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-455c5e02\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CompanyProfile.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 72:
+/***/ 97:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
@@ -460,14 +460,14 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\ni {\r\n  -webkit-user-select: none !important;\r\n     -moz-user-select: none !important;\r\n      -ms-user-select: none !important;\r\n          user-select: none !important;\n}\nbutton.primary {\r\n  background-color: #f80b37 !important;\n}\nbutton.v-btn--flat {\r\n  color: #f80b37 !important;\n}\n.primary-text {\r\n  color: #f80b37 !important;\n}\n.fade-enter-active,\r\n.fade-leave-active {\r\n  -webkit-transition-duration: 0.3s;\r\n          transition-duration: 0.3s;\r\n  -webkit-transition-property: opacity;\r\n  transition-property: opacity;\r\n  -webkit-transition-timing-function: ease;\r\n          transition-timing-function: ease;\n}\n.fade-enter,\r\n.fade-leave-active {\r\n  opacity: 0;\n}\r\n", ""]);
+exports.push([module.i, "\n.v-avatar[data-v-455c5e02] {\n  position: absolute;\n  left: 25px;\n  overflow: hidden;\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n  top: -128px;\n  border-radius: 50% !important;\n  -webkit-transition: 0.2s linear;\n  transition: 0.2s linear;\n}\n.v-avatar img[data-v-455c5e02] {\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n}\n.file[data-v-455c5e02] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 64px;\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n  top: 0;\n  left: 0;\n  cursor: pointer;\n  z-index: 4;\n  opacity: 0;\n}\n.v-card__title[data-v-455c5e02] {\n  padding-top: 148px !important;\n}\n.company-profile[data-v-455c5e02] {\n  margin: 128px 0 0 0;\n}\n.v-card .v-avatar[data-v-455c5e02] {\n  cursor: pointer;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 73:
+/***/ 98:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -486,58 +486,115 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  metaInfo: {
-    titleTemplate: "%s"
-  },
   data: function data() {
     return {
-      transitionName: "slide-left"
+      tile: true,
+      avatarSize: 256,
+      alert: {
+        enable: false
+      },
+      switch1: false
     };
   },
-
-  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({
-    SetWindowWidth: "config/SetWindowWidth",
-    SetWindowHeight: "config/SetWindowHeight"
-  })),
-  mounted: function mounted() {
-    this.$Progress.finish();
-    var init = this;
-    window.addEventListener("resize", function (event) {
-      init.SetWindowHeight(document.documentElement.clientHeight);
-      init.SetWindowWidth(document.documentElement.clientWidth);
-    });
-  },
-
   computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-    windowHeight: "config/windowHeight",
-    windowWidth: "config/windowWidth"
-  })),
-  created: function created() {
-    var _this = this;
+    GetCompanyBySlug: "user/GetCompanyBySlug"
+  }), {
+    Company: function Company() {
+      return this.GetCompanyBySlug(this.$route.params.slug);
+    }
+  }),
+  methods: {
+    remove: function remove(item) {
+      console.log(item);
+      var index = this.Company.activities.indexOf(item.name);
+      if (index >= 0) this.Company.activities.splice(index, 1);
+    },
+    onFileChange: function onFileChange(e) {
+      var files = e.target.files || e.dataTransfer.files;
+      if (!files.length) return;
+      this.createImage(this.Company, files[0]);
+      this.isActive = false;
+    },
+    createImage: function createImage(item, file) {
+      var image = new Image();
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        item.logo = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    },
 
-    this.$Progress.start();
-    this.$router.beforeEach(function (to, from, next) {
-      if (to.meta.progress !== undefined) {
-        var meta = to.meta.progress;
-        _this.$Progress.parseMeta(meta);
-      }
-      _this.$Progress.start();
-
-      next();
-    });
-    this.$router.afterEach(function (to, from) {
-      _this.$Progress.finish();
-    });
+    removeImage: function removeImage(item) {
+      item.image = false;
+    },
+    submit: function submit() {
+      var data = new FormData();
+      data.append("logo", this.$refs.file.files[0]);
+      data.append("name", this.Company.name);
+      data.append("creator", this.user);
+      data.append("website", this.Company.website);
+      data.append("activities", JSON.stringify(this.Company.activities));
+      var init = this;
+      axios.post("/api/auth/company", data).then(function (resp) {
+        init.AddCompany(resp.data);
+      }).catch(function (error) {
+        init.alert.message = error.response.data.message;
+        init.alert.enable = true;
+      });
+    }
   }
 });
 
 /***/ }),
 
-/***/ 74:
+/***/ 99:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -545,22 +602,194 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-app",
+    "v-container",
     [
       _c(
-        "v-content",
+        "v-layout",
+        { attrs: { "justify-center": "", "align-center": "" } },
         [
           _c(
-            "transition",
-            { attrs: { name: "fade", mode: "out-in" } },
-            [_c("router-view")],
+            "v-flex",
+            { attrs: { xl8: "", lg8: "", md10: "", sm12: "", xs12: "" } },
+            [
+              _vm.Company
+                ? _c(
+                    "v-card",
+                    { staticClass: "company-profile" },
+                    [
+                      _c(
+                        "v-avatar",
+                        {
+                          attrs: {
+                            tile: _vm.tile,
+                            size: _vm.avatarSize,
+                            color: "grey lighten-4"
+                          }
+                        },
+                        [
+                          _c("input", {
+                            ref: "file",
+                            staticClass: "file",
+                            attrs: {
+                              type: "file",
+                              accept: "image/jpeg,image/png,image/gif"
+                            },
+                            on: { change: _vm.onFileChange }
+                          }),
+                          _vm._v(" "),
+                          !_vm.Company.logo
+                            ? _c("v-icon", { attrs: { alt: "avatar" } }, [
+                                _vm._v("add_circle_outline")
+                              ])
+                            : _c("img", {
+                                attrs: {
+                                  src: "/storage/uploads/" + _vm.Company.logo
+                                }
+                              })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-title",
+                        { attrs: { "primary-title": "" } },
+                        [
+                          _c(
+                            "v-flex",
+                            { attrs: { row: "" } },
+                            [
+                              _c(
+                                "v-alert",
+                                {
+                                  attrs: { type: "error", dismissible: "" },
+                                  model: {
+                                    value: _vm.alert.enable,
+                                    callback: function($$v) {
+                                      _vm.$set(_vm.alert, "enable", $$v)
+                                    },
+                                    expression: "alert.enable"
+                                  }
+                                },
+                                [_vm._v(_vm._s(_vm.alert.message))]
+                              ),
+                              _vm._v(" "),
+                              _c("v-text-field", {
+                                attrs: {
+                                  outline: "",
+                                  label: "Название компании",
+                                  "append-icon": "business"
+                                },
+                                model: {
+                                  value: _vm.Company.name,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.Company, "name", $$v)
+                                  },
+                                  expression: "Company.name"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("v-text-field", {
+                                attrs: {
+                                  outline: "",
+                                  label: "Сайт компании",
+                                  "append-icon": "web"
+                                },
+                                model: {
+                                  value: _vm.Company.website,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.Company, "website", $$v)
+                                  },
+                                  expression: "Company.website"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "v-card",
+                [
+                  _c(
+                    "v-toolbar",
+                    { attrs: { dark: "", color: "primary" } },
+                    [
+                      _c("v-toolbar-title", [_vm._v("Структура")]),
+                      _vm._v(" "),
+                      _c("v-spacer")
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card",
+                [
+                  _c(
+                    "v-toolbar",
+                    { attrs: { dark: "", color: "primary" } },
+                    [
+                      _c("v-toolbar-title", [_vm._v("Сотрудники")]),
+                      _vm._v(" "),
+                      _c("v-spacer")
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card",
+                [
+                  _c(
+                    "v-toolbar",
+                    { attrs: { dark: "", color: "primary" } },
+                    [
+                      _c("v-toolbar-title", [_vm._v("Поручения")]),
+                      _vm._v(" "),
+                      _c("v-spacer")
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card",
+                [
+                  _c(
+                    "v-toolbar",
+                    { attrs: { dark: "", color: "primary" } },
+                    [
+                      _c("v-toolbar-title", [_vm._v("Трудозатраты")]),
+                      _vm._v(" "),
+                      _c("v-spacer")
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _vm.Company == undefined
+                ? _c("v-card", [_c("h1", [_vm._v("Компания не найдена.")])])
+                : _vm._e()
+            ],
             1
           )
         ],
         1
-      ),
-      _vm._v(" "),
-      _c("vue-progress-bar")
+      )
     ],
     1
   )
@@ -571,7 +800,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-50e73d1e", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-455c5e02", module.exports)
   }
 }
 

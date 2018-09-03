@@ -2,31 +2,56 @@
     <v-container>
         <v-layout justify-center align-center>
             <v-flex xl8 lg8 md10 sm12 xs12>
-                 <v-card v-if="Company">
-                    <v-avatar
-                    :tile="tile"
-                    :size="avatarSize"
-                    color="grey lighten-4"
-                    >
-                        <input type="file" @change="onFileChange" accept="image/jpeg,image/png,image/gif" class="file" ref="file">
+                <v-card class="company-profile" v-if="Company">
+                    <v-avatar :tile="tile" :size="avatarSize" color="grey lighten-4">
+                        <input type="file" @change="onFileChange" accept="image/jpeg,image/png,image/gif" class="file"
+                            ref="file">
                         <v-icon v-if="!Company.logo" alt="avatar">add_circle_outline</v-icon>
                         <img v-else :src="'/storage/uploads/' + Company.logo">
                     </v-avatar>
-                                        <v-card-title primary-title>
+                    <v-card-title primary-title>
                         <v-flex row>
                             <v-alert v-model="alert.enable" type="error" dismissible>{{alert.message}}</v-alert>
                             <v-text-field outline label="Название компании" append-icon="business" v-model="Company.name"></v-text-field>
                             <v-text-field outline label="Сайт компании" append-icon="web" v-model="Company.website"></v-text-field>
                         </v-flex>
                     </v-card-title>
-                 </v-card>
-                 <v-card v-if="Company == undefined">
-                     <h1>Компания не найдена.</h1>
-                 </v-card>
+                </v-card>
+                <v-card>
+                    <v-toolbar dark color="primary">
+                        <v-toolbar-title>Структура</v-toolbar-title>
+                        <v-spacer></v-spacer>
+                    </v-toolbar>
+                </v-card>
+                <v-card>
+                    <v-toolbar dark color="primary">
+                        <v-toolbar-title>Сотрудники</v-toolbar-title>
+                        <v-spacer></v-spacer>
+
+                    </v-toolbar>
+                </v-card>
+                <v-card>
+                    <v-toolbar dark color="primary">
+                        <v-toolbar-title>Поручения</v-toolbar-title>
+                        <v-spacer></v-spacer>
+
+                    </v-toolbar>
+                </v-card>
+                <v-card>
+                    <v-toolbar dark color="primary">
+                        <v-toolbar-title>Трудозатраты</v-toolbar-title>
+                        <v-spacer></v-spacer>
+
+                    </v-toolbar>
+                </v-card>
+                <v-card v-if="Company == undefined">
+                    <h1>Компания не найдена.</h1>
+                </v-card>
             </v-flex>
         </v-layout>
     </v-container>
 </template>
+
 <script>
 import { mapGetters } from "vuex";
 
@@ -122,7 +147,7 @@ export default {
 .v-card__title {
   padding-top: 148px !important;
 }
-.v-card {
+.company-profile {
   margin: 128px 0 0 0;
 }
 .v-card .v-avatar {

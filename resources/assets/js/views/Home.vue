@@ -26,10 +26,12 @@
                         <v-list-tile-title>{{comp.name}}</v-list-tile-title>
                         <v-list-tile-sub-title>Владелец</v-list-tile-sub-title>
                     </v-list-tile-content>
-
                     <v-list-tile-action>
-                        <v-badge color="secondary" class="list-for-icon">
-                            <span slot="badge">6</span>
+                        <v-badge color="secondary">
+                        <span slot="badge">6</span>
+                            <v-btn icon>
+                                <v-icon>notifications</v-icon>
+                            </v-btn>
                         </v-badge>
                     </v-list-tile-action>
                 </v-list-tile>
@@ -64,13 +66,12 @@
                     </v-list-tile>
                 </v-list>
             </v-menu>
-            <v-badge color="secondary" class="for-icon">
-                <span slot="badge">6</span>
-                <v-btn icon>
-                    <v-icon>notifications</v-icon>
-                </v-btn>
-            </v-badge>
-
+                <v-badge color="secondary" overlap>
+                    <span slot="badge">6</span>
+                        <v-btn icon>
+                            <v-icon>notifications</v-icon>
+                        </v-btn>
+                </v-badge>
         </v-toolbar>
         <div class="wrapper" v-bar :style=" { height: page + 'px' } ">
             <div>
@@ -175,6 +176,9 @@ export default {
 }
 .active-link .v-icon {
   color: rgba(0, 0, 0, 0.54) !important;
+}
+.v-list__tile__action .v-badge {
+  margin: 0 10px 0 0;
 }
 .nav-btn {
   color: #ffffff !important;

@@ -6,13 +6,13 @@ webpackJsonp([0],{
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(75)
+  __webpack_require__(76)
 }
-var normalizeComponent = __webpack_require__(68)
+var normalizeComponent = __webpack_require__(69)
 /* script */
-var __vue_script__ = __webpack_require__(77)
+var __vue_script__ = __webpack_require__(78)
 /* template */
-var __vue_template__ = __webpack_require__(78)
+var __vue_template__ = __webpack_require__(79)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52,7 +52,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 68:
+/***/ 69:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -162,7 +162,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 69:
+/***/ 70:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -181,7 +181,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(70)
+var listToStyles = __webpack_require__(71)
 
 /*
 type StyleObject = {
@@ -391,7 +391,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 70:
+/***/ 71:
 /***/ (function(module, exports) {
 
 /**
@@ -425,17 +425,17 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 75:
+/***/ 76:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(76);
+var content = __webpack_require__(77);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(69)("dacd05b4", content, false, {});
+var update = __webpack_require__(70)("dacd05b4", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 76:
+/***/ 77:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
@@ -460,14 +460,14 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.logo[data-v-6c0a33b2] {\r\n  color: #ffffff;\r\n  text-decoration: none;\n}\n.active-link .v-icon[data-v-6c0a33b2] {\r\n  color: rgba(0, 0, 0, 0.54) !important;\n}\n.nav-btn[data-v-6c0a33b2] {\r\n  color: #ffffff !important;\r\n  height: 100%;\n}\n.v-menu[data-v-6c0a33b2] {\r\n  height: 100%;\n}\n.v-content[data-v-6c0a33b2] {\r\n  padding-top: 0px !important;\n}\n.wrapper[data-v-6c0a33b2] {\r\n  overflow: hidden;\n}\n.v-navigation-drawer[data-v-6c0a33b2] {\r\n  z-index: 6;\n}\n.v-bottom-nav[data-v-6c0a33b2] {\r\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\r\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n.target-link .v-list__tile__content .v-list__tile__title[data-v-6c0a33b2] {\r\n  color: #f80b37 !important;\n}\n.target-link .v-icon[data-v-6c0a33b2] {\r\n  color: #f80b37 !important;\n}\n.fade-enter-active[data-v-6c0a33b2],\r\n.fade-leave-active[data-v-6c0a33b2] {\r\n  -webkit-transition-duration: 0.3s;\r\n          transition-duration: 0.3s;\r\n  -webkit-transition-property: opacity;\r\n  transition-property: opacity;\r\n  -webkit-transition-timing-function: ease;\r\n          transition-timing-function: ease;\n}\n.v-avatar .fade-enter[data-v-6c0a33b2],\r\n.fade-leave-active[data-v-6c0a33b2] {\r\n  opacity: 0;\n}\n.search-bar[data-v-6c0a33b2] {\r\n  margin: 5px 0;\n}\n.company[data-v-6c0a33b2] {\r\n  background: rgba(0, 0, 0, 0.1);\n}\r\n", ""]);
+exports.push([module.i, "\n.logo[data-v-6c0a33b2] {\n  color: #ffffff;\n  text-decoration: none;\n}\n.active-link .v-icon[data-v-6c0a33b2] {\n  color: rgba(0, 0, 0, 0.54) !important;\n}\n.v-list__tile__action .v-badge[data-v-6c0a33b2] {\n  margin: 0 10px 0 0;\n}\n.nav-btn[data-v-6c0a33b2] {\n  color: #ffffff !important;\n  height: 100%;\n}\n.v-menu[data-v-6c0a33b2] {\n  height: 100%;\n}\n.v-content[data-v-6c0a33b2] {\n  padding-top: 0px !important;\n}\n.wrapper[data-v-6c0a33b2] {\n  overflow: hidden;\n}\n.v-navigation-drawer[data-v-6c0a33b2] {\n  z-index: 6;\n}\n.v-bottom-nav[data-v-6c0a33b2] {\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n.target-link .v-list__tile__content .v-list__tile__title[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n.target-link .v-icon[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n.fade-enter-active[data-v-6c0a33b2],\n.fade-leave-active[data-v-6c0a33b2] {\n  -webkit-transition-duration: 0.3s;\n          transition-duration: 0.3s;\n  -webkit-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-timing-function: ease;\n          transition-timing-function: ease;\n}\n.v-avatar .fade-enter[data-v-6c0a33b2],\n.fade-leave-active[data-v-6c0a33b2] {\n  opacity: 0;\n}\n.search-bar[data-v-6c0a33b2] {\n  margin: 5px 0;\n}\n.company[data-v-6c0a33b2] {\n  background: rgba(0, 0, 0, 0.1);\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 77:
+/***/ 78:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -475,6 +475,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
 //
 //
 //
@@ -628,7 +629,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 /***/ }),
 
-/***/ 78:
+/***/ 79:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -716,20 +717,25 @@ var render = function() {
                   {
                     key: index,
                     attrs: {
-                      to: "/",
+                      to: {
+                        name: "company-profile",
+                        params: { slug: comp.slug }
+                      },
                       "exact-active-class": "target-link",
                       avatar: ""
                     }
                   },
                   [
-                    _c("v-list-tile-avatar", [
-                      _c("img", {
-                        attrs: {
-                          src: "/storage/uploads/" + comp.logo,
-                          alt: comp.name
-                        }
-                      })
-                    ]),
+                    comp.logo
+                      ? _c("v-list-tile-avatar", [
+                          _c("img", {
+                            attrs: {
+                              src: "/storage/uploads/" + comp.logo,
+                              alt: comp.name
+                            }
+                          })
+                        ])
+                      : _vm._e(),
                     _vm._v(" "),
                     _c(
                       "v-list-tile-content",
@@ -746,17 +752,22 @@ var render = function() {
                       [
                         _c(
                           "v-badge",
-                          {
-                            staticClass: "list-for-icon",
-                            attrs: { color: "secondary" }
-                          },
+                          { attrs: { color: "secondary" } },
                           [
                             _c(
                               "span",
                               { attrs: { slot: "badge" }, slot: "badge" },
                               [_vm._v("6")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-btn",
+                              { attrs: { icon: "" } },
+                              [_c("v-icon", [_vm._v("notifications")])],
+                              1
                             )
-                          ]
+                          ],
+                          1
                         )
                       ],
                       1
@@ -877,7 +888,7 @@ var render = function() {
           _vm._v(" "),
           _c(
             "v-badge",
-            { staticClass: "for-icon", attrs: { color: "secondary" } },
+            { attrs: { color: "secondary", overlap: "" } },
             [
               _c("span", { attrs: { slot: "badge" }, slot: "badge" }, [
                 _vm._v("6")
@@ -909,8 +920,8 @@ var render = function() {
             [
               _c(
                 "transition",
-                { attrs: { name: "fade", mode: "out-in" } },
-                [_c("router-view")],
+                { attrs: { name: "fade", mode: "out-in", appear: "" } },
+                [_c("router-view", { key: _vm.$route.fullPath })],
                 1
               )
             ],
@@ -942,9 +953,9 @@ var render = function() {
               }
             },
             [
-              _c("span", [_vm._v("ERP")]),
+              _c("span", [_vm._v("Общение")]),
               _vm._v(" "),
-              _c("v-icon", [_vm._v("dashboard")])
+              _c("v-icon", [_vm._v("chat_bubble")])
             ],
             1
           ),
