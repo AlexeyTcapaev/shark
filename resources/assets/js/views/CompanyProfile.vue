@@ -17,33 +17,6 @@
                         </v-flex>
                     </v-card-title>
                 </v-card>
-                <v-card>
-                    <v-toolbar dark color="primary">
-                        <v-toolbar-title>Структура</v-toolbar-title>
-                        <v-spacer></v-spacer>
-                    </v-toolbar>
-                </v-card>
-                <v-card>
-                    <v-toolbar dark color="primary">
-                        <v-toolbar-title>Сотрудники</v-toolbar-title>
-                        <v-spacer></v-spacer>
-
-                    </v-toolbar>
-                </v-card>
-                <v-card>
-                    <v-toolbar dark color="primary">
-                        <v-toolbar-title>Поручения</v-toolbar-title>
-                        <v-spacer></v-spacer>
-
-                    </v-toolbar>
-                </v-card>
-                <v-card>
-                    <v-toolbar dark color="primary">
-                        <v-toolbar-title>Трудозатраты</v-toolbar-title>
-                        <v-spacer></v-spacer>
-
-                    </v-toolbar>
-                </v-card>
                 <v-card v-if="Company == undefined">
                     <h1>Компания не найдена.</h1>
                 </v-card>

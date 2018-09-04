@@ -17,24 +17,103 @@
                         <v-text-field outline label="Поиск по компаниям" append-icon="search" v-model="search"></v-text-field>
                     </v-list-tile-content>
                 </v-list-tile>
-                <v-list-tile :to="{name:'company-profile',params:{slug:comp.slug}}" exact-active-class="target-link" avatar v-for="(comp,index) in FiltredCompany" :key="index">
-                    <v-list-tile-avatar v-if="comp.logo">
-                        <img :src="'/storage/uploads/'+comp.logo" :alt="comp.name">
-                    </v-list-tile-avatar>
-
-                    <v-list-tile-content>
-                        <v-list-tile-title>{{comp.name}}</v-list-tile-title>
-                        <v-list-tile-sub-title>Владелец</v-list-tile-sub-title>
-                    </v-list-tile-content>
-                    <v-list-tile-action>
-                        <v-badge color="secondary">
-                        <span slot="badge">6</span>
-                            <v-btn icon>
+                <v-list-group :to="{name:'company-profile',params:{slug:comp.slug}}" avatar v-for="(comp,index) in FiltredCompany" :key="index">
+                    <v-list-tile slot="activator">
+                        <v-list-tile-avatar v-if="comp.logo">
+                            <img :src="'/storage/uploads/'+comp.logo" :alt="comp.name">
+                        </v-list-tile-avatar>
+                        <v-list-tile-content>
+                            <v-list-tile-title>{{comp.name}}</v-list-tile-title>
+                            <v-list-tile-sub-title>Владелец</v-list-tile-sub-title>
+                        </v-list-tile-content>
+                        <v-list-tile-action>
+                            <v-badge color="secondary">
+                                <span slot="badge">6</span>
                                 <v-icon>notifications</v-icon>
-                            </v-btn>
-                        </v-badge>
-                    </v-list-tile-action>
-                </v-list-tile>
+                            </v-badge>
+                        </v-list-tile-action>
+                    </v-list-tile>
+                    <v-list-tile @click="">
+                        <v-list-tile-action>
+                            <v-icon>view_module</v-icon>
+                        </v-list-tile-action>
+                        <v-list-tile-content>
+                            <v-list-tile-title>Структура</v-list-tile-title>
+                        </v-list-tile-content>
+                        <v-list-tile-action>
+                            <v-badge color="secondary">
+                                <span slot="badge">6</span>
+                                <v-btn icon>
+                                    <v-icon>notifications</v-icon>
+                                </v-btn>
+                            </v-badge>
+                        </v-list-tile-action>
+                    </v-list-tile>
+                    <v-list-tile @click="">
+                        <v-list-tile-action>
+                            <v-icon>group</v-icon>
+                        </v-list-tile-action>
+                        <v-list-tile-content>
+                            <v-list-tile-title>Сотрудники</v-list-tile-title>
+                        </v-list-tile-content>
+                        <v-list-tile-action>
+                            <v-badge color="secondary">
+                                <span slot="badge">6</span>
+                                <v-btn icon>
+                                    <v-icon>notifications</v-icon>
+                                </v-btn>
+                            </v-badge>
+                        </v-list-tile-action>
+                    </v-list-tile>
+                    <v-list-tile @click="">
+                        <v-list-tile-action>
+                            <v-icon>work</v-icon>
+                        </v-list-tile-action>
+                        <v-list-tile-content>
+                            <v-list-tile-title>Поручения</v-list-tile-title>
+                        </v-list-tile-content>
+                        <v-list-tile-action>
+                            <v-badge color="secondary">
+                                <span slot="badge">6</span>
+                                <v-btn icon>
+                                    <v-icon>notifications</v-icon>
+                                </v-btn>
+                            </v-badge>
+                        </v-list-tile-action>
+                    </v-list-tile>
+                    <v-list-tile @click="">
+                        <v-list-tile-action>
+                            <v-icon>timelapse</v-icon>
+                        </v-list-tile-action>
+                        <v-list-tile-content>
+                            <v-list-tile-title>Трудозатраты</v-list-tile-title>
+                        </v-list-tile-content>
+                        <v-list-tile-action>
+                            <v-badge color="secondary">
+                                <span slot="badge">6</span>
+                                <v-btn icon>
+                                    <v-icon>notifications</v-icon>
+                                </v-btn>
+                            </v-badge>
+                        </v-list-tile-action>
+                    </v-list-tile>
+                    <v-list-tile @click="">
+                        <v-list-tile-action>
+                            <v-icon>timeline</v-icon>
+                        </v-list-tile-action>
+                        <v-list-tile-content>
+                            <v-list-tile-title>Поэтапная деятельность</v-list-tile-title>
+                        </v-list-tile-content>
+                        <v-list-tile-action>
+                            <v-badge color="secondary">
+                                <span slot="badge">6</span>
+                                <v-btn icon>
+                                    <v-icon>notifications</v-icon>
+                                </v-btn>
+                            </v-badge>
+                        </v-list-tile-action>
+                    </v-list-tile>
+                </v-list-group>
                 <v-divider dark></v-divider>
                 <v-list-tile :to="{name:'add_company'}" exact-active-class="target-link">
                     <v-list-tile-action>
@@ -83,7 +162,7 @@
         <v-bottom-nav :active.sync="bottomNav" fixed :value="true" app>
             <v-btn  flat value="recent" :to="{name:'app'}" exact-active-class="target-link-bottom" active-class="active-link-bottom">
                 <span>Общение</span>
-                <v-icon>chat_bubble</v-icon>
+                <v-icon>question_answer</v-icon>
             </v-btn>
 
             <v-btn  flat value="favorites" :to="{name:'news'}" exact-active-class="target-link-bottom" active-class="active-link-bottom">

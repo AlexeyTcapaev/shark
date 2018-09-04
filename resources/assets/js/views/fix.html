@@ -1,53 +1,119 @@
-<template>
-    <v-container>
-        <v-layout justify-center align-center>
-            <v-flex xl8 lg8 md10 sm12 xs12>
-                <v-card class="company-profile" v-if="Company">
-                    <v-avatar :tile="tile" :size="avatarSize" color="grey lighten-4">
-                        <input type="file" @change="onFileChange" accept="image/jpeg,image/png,image/gif" class="file"
-                            ref="file">
-                        <v-icon v-if="!Company.logo" alt="avatar">add_circle_outline</v-icon>
-                        <img v-else :src="'/storage/uploads/' + Company.logo">
-                    </v-avatar>
-                    <v-card-title primary-title>
-                        <v-flex row>
-                            <v-alert v-model="alert.enable" type="error" dismissible>{{alert.message}}</v-alert>
-                            <v-text-field outline label="Название компании" append-icon="business" v-model="Company.name"></v-text-field>
-                            <v-text-field outline label="Сайт компании" append-icon="web" v-model="Company.website"></v-text-field>
-                        </v-flex>
-                    </v-card-title>
-                </v-card>
-                <v-card>
-                    <v-toolbar dark color="primary">
-                        <v-toolbar-title>Структура</v-toolbar-title>
-                        <v-spacer></v-spacer>
-                    </v-toolbar>
-                </v-card>
-                <v-card>
-                    <v-toolbar dark color="primary">
-                        <v-toolbar-title>Сотрудники</v-toolbar-title>
-                        <v-spacer></v-spacer>
+<v-list-group :to="{name:'company-profile',params:{slug:comp.slug}}" avatar v-for="(comp,index) in FiltredCompany" :key="index">
+    <v-list-tile slot="activator">
+        <v-list-tile-avatar v-if="comp.logo">
+            <img :src="'/storage/uploads/'+comp.logo" :alt="comp.name">
+        </v-list-tile-avatar>
+        <v-list-tile-content>
+            <v-list-tile-title>{{comp.name}}</v-list-tile-title>
+            <v-list-tile-sub-title>Владелец</v-list-tile-sub-title>
+        </v-list-tile-content>
+        <v-list-tile-action>
+            <v-badge color="secondary">
+                <span slot="badge">6</span>
+                <v-btn icon>
+                    <v-icon>notifications</v-icon>
+                </v-btn>
+            </v-badge>
+        </v-list-tile-action>
+    </v-list-tile>
+    <v-list-tile @click="">
+        <v-list-tile-action>
+            <v-icon>view_module</v-icon>
+        </v-list-tile-action>
+        <v-list-tile-content>
+            <v-list-tile-title>Структура</v-list-tile-title>
+        </v-list-tile-content>
+        <v-list-tile-action>
+            <v-badge color="secondary">
+                <span slot="badge">6</span>
+                <v-btn icon>
+                    <v-icon>notifications</v-icon>
+                </v-btn>
+            </v-badge>
+        </v-list-tile-action>
+    </v-list-tile>
+    <v-list-tile @click="">
+        <v-list-tile-action>
+            <v-icon>group</v-icon>
+        </v-list-tile-action>
+        <v-list-tile-content>
+            <v-list-tile-title>Сотрудники</v-list-tile-title>
+        </v-list-tile-content>
+        <v-list-tile-action>
+            <v-badge color="secondary">
+                <span slot="badge">6</span>
+                <v-btn icon>
+                    <v-icon>notifications</v-icon>
+                </v-btn>
+            </v-badge>
+        </v-list-tile-action>
+    </v-list-tile>
+    <v-list-tile @click="">
+        <v-list-tile-action>
+            <v-icon>work</v-icon>
+        </v-list-tile-action>
+        <v-list-tile-content>
+            <v-list-tile-title>Поручения</v-list-tile-title>
+        </v-list-tile-content>
+        <v-list-tile-action>
+            <v-badge color="secondary">
+                <span slot="badge">6</span>
+                <v-btn icon>
+                    <v-icon>notifications</v-icon>
+                </v-btn>
+            </v-badge>
+        </v-list-tile-action>
+    </v-list-tile>
+    <v-list-tile @click="">
+        <v-list-tile-action>
+            <v-icon>timelaps</v-icon>
+        </v-list-tile-action>
+        <v-list-tile-content>
+            <v-list-tile-title>Трудозатраты</v-list-tile-title>
+        </v-list-tile-content>
+        <v-list-tile-action>
+            <v-badge color="secondary">
+                <span slot="badge">6</span>
+                <v-btn icon>
+                    <v-icon>notifications</v-icon>
+                </v-btn>
+            </v-badge>
+        </v-list-tile-action>
+    </v-list-tile>
+    <v-list-tile @click="">
+        <v-list-tile-action>
+            <v-icon>timeline</v-icon>
+        </v-list-tile-action>
+        <v-list-tile-content>
+            <v-list-tile-title>Поэтапная деятельность</v-list-tile-title>
+        </v-list-tile-content>
+        <v-list-tile-action>
+            <v-badge color="secondary">
+                <span slot="badge">6</span>
+                <v-btn icon>
+                    <v-icon>notifications</v-icon>
+                </v-btn>
+            </v-badge>
+        </v-list-tile-action>
+    </v-list-tile>
+</v-list-group>
 
-                    </v-toolbar>
-                </v-card>
-                <v-card>
-                    <v-toolbar dark color="primary">
-                        <v-toolbar-title>Поручения</v-toolbar-title>
-                        <v-spacer></v-spacer>
+<v-list-tile :to="{name:'company-profile',params:{slug:comp.slug}}" exact-active-class="target-link" avatar v-for="(comp,index) in FiltredCompany"
+    :key="index">
+    <v-list-tile-avatar v-if="comp.logo">
+        <img :src="'/storage/uploads/'+comp.logo" :alt="comp.name">
+    </v-list-tile-avatar>
 
-                    </v-toolbar>
-                </v-card>
-                <v-card>
-                    <v-toolbar dark color="primary">
-                        <v-toolbar-title>Трудозатраты</v-toolbar-title>
-                        <v-spacer></v-spacer>
-
-                    </v-toolbar>
-                </v-card>
-                <v-card v-if="Company == undefined">
-                    <h1>Компания не найдена.</h1>
-                </v-card>
-            </v-flex>
-        </v-layout>
-    </v-container>
-</template>
+    <v-list-tile-content>
+        <v-list-tile-title>{{comp.name}}</v-list-tile-title>
+        <v-list-tile-sub-title>Владелец</v-list-tile-sub-title>
+    </v-list-tile-content>
+    <v-list-tile-action>
+        <v-badge color="secondary">
+            <span slot="badge">6</span>
+            <v-btn icon>
+                <v-icon>notifications</v-icon>
+            </v-btn>
+        </v-badge>
+    </v-list-tile-action>
+</v-list-tile>
