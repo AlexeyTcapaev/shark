@@ -1258,9 +1258,9 @@ var render = function() {
               attrs: {
                 flat: "",
                 value: "recent",
-                to: { name: "app" },
-                "exact-active-class": "target-link-bottom",
-                "active-class": "active-link-bottom"
+                to: { name: "communication" },
+                "exact-active-class": "",
+                "active-class": ""
               }
             },
             [
@@ -1278,8 +1278,8 @@ var render = function() {
                 flat: "",
                 value: "favorites",
                 to: { name: "news" },
-                "exact-active-class": "target-link-bottom",
-                "active-class": "active-link-bottom"
+                "exact-active-class": "",
+                "active-class": ""
               }
             },
             [
@@ -1292,7 +1292,14 @@ var render = function() {
           _vm._v(" "),
           _c(
             "v-btn",
-            { attrs: { color: "black", flat: "", value: "nearby", to: "2" } },
+            {
+              attrs: {
+                color: "black",
+                flat: "",
+                value: "nearby",
+                to: { name: "platform" }
+              }
+            },
             [
               _c("span", [_vm._v("Бизнес площадка")]),
               _vm._v(" "),

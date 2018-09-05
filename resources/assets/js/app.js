@@ -54,7 +54,10 @@ const VerifyEmail = () =>
     import('./views/VerifyEmail.vue');
 const CompanyProfile = () =>
     import('./views/CompanyProfile.vue');
-
+const Communication = () =>
+    import('./views/Communication.vue');
+const Platform = () =>
+    import('./views/Platform.vue');
 
 const router = new VueRouter({
     mode: 'history',
@@ -116,7 +119,16 @@ const router = new VueRouter({
             component: Feed,
             name: "news",
         },
-
+        {
+            path: "communication",
+            component: Communication,
+            name: "communication",
+        },
+        {
+            path: "platform",
+            component: Platform,
+            name: "platform",
+        }
         ]
     },
     {

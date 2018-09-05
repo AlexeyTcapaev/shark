@@ -160,17 +160,17 @@
             </div>
         </div>
         <v-bottom-nav :active.sync="bottomNav" fixed :value="true" app>
-            <v-btn  flat value="recent" :to="{name:'app'}" exact-active-class="target-link-bottom" active-class="active-link-bottom">
+            <v-btn  flat value="recent" :to="{name:'communication'}" exact-active-class="" active-class="">
                 <span>Общение</span>
                 <v-icon>question_answer</v-icon>
             </v-btn>
 
-            <v-btn  flat value="favorites" :to="{name:'news'}" exact-active-class="target-link-bottom" active-class="active-link-bottom">
+            <v-btn  flat value="favorites" :to="{name:'news'}" exact-active-class="" active-class="">
                 <span>Новости</span>
                 <v-icon>description</v-icon>
             </v-btn>
 
-            <v-btn color="black"  flat value="nearby" to="2">
+            <v-btn color="black"  flat value="nearby" :to="{name:'platform'}">
                 <span>Бизнес площадка</span>
                 <v-icon>business</v-icon>
             </v-btn>

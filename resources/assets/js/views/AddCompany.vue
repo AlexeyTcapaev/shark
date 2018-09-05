@@ -15,14 +15,28 @@
                     <v-card-title primary-title>
                         <v-flex row>
                             <v-alert v-model="alert.enable" type="error" dismissible>{{alert.message}}</v-alert>
-                            <v-text-field outline label="Название компании" append-icon="business" v-model="Company.name"></v-text-field>
+                            <v-layout align-center justify-center row fill-height wrap>
+                              <v-flex xl3 md12 sm12>
+                                <v-select
+                                    v-model="Company.type"
+                                    :items="types"
+                                    outline
+                                    offset-y
+                                    label="Тип организации"
+                                    item-text="name"
+                                    item-value="name"
+                                ></v-select>
+                              </v-flex>
+                              <v-flex xl8 offset-xl1 md12 sm12>
+                                <v-text-field outline label="Название компании" append-icon="business" v-model="Company.name"></v-text-field>
+                              </v-flex>
+                            </v-layout>
                             <v-text-field outline label="Сайт компании" append-icon="web" v-model="Company.website"></v-text-field>
                             <v-autocomplete v-if="switch1 == false"
                                 v-model="Company.activities"
                                 :items="activities"
                                 outline
                                 chips
-                                clearable
                                 label="Сферы деятельности"
                                 item-text="name"
                                 item-value="name"
@@ -92,7 +106,10 @@ export default {
     Company: {
       name: "",
       activities: [],
-      logo: undefined
+      logo: undefined,
+      type: {
+        name: "ООО"
+      }
     },
     alert: {
       enable: false
@@ -104,6 +121,20 @@ export default {
       },
       {
         name: "Проектирование"
+      }
+    ],
+    types: [
+      {
+        name: "ООО"
+      },
+      {
+        name: "ОАО"
+      },
+      {
+        name: "АО"
+      },
+      {
+        name: " ПАО"
       }
     ]
   }),

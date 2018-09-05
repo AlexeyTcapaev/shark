@@ -557,6 +557,20 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -570,7 +584,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       Company: {
         name: "",
         activities: [],
-        logo: undefined
+        logo: undefined,
+        type: {
+          name: "ООО"
+        }
       },
       alert: {
         enable: false
@@ -580,6 +597,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         name: "IT"
       }, {
         name: "Проектирование"
+      }],
+      types: [{
+        name: "ООО"
+      }, {
+        name: "ОАО"
+      }, {
+        name: "АО"
+      }, {
+        name: " ПАО"
       }]
     };
   },
@@ -703,20 +729,74 @@ var render = function() {
                             [_vm._v(_vm._s(_vm.alert.message))]
                           ),
                           _vm._v(" "),
-                          _c("v-text-field", {
-                            attrs: {
-                              outline: "",
-                              label: "Название компании",
-                              "append-icon": "business"
+                          _c(
+                            "v-layout",
+                            {
+                              attrs: {
+                                "align-center": "",
+                                "justify-center": "",
+                                row: "",
+                                "fill-height": "",
+                                wrap: ""
+                              }
                             },
-                            model: {
-                              value: _vm.Company.name,
-                              callback: function($$v) {
-                                _vm.$set(_vm.Company, "name", $$v)
-                              },
-                              expression: "Company.name"
-                            }
-                          }),
+                            [
+                              _c(
+                                "v-flex",
+                                { attrs: { xl3: "", md12: "", sm12: "" } },
+                                [
+                                  _c("v-select", {
+                                    attrs: {
+                                      items: _vm.types,
+                                      outline: "",
+                                      "offset-y": "",
+                                      label: "Тип организации",
+                                      "item-text": "name",
+                                      "item-value": "name"
+                                    },
+                                    model: {
+                                      value: _vm.Company.type,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.Company, "type", $$v)
+                                      },
+                                      expression: "Company.type"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-flex",
+                                {
+                                  attrs: {
+                                    xl8: "",
+                                    "offset-xl1": "",
+                                    md12: "",
+                                    sm12: ""
+                                  }
+                                },
+                                [
+                                  _c("v-text-field", {
+                                    attrs: {
+                                      outline: "",
+                                      label: "Название компании",
+                                      "append-icon": "business"
+                                    },
+                                    model: {
+                                      value: _vm.Company.name,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.Company, "name", $$v)
+                                      },
+                                      expression: "Company.name"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          ),
                           _vm._v(" "),
                           _c("v-text-field", {
                             attrs: {
@@ -739,7 +819,6 @@ var render = function() {
                                   items: _vm.activities,
                                   outline: "",
                                   chips: "",
-                                  clearable: "",
                                   label: "Сферы деятельности",
                                   "item-text": "name",
                                   "item-value": "name",

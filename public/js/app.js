@@ -26202,7 +26202,7 @@ var Login = function Login() {
     return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 62));
 };
 var IndexPage = function IndexPage() {
-    return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 63));
+    return __webpack_require__.e/* import() */(9).then(__webpack_require__.bind(null, 63));
 };
 var Feed = function Feed() {
     return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 64));
@@ -26211,13 +26211,19 @@ var AddCompany = function AddCompany() {
     return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 65));
 };
 var Dashboard = function Dashboard() {
-    return __webpack_require__.e/* import() */(9).then(__webpack_require__.bind(null, 66));
+    return __webpack_require__.e/* import() */(22).then(__webpack_require__.bind(null, 66));
 };
 var VerifyEmail = function VerifyEmail() {
     return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 67));
 };
 var CompanyProfile = function CompanyProfile() {
     return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 68));
+};
+var Communication = function Communication() {
+    return __webpack_require__.e/* import() */(23).then(__webpack_require__.bind(null, 101));
+};
+var Platform = function Platform() {
+    return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 103));
 };
 
 var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
@@ -26272,6 +26278,14 @@ var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
             path: "news",
             component: Feed,
             name: "news"
+        }, {
+            path: "communication",
+            component: Communication,
+            name: "communication"
+        }, {
+            path: "platform",
+            component: Platform,
+            name: "platform"
         }]
     }, {
         path: '*',

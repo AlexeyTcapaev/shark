@@ -12,7 +12,7 @@
                 <v-form>
                     <v-text-field outline label="Login or E-mail" append-icon="person" v-model="login"></v-text-field>
                     <v-text-field outline label="Password" @click:append="show1 = !show1" :append-icon="show1 ? 'visibility_off' : 'visibility'" :type="show1 ? 'text' : 'password'" required v-model="password" :rules="passwordRules"></v-text-field>
-                    <v-switch v-model="remember_me" label="Запомнить меня"></v-switch>
+                    <v-switch color="primary" v-model="remember_me" label="Запомнить меня"></v-switch>
                 </v-form>
               </v-card-text>
               <v-card-actions>

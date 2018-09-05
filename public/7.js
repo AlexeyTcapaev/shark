@@ -343,7 +343,10 @@ var render = function() {
                           }),
                           _vm._v(" "),
                           _c("v-switch", {
-                            attrs: { label: "Запомнить меня" },
+                            attrs: {
+                              color: "primary",
+                              label: "Запомнить меня"
+                            },
                             model: {
                               value: _vm.remember_me,
                               callback: function($$v) {

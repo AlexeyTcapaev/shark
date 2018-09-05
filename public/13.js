@@ -1,24 +1,24 @@
 webpackJsonp([13],{
 
-/***/ 65:
+/***/ 68:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(88)
+  __webpack_require__(96)
 }
-var normalizeComponent = __webpack_require__(68)
+var normalizeComponent = __webpack_require__(69)
 /* script */
-var __vue_script__ = __webpack_require__(90)
+var __vue_script__ = __webpack_require__(98)
 /* template */
-var __vue_template__ = __webpack_require__(91)
+var __vue_template__ = __webpack_require__(99)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-bc5e96a2"
+var __vue_scopeId__ = "data-v-455c5e02"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -29,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/AddCompany.vue"
+Component.options.__file = "resources/assets/js/views/CompanyProfile.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -38,9 +38,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-bc5e96a2", Component.options)
+    hotAPI.createRecord("data-v-455c5e02", Component.options)
   } else {
-    hotAPI.reload("data-v-bc5e96a2", Component.options)
+    hotAPI.reload("data-v-455c5e02", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -52,7 +52,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 68:
+/***/ 69:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -162,7 +162,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 69:
+/***/ 70:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -181,7 +181,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(70)
+var listToStyles = __webpack_require__(71)
 
 /*
 type StyleObject = {
@@ -391,7 +391,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 70:
+/***/ 71:
 /***/ (function(module, exports) {
 
 /**
@@ -425,23 +425,23 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 88:
+/***/ 96:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(89);
+var content = __webpack_require__(97);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(69)("f2834252", content, false, {});
+var update = __webpack_require__(70)("23f2ed99", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-bc5e96a2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AddCompany.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-bc5e96a2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AddCompany.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-455c5e02\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CompanyProfile.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-455c5e02\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CompanyProfile.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 89:
+/***/ 97:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
@@ -460,14 +460,14 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.v-avatar[data-v-bc5e96a2] {\r\n  position: absolute;\r\n  left: 25px;\r\n  overflow: hidden;\r\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n  top: -128px;\r\n  border-radius: 50% !important;\r\n  -webkit-transition: 0.2s linear;\r\n  transition: 0.2s linear;\n}\n.v-avatar img[data-v-bc5e96a2] {\r\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n}\n.file[data-v-bc5e96a2] {\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 100%;\r\n  border-radius: 64px;\r\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n  top: 0;\r\n  left: 0;\r\n  cursor: pointer;\r\n  z-index: 4;\r\n  opacity: 0;\n}\n.v-card__title[data-v-bc5e96a2] {\r\n  padding-top: 148px !important;\n}\n.v-card[data-v-bc5e96a2] {\r\n  margin: 128px 0 0 0;\n}\n.v-card .v-avatar[data-v-bc5e96a2] {\r\n  cursor: pointer;\n}\r\n", ""]);
+exports.push([module.i, "\n.v-avatar[data-v-455c5e02] {\r\n  position: absolute;\r\n  left: 25px;\r\n  overflow: hidden;\r\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n  top: -128px;\r\n  border-radius: 50% !important;\r\n  -webkit-transition: 0.2s linear;\r\n  transition: 0.2s linear;\n}\n.v-avatar img[data-v-455c5e02] {\r\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n}\n.file[data-v-455c5e02] {\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 100%;\r\n  border-radius: 64px;\r\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n  top: 0;\r\n  left: 0;\r\n  cursor: pointer;\r\n  z-index: 4;\r\n  opacity: 0;\n}\n.v-card__title[data-v-455c5e02] {\r\n  padding-top: 148px !important;\n}\n.company-profile[data-v-455c5e02] {\r\n  margin: 128px 0 0 0;\n}\n.v-card .v-avatar[data-v-455c5e02] {\r\n  cursor: pointer;\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 90:
+/***/ 98:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -502,88 +502,28 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      show: false,
-      avatarSize: 256,
       tile: true,
-      switch1: false,
-      Company: {
-        name: "",
-        activities: [],
-        logo: undefined
-      },
+      avatarSize: 256,
       alert: {
         enable: false
       },
-      NewActivity: "",
-      activities: [{
-        name: "IT"
-      }, {
-        name: "Проектирование"
-      }]
+      switch1: false
     };
   },
-  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({ AddCompany: "user/AddCompany" }), {
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+    GetCompanyBySlug: "user/GetCompanyBySlug"
+  }), {
+    Company: function Company() {
+      return this.GetCompanyBySlug(this.$route.params.slug);
+    }
+  }),
+  methods: {
     remove: function remove(item) {
       console.log(item);
       var index = this.Company.activities.indexOf(item.name);
@@ -622,15 +562,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         init.alert.enable = true;
       });
     }
-  }),
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-    user: "user/GetUserId"
-  }))
+  }
 });
 
 /***/ }),
 
-/***/ 91:
+/***/ 99:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -646,238 +583,112 @@ var render = function() {
         [
           _c(
             "v-flex",
-            { attrs: { xl6: "", lg6: "", md6: "", sm12: "", xs12: "" } },
+            { attrs: { xl8: "", lg8: "", md10: "", sm12: "", xs12: "" } },
             [
-              _c(
-                "v-card",
-                [
-                  _c(
-                    "v-avatar",
-                    {
-                      attrs: {
-                        tile: _vm.tile,
-                        size: _vm.avatarSize,
-                        color: "grey lighten-4"
-                      }
-                    },
-                    [
-                      _c("input", {
-                        ref: "file",
-                        staticClass: "file",
-                        attrs: {
-                          type: "file",
-                          accept: "image/jpeg,image/png,image/gif"
-                        },
-                        on: { change: _vm.onFileChange }
-                      }),
-                      _vm._v(" "),
-                      !_vm.Company.logo
-                        ? _c("v-icon", { attrs: { alt: "avatar" } }, [
-                            _vm._v("add_circle_outline")
-                          ])
-                        : _c("img", { attrs: { src: _vm.Company.logo } })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-title",
-                    { attrs: { "primary-title": "" } },
+              _vm.Company
+                ? _c(
+                    "v-card",
+                    { staticClass: "company-profile" },
                     [
                       _c(
-                        "v-flex",
-                        { attrs: { row: "" } },
+                        "v-avatar",
+                        {
+                          attrs: {
+                            tile: _vm.tile,
+                            size: _vm.avatarSize,
+                            color: "grey lighten-4"
+                          }
+                        },
                         [
-                          _c(
-                            "v-alert",
-                            {
-                              attrs: { type: "error", dismissible: "" },
-                              model: {
-                                value: _vm.alert.enable,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.alert, "enable", $$v)
-                                },
-                                expression: "alert.enable"
-                              }
-                            },
-                            [_vm._v(_vm._s(_vm.alert.message))]
-                          ),
-                          _vm._v(" "),
-                          _c("v-text-field", {
+                          _c("input", {
+                            ref: "file",
+                            staticClass: "file",
                             attrs: {
-                              outline: "",
-                              label: "Название компании",
-                              "append-icon": "business"
+                              type: "file",
+                              accept: "image/jpeg,image/png,image/gif"
                             },
-                            model: {
-                              value: _vm.Company.name,
-                              callback: function($$v) {
-                                _vm.$set(_vm.Company, "name", $$v)
-                              },
-                              expression: "Company.name"
-                            }
+                            on: { change: _vm.onFileChange }
                           }),
                           _vm._v(" "),
-                          _c("v-text-field", {
-                            attrs: {
-                              outline: "",
-                              label: "Сайт компании",
-                              "append-icon": "web"
-                            },
-                            model: {
-                              value: _vm.Company.website,
-                              callback: function($$v) {
-                                _vm.$set(_vm.Company, "website", $$v)
-                              },
-                              expression: "Company.website"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _vm.switch1 == false
-                            ? _c("v-autocomplete", {
+                          !_vm.Company.logo
+                            ? _c("v-icon", { attrs: { alt: "avatar" } }, [
+                                _vm._v("add_circle_outline")
+                              ])
+                            : _c("img", {
                                 attrs: {
-                                  items: _vm.activities,
-                                  outline: "",
-                                  chips: "",
-                                  clearable: "",
-                                  label: "Сферы деятельности",
-                                  "item-text": "name",
-                                  "item-value": "name",
-                                  multiple: ""
-                                },
-                                scopedSlots: _vm._u([
-                                  {
-                                    key: "selection",
-                                    fn: function(data) {
-                                      return [
-                                        _c(
-                                          "v-chip",
-                                          {
-                                            staticClass: "chip--select-multi",
-                                            attrs: {
-                                              selected: data.selected,
-                                              close: ""
-                                            },
-                                            on: {
-                                              input: function($event) {
-                                                _vm.remove(data.item)
-                                              }
-                                            }
-                                          },
-                                          [
-                                            _vm._v(
-                                              "\n                                " +
-                                                _vm._s(data.item.name) +
-                                                "\n                            "
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    }
-                                  },
-                                  {
-                                    key: "item",
-                                    fn: function(data) {
-                                      return [
-                                        typeof data.item !== "object"
-                                          ? [
-                                              _c("v-list-tile-content", {
-                                                domProps: {
-                                                  textContent: _vm._s(data.item)
-                                                }
-                                              })
-                                            ]
-                                          : [
-                                              _c(
-                                                "v-list-tile-content",
-                                                [
-                                                  _c("v-list-tile-title", {
-                                                    domProps: {
-                                                      innerHTML: _vm._s(
-                                                        data.item.name
-                                                      )
-                                                    }
-                                                  }),
-                                                  _vm._v(" "),
-                                                  _c("v-list-tile-sub-title", {
-                                                    domProps: {
-                                                      innerHTML: _vm._s(
-                                                        data.item.group
-                                                      )
-                                                    }
-                                                  })
-                                                ],
-                                                1
-                                              )
-                                            ]
-                                      ]
-                                    }
-                                  }
-                                ]),
-                                model: {
-                                  value: _vm.Company.activities,
-                                  callback: function($$v) {
-                                    _vm.$set(_vm.Company, "activities", $$v)
-                                  },
-                                  expression: "Company.activities"
+                                  src: "/storage/uploads/" + _vm.Company.logo
                                 }
                               })
-                            : _c("v-text-field", {
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-title",
+                        { attrs: { "primary-title": "" } },
+                        [
+                          _c(
+                            "v-flex",
+                            { attrs: { row: "" } },
+                            [
+                              _c(
+                                "v-alert",
+                                {
+                                  attrs: { type: "error", dismissible: "" },
+                                  model: {
+                                    value: _vm.alert.enable,
+                                    callback: function($$v) {
+                                      _vm.$set(_vm.alert, "enable", $$v)
+                                    },
+                                    expression: "alert.enable"
+                                  }
+                                },
+                                [_vm._v(_vm._s(_vm.alert.message))]
+                              ),
+                              _vm._v(" "),
+                              _c("v-text-field", {
                                 attrs: {
                                   outline: "",
-                                  label:
-                                    "Введите свой вариант сферы деятельности",
-                                  "append-icon": "edit"
+                                  label: "Название компании",
+                                  "append-icon": "business"
                                 },
                                 model: {
-                                  value: _vm.NewActivity,
+                                  value: _vm.Company.name,
                                   callback: function($$v) {
-                                    _vm.NewActivity = $$v
+                                    _vm.$set(_vm.Company, "name", $$v)
                                   },
-                                  expression: "NewActivity"
+                                  expression: "Company.name"
                                 }
                               }),
-                          _vm._v(" "),
-                          _c("v-switch", {
-                            attrs: {
-                              label: "Нет подходящего варианта",
-                              color: "primary",
-                              disabled: _vm.Company.activities.length > 0
-                            },
-                            model: {
-                              value: _vm.switch1,
-                              callback: function($$v) {
-                                _vm.switch1 = $$v
-                              },
-                              expression: "switch1"
-                            }
-                          })
+                              _vm._v(" "),
+                              _c("v-text-field", {
+                                attrs: {
+                                  outline: "",
+                                  label: "Сайт компании",
+                                  "append-icon": "web"
+                                },
+                                model: {
+                                  value: _vm.Company.website,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.Company, "website", $$v)
+                                  },
+                                  expression: "Company.website"
+                                }
+                              })
+                            ],
+                            1
+                          )
                         ],
                         1
                       )
                     ],
                     1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-actions",
-                    [
-                      _c("v-spacer"),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { color: "secondary" },
-                          on: { click: _vm.submit }
-                        },
-                        [_vm._v("Создать")]
-                      )
-                    ],
-                    1
                   )
-                ],
-                1
-              )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.Company == undefined
+                ? _c("v-card", [_c("h1", [_vm._v("Компания не найдена.")])])
+                : _vm._e()
             ],
             1
           )
@@ -894,7 +705,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-bc5e96a2", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-455c5e02", module.exports)
   }
 }
 
