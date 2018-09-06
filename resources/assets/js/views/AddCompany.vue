@@ -135,6 +135,9 @@ export default {
       },
       {
         name: " ПАО"
+      },
+      {
+        name: " ИП"
       }
     ]
   }),
