@@ -105,7 +105,9 @@ export default {
     switch1: false,
     Company: {
       name: "",
-      activities: [],
+      activities: [
+        
+      ],
       logo: undefined,
       type: {
         name: "ООО"
