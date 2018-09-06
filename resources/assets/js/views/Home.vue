@@ -65,6 +65,22 @@
                             </v-badge>
                         </v-list-tile-action>
                     </v-list-tile>
+                                        <v-list-tile @click="">
+                        <v-list-tile-action>
+                            <v-icon>book</v-icon>
+                        </v-list-tile-action>
+                        <v-list-tile-content>
+                            <v-list-tile-title>Справочник</v-list-tile-title>
+                        </v-list-tile-content>
+                        <v-list-tile-action>
+                            <v-badge color="secondary">
+                                <span slot="badge">6</span>
+                                <v-btn icon>
+                                    <v-icon>notifications</v-icon>
+                                </v-btn>
+                            </v-badge>
+                        </v-list-tile-action>
+                    </v-list-tile>
                     <v-list-tile @click="">
                         <v-list-tile-action>
                             <v-icon>work</v-icon>
