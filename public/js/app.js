@@ -29,7 +29,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		10: 0
+/******/ 		12: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -26211,7 +26211,7 @@ var AddCompany = function AddCompany() {
     return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 65));
 };
 var Dashboard = function Dashboard() {
-    return __webpack_require__.e/* import() */(22).then(__webpack_require__.bind(null, 66));
+    return __webpack_require__.e/* import() */(10).then(__webpack_require__.bind(null, 66));
 };
 var VerifyEmail = function VerifyEmail() {
     return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 67));
@@ -26220,10 +26220,10 @@ var CompanyProfile = function CompanyProfile() {
     return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 68));
 };
 var Communication = function Communication() {
-    return __webpack_require__.e/* import() */(23).then(__webpack_require__.bind(null, 101));
+    return __webpack_require__.e/* import() */(11).then(__webpack_require__.bind(null, 69));
 };
 var Platform = function Platform() {
-    return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 103));
+    return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 70));
 };
 
 var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
