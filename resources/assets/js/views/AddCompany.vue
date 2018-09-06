@@ -22,7 +22,7 @@
                                     :items="types"
                                     outline
                                     offset-y
-                                    label="Тип организации"
+                                    label="Тип юридического лица"
                                     item-text="name"
                                     item-value="name"
                                 ></v-select>
@@ -106,7 +106,7 @@ export default {
     Company: {
       name: "",
       activities: [
-        
+
       ],
       logo: undefined,
       type: {
