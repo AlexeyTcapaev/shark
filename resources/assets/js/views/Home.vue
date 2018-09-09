@@ -175,18 +175,17 @@
                 </transition>
             </div>
         </div>
-        <v-bottom-nav :active.sync="bottomNav" fixed :value="true" app>
-            <v-btn  flat value="recent" :to="{name:'communication'}" exact-active-class="" active-class="">
+        <v-bottom-nav :active.sync="bottomNav" :value="true" fixed>
+            <v-btn flat :to="{name:'communication'}">
                 <span>Общение</span>
                 <v-icon>question_answer</v-icon>
             </v-btn>
 
-            <v-btn  flat value="favorites" :to="{name:'news'}" exact-active-class="" active-class="">
+            <v-btn  flat :to="{name:'news'}">
                 <span>Новости</span>
                 <v-icon>description</v-icon>
             </v-btn>
-
-            <v-btn color="black"  flat value="nearby" :to="{name:'platform'}">
+            <v-btn  flat :to="{name:'platform'}">
                 <span>Бизнес площадка</span>
                 <v-icon>business</v-icon>
             </v-btn>
@@ -317,5 +316,8 @@ export default {
 }
 .company {
   background: rgba(0, 0, 0, 0.1);
+}
+.v-bottom-nav .v-btn--active{
+    color: #f80b37;
 }
 </style>
