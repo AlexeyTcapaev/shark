@@ -17,7 +17,8 @@
                         <v-text-field outline label="Поиск по компаниям" append-icon="search" v-model="search"></v-text-field>
                     </v-list-tile-content>
                 </v-list-tile>
-                <v-list-group :to="{name:'company-profile',params:{slug:comp.slug}}" avatar v-for="(comp,index) in FiltredCompany" :key="index">
+                <v-list-group :to="{name:'company-profile',params:{slug:comp.slug}}" avatar v-for="(comp,index) in FiltredCompany"
+                    :key="index">
                     <v-list-tile slot="activator">
                         <v-list-tile-avatar v-if="comp.logo">
                             <img :src="'/storage/uploads/'+comp.logo" :alt="comp.name">
@@ -29,7 +30,6 @@
                         <v-list-tile-action>
                             <v-badge color="secondary">
                                 <span slot="badge">6</span>
-                                <v-icon>notifications</v-icon>
                             </v-badge>
                         </v-list-tile-action>
                     </v-list-tile>
@@ -41,12 +41,6 @@
                             <v-list-tile-title>Структура</v-list-tile-title>
                         </v-list-tile-content>
                         <v-list-tile-action>
-                            <v-badge color="secondary">
-                                <span slot="badge">6</span>
-                                <v-btn icon>
-                                    <v-icon>notifications</v-icon>
-                                </v-btn>
-                            </v-badge>
                         </v-list-tile-action>
                     </v-list-tile>
                     <v-list-tile @click="">
@@ -57,15 +51,9 @@
                             <v-list-tile-title>Сотрудники</v-list-tile-title>
                         </v-list-tile-content>
                         <v-list-tile-action>
-                            <v-badge color="secondary">
-                                <span slot="badge">6</span>
-                                <v-btn icon>
-                                    <v-icon>notifications</v-icon>
-                                </v-btn>
-                            </v-badge>
                         </v-list-tile-action>
                     </v-list-tile>
-                                        <v-list-tile @click="">
+                    <v-list-tile @click="">
                         <v-list-tile-action>
                             <v-icon>book</v-icon>
                         </v-list-tile-action>
@@ -73,12 +61,6 @@
                             <v-list-tile-title>Справочник</v-list-tile-title>
                         </v-list-tile-content>
                         <v-list-tile-action>
-                            <v-badge color="secondary">
-                                <span slot="badge">6</span>
-                                <v-btn icon>
-                                    <v-icon>notifications</v-icon>
-                                </v-btn>
-                            </v-badge>
                         </v-list-tile-action>
                     </v-list-tile>
                     <v-list-tile @click="">
@@ -89,12 +71,6 @@
                             <v-list-tile-title>Поручения</v-list-tile-title>
                         </v-list-tile-content>
                         <v-list-tile-action>
-                            <v-badge color="secondary">
-                                <span slot="badge">6</span>
-                                <v-btn icon>
-                                    <v-icon>notifications</v-icon>
-                                </v-btn>
-                            </v-badge>
                         </v-list-tile-action>
                     </v-list-tile>
                     <v-list-tile @click="">
@@ -105,12 +81,6 @@
                             <v-list-tile-title>Трудозатраты</v-list-tile-title>
                         </v-list-tile-content>
                         <v-list-tile-action>
-                            <v-badge color="secondary">
-                                <span slot="badge">6</span>
-                                <v-btn icon>
-                                    <v-icon>notifications</v-icon>
-                                </v-btn>
-                            </v-badge>
                         </v-list-tile-action>
                     </v-list-tile>
                     <v-list-tile @click="">
@@ -121,12 +91,6 @@
                             <v-list-tile-title>Поэтапная деятельность</v-list-tile-title>
                         </v-list-tile-content>
                         <v-list-tile-action>
-                            <v-badge color="secondary">
-                                <span slot="badge">6</span>
-                                <v-btn icon>
-                                    <v-icon>notifications</v-icon>
-                                </v-btn>
-                            </v-badge>
                         </v-list-tile-action>
                     </v-list-tile>
                 </v-list-group>
@@ -136,7 +100,7 @@
                         <v-icon>add_circle_outline</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-content>
-                      <v-list-tile-title>Создать компанию</v-list-tile-title>
+                        <v-list-tile-title>Создать компанию</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
             </v-list>
@@ -161,12 +125,12 @@
                     </v-list-tile>
                 </v-list>
             </v-menu>
-                <v-badge color="secondary" overlap>
-                    <span slot="badge">6</span>
-                        <v-btn icon>
-                            <v-icon>notifications</v-icon>
-                        </v-btn>
-                </v-badge>
+            <v-badge color="secondary" overlap>
+                <span slot="badge">6</span>
+                <v-btn icon>
+                    <v-icon>notifications</v-icon>
+                </v-btn>
+            </v-badge>
         </v-toolbar>
         <div class="wrapper" v-bar :style=" { height: page + 'px' } ">
             <div>
@@ -181,17 +145,18 @@
                 <v-icon>question_answer</v-icon>
             </v-btn>
 
-            <v-btn  flat :to="{name:'news'}">
+            <v-btn flat :to="{name:'news'}">
                 <span>Новости</span>
                 <v-icon>description</v-icon>
             </v-btn>
-            <v-btn  flat :to="{name:'platform'}">
+            <v-btn flat :to="{name:'platform'}">
                 <span>Бизнес площадка</span>
                 <v-icon>business</v-icon>
             </v-btn>
         </v-bottom-nav>
     </main>
 </template>
+
 <script>
 import { mapActions } from "vuex";
 import { mapGetters } from "vuex";

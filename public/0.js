@@ -634,41 +634,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -849,20 +814,13 @@ var render = function() {
                         _c(
                           "v-list-tile-action",
                           [
-                            _c(
-                              "v-badge",
-                              { attrs: { color: "secondary" } },
-                              [
-                                _c(
-                                  "span",
-                                  { attrs: { slot: "badge" }, slot: "badge" },
-                                  [_vm._v("6")]
-                                ),
-                                _vm._v(" "),
-                                _c("v-icon", [_vm._v("notifications")])
-                              ],
-                              1
-                            )
+                            _c("v-badge", { attrs: { color: "secondary" } }, [
+                              _c(
+                                "span",
+                                { attrs: { slot: "badge" }, slot: "badge" },
+                                [_vm._v("6")]
+                              )
+                            ])
                           ],
                           1
                         )
@@ -886,31 +844,7 @@ var render = function() {
                           1
                         ),
                         _vm._v(" "),
-                        _c(
-                          "v-list-tile-action",
-                          [
-                            _c(
-                              "v-badge",
-                              { attrs: { color: "secondary" } },
-                              [
-                                _c(
-                                  "span",
-                                  { attrs: { slot: "badge" }, slot: "badge" },
-                                  [_vm._v("6")]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "v-btn",
-                                  { attrs: { icon: "" } },
-                                  [_c("v-icon", [_vm._v("notifications")])],
-                                  1
-                                )
-                              ],
-                              1
-                            )
-                          ],
-                          1
-                        )
+                        _c("v-list-tile-action")
                       ],
                       1
                     ),
@@ -931,31 +865,7 @@ var render = function() {
                           1
                         ),
                         _vm._v(" "),
-                        _c(
-                          "v-list-tile-action",
-                          [
-                            _c(
-                              "v-badge",
-                              { attrs: { color: "secondary" } },
-                              [
-                                _c(
-                                  "span",
-                                  { attrs: { slot: "badge" }, slot: "badge" },
-                                  [_vm._v("6")]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "v-btn",
-                                  { attrs: { icon: "" } },
-                                  [_c("v-icon", [_vm._v("notifications")])],
-                                  1
-                                )
-                              ],
-                              1
-                            )
-                          ],
-                          1
-                        )
+                        _c("v-list-tile-action")
                       ],
                       1
                     ),
@@ -976,31 +886,7 @@ var render = function() {
                           1
                         ),
                         _vm._v(" "),
-                        _c(
-                          "v-list-tile-action",
-                          [
-                            _c(
-                              "v-badge",
-                              { attrs: { color: "secondary" } },
-                              [
-                                _c(
-                                  "span",
-                                  { attrs: { slot: "badge" }, slot: "badge" },
-                                  [_vm._v("6")]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "v-btn",
-                                  { attrs: { icon: "" } },
-                                  [_c("v-icon", [_vm._v("notifications")])],
-                                  1
-                                )
-                              ],
-                              1
-                            )
-                          ],
-                          1
-                        )
+                        _c("v-list-tile-action")
                       ],
                       1
                     ),
@@ -1021,31 +907,7 @@ var render = function() {
                           1
                         ),
                         _vm._v(" "),
-                        _c(
-                          "v-list-tile-action",
-                          [
-                            _c(
-                              "v-badge",
-                              { attrs: { color: "secondary" } },
-                              [
-                                _c(
-                                  "span",
-                                  { attrs: { slot: "badge" }, slot: "badge" },
-                                  [_vm._v("6")]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "v-btn",
-                                  { attrs: { icon: "" } },
-                                  [_c("v-icon", [_vm._v("notifications")])],
-                                  1
-                                )
-                              ],
-                              1
-                            )
-                          ],
-                          1
-                        )
+                        _c("v-list-tile-action")
                       ],
                       1
                     ),
@@ -1066,31 +928,7 @@ var render = function() {
                           1
                         ),
                         _vm._v(" "),
-                        _c(
-                          "v-list-tile-action",
-                          [
-                            _c(
-                              "v-badge",
-                              { attrs: { color: "secondary" } },
-                              [
-                                _c(
-                                  "span",
-                                  { attrs: { slot: "badge" }, slot: "badge" },
-                                  [_vm._v("6")]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "v-btn",
-                                  { attrs: { icon: "" } },
-                                  [_c("v-icon", [_vm._v("notifications")])],
-                                  1
-                                )
-                              ],
-                              1
-                            )
-                          ],
-                          1
-                        )
+                        _c("v-list-tile-action")
                       ],
                       1
                     ),
@@ -1115,31 +953,7 @@ var render = function() {
                           1
                         ),
                         _vm._v(" "),
-                        _c(
-                          "v-list-tile-action",
-                          [
-                            _c(
-                              "v-badge",
-                              { attrs: { color: "secondary" } },
-                              [
-                                _c(
-                                  "span",
-                                  { attrs: { slot: "badge" }, slot: "badge" },
-                                  [_vm._v("6")]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "v-btn",
-                                  { attrs: { icon: "" } },
-                                  [_c("v-icon", [_vm._v("notifications")])],
-                                  1
-                                )
-                              ],
-                              1
-                            )
-                          ],
-                          1
-                        )
+                        _c("v-list-tile-action")
                       ],
                       1
                     )
