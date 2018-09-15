@@ -76,12 +76,27 @@
                                 </template>
                                 </template>
                             </v-autocomplete>
-                            <v-text-field v-else outline label="Введите свой вариант сферы деятельности" append-icon="edit" v-model="NewActivity"></v-text-field>
+                            <v-text-field v-else chips outline label="Введите свой вариант сферы деятельности"  v-model="NewActivity" append-icon="add"  @click:append="AddActivity" @keyup.enter="AddActivity"></v-text-field>
+                            <ul class="chips-list">
+                                <li v-for="(activity,index) in NewActivities" :key="index">
+                                    <v-chip
+                                    close
+                                    class="chip--select-multi"
+                                    @input="removeInActivities(index)"
+                                    >
+                                    <!--<v-avatar>
+                                    <img :src="data.item.avatar">
+                                    </v-avatar>-->
+                                    {{ activity }}
+                                </v-chip>
+                                </li>
+                            </ul>
                              <v-switch
                               label="Нет подходящего варианта"
                               v-model="switch1"
                               color="primary"
                               :disabled="Company.activities.length > 0"
+                              @change="ResetNewActivities"
                               ></v-switch>
                         </v-flex>
                     </v-card-title>
@@ -105,9 +120,7 @@ export default {
     switch1: false,
     Company: {
       name: "",
-      activities: [
-
-      ],
+      activities: [],
       logo: undefined,
       type: {
         name: "ООО"
@@ -117,6 +130,7 @@ export default {
       enable: false
     },
     NewActivity: "",
+    NewActivities: [],
     activities: [
       {
         name: "IT"
@@ -150,6 +164,9 @@ export default {
       const index = this.Company.activities.indexOf(item.name);
       if (index >= 0) this.Company.activities.splice(index, 1);
     },
+    removeInActivities(index) {
+      this.NewActivities.splice(index, 1);
+    },
     onFileChange(e) {
       var files = e.target.files || e.dataTransfer.files;
       if (!files.length) return;
@@ -166,6 +183,9 @@ export default {
     },
     removeImage: function(item) {
       item.image = false;
+    },
+    ResetNewActivities() {
+      if (this.NewActivities.length > 0) this.NewActivities = [];
     },
     submit() {
       let data = new FormData();
@@ -184,6 +204,10 @@ export default {
           init.alert.message = error.response.data.message;
           init.alert.enable = true;
         });
+    },
+    AddActivity() {
+      this.NewActivities.push(this.NewActivity);
+      this.NewActivity = "";
     }
   },
   computed: {
@@ -229,5 +253,9 @@ export default {
 }
 .v-card .v-avatar {
   cursor: pointer;
+}
+.chips-list {
+  display: flex;
+  flex-wrap: wrap;
 }
 </style>

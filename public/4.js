@@ -460,7 +460,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.v-avatar[data-v-bc5e96a2] {\r\n  position: absolute;\r\n  left: 25px;\r\n  overflow: hidden;\r\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n  top: -128px;\r\n  border-radius: 50% !important;\r\n  -webkit-transition: 0.2s linear;\r\n  transition: 0.2s linear;\n}\n.v-avatar img[data-v-bc5e96a2] {\r\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n}\n.file[data-v-bc5e96a2] {\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 100%;\r\n  border-radius: 64px;\r\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n  top: 0;\r\n  left: 0;\r\n  cursor: pointer;\r\n  z-index: 4;\r\n  opacity: 0;\n}\n.v-card__title[data-v-bc5e96a2] {\r\n  padding-top: 148px !important;\n}\n.v-card[data-v-bc5e96a2] {\r\n  margin: 128px 0 0 0;\n}\n.v-card .v-avatar[data-v-bc5e96a2] {\r\n  cursor: pointer;\n}\r\n", ""]);
+exports.push([module.i, "\n.v-avatar[data-v-bc5e96a2] {\n  position: absolute;\n  left: 25px;\n  overflow: hidden;\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n  top: -128px;\n  border-radius: 50% !important;\n  -webkit-transition: 0.2s linear;\n  transition: 0.2s linear;\n}\n.v-avatar img[data-v-bc5e96a2] {\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n}\n.file[data-v-bc5e96a2] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 64px;\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n  top: 0;\n  left: 0;\n  cursor: pointer;\n  z-index: 4;\n  opacity: 0;\n}\n.v-card__title[data-v-bc5e96a2] {\n  padding-top: 148px !important;\n}\n.v-card[data-v-bc5e96a2] {\n  margin: 128px 0 0 0;\n}\n.v-card .v-avatar[data-v-bc5e96a2] {\n  cursor: pointer;\n}\n.chips-list[data-v-bc5e96a2] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n", ""]);
 
 // exports
 
@@ -475,6 +475,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -593,6 +608,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         enable: false
       },
       NewActivity: "",
+      NewActivities: [],
       activities: [{
         name: "IT"
       }, {
@@ -617,6 +633,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       var index = this.Company.activities.indexOf(item.name);
       if (index >= 0) this.Company.activities.splice(index, 1);
     },
+    removeInActivities: function removeInActivities(index) {
+      this.NewActivities.splice(index, 1);
+    },
     onFileChange: function onFileChange(e) {
       var files = e.target.files || e.dataTransfer.files;
       if (!files.length) return;
@@ -635,6 +654,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     removeImage: function removeImage(item) {
       item.image = false;
     },
+    ResetNewActivities: function ResetNewActivities() {
+      if (this.NewActivities.length > 0) this.NewActivities = [];
+    },
     submit: function submit() {
       var data = new FormData();
       data.append("logo", this.$refs.file.files[0]);
@@ -649,6 +671,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         init.alert.message = error.response.data.message;
         init.alert.enable = true;
       });
+    },
+    AddActivity: function AddActivity() {
+      this.NewActivities.push(this.NewActivity);
+      this.NewActivity = "";
     }
   }),
   computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
@@ -905,10 +931,29 @@ var render = function() {
                               })
                             : _c("v-text-field", {
                                 attrs: {
+                                  chips: "",
                                   outline: "",
                                   label:
                                     "Введите свой вариант сферы деятельности",
-                                  "append-icon": "edit"
+                                  "append-icon": "add"
+                                },
+                                on: {
+                                  "click:append": _vm.AddActivity,
+                                  keyup: function($event) {
+                                    if (
+                                      !("button" in $event) &&
+                                      _vm._k(
+                                        $event.keyCode,
+                                        "enter",
+                                        13,
+                                        $event.key,
+                                        "Enter"
+                                      )
+                                    ) {
+                                      return null
+                                    }
+                                    return _vm.AddActivity($event)
+                                  }
                                 },
                                 model: {
                                   value: _vm.NewActivity,
@@ -919,12 +964,49 @@ var render = function() {
                                 }
                               }),
                           _vm._v(" "),
+                          _c(
+                            "ul",
+                            { staticClass: "chips-list" },
+                            _vm._l(_vm.NewActivities, function(
+                              activity,
+                              index
+                            ) {
+                              return _c(
+                                "li",
+                                { key: index },
+                                [
+                                  _c(
+                                    "v-chip",
+                                    {
+                                      staticClass: "chip--select-multi",
+                                      attrs: { close: "" },
+                                      on: {
+                                        input: function($event) {
+                                          _vm.removeInActivities(index)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                                " +
+                                          _vm._s(activity) +
+                                          "\n                            "
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            })
+                          ),
+                          _vm._v(" "),
                           _c("v-switch", {
                             attrs: {
                               label: "Нет подходящего варианта",
                               color: "primary",
                               disabled: _vm.Company.activities.length > 0
                             },
+                            on: { change: _vm.ResetNewActivities },
                             model: {
                               value: _vm.switch1,
                               callback: function($$v) {
