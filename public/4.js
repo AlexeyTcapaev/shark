@@ -674,6 +674,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         init.alert.message = "Компания успешно создана.";
         init.alert.enable = true;
         init.alert.type = "success";
+        init.Company = {
+          name: "",
+          activities: [],
+          logo: undefined,
+          type: {
+            name: "ООО"
+          }
+        };
       }).catch(function (error) {
         init.alert.message = error.response.data.message;
         init.alert.enable = true;
