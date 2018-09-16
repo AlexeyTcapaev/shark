@@ -202,8 +202,8 @@ export default {
       axios
         .post("/api/auth/company", data)
         .then(function(resp) {
-          init.AddCompany(init.Company);
-          init.alert.message = resp.data.message;
+          init.AddCompany(resp.data);
+          init.alert.message = "Компания успешно создана.";
           init.alert.enable = true;
           init.alert.type = "success";
         })

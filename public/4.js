@@ -670,8 +670,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       data.append("activities", JSON.stringify(this.Company.activities));
       var init = this;
       axios.post("/api/auth/company", data).then(function (resp) {
-        init.AddCompany(init.Company);
-        init.alert.message = resp.data.message;
+        init.AddCompany(resp.data);
+        init.alert.message = "Компания успешно создана.";
         init.alert.enable = true;
         init.alert.type = "success";
       }).catch(function (error) {
