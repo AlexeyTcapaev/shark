@@ -17,8 +17,8 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        
-     
+
+
     }
 
     /**
@@ -39,18 +39,24 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //return $request->activities;
         try {
-        $Company = Company::add($request);   
-        //$activities = Activity::add(json_decode($request->activities));
-        $Company->uploadImage($request->file('logo'));
-        //$Company->activities = $activities;
-        if (empty($Company))
-            throw new Exception('Ошибка при создании компании');
+            $Company = Company::add($request);
+            $Company->uploadImage($request->file('logo'));
+            foreach (json_decode($request->activities) as $activity) {
+                $search = Activity::where('name', $activity->name)->first();
+                if ($search) {
+                    $Company->activities()->attach($search->id);
+                } else {
+                    $Company->activities()->attach(Activity::add($activity)->id);
+                }
+            }
+
+            if (empty($Company))
+                throw new Exception('Ошибка при создании компании');
         } catch (Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
-        return $Company;
+        return response()->json(['message' => 'Компания успешно создана'], 201);
     }
 
     /**
@@ -62,7 +68,7 @@ class CompanyController extends Controller
     public function show($id)
     {
         try {
-            $Company = Company::where('creator',$id)->get();
+            $Company = Company::where('creator', $id)->get();
             if (empty($Company))
                 return response()->json(['error' => 'Компания не найдены'], 404);
         } catch (Exception $e) {
@@ -89,14 +95,13 @@ class CompanyController extends Controller
      * @param  \App\Company  $Company
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         try {
             $Company = Company::findOrFail($id);
             if (empty($Company))
                 return response()->json(['error' => 'Компания не найдена'], 404);
-            else
-            {
+            else {
                 $Company->update($request->all());
                 if ($request->hasFile('image')) {
                     $Company->uploadImage($request->file('image'));
@@ -104,8 +109,7 @@ class CompanyController extends Controller
                 $activities = Activity::findAndUpdate(json_decode($request->activities), $product->id);
                 $product->activities = $activities;
             }
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
         return $Company;
@@ -120,18 +124,15 @@ class CompanyController extends Controller
     public function destroy(Company $Company)
     {
         try {
-                $Company = Company::findOrFail($id);
-                if (empty($Company))
-                    return response()->json(['error' => 'Компания не найдена'], 404);
-                else
-                {
-                    $Company->remove();
-                    return response()->json(['message' => 'Компания успешно удалена'], 200);
-                }
-            } 
-        catch (Exception $e) 
-            {
-                return response()->json(['error' => $e->getMessage()], 500);
+            $Company = Company::findOrFail($id);
+            if (empty($Company))
+                return response()->json(['error' => 'Компания не найдена'], 404);
+            else {
+                $Company->remove();
+                return response()->json(['message' => 'Компания успешно удалена'], 200);
             }
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 }

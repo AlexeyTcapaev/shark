@@ -460,7 +460,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.logo[data-v-6c0a33b2] {\n  color: #ffffff;\n  text-decoration: none;\n}\n.active-link .v-icon[data-v-6c0a33b2] {\n  color: rgba(0, 0, 0, 0.54) !important;\n}\n.v-list__tile__action .v-badge[data-v-6c0a33b2] {\n  margin: 0 10px 0 0;\n}\n.nav-btn[data-v-6c0a33b2] {\n  color: #ffffff !important;\n  height: 100%;\n}\n.v-menu[data-v-6c0a33b2] {\n  height: 100%;\n}\n.v-content[data-v-6c0a33b2] {\n  padding-top: 0px !important;\n}\n.wrapper[data-v-6c0a33b2] {\n  overflow: hidden;\n}\n.v-navigation-drawer[data-v-6c0a33b2] {\n  z-index: 6;\n}\n.v-bottom-nav[data-v-6c0a33b2] {\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n.target-link .v-list__tile__content .v-list__tile__title[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n.target-link .v-icon[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n.fade-enter-active[data-v-6c0a33b2],\n.fade-leave-active[data-v-6c0a33b2] {\n  -webkit-transition-duration: 0.3s;\n          transition-duration: 0.3s;\n  -webkit-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-timing-function: ease;\n          transition-timing-function: ease;\n}\n.v-avatar .fade-enter[data-v-6c0a33b2],\n.fade-leave-active[data-v-6c0a33b2] {\n  opacity: 0;\n}\n.search-bar[data-v-6c0a33b2] {\n  margin: 5px 0;\n}\n.company[data-v-6c0a33b2] {\n  background: rgba(0, 0, 0, 0.1);\n}\n.v-bottom-nav .v-btn--active[data-v-6c0a33b2]{\n    color: #f80b37;\n}\n", ""]);
+exports.push([module.i, "\n.logo[data-v-6c0a33b2] {\n  color: #ffffff;\n  text-decoration: none;\n}\n.active-link .v-icon[data-v-6c0a33b2] {\n  color: rgba(0, 0, 0, 0.54) !important;\n}\n.v-list__tile__action .v-badge[data-v-6c0a33b2] {\n  margin: 0 10px 0 0;\n}\n.nav-btn[data-v-6c0a33b2] {\n  color: #ffffff !important;\n  height: 100%;\n}\n.v-menu[data-v-6c0a33b2] {\n  height: 100%;\n}\n.v-content[data-v-6c0a33b2] {\n  padding-top: 0px !important;\n}\n.wrapper[data-v-6c0a33b2] {\n  overflow: hidden;\n}\n.v-navigation-drawer[data-v-6c0a33b2] {\n  z-index: 6;\n}\n.v-bottom-nav[data-v-6c0a33b2] {\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n.target-link .v-list__tile__content .v-list__tile__title[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n.target-link .v-icon[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n.fade-enter-active[data-v-6c0a33b2],\n.fade-leave-active[data-v-6c0a33b2] {\n  -webkit-transition-duration: 0.3s;\n          transition-duration: 0.3s;\n  -webkit-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-timing-function: ease;\n          transition-timing-function: ease;\n}\n.v-avatar .fade-enter[data-v-6c0a33b2],\n.fade-leave-active[data-v-6c0a33b2] {\n  opacity: 0;\n}\n.search-bar[data-v-6c0a33b2] {\n  margin: 5px 0;\n}\n.company[data-v-6c0a33b2] {\n  background: rgba(0, 0, 0, 0.1);\n}\n.v-bottom-nav .v-btn--active[data-v-6c0a33b2] {\n  color: #f80b37;\n}\n", ""]);
 
 // exports
 
@@ -773,16 +773,7 @@ var render = function() {
               _vm._l(_vm.FiltredCompany, function(comp, index) {
                 return _c(
                   "v-list-group",
-                  {
-                    key: index,
-                    attrs: {
-                      to: {
-                        name: "company-profile",
-                        params: { slug: comp.slug }
-                      },
-                      avatar: ""
-                    }
-                  },
+                  { key: index, attrs: { avatar: "" } },
                   [
                     _c(
                       "v-list-tile",

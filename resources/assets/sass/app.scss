@@ -13,8 +13,9 @@
     background: rgba(0, 0, 0, 0.1);
     transition: 0.2s linear;
 }
-.v-toolbar__content{
-    height: 64px!important;
+
+.v-toolbar__content {
+    height: 64px !important;
 }
 
 .v-badge--overlap .v-badge__badge {
@@ -32,10 +33,6 @@ aside .v-list {
 
 .v-list__tile__sub-title {
     text-align: left;
-}
-
-.vb-content {
-    display: flex !important;
 }
 
 .application .theme--light.v-bottom-nav,

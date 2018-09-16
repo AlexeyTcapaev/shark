@@ -9,6 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 class Company extends Model
 {
     protected $fillable = ['name', 'creator', 'website'];
+    public $load_map = [
+        'activities'
+    ];
+
     use Sluggable;
     public function sluggable()
     {
@@ -20,7 +24,7 @@ class Company extends Model
     }
     public function activities()
     {
-        return $this->belongsToMany(Activity::class);
+        return $this->belongsToMany(Activity::class)->withTimestamps();
     }
     public function uploadImage($image)
     {
@@ -28,7 +32,7 @@ class Company extends Model
             return;
         }
         if ($this->image != null)
-        Storage::delete('public/uploads/' . $this->logo);
+            Storage::delete('public/uploads/' . $this->logo);
         $filename = str_random(10) . '.' . $image->extension();
         $image->storeAs('public/uploads', $filename);
         $this->logo = $filename;
@@ -43,5 +47,9 @@ class Company extends Model
     {
         $company = Company::create($fields->all());
         return $company;
+    }
+    public function scopeWithAll($query)
+    {
+        return $query->with($this->load_map);
     }
 }

@@ -9,15 +9,12 @@ class Activity extends Model
     protected $fillable = ['name'];
     public function company()
     {
-        return $this->belongsToMany(Company::class);
+        return $this->belongsToMany(Company::class)->withTimestamps();
     }
     public static function add($fields)
     {
-        $options = [];
-        foreach ($fields as $option) {
-            array_push($options, Activity::create((array)$option));
-        }
-        return $options;
+        $activity = Activity::create((array)$fields);
+        return $activity;
     }
     public static function findAndUpdate($fields, $id)
     {

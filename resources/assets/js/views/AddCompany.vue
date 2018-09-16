@@ -14,7 +14,7 @@
                     </v-avatar>
                     <v-card-title primary-title>
                         <v-flex row>
-                            <v-alert v-model="alert.enable" type="error" dismissible>{{alert.message}}</v-alert>
+                            <v-alert v-model="alert.enable" :type="alert.type" dismissible>{{alert.message}}</v-alert>
                             <v-layout align-center justify-center row fill-height wrap>
                               <v-flex xl3 md12 sm12>
                                 <v-select
@@ -40,6 +40,7 @@
                                 label="Сферы деятельности"
                                 item-text="name"
                                 item-value="name"
+                                return-object
                                 multiple
                             >
                                 <template
@@ -77,12 +78,12 @@
                                 </template>
                             </v-autocomplete>
                             <v-text-field v-else chips outline label="Введите свой вариант сферы деятельности"  v-model="NewActivity" append-icon="add"  @click:append="AddActivity" @keyup.enter="AddActivity"></v-text-field>
-                            <ul class="chips-list">
-                                <li v-for="(activity,index) in NewActivities" :key="index">
+                            <ul class="chips-list" v-if="switch1">
+                                <li v-for="(activity,index) in Company.activities" :key="index">
                                     <v-chip
                                     close
                                     class="chip--select-multi"
-                                    @input="removeInActivities(index)"
+                                    @input="remove(activity)"
                                     >
                                     <!--<v-avatar>
                                     <img :src="data.item.avatar">
@@ -161,11 +162,11 @@ export default {
     ...mapActions({ AddCompany: "user/AddCompany" }),
     remove(item) {
       console.log(item);
-      const index = this.Company.activities.indexOf(item.name);
+      const index = this.Company.activities.indexOf(item);
       if (index >= 0) this.Company.activities.splice(index, 1);
     },
-    removeInActivities(index) {
-      this.NewActivities.splice(index, 1);
+    removeItem(index) {
+      this.Company.activities.splice(index, 1);
     },
     onFileChange(e) {
       var files = e.target.files || e.dataTransfer.files;
@@ -188,6 +189,9 @@ export default {
       if (this.NewActivities.length > 0) this.NewActivities = [];
     },
     submit() {
+      this.alert = {
+        enable: false
+      };
       let data = new FormData();
       data.append("logo", this.$refs.file.files[0]);
       data.append("name", this.Company.name);
@@ -198,15 +202,19 @@ export default {
       axios
         .post("/api/auth/company", data)
         .then(function(resp) {
-          init.AddCompany(resp.data);
+          init.AddCompany(init.Company);
+          init.alert.message = resp.data.message;
+          init.alert.enable = true;
+          init.alert.type = "success";
         })
         .catch(function(error) {
           init.alert.message = error.response.data.message;
           init.alert.enable = true;
+          init.alert.type = "error";
         });
     },
     AddActivity() {
-      this.NewActivities.push({ name: this.NewActivity });
+      this.Company.activities.push({ name: this.NewActivity });
       this.NewActivity = "";
     }
   },
@@ -214,6 +222,15 @@ export default {
     ...mapGetters({
       user: "user/GetUserId"
     })
+  },
+  beforeCreate() {
+    const init = this;
+    axios
+      .get("/api/auth/activities")
+      .then(function(resp) {
+        init.activities = resp.data;
+      })
+      .catch(function(error) {});
   }
 };
 </script>

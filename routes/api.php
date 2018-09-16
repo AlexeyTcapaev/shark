@@ -28,5 +28,6 @@ Route::group([
         Route::get('logout', 'AuthController@logout');
         Route::get('user', 'AuthController@user');
         Route::apiResource('company','CompanyController');
+        Route::apiResource('activities','ActivityController');
     });
 });

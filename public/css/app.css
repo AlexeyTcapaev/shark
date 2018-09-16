@@ -14191,12 +14191,6 @@ aside .v-list {
   text-align: left;
 }
 
-.vb-content {
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
-}
-
 .application .theme--light.v-bottom-nav,
 .theme--light .v-bottom-nav {
   background-color: #ffffff !important;

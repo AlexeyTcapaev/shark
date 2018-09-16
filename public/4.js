@@ -586,6 +586,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -630,11 +631,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({ AddCompany: "user/AddCompany" }), {
     remove: function remove(item) {
       console.log(item);
-      var index = this.Company.activities.indexOf(item.name);
+      var index = this.Company.activities.indexOf(item);
       if (index >= 0) this.Company.activities.splice(index, 1);
     },
-    removeInActivities: function removeInActivities(index) {
-      this.NewActivities.splice(index, 1);
+    removeItem: function removeItem(index) {
+      this.Company.activities.splice(index, 1);
     },
     onFileChange: function onFileChange(e) {
       var files = e.target.files || e.dataTransfer.files;
@@ -658,6 +659,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       if (this.NewActivities.length > 0) this.NewActivities = [];
     },
     submit: function submit() {
+      this.alert = {
+        enable: false
+      };
       var data = new FormData();
       data.append("logo", this.$refs.file.files[0]);
       data.append("name", this.Company.name);
@@ -666,20 +670,30 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       data.append("activities", JSON.stringify(this.Company.activities));
       var init = this;
       axios.post("/api/auth/company", data).then(function (resp) {
-        init.AddCompany(resp.data);
+        init.AddCompany(init.Company);
+        init.alert.message = resp.data.message;
+        init.alert.enable = true;
+        init.alert.type = "success";
       }).catch(function (error) {
         init.alert.message = error.response.data.message;
         init.alert.enable = true;
+        init.alert.type = "error";
       });
     },
     AddActivity: function AddActivity() {
-      this.NewActivities.push({ name: this.NewActivity });
+      this.Company.activities.push({ name: this.NewActivity });
       this.NewActivity = "";
     }
   }),
   computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
     user: "user/GetUserId"
-  }))
+  })),
+  beforeCreate: function beforeCreate() {
+    var init = this;
+    axios.get("/api/auth/activities").then(function (resp) {
+      init.activities = resp.data;
+    }).catch(function (error) {});
+  }
 });
 
 /***/ }),
@@ -745,7 +759,7 @@ var render = function() {
                           _c(
                             "v-alert",
                             {
-                              attrs: { type: "error", dismissible: "" },
+                              attrs: { type: _vm.alert.type, dismissible: "" },
                               model: {
                                 value: _vm.alert.enable,
                                 callback: function($$v) {
@@ -850,6 +864,7 @@ var render = function() {
                                   label: "Сферы деятельности",
                                   "item-text": "name",
                                   "item-value": "name",
+                                  "return-object": "",
                                   multiple: ""
                                 },
                                 scopedSlots: _vm._u([
@@ -964,41 +979,43 @@ var render = function() {
                                 }
                               }),
                           _vm._v(" "),
-                          _c(
-                            "ul",
-                            { staticClass: "chips-list" },
-                            _vm._l(_vm.NewActivities, function(
-                              activity,
-                              index
-                            ) {
-                              return _c(
-                                "li",
-                                { key: index },
-                                [
-                                  _c(
-                                    "v-chip",
-                                    {
-                                      staticClass: "chip--select-multi",
-                                      attrs: { close: "" },
-                                      on: {
-                                        input: function($event) {
-                                          _vm.removeInActivities(index)
-                                        }
-                                      }
-                                    },
+                          _vm.switch1
+                            ? _c(
+                                "ul",
+                                { staticClass: "chips-list" },
+                                _vm._l(_vm.Company.activities, function(
+                                  activity,
+                                  index
+                                ) {
+                                  return _c(
+                                    "li",
+                                    { key: index },
                                     [
-                                      _vm._v(
-                                        "\n                                " +
-                                          _vm._s(activity.name) +
-                                          "\n                            "
+                                      _c(
+                                        "v-chip",
+                                        {
+                                          staticClass: "chip--select-multi",
+                                          attrs: { close: "" },
+                                          on: {
+                                            input: function($event) {
+                                              _vm.remove(activity)
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                                " +
+                                              _vm._s(activity.name) +
+                                              "\n                            "
+                                          )
+                                        ]
                                       )
-                                    ]
+                                    ],
+                                    1
                                   )
-                                ],
-                                1
+                                })
                               )
-                            })
-                          ),
+                            : _vm._e(),
                           _vm._v(" "),
                           _c("v-switch", {
                             attrs: {
