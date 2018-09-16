@@ -21,8 +21,8 @@
                             :key="index">
                             <v-list-tile slot="activator">
                                 <v-list-tile-avatar v-if="comp.logo">
-                                    <img v-if="comp.logo.indexOf('data:') > -1" :src="'/storage/uploads/'+comp.logo" :alt="comp.name">
-                                    <img v-else :src="comp.logo" :alt="comp.name">
+                                    <img v-if="comp.logo.indexOf('data:') > -1" :src="comp.logo"  :alt="comp.name">
+                                    <img v-else :src="'/storage/uploads/'+comp.logo"  :alt="comp.name">
                                 </v-list-tile-avatar>
                                 <v-list-tile-content>
                                     <v-list-tile-title>{{comp.name}}</v-list-tile-title>

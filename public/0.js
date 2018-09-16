@@ -784,13 +784,13 @@ var render = function() {
                           ? _c("v-list-tile-avatar", [
                               comp.logo.indexOf("data:") > -1
                                 ? _c("img", {
+                                    attrs: { src: comp.logo, alt: comp.name }
+                                  })
+                                : _c("img", {
                                     attrs: {
                                       src: "/storage/uploads/" + comp.logo,
                                       alt: comp.name
                                     }
-                                  })
-                                : _c("img", {
-                                    attrs: { src: comp.logo, alt: comp.name }
                                   })
                             ])
                           : _vm._e(),
