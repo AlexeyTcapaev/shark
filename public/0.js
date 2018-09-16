@@ -634,6 +634,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -781,12 +782,16 @@ var render = function() {
                       [
                         comp.logo
                           ? _c("v-list-tile-avatar", [
-                              _c("img", {
-                                attrs: {
-                                  src: "/storage/uploads/" + comp.logo,
-                                  alt: comp.name
-                                }
-                              })
+                              comp.logo.indexOf("data:") > -1
+                                ? _c("img", {
+                                    attrs: {
+                                      src: "/storage/uploads/" + comp.logo,
+                                      alt: comp.name
+                                    }
+                                  })
+                                : _c("img", {
+                                    attrs: { src: comp.logo, alt: comp.name }
+                                  })
                             ])
                           : _vm._e(),
                         _vm._v(" "),
