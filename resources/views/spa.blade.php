@@ -7,6 +7,21 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Бизнес-Акула</title>
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <!-- Yandex.Metrika counter -->
+    <script src="https://mc.yandex.ru/metrika/watch.js" type="text/javascript"></script>
+    <script type="text/javascript" >
+    try {
+        var yaCounter33686679 = new Ya.Metrika({
+            id:33686679,
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true,
+            trackHash:true
+        });
+    } catch(e) { }
+    </script>
+    <!-- /Yandex.Metrika counter -->
 </head>
 <body>
   <div id="app">

@@ -673,7 +673,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       });
     },
     AddActivity: function AddActivity() {
-      this.NewActivities.push(this.NewActivity);
+      this.NewActivities.push({ name: this.NewActivity });
       this.NewActivity = "";
     }
   }),
@@ -989,7 +989,7 @@ var render = function() {
                                     [
                                       _vm._v(
                                         "\n                                " +
-                                          _vm._s(activity) +
+                                          _vm._s(activity.name) +
                                           "\n                            "
                                       )
                                     ]

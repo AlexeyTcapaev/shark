@@ -87,7 +87,7 @@
                                     <!--<v-avatar>
                                     <img :src="data.item.avatar">
                                     </v-avatar>-->
-                                    {{ activity }}
+                                    {{ activity.name }}
                                 </v-chip>
                                 </li>
                             </ul>
@@ -206,7 +206,7 @@ export default {
         });
     },
     AddActivity() {
-      this.NewActivities.push(this.NewActivity);
+      this.NewActivities.push({ name: this.NewActivity });
       this.NewActivity = "";
     }
   },
