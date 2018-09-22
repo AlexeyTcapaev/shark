@@ -2,7 +2,7 @@
     <main class="fullheight">
         <v-navigation-drawer fixed v-model="drawer" app>
             <v-list dense >
-                        <v-list-tile @click="" to="/app" exact-active-class="target-link" active-class="active-link">
+                        <v-list-tile  to="/app" exact-active-class="target-link" active-class="active-link">
                             <v-list-tile-action>
                                 <v-icon>home</v-icon>
                             </v-list-tile-action>
@@ -33,7 +33,7 @@
                                     </v-badge>
                                 </v-list-tile-action>
                             </v-list-tile>
-                            <v-list-tile @click="">
+                            <v-list-tile active-class="secondary--text target-link" :to="{name:'company-structure',params:{slug:comp.slug}}">
                                 <v-list-tile-action>
                                     <v-icon>view_module</v-icon>
                                 </v-list-tile-action>
@@ -43,7 +43,7 @@
                                 <v-list-tile-action>
                                 </v-list-tile-action>
                             </v-list-tile>
-                            <v-list-tile @click="">
+                            <v-list-tile >
                                 <v-list-tile-action>
                                     <v-icon>group</v-icon>
                                 </v-list-tile-action>
@@ -53,7 +53,7 @@
                                 <v-list-tile-action>
                                 </v-list-tile-action>
                             </v-list-tile>
-                            <v-list-tile @click="">
+                            <v-list-tile >
                                 <v-list-tile-action>
                                     <v-icon>book</v-icon>
                                 </v-list-tile-action>
@@ -63,7 +63,7 @@
                                 <v-list-tile-action>
                                 </v-list-tile-action>
                             </v-list-tile>
-                            <v-list-tile @click="">
+                            <v-list-tile >
                                 <v-list-tile-action>
                                     <v-icon>work</v-icon>
                                 </v-list-tile-action>
@@ -73,7 +73,7 @@
                                 <v-list-tile-action>
                                 </v-list-tile-action>
                             </v-list-tile>
-                            <v-list-tile @click="">
+                            <v-list-tile >
                                 <v-list-tile-action>
                                     <v-icon>timelapse</v-icon>
                                 </v-list-tile-action>
@@ -83,7 +83,7 @@
                                 <v-list-tile-action>
                                 </v-list-tile-action>
                             </v-list-tile>
-                            <v-list-tile @click="">
+                            <v-list-tile >
                                 <v-list-tile-action>
                                     <v-icon>timeline</v-icon>
                                 </v-list-tile-action>

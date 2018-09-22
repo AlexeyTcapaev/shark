@@ -206,6 +206,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       show1: false,
       show2: false,
       password: "",
+      loading: false,
       err: [],
       alert: false,
       type: "success",
@@ -230,6 +231,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   },
   methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({ SetToken: "user/SetToken" }), {
     submit: function submit() {
+      this.loading = true;
       var init = this;
       axios.post("/api/auth/signup", {
         email: this.email,
@@ -240,6 +242,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         init.alert = true;
         init.alert_message = resp.data;
         init.type = "success";
+        init.loading = false;
         axios.post("/api/auth/login", {
           email: init.email,
           password: init.password,
@@ -254,6 +257,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             var e = {};
             e.message = err;
             e.alert = true;
+            init.loading = false;
             init.err.push(e);
           });
         });
@@ -361,6 +365,7 @@ var render = function() {
                         [
                           _c("v-text-field", {
                             attrs: {
+                              loading: _vm.loading,
                               outline: "",
                               label: "Login",
                               "append-icon": "person",
@@ -378,6 +383,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("v-text-field", {
                             attrs: {
+                              loading: _vm.loading,
                               outline: "",
                               label: "E-mail",
                               "append-icon": "mail",
@@ -395,6 +401,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("v-text-field", {
                             attrs: {
+                              loading: _vm.loading,
                               outline: "",
                               label: "Password",
                               "append-icon": _vm.show1
@@ -420,6 +427,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("v-text-field", {
                             attrs: {
+                              loading: _vm.loading,
                               outline: "",
                               label: "Confrim",
                               "append-icon": _vm.show2
@@ -466,7 +474,8 @@ var render = function() {
                             color: "primary",
                             disabled: !(
                               _vm.valid == true && _vm.passwordValid == true
-                            )
+                            ),
+                            loading: _vm.loading
                           },
                           on: { click: _vm.submit }
                         },

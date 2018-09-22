@@ -723,8 +723,7 @@ var render = function() {
                     to: "/app",
                     "exact-active-class": "target-link",
                     "active-class": "active-link"
-                  },
-                  on: { click: function($event) {} }
+                  }
                 },
                 [
                   _c("v-list-tile-action", [_c("v-icon", [_vm._v("home")])], 1),
@@ -821,7 +820,15 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "v-list-tile",
-                      { on: { click: function($event) {} } },
+                      {
+                        attrs: {
+                          "active-class": "secondary--text target-link",
+                          to: {
+                            name: "company-structure",
+                            params: { slug: comp.slug }
+                          }
+                        }
+                      },
                       [
                         _c(
                           "v-list-tile-action",
@@ -842,7 +849,6 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "v-list-tile",
-                      { on: { click: function($event) {} } },
                       [
                         _c(
                           "v-list-tile-action",
@@ -863,7 +869,6 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "v-list-tile",
-                      { on: { click: function($event) {} } },
                       [
                         _c(
                           "v-list-tile-action",
@@ -884,7 +889,6 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "v-list-tile",
-                      { on: { click: function($event) {} } },
                       [
                         _c(
                           "v-list-tile-action",
@@ -905,7 +909,6 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "v-list-tile",
-                      { on: { click: function($event) {} } },
                       [
                         _c(
                           "v-list-tile-action",
@@ -926,7 +929,6 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "v-list-tile",
-                      { on: { click: function($event) {} } },
                       [
                         _c(
                           "v-list-tile-action",

@@ -52,8 +52,8 @@ const Dashboard = () =>
     import('./views/Dashboard.vue');
 const VerifyEmail = () =>
     import('./views/VerifyEmail.vue');
-const CompanyProfile = () =>
-    import('./views/CompanyProfile.vue');
+const CompanyStructure = () =>
+    import('./views/CompanyStructure.vue');
 const Communication = () =>
     import('./views/Communication.vue');
 const Platform = () =>
@@ -62,79 +62,79 @@ const Platform = () =>
 const router = new VueRouter({
     mode: 'history',
     routes: [{
-        path: '/',
-        name: 'IndexPage',
-        component: IndexPage
-    },
-    {
-        path: "/registration",
-        name: "registration",
-        component: Registration,
-    },
-    {
-        path: "/login",
-        name: "login",
-        component: Login,
-    },
-    {
-        path: "/app",
-        component: Home,
-        beforeEnter: (to, from, next) => {
-            axios.get('/api/auth/user').then(function (resp) {
-                store.state.user.user = resp.data
-                Cookies.set('user', JSON.stringify(store.state.user.user), {
-                    expires: 2,
-                    domain: location.hostname
-                });
-                axios.get("/api/auth/company/" + store.state.user.user.id).then(function (resp) {
-                    store.state.user.company = resp.data
-                });
-                next();
-            }).catch(error => {
-                router.push("/login");
-            })
-        },
-        children: [{
-            path: "",
-            component: Dashboard,
-            name: "app",
+            path: '/',
+            name: 'IndexPage',
+            component: IndexPage
         },
         {
-            path: 'company/:slug',
-            name: "company-profile",
-            component: CompanyProfile,
+            path: "/registration",
+            name: "registration",
+            component: Registration,
         },
         {
-            path: 'verifyemail/:token',
-            name: "verifyemail",
-            component: VerifyEmail,
+            path: "/login",
+            name: "login",
+            component: Login,
         },
         {
-            path: "add_company",
-            component: AddCompany,
-            name: "add_company",
+            path: "/app",
+            component: Home,
+            beforeEnter: (to, from, next) => {
+                axios.get('/api/auth/user').then(function (resp) {
+                    store.state.user.user = resp.data
+                    Cookies.set('user', JSON.stringify(store.state.user.user), {
+                        expires: 2,
+                        domain: location.hostname
+                    });
+                    axios.get("/api/auth/company/" + store.state.user.user.id).then(function (resp) {
+                        store.state.user.company = resp.data
+                    });
+                    next();
+                }).catch(error => {
+                    router.push("/login");
+                })
+            },
+            children: [{
+                    path: "",
+                    component: Dashboard,
+                    name: "app",
+                },
+                {
+                    path: 'company/:slug/structure',
+                    name: "company-structure",
+                    component: CompanyStructure,
+                },
+                {
+                    path: 'verifyemail/:token',
+                    name: "verifyemail",
+                    component: VerifyEmail,
+                },
+                {
+                    path: "add_company",
+                    component: AddCompany,
+                    name: "add_company",
+                },
+                {
+                    path: "news",
+                    component: Feed,
+                    name: "news",
+                },
+                {
+                    path: "communication",
+                    component: Communication,
+                    name: "communication",
+                },
+                {
+                    path: "platform",
+                    component: Platform,
+                    name: "platform",
+                }
+            ]
         },
         {
-            path: "news",
-            component: Feed,
-            name: "news",
-        },
-        {
-            path: "communication",
-            component: Communication,
-            name: "communication",
-        },
-        {
-            path: "platform",
-            component: Platform,
-            name: "platform",
+            path: '*',
+            redirect: '/'
         }
-        ]
-    },
-    {
-        path: '*',
-        redirect: '/'
-    }
     ],
 });
 router.beforeEach((to, from, next) => {

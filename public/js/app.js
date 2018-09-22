@@ -26216,8 +26216,8 @@ var Dashboard = function Dashboard() {
 var VerifyEmail = function VerifyEmail() {
     return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 67));
 };
-var CompanyProfile = function CompanyProfile() {
-    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 68));
+var CompanyStructure = function CompanyStructure() {
+    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 107));
 };
 var Communication = function Communication() {
     return __webpack_require__.e/* import() */(11).then(__webpack_require__.bind(null, 69));
@@ -26263,9 +26263,9 @@ var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
             component: Dashboard,
             name: "app"
         }, {
-            path: 'company/:slug',
-            name: "company-profile",
-            component: CompanyProfile
+            path: 'company/:slug/structure',
+            name: "company-structure",
+            component: CompanyStructure
         }, {
             path: 'verifyemail/:token',
             name: "verifyemail",

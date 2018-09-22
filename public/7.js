@@ -204,6 +204,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       alert: {
         enable: false
       },
+      loading: false,
       show1: false,
       passwordRules: [function (v) {
         return !!v || "Password is required";
@@ -213,14 +214,17 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({ SetToken: "user/SetToken" }), {
     submit: function submit() {
       var init = this;
+      this.loading = true;
       if (this.login.indexOf("@") > -1) axios.post("/api/auth/login", {
         email: init.login,
         password: init.password,
         remember_me: true
       }).then(function (resp) {
         init.SetToken(resp.data);
+        init.loading = false;
         init.$router.push("/app");
       }).catch(function (error) {
+        init.loading = false;
         init.alert.message = error.response.data.message;
         init.alert.enable = true;
       });else axios.post("/api/auth/login", {
@@ -306,7 +310,8 @@ var render = function() {
                             attrs: {
                               outline: "",
                               label: "Login or E-mail",
-                              "append-icon": "person"
+                              "append-icon": "person",
+                              loading: _vm.loading
                             },
                             model: {
                               value: _vm.login,
@@ -319,6 +324,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("v-text-field", {
                             attrs: {
+                              loading: _vm.loading,
                               outline: "",
                               label: "Password",
                               "append-icon": _vm.show1
@@ -382,7 +388,11 @@ var render = function() {
                       _c(
                         "v-btn",
                         {
-                          attrs: { disabled: !_vm.valid, color: "primary" },
+                          attrs: {
+                            disabled: !_vm.valid,
+                            color: "primary",
+                            loading: _vm.loading
+                          },
                           on: { click: _vm.submit }
                         },
                         [_vm._v("Отправить")]
