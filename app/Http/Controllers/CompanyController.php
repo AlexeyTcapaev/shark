@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Company;
 use Illuminate\Http\Request;
+use Exception;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use App\Activity;
+use App\CompanyType;
 
 class CompanyController extends Controller
 {
@@ -68,7 +70,7 @@ class CompanyController extends Controller
     public function show($id)
     {
         try {
-            $Company = Company::where('creator', $id)->get();
+            $Company = Company::withAll()->where('creator_id', $id)->get();
             if (empty($Company))
                 return response()->json(['error' => 'Компания не найдены'], 404);
         } catch (Exception $e) {
@@ -97,6 +99,7 @@ class CompanyController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         try {
             $Company = Company::findOrFail($id);
             if (empty($Company))

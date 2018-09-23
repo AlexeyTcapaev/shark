@@ -29,5 +29,6 @@ Route::group([
         Route::get('user', 'AuthController@user');
         Route::apiResource('company','CompanyController');
         Route::apiResource('activities','ActivityController');
+        Route::apiResource('company_types','CompanyTypeController');
     });
 });

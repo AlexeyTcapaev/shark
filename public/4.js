@@ -587,6 +587,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -600,10 +601,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       Company: {
         name: "",
         activities: [],
-        logo: undefined,
-        type: {
-          name: "ООО"
-        }
+        logo: undefined
       },
       alert: {
         enable: false
@@ -665,7 +663,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       var data = new FormData();
       data.append("logo", this.$refs.file.files[0]);
       data.append("name", this.Company.name);
-      data.append("creator", this.user);
+      data.append("company_type_id", this.Company.type.id);
+      data.append("creator_id", this.user);
       data.append("website", this.Company.website);
       data.append("activities", JSON.stringify(this.Company.activities));
       var init = this;
@@ -700,6 +699,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     var init = this;
     axios.get("/api/auth/activities").then(function (resp) {
       init.activities = resp.data;
+    }).catch(function (error) {});
+    axios.get("/api/auth/company_types").then(function (resp) {
+      init.types = resp.data;
     }).catch(function (error) {});
   }
 });
@@ -800,6 +802,7 @@ var render = function() {
                                       items: _vm.types,
                                       outline: "",
                                       "offset-y": "",
+                                      "return-object": "",
                                       label: "Тип юридического лица",
                                       "item-text": "name",
                                       "item-value": "name"

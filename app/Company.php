@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model
 {
-    protected $fillable = ['name', 'creator', 'website'];
+    protected $fillable = ['name', 'creator_id', 'website','company_type_id'];
     public $load_map = [
-        'activities'
+        'activities',
+        'company_type'
     ];
 
     use Sluggable;
@@ -25,6 +26,10 @@ class Company extends Model
     public function activities()
     {
         return $this->belongsToMany(Activity::class)->withTimestamps();
+    }
+    public function company_type()
+    {
+        return $this->belongsTo(CompanyType::class,'company_type_id','id')->withTimestamps();
     }
     public function uploadImage($image)
     {

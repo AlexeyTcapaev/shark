@@ -22,6 +22,7 @@
                                     :items="types"
                                     outline
                                     offset-y
+                                    return-object
                                     label="Тип юридического лица"
                                     item-text="name"
                                     item-value="name"
@@ -123,9 +124,6 @@ export default {
       name: "",
       activities: [],
       logo: undefined,
-      type: {
-        name: "ООО"
-      }
     },
     alert: {
       enable: false
@@ -195,7 +193,8 @@ export default {
       let data = new FormData();
       data.append("logo", this.$refs.file.files[0]);
       data.append("name", this.Company.name);
-      data.append("creator", this.user);
+      data.append("company_type_id", this.Company.type.id);
+      data.append("creator_id", this.user);
       data.append("website", this.Company.website);
       data.append("activities", JSON.stringify(this.Company.activities));
       const init = this;
@@ -239,6 +238,13 @@ export default {
         init.activities = resp.data;
       })
       .catch(function(error) {});
+          axios
+      .get("/api/auth/company_types")
+      .then(function(resp) {
+        init.types = resp.data;
+      })
+      .catch(function(error) {});
+
   }
 };
 </script>

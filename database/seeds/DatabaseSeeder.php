@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\CompanyType;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,5 +13,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        CompanyType::create(['name' => 'ООО']);
+        CompanyType::create(['name' => 'ОАО']);
+        CompanyType::create(['name' => 'АО']);
+        CompanyType::create(['name' => 'ПАО']);
+        CompanyType::create(['name' => 'ИП']);
     }
 }
