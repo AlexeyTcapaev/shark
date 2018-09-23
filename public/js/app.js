@@ -26217,7 +26217,7 @@ var VerifyEmail = function VerifyEmail() {
     return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 67));
 };
 var CompanyStructure = function CompanyStructure() {
-    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 107));
+    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 68));
 };
 var Communication = function Communication() {
     return __webpack_require__.e/* import() */(11).then(__webpack_require__.bind(null, 69));
