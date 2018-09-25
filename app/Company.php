@@ -51,6 +51,7 @@ class Company extends Model
     public static function add($fields)
     {
         $company = Company::create($fields->all());
+        $company->load($company->load_map);
         return $company;
     }
     public function scopeWithAll($query)

@@ -207,7 +207,16 @@ var render = function() {
                     { key: i },
                     [
                       _c("div", { attrs: { slot: "header" }, slot: "header" }, [
-                        _vm._v(_vm._s(item.name))
+                        _c(
+                          "div",
+                          { staticClass: "department-header" },
+                          [
+                            _c("v-icon", [_vm._v("group")]),
+                            _vm._v("123 "),
+                            _c("p", [_vm._v(_vm._s(item.name))])
+                          ],
+                          1
+                        )
                       ]),
                       _vm._v(" "),
                       _c(
@@ -708,7 +717,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.creator[data-v-40d62849] {\n  margin-bottom: 15px;\n}\ndiv[data-v-40d62849] {\n  text-align: left;\n}\n", ""]);
+exports.push([module.i, "\n.creator[data-v-40d62849] {\r\n  margin-bottom: 15px;\n}\ndiv[data-v-40d62849] {\r\n  text-align: left;\n}\n.department-header[data-v-40d62849]{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: row;\r\n            flex-direction: row;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\n}\n.department-header i[data-v-40d62849] {\r\n    margin-right: 5px;\n}\r\n", ""]);
 
 // exports
 

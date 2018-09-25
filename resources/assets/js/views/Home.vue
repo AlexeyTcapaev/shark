@@ -24,7 +24,7 @@
                                     <img :src="'/storage/uploads/'+comp.logo" :alt="comp.name">
                                 </v-list-tile-avatar>
                                 <v-list-tile-content>
-                                    <v-list-tile-title>{{comp.name}}</v-list-tile-title>
+                                    <v-list-tile-title>{{comp.company_type.name}} {{comp.name}}</v-list-tile-title>
                                     <v-list-tile-sub-title>Владелец</v-list-tile-sub-title>
                                 </v-list-tile-content>
                                 <v-list-tile-action>
@@ -139,7 +139,7 @@
                 </transition>
             </div>
         </div>
-        <v-bottom-nav :active.sync="bottomNav" :value="true" fixed>
+        <v-bottom-nav :active.sync="bottomNav" :value="true">
             <v-btn flat :to="{name:'communication'}">
                 <span>Общение</span>
                 <v-icon>question_answer</v-icon>
@@ -221,7 +221,7 @@ export default {
       if (this.company !== undefined)
         return this.company.filter(elem => {
           if (this.search === "") return true;
-          else if (elem.name.indexOf(this.search) > -1) return elem;
+          else if (elem.name.toLowerCase().indexOf(this.search.toLowerCase()) > -1 || elem.company_type.name.toLowerCase().indexOf(this.search.toLowerCase()) > -1) return elem;
         });
       else return [];
     }
@@ -265,6 +265,9 @@ export default {
 
 .target-link .v-icon {
   color: #f80b37 !important;
+}
+.nav-btn i{
+    margin-right: 15px;
 }
 .fade-enter-active,
 .fade-leave-active {
