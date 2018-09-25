@@ -29,7 +29,7 @@ class Company extends Model
     }
     public function company_type()
     {
-        return $this->belongsTo(CompanyType::class,'company_type_id','id')->withTimestamps();
+        return $this->belongsTo(CompanyType::class,'company_type_id','id');
     }
     public function uploadImage($image)
     {
@@ -51,6 +51,7 @@ class Company extends Model
     public static function add($fields)
     {
         $company = Company::create($fields->all());
+        $company->load($company->load_map);
         return $company;
     }
     public function scopeWithAll($query)

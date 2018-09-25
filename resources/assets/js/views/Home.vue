@@ -24,7 +24,7 @@
                                     <img :src="'/storage/uploads/'+comp.logo" :alt="comp.name">
                                 </v-list-tile-avatar>
                                 <v-list-tile-content>
-                                    <v-list-tile-title>{{comp.name}}</v-list-tile-title>
+                                    <v-list-tile-title>{{comp.company_type.name}} {{comp.name}}</v-list-tile-title>
                                     <v-list-tile-sub-title>Владелец</v-list-tile-sub-title>
                                 </v-list-tile-content>
                                 <v-list-tile-action>

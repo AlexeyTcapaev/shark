@@ -708,7 +708,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.creator[data-v-40d62849] {\n  margin-bottom: 15px;\n}\ndiv[data-v-40d62849] {\n  text-align: left;\n}\n", ""]);
+exports.push([module.i, "\n.creator[data-v-40d62849] {\r\n  margin-bottom: 15px;\n}\ndiv[data-v-40d62849] {\r\n  text-align: left;\n}\r\n", ""]);
 
 // exports
 
