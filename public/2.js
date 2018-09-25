@@ -213,6 +213,10 @@ var render = function() {
                           [
                             _c("v-icon", [_vm._v("group")]),
                             _vm._v("123 "),
+                            _c("v-divider", {
+                              staticClass: "mx-3",
+                              attrs: { vertical: "" }
+                            }),
                             _c("p", [_vm._v(_vm._s(item.name))])
                           ],
                           1
@@ -717,7 +721,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.creator[data-v-40d62849] {\r\n  margin-bottom: 15px;\n}\ndiv[data-v-40d62849] {\r\n  text-align: left;\n}\n.department-header[data-v-40d62849]{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: row;\r\n            flex-direction: row;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\n}\n.department-header i[data-v-40d62849] {\r\n    margin-right: 5px;\n}\r\n", ""]);
+exports.push([module.i, "\n.creator[data-v-40d62849] {\n  margin-bottom: 15px;\n}\ndiv[data-v-40d62849] {\n  text-align: left;\n}\n.department-header[data-v-40d62849]{\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    overflow: hidden;\n}\n.department-header i[data-v-40d62849] {\n    margin-right: 5px;\n}\n.department-header p[data-v-40d62849]{\n    font-weight: bold;\n    padding: 0 10px;\n    margin: 0 ;\n}\n.department-header .v-divider--vertical[data-v-40d62849]{\n    height: 50px;\n}\n", ""]);
 
 // exports
 
