@@ -95,7 +95,7 @@ class AuthController extends Controller
             //'expires_at' => Carbon::parse(
             //    $tokenResult->token->expires_at
            // )->toDateTimeString()
-        ])->header('Authorization', "Bearer " . $tokenResult->accessToken)->cookie('access_token', $tokenResult->accessToken, 120);
+        ])->cookie('access_token', $tokenResult->accessToken, Carbon::parse($tokenResult->token->expires_at)->toDateTimeString());
     }
 
     /**
