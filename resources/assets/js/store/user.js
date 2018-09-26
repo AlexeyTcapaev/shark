@@ -24,12 +24,12 @@ export default {
     },
     mutations: {
         SetToken(state, input_data) {
-            state.token = input_data
+            /*state.token = input_data
             axios.defaults.headers.common['Authorization'] = state.token.token_type + " " + state.token.access_token
             Cookies.set('token', JSON.stringify(state.token), {
                 expires: 2,
                 domain: location.hostname
-            });
+            });*/
         },
         SetUser(state, input_data) {
             state.user = input_data

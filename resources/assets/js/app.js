@@ -32,7 +32,7 @@ Vue.use(VueProgressBar, {
     inverse: false
 })
 if (store.state.user.token !== undefined) {
-    axios.defaults.headers.common['Authorization'] = store.state.user.token.token_type + " " + store.state.user.token.access_token
+  //  axios.defaults.headers.common['Authorization'] = store.state.user.token.token_type + " " + store.state.user.token.access_token
 }
 const App = () =>
     import('./views/App.vue');
