@@ -26187,7 +26187,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_8_vue_
     inverse: false
 });
 if (__WEBPACK_IMPORTED_MODULE_5__store_index__["a" /* default */].state.user.token !== undefined) {
-    //  axios.defaults.headers.common['Authorization'] = store.state.user.token.token_type + " " + store.state.user.token.access_token
+    axios.defaults.headers.common['Authorization'] = __WEBPACK_IMPORTED_MODULE_5__store_index__["a" /* default */].state.user.token.token_type + " " + __WEBPACK_IMPORTED_MODULE_5__store_index__["a" /* default */].state.user.token.access_token;
 }
 var App = function App() {
     return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 59));
@@ -71958,12 +71958,12 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
     },
     mutations: {
         SetToken: function SetToken(state, input_data) {
-            /*state.token = input_data
-            axios.defaults.headers.common['Authorization'] = state.token.token_type + " " + state.token.access_token
-            Cookies.set('token', JSON.stringify(state.token), {
+            state.token = input_data;
+            axios.defaults.headers.common['Authorization'] = state.token.token_type + " " + state.token.access_token;
+            __WEBPACK_IMPORTED_MODULE_0_js_cookie__["set"]('token', JSON.stringify(state.token), {
                 expires: 2,
                 domain: location.hostname
-            });*/
+            });
         },
         SetUser: function SetUser(state, input_data) {
             state.user = input_data;

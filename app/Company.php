@@ -51,6 +51,10 @@ class Company extends Model
     public static function add($fields)
     {
         $company = Company::create($fields->all());
+        Department::create([
+            'name' => $company->name,
+          
+        ]);
         $company->load($company->load_map);
         return $company;
     }

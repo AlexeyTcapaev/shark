@@ -123,7 +123,7 @@ export default {
     Company: {
       name: "",
       activities: [],
-      logo: undefined,
+      logo: undefined
     },
     alert: {
       enable: false
@@ -238,13 +238,12 @@ export default {
         init.activities = resp.data;
       })
       .catch(function(error) {});
-          axios
+    axios
       .get("/api/auth/company_types")
       .then(function(resp) {
         init.types = resp.data;
       })
       .catch(function(error) {});
-
   }
 };
 </script>

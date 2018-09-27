@@ -41,6 +41,7 @@ import { mapGetters } from "vuex";
 export default {
   data: () => ({
     Departments: [],
+    root:'',
     NewDepartment: "",
     panel: []
   }),
@@ -54,9 +55,25 @@ export default {
   },
   methods: {
     AddDepartment() {
-      this.Departments.push({ name: this.NewDepartment });
-      this.panel.push(false);
+      const init = this;
+      axios
+        .post("/api/auth/departments" ,{NewDepartment:this.NewDepartment,root:this.root.slug})
+        .then(function(resp) {
+          console.log(resp);
+        })
+        .catch(function(error) {});
+      // this.Departments.push({ name: this.NewDepartment });
+      //this.panel.push(false);
     }
+  },
+  mounted() {
+    const init = this;
+    axios
+      .get("/api/auth/departments/" + this.$route.params.slug)
+      .then(function(resp) {
+        init.root = resp.data;
+      })
+      .catch(function(error) {});
   }
 };
 </script>
@@ -67,21 +84,21 @@ export default {
 div {
   text-align: left;
 }
-.department-header{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    overflow: hidden;
+.department-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
 }
 .department-header i {
-    margin-right: 5px;
+  margin-right: 5px;
 }
-.department-header p{
-    font-weight: bold;
-    padding: 0 10px;
-    margin: 0 ;
+.department-header p {
+  font-weight: bold;
+  padding: 0 10px;
+  margin: 0;
 }
-.department-header .v-divider--vertical{
-    height: 50px;
+.department-header .v-divider--vertical {
+  height: 50px;
 }
 </style>

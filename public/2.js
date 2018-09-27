@@ -52,6 +52,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   data: function data() {
     return {
       Departments: [],
+      root: '',
       NewDepartment: "",
       panel: []
     };
@@ -65,9 +66,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   }),
   methods: {
     AddDepartment: function AddDepartment() {
-      this.Departments.push({ name: this.NewDepartment });
-      this.panel.push(false);
+      var init = this;
+      axios.post("/api/auth/departments", { NewDepartment: this.NewDepartment, root: this.root.slug }).then(function (resp) {
+        console.log(resp);
+      }).catch(function (error) {});
+      // this.Departments.push({ name: this.NewDepartment });
+      //this.panel.push(false);
     }
+  },
+  mounted: function mounted() {
+    var init = this;
+    axios.get("/api/auth/departments/" + this.$route.params.slug).then(function (resp) {
+      init.root = resp.data;
+    }).catch(function (error) {});
   }
 });
 
@@ -721,7 +732,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.creator[data-v-40d62849] {\n  margin-bottom: 15px;\n}\ndiv[data-v-40d62849] {\n  text-align: left;\n}\n.department-header[data-v-40d62849]{\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    overflow: hidden;\n}\n.department-header i[data-v-40d62849] {\n    margin-right: 5px;\n}\n.department-header p[data-v-40d62849]{\n    font-weight: bold;\n    padding: 0 10px;\n    margin: 0 ;\n}\n.department-header .v-divider--vertical[data-v-40d62849]{\n    height: 50px;\n}\n", ""]);
+exports.push([module.i, "\n.creator[data-v-40d62849] {\r\n  margin-bottom: 15px;\n}\ndiv[data-v-40d62849] {\r\n  text-align: left;\n}\n.department-header[data-v-40d62849] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  overflow: hidden;\n}\n.department-header i[data-v-40d62849] {\r\n  margin-right: 5px;\n}\n.department-header p[data-v-40d62849] {\r\n  font-weight: bold;\r\n  padding: 0 10px;\r\n  margin: 0;\n}\n.department-header .v-divider--vertical[data-v-40d62849] {\r\n  height: 50px;\n}\r\n", ""]);
 
 // exports
 
