@@ -16,7 +16,7 @@
                         <v-flex row>
                             <v-alert v-model="alert.enable" :type="alert.type" dismissible>{{alert.message}}</v-alert>
                             <v-layout align-center justify-center row fill-height wrap>
-                              <v-flex xl3 md12 sm12>
+                              <v-flex xl4 md12 sm12>
                                 <v-select
                                     v-model="Company.type"
                                     :items="types"
@@ -28,7 +28,7 @@
                                     item-value="name"
                                 ></v-select>
                               </v-flex>
-                              <v-flex xl8 offset-xl1 md12 sm12>
+                              <v-flex xl7 offset-xl1 md12 sm12>
                                 <v-text-field outline label="Название компании" append-icon="business" v-model="Company.name"></v-text-field>
                               </v-flex>
                             </v-layout>

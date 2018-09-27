@@ -45,14 +45,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      Departments: [],
-      root: '',
+      root: {
+        descendants: []
+      },
       NewDepartment: "",
       panel: []
     };
@@ -65,13 +70,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     }
   }),
   methods: {
-    AddDepartment: function AddDepartment() {
+    AddDepartment: function AddDepartment(root) {
       var init = this;
-      axios.post("/api/auth/departments", { NewDepartment: this.NewDepartment, root: this.root.slug }).then(function (resp) {
-        console.log(resp);
+      axios.post("/api/auth/departments", {
+        name: root.new,
+        root: root.slug
+      }).then(function (resp) {
+        root.descendants.push(resp.data);
       }).catch(function (error) {});
-      // this.Departments.push({ name: this.NewDepartment });
-      //this.panel.push(false);
     }
   },
   mounted: function mounted() {
@@ -159,7 +165,9 @@ var render = function() {
                                       "append-icon": "add"
                                     },
                                     on: {
-                                      "click:append": _vm.AddDepartment,
+                                      "click:append": function($event) {
+                                        _vm.AddDepartment(_vm.root)
+                                      },
                                       keyup: function($event) {
                                         if (
                                           !("button" in $event) &&
@@ -173,15 +181,15 @@ var render = function() {
                                         ) {
                                           return null
                                         }
-                                        return _vm.AddDepartment($event)
+                                        _vm.AddDepartment(_vm.root)
                                       }
                                     },
                                     model: {
-                                      value: _vm.NewDepartment,
+                                      value: _vm.root.newDepartment,
                                       callback: function($$v) {
-                                        _vm.NewDepartment = $$v
+                                        _vm.$set(_vm.root, "newDepartment", $$v)
                                       },
-                                      expression: "NewDepartment"
+                                      expression: "root.newDepartment"
                                     }
                                   })
                                 ],
@@ -212,7 +220,7 @@ var render = function() {
                     expression: "panel"
                   }
                 },
-                _vm._l(_vm.Departments, function(item, i) {
+                _vm._l(_vm.root.children, function(item, i) {
                   return _c(
                     "v-expansion-panel-content",
                     { key: i },
@@ -237,11 +245,53 @@ var render = function() {
                       _c(
                         "v-card",
                         [
-                          _c("v-card-text", { staticClass: "grey lighten-3" }, [
-                            _vm._v(
-                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                            )
-                          ])
+                          _c(
+                            "v-card-text",
+                            { staticClass: "grey lighten-3" },
+                            [
+                              _c(
+                                "v-flex",
+                                [
+                                  _c("v-text-field", {
+                                    attrs: {
+                                      outline: "",
+                                      label: "Введите название отдела",
+                                      "append-icon": "add"
+                                    },
+                                    on: {
+                                      "click:append": function($event) {
+                                        _vm.AddDepartment(item)
+                                      },
+                                      keyup: function($event) {
+                                        if (
+                                          !("button" in $event) &&
+                                          _vm._k(
+                                            $event.keyCode,
+                                            "enter",
+                                            13,
+                                            $event.key,
+                                            "Enter"
+                                          )
+                                        ) {
+                                          return null
+                                        }
+                                        _vm.AddDepartment(item)
+                                      }
+                                    },
+                                    model: {
+                                      value: item.newDepartment,
+                                      callback: function($$v) {
+                                        _vm.$set(item, "newDepartment", $$v)
+                                      },
+                                      expression: "item.newDepartment"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
                         ],
                         1
                       )
@@ -732,7 +782,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.creator[data-v-40d62849] {\r\n  margin-bottom: 15px;\n}\ndiv[data-v-40d62849] {\r\n  text-align: left;\n}\n.department-header[data-v-40d62849] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  overflow: hidden;\n}\n.department-header i[data-v-40d62849] {\r\n  margin-right: 5px;\n}\n.department-header p[data-v-40d62849] {\r\n  font-weight: bold;\r\n  padding: 0 10px;\r\n  margin: 0;\n}\n.department-header .v-divider--vertical[data-v-40d62849] {\r\n  height: 50px;\n}\r\n", ""]);
+exports.push([module.i, "\n.creator[data-v-40d62849] {\n  margin-bottom: 15px;\n}\ndiv[data-v-40d62849] {\n  text-align: left;\n}\n.department-header[data-v-40d62849] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  overflow: hidden;\n}\n.department-header i[data-v-40d62849] {\n  margin-right: 5px;\n}\n.department-header p[data-v-40d62849] {\n  font-weight: bold;\n  padding: 0 10px;\n  margin: 0;\n}\n.department-header .v-divider--vertical[data-v-40d62849] {\n  height: 50px;\n}\n", ""]);
 
 // exports
 

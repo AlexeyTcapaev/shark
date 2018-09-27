@@ -460,7 +460,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.v-avatar[data-v-bc5e96a2] {\r\n  position: absolute;\r\n  left: 25px;\r\n  overflow: hidden;\r\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n  top: -128px;\r\n  border-radius: 50% !important;\r\n  -webkit-transition: 0.2s linear;\r\n  transition: 0.2s linear;\n}\n.v-avatar img[data-v-bc5e96a2] {\r\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n}\n.file[data-v-bc5e96a2] {\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 100%;\r\n  border-radius: 64px;\r\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n  top: 0;\r\n  left: 0;\r\n  cursor: pointer;\r\n  z-index: 4;\r\n  opacity: 0;\n}\n.v-card__title[data-v-bc5e96a2] {\r\n  padding-top: 148px !important;\n}\n.v-card[data-v-bc5e96a2] {\r\n  margin: 128px 0 0 0;\n}\n.v-card .v-avatar[data-v-bc5e96a2] {\r\n  cursor: pointer;\n}\n.chips-list[data-v-bc5e96a2] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\n}\r\n", ""]);
+exports.push([module.i, "\n.v-avatar[data-v-bc5e96a2] {\n  position: absolute;\n  left: 25px;\n  overflow: hidden;\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n  top: -128px;\n  border-radius: 50% !important;\n  -webkit-transition: 0.2s linear;\n  transition: 0.2s linear;\n}\n.v-avatar img[data-v-bc5e96a2] {\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n}\n.file[data-v-bc5e96a2] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 64px;\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n  top: 0;\n  left: 0;\n  cursor: pointer;\n  z-index: 4;\n  opacity: 0;\n}\n.v-card__title[data-v-bc5e96a2] {\n  padding-top: 148px !important;\n}\n.v-card[data-v-bc5e96a2] {\n  margin: 128px 0 0 0;\n}\n.v-card .v-avatar[data-v-bc5e96a2] {\n  cursor: pointer;\n}\n.chips-list[data-v-bc5e96a2] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n", ""]);
 
 // exports
 
@@ -795,7 +795,7 @@ var render = function() {
                             [
                               _c(
                                 "v-flex",
-                                { attrs: { xl3: "", md12: "", sm12: "" } },
+                                { attrs: { xl4: "", md12: "", sm12: "" } },
                                 [
                                   _c("v-select", {
                                     attrs: {
@@ -823,7 +823,7 @@ var render = function() {
                                 "v-flex",
                                 {
                                   attrs: {
-                                    xl8: "",
+                                    xl7: "",
                                     "offset-xl1": "",
                                     md12: "",
                                     sm12: ""

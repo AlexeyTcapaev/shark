@@ -460,7 +460,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\ni {\r\n  -webkit-user-select: none !important;\r\n     -moz-user-select: none !important;\r\n      -ms-user-select: none !important;\r\n          user-select: none !important;\n}\nbutton.primary {\r\n  background-color: #f80b37 !important;\n}\nbutton.v-btn--flat {\r\n  color: #f80b37 !important;\n}\n.primary-text {\r\n  color: #f80b37 !important;\n}\n.fade-enter-active,\r\n.fade-leave-active {\r\n  -webkit-transition-duration: 0.3s;\r\n          transition-duration: 0.3s;\r\n  -webkit-transition-property: opacity;\r\n  transition-property: opacity;\r\n  -webkit-transition-timing-function: ease;\r\n          transition-timing-function: ease;\n}\n.fade-enter,\r\n.fade-leave-active {\r\n  opacity: 0;\n}\r\n", ""]);
+exports.push([module.i, "\ni {\n  -webkit-user-select: none !important;\n     -moz-user-select: none !important;\n      -ms-user-select: none !important;\n          user-select: none !important;\n}\nbutton.primary {\n  background-color: #f80b37 !important;\n}\nbutton.v-btn--flat {\n  color: #f80b37 !important;\n}\n.primary-text {\n  color: #f80b37 !important;\n}\n.fade-enter-active,\n.fade-leave-active {\n  -webkit-transition-duration: 0.3s;\n          transition-duration: 0.3s;\n  -webkit-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-timing-function: ease;\n          transition-timing-function: ease;\n}\n.fade-enter,\n.fade-leave-active {\n  opacity: 0;\n}\n", ""]);
 
 // exports
 

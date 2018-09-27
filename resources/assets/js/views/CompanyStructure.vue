@@ -16,17 +16,21 @@
                         <v-card>
                             <v-card-text class="grey lighten-3">
                                 <v-flex>
-                                   <v-text-field outline label="Введите название отдела"  v-model="NewDepartment" append-icon="add"  @click:append="AddDepartment" @keyup.enter="AddDepartment"></v-text-field>
+                                   <v-text-field outline label="Введите название отдела"  v-model="root.newDepartment" append-icon="add"  @click:append="AddDepartment(root)" @keyup.enter="AddDepartment(root)"></v-text-field>
                                 </v-flex>
                             </v-card-text>
                         </v-card>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
                 <v-expansion-panel v-model="panel" expand>
-                    <v-expansion-panel-content v-for="(item, i) in Departments" :key="i"  >
+                    <v-expansion-panel-content v-for="(item, i) in root.children" :key="i"  >
                         <div slot="header"><div class="department-header"><v-icon>group</v-icon>123 <v-divider class="mx-3" vertical></v-divider><p>{{item.name}}</p> </div></div>
                         <v-card>
-                            <v-card-text class="grey lighten-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</v-card-text>
+                            <v-card-text class="grey lighten-3">
+                                <v-flex>
+                                    <v-text-field outline label="Введите название отдела"  v-model="item.newDepartment" append-icon="add"  @click:append="AddDepartment(item)" @keyup.enter="AddDepartment(item)"></v-text-field>
+                                </v-flex>
+                            </v-card-text>
                         </v-card>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
@@ -40,8 +44,9 @@ import { mapGetters } from "vuex";
 
 export default {
   data: () => ({
-    Departments: [],
-    root:'',
+    root: {
+      descendants: []
+    },
     NewDepartment: "",
     panel: []
   }),
@@ -54,16 +59,17 @@ export default {
     }
   },
   methods: {
-    AddDepartment() {
+    AddDepartment(root) {
       const init = this;
       axios
-        .post("/api/auth/departments" ,{NewDepartment:this.NewDepartment,root:this.root.slug})
+        .post("/api/auth/departments", {
+          name: root.new,
+          root: root.slug
+        })
         .then(function(resp) {
-          console.log(resp);
+          root.descendants.push(resp.data);
         })
         .catch(function(error) {});
-      // this.Departments.push({ name: this.NewDepartment });
-      //this.panel.push(false);
     }
   },
   mounted() {

@@ -35,14 +35,14 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        $department = Department::create($request->NewDepartment,Department::where('slug', $request->root)->get());
+        $department = Department::create(['name' => $request->name],Department::where('slug', $request->root)->first());
         try {
             if (empty($department))
                 return response()->json(['error' => 'Компания не найдены'], 404);
         } catch (Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
-        return $department;
+        return $department;//Department::where('slug', $request->root)->with('descendants')->get();
     }
 
     /**
@@ -54,7 +54,7 @@ class DepartmentController extends Controller
     public function show($slug)
     {
         try {
-            $departments = Department::where('slug', $slug)->first();
+            $departments = Department::descendantsAndSelf(Department::where('slug',$slug)->first()->id)->toTree()->first();
             if (empty($departments))
                 return response()->json(['error' => 'Компания не найдены'], 404);
         } catch (Exception $e) {

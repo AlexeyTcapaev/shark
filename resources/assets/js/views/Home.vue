@@ -123,6 +123,9 @@
                     <v-list-tile @click="logout">
                         <v-list-tile-title>Выход</v-list-tile-title>
                     </v-list-tile>
+                    <v-list-tile to="/settings">
+                        <v-list-tile-title>Настройки профиля</v-list-tile-title>
+                    </v-list-tile>
                 </v-list>
             </v-menu>
             <v-badge color="secondary" overlap>

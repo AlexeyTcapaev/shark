@@ -460,7 +460,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.logo[data-v-6c0a33b2] {\r\n  color: #ffffff;\r\n  text-decoration: none;\n}\n.active-link .v-icon[data-v-6c0a33b2] {\r\n  color: rgba(0, 0, 0, 0.54) !important;\n}\n.v-list__tile__action .v-badge[data-v-6c0a33b2] {\r\n  margin: 0 10px 0 0;\n}\n.nav-btn[data-v-6c0a33b2] {\r\n  color: #ffffff !important;\r\n  height: 100%;\n}\n.v-menu[data-v-6c0a33b2] {\r\n  height: 100%;\n}\n.v-content[data-v-6c0a33b2] {\r\n  padding-top: 0px !important;\n}\n.wrapper[data-v-6c0a33b2] {\r\n  overflow: hidden;\n}\n.v-navigation-drawer[data-v-6c0a33b2] {\r\n  z-index: 6;\n}\n.v-bottom-nav[data-v-6c0a33b2] {\r\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\r\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n.target-link .v-list__tile__content .v-list__tile__title[data-v-6c0a33b2] {\r\n  color: #f80b37 !important;\n}\n.target-link .v-icon[data-v-6c0a33b2] {\r\n  color: #f80b37 !important;\n}\n.nav-btn i[data-v-6c0a33b2]{\r\n    margin-right: 15px;\n}\n.fade-enter-active[data-v-6c0a33b2],\r\n.fade-leave-active[data-v-6c0a33b2] {\r\n  -webkit-transition-duration: 0.3s;\r\n          transition-duration: 0.3s;\r\n  -webkit-transition-property: opacity;\r\n  transition-property: opacity;\r\n  -webkit-transition-timing-function: ease;\r\n          transition-timing-function: ease;\n}\n.v-avatar .fade-enter[data-v-6c0a33b2],\r\n.fade-leave-active[data-v-6c0a33b2] {\r\n  opacity: 0;\n}\n.search-bar[data-v-6c0a33b2] {\r\n  margin: 5px 0;\n}\n.company[data-v-6c0a33b2] {\r\n  background: rgba(0, 0, 0, 0.1);\n}\n.v-bottom-nav .v-btn--active[data-v-6c0a33b2] {\r\n  color: #f80b37;\n}\r\n", ""]);
+exports.push([module.i, "\n.logo[data-v-6c0a33b2] {\n  color: #ffffff;\n  text-decoration: none;\n}\n.active-link .v-icon[data-v-6c0a33b2] {\n  color: rgba(0, 0, 0, 0.54) !important;\n}\n.v-list__tile__action .v-badge[data-v-6c0a33b2] {\n  margin: 0 10px 0 0;\n}\n.nav-btn[data-v-6c0a33b2] {\n  color: #ffffff !important;\n  height: 100%;\n}\n.v-menu[data-v-6c0a33b2] {\n  height: 100%;\n}\n.v-content[data-v-6c0a33b2] {\n  padding-top: 0px !important;\n}\n.wrapper[data-v-6c0a33b2] {\n  overflow: hidden;\n}\n.v-navigation-drawer[data-v-6c0a33b2] {\n  z-index: 6;\n}\n.v-bottom-nav[data-v-6c0a33b2] {\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n.target-link .v-list__tile__content .v-list__tile__title[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n.target-link .v-icon[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n.nav-btn i[data-v-6c0a33b2]{\n    margin-right: 15px;\n}\n.fade-enter-active[data-v-6c0a33b2],\n.fade-leave-active[data-v-6c0a33b2] {\n  -webkit-transition-duration: 0.3s;\n          transition-duration: 0.3s;\n  -webkit-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-timing-function: ease;\n          transition-timing-function: ease;\n}\n.v-avatar .fade-enter[data-v-6c0a33b2],\n.fade-leave-active[data-v-6c0a33b2] {\n  opacity: 0;\n}\n.search-bar[data-v-6c0a33b2] {\n  margin: 5px 0;\n}\n.company[data-v-6c0a33b2] {\n  background: rgba(0, 0, 0, 0.1);\n}\n.v-bottom-nav .v-btn--active[data-v-6c0a33b2] {\n  color: #f80b37;\n}\n", ""]);
 
 // exports
 
@@ -475,6 +475,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
+//
 //
 //
 //
@@ -1059,6 +1062,13 @@ var render = function() {
                     "v-list-tile",
                     { on: { click: _vm.logout } },
                     [_c("v-list-tile-title", [_vm._v("Выход")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-tile",
+                    { attrs: { to: "/settings" } },
+                    [_c("v-list-tile-title", [_vm._v("Настройки профиля")])],
                     1
                   )
                 ],
