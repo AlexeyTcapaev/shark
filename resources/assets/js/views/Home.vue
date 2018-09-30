@@ -141,16 +141,16 @@
         <div v-if="!mobileAndTabletcheck" class="wrapper hidden" v-bar :style=" { height: page + 'px' } ">
             <div>
                 <transition name="fade" mode="out-in" appear>
-                    <router-view :key="$route.fullPath"></router-view>
+                    <router-view ></router-view>
                 </transition>
             </div>
         </div>
         <div v-else class="wrapper" :style=" { height: page + 'px' } ">
             <transition name="fade" mode="out-in" appear>
-                <router-view :key="$route.fullPath"></router-view>
+                <router-view ></router-view>
             </transition>
         </div>
-        <v-bottom-nav :active.sync="bottomNav" :value="true" absolute>
+        <v-bottom-nav :active.sync="bottomNav" :value="true">
             <v-btn flat :to="{name:'communication'}">
                 <span>Общение</span>
                 <v-icon>question_answer</v-icon>
@@ -286,6 +286,7 @@ export default {
 }
 .wrapper {
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 .v-navigation-drawer {
   z-index: 6;
@@ -304,7 +305,6 @@ export default {
 .nav-btn i {
   margin-right: 15px;
 }
-.v-avatar .v-icon,
 .v-avatar {
   margin-right: 15px;
 }

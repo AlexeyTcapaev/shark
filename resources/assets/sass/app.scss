@@ -24,6 +24,9 @@ aside .v-list {
     padding-top: 0;
 }
 
+.relative-badge .v-badge__badge {
+    position:static !important;
+}
 
 * {
     outline: none !important;

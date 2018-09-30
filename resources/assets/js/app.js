@@ -60,6 +60,8 @@ const Platform = () =>
     import('./views/Platform.vue');
 const UserSettings = () =>
     import('./views/UserSettings.vue');
+const Chat = () =>
+    import('./views/Chat.vue');
 
 const router = new VueRouter({
     mode: 'history',
@@ -130,6 +132,11 @@ const router = new VueRouter({
                     path: "communication",
                     component: Communication,
                     name: "communication",
+                    children: [{
+                        path: ":chatid",
+                        component: Chat,
+                        name: "chat",
+                    }]
                 },
                 {
                     path: "platform",
