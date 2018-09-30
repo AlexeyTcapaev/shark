@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use Exception;
 use App\User;
 use App\Jobs\SendVerificationEmail;
 
@@ -40,12 +41,37 @@ class AuthController extends Controller
     public function verify(Request $request)
     {
         $user = User::where('email_token', $request->token)->where('verified', 0)->first();
-        $user->verified = 1;
-        if ($user->save()) {
-            return response()->json([
-                'message' => 'Почта успешно подтверждена'
-            ], 201);
+        if ($user->email_token != null) {
+            $user->verified = 1;
+            $user->email_token = null;
+            if ($user->save()) {
+                return response()->json([
+                    'message' => 'Почта успешно подтверждена'
+                ], 201);
+            }
         }
+    }
+    public function verify_from_site(Request $request)
+    {
+        try {
+            $user = User::findOrFail($request->id);
+            if (empty($user))
+                throw new Exception('Ошибка при подтверждении почты');
+            else {
+                if ($user->email_token != null) {
+                    $user->verified = 1;
+                    $user->email_token = null;
+                    if ($user->save()) {
+                        return response()->json([
+                            'message' => 'Почта успешно подтверждена'
+                        ], 201);
+                    }
+                }
+            }
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+
     }
     /**
      * Login user and create token

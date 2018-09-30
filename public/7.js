@@ -1,14 +1,14 @@
 webpackJsonp([7],{
 
-/***/ 62:
+/***/ 61:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(71)
 /* script */
-var __vue_script__ = __webpack_require__(84)
+var __vue_script__ = __webpack_require__(82)
 /* template */
-var __vue_template__ = __webpack_require__(85)
+var __vue_template__ = __webpack_require__(83)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -25,7 +25,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/Login.vue"
+Component.options.__file = "resources/assets/js/views/Registration.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -34,9 +34,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-33212926", Component.options)
+    hotAPI.createRecord("data-v-7ae5bf8c", Component.options)
   } else {
-    hotAPI.reload("data-v-33212926", Component.options)
+    hotAPI.reload("data-v-7ae5bf8c", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -158,7 +158,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 84:
+/***/ 82:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -193,19 +193,37 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      remember_me: false,
+      valid: false,
+      passwordValid: false,
       login: "",
-      password: "",
-      alert: {
-        enable: false
-      },
-      loading: false,
       show1: false,
+      show2: false,
+      password: "",
+      loading: false,
+      err: [],
+      alert: false,
+      type: "success",
+      alert_message: "",
+      confrim_password: "",
+      loginRules: [function (v) {
+        return !!v || "Name is required";
+      }, function (v) {
+        return v && v.length <= 15 || "Name must be less than 15 characters";
+      }],
+      email: "",
+      emailRules: [function (v) {
+        return !!v || "E-mail is required";
+      }, function (v) {
+        return (/.+@.+/.test(v) || "E-mail must be valid"
+        );
+      }],
       passwordRules: [function (v) {
         return !!v || "Password is required";
       }]
@@ -213,45 +231,56 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   },
   methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({ SetToken: "user/SetToken" }), {
     submit: function submit() {
-      var init = this;
       this.loading = true;
-      if (this.login.indexOf("@") > -1) axios.post("/api/auth/login", {
-        email: init.login,
-        password: init.password,
-        remember_me: true
+      var init = this;
+      axios.post("/api/auth/signup", {
+        email: this.email,
+        password: this.password,
+        password_confirmation: this.confrim_password,
+        name: this.login
       }).then(function (resp) {
-        init.SetToken(resp.data);
+        init.alert = true;
+        init.alert_message = resp.data;
+        init.type = "success";
         init.loading = false;
-        init.$router.push("/app");
+        axios.post("/api/auth/login", {
+          email: init.email,
+          password: init.password,
+          remember_me: true
+        }).then(function (resp) {
+          init.SetToken(resp.data);
+          init.$router.push("/app");
+        });
       }).catch(function (error) {
-        init.loading = false;
-        init.alert.message = error.response.data.message;
-        init.alert.enable = true;
-      });else axios.post("/api/auth/login", {
-        name: init.login,
-        password: init.password,
-        remember_me: true
-      }).then(function (resp) {
-        init.SetToken(resp.data);
-        init.$router.push("/app");
+        Object.keys(error.response.data.errors).forEach(function (element) {
+          error.response.data.errors[element].forEach(function (err) {
+            var e = {};
+            e.message = err;
+            e.alert = true;
+            init.loading = false;
+            init.err.push(e);
+          });
+        });
+        console.log(error.response.data.errors);
       });
+    },
+    passwordCheck: function passwordCheck() {
+      if (this.password === this.confrim_password) this.passwordValid = true;else this.passwordValid = false;
     }
   }),
-  computed: {
-    valid: function valid() {
-      if (this.password !== "" && this.login !== "") return true;else return false;
-    }
-  },
-  beforeCreate: function beforeCreate() {
-    if (this.$store.state.user.token) {
-      if (Object.keys(this.$store.state.user.token).length > 0) this.$router.push("/app");
+  watch: {
+    password: function password() {
+      this.passwordCheck();
+    },
+    confrim_password: function confrim_password() {
+      this.passwordCheck();
     }
   }
 });
 
 /***/ }),
 
-/***/ 85:
+/***/ 83:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -278,7 +307,7 @@ var render = function() {
                     "v-toolbar",
                     { attrs: { dark: "", color: "primary" } },
                     [
-                      _c("v-toolbar-title", [_vm._v("Вход")]),
+                      _c("v-toolbar-title", [_vm._v("Регистрация")]),
                       _vm._v(" "),
                       _c("v-spacer")
                     ],
@@ -291,27 +320,57 @@ var render = function() {
                       _c(
                         "v-alert",
                         {
-                          attrs: { type: "error", dismissible: "" },
+                          attrs: { type: _vm.type, dismissible: "" },
                           model: {
-                            value: _vm.alert.enable,
+                            value: _vm.alert,
                             callback: function($$v) {
-                              _vm.$set(_vm.alert, "enable", $$v)
+                              _vm.alert = $$v
                             },
-                            expression: "alert.enable"
+                            expression: "alert"
                           }
                         },
-                        [_vm._v(_vm._s(_vm.alert.message))]
+                        [_vm._v(_vm._s(_vm.alert_message.message))]
                       ),
+                      _vm._v(" "),
+                      _vm._l(_vm.err, function(error, index) {
+                        return _c(
+                          "v-alert",
+                          {
+                            key: index,
+                            attrs: { type: "error", dismissible: "" },
+                            model: {
+                              value: error.alert,
+                              callback: function($$v) {
+                                _vm.$set(error, "alert", $$v)
+                              },
+                              expression: "error.alert"
+                            }
+                          },
+                          [_vm._v(_vm._s(error.message))]
+                        )
+                      }),
                       _vm._v(" "),
                       _c(
                         "v-form",
+                        {
+                          ref: "form",
+                          model: {
+                            value: _vm.valid,
+                            callback: function($$v) {
+                              _vm.valid = $$v
+                            },
+                            expression: "valid"
+                          }
+                        },
                         [
                           _c("v-text-field", {
                             attrs: {
+                              loading: _vm.loading,
                               outline: "",
-                              label: "Login or E-mail",
+                              label: "Login",
                               "append-icon": "person",
-                              loading: _vm.loading
+                              required: "",
+                              rules: _vm.loginRules
                             },
                             model: {
                               value: _vm.login,
@@ -319,6 +378,24 @@ var render = function() {
                                 _vm.login = $$v
                               },
                               expression: "login"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("v-text-field", {
+                            attrs: {
+                              loading: _vm.loading,
+                              outline: "",
+                              label: "E-mail",
+                              "append-icon": "mail",
+                              required: "",
+                              rules: _vm.emailRules
+                            },
+                            model: {
+                              value: _vm.email,
+                              callback: function($$v) {
+                                _vm.email = $$v
+                              },
+                              expression: "email"
                             }
                           }),
                           _vm._v(" "),
@@ -348,24 +425,35 @@ var render = function() {
                             }
                           }),
                           _vm._v(" "),
-                          _c("v-switch", {
+                          _c("v-text-field", {
                             attrs: {
-                              color: "primary",
-                              label: "Запомнить меня"
+                              loading: _vm.loading,
+                              outline: "",
+                              label: "Confrim",
+                              "append-icon": _vm.show2
+                                ? "visibility_off"
+                                : "visibility",
+                              type: _vm.show2 ? "text" : "password",
+                              required: ""
+                            },
+                            on: {
+                              "click:append": function($event) {
+                                _vm.show2 = !_vm.show2
+                              }
                             },
                             model: {
-                              value: _vm.remember_me,
+                              value: _vm.confrim_password,
                               callback: function($$v) {
-                                _vm.remember_me = $$v
+                                _vm.confrim_password = $$v
                               },
-                              expression: "remember_me"
+                              expression: "confrim_password"
                             }
                           })
                         ],
                         1
                       )
                     ],
-                    1
+                    2
                   ),
                   _vm._v(" "),
                   _c(
@@ -375,22 +463,18 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "v-btn",
-                        {
-                          attrs: {
-                            flat: "",
-                            color: "primary",
-                            to: "/registration"
-                          }
-                        },
-                        [_vm._v("Регистрация")]
+                        { attrs: { flat: "", color: "primary", to: "/login" } },
+                        [_vm._v("Есть аккаунт?")]
                       ),
                       _vm._v(" "),
                       _c(
                         "v-btn",
                         {
                           attrs: {
-                            disabled: !_vm.valid,
                             color: "primary",
+                            disabled: !(
+                              _vm.valid == true && _vm.passwordValid == true
+                            ),
                             loading: _vm.loading
                           },
                           on: { click: _vm.submit }
@@ -419,7 +503,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-33212926", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-7ae5bf8c", module.exports)
   }
 }
 

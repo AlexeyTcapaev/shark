@@ -10,6 +10,9 @@ export default {
         GetUserId(state) {
             return state.user.id;
         },
+        GetUser(state) {
+            return state.user;
+        },
         GetCompany(state) {
             return state.company;
         },

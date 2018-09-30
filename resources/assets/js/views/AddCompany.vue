@@ -170,7 +170,6 @@ export default {
       var files = e.target.files || e.dataTransfer.files;
       if (!files.length) return;
       this.createImage(this.Company, files[0]);
-      this.isActive = false;
     },
     createImage(item, file) {
       var image = new Image();

@@ -1,24 +1,24 @@
 webpackJsonp([1],{
 
-/***/ 64:
+/***/ 60:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(87)
+  __webpack_require__(78)
 }
 var normalizeComponent = __webpack_require__(71)
 /* script */
-var __vue_script__ = __webpack_require__(89)
+var __vue_script__ = __webpack_require__(80)
 /* template */
-var __vue_template__ = __webpack_require__(90)
+var __vue_template__ = __webpack_require__(81)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-7d94acf1"
+var __vue_scopeId__ = "data-v-6c0a33b2"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -29,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/Feed.vue"
+Component.options.__file = "resources/assets/js/views/Home.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -38,9 +38,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7d94acf1", Component.options)
+    hotAPI.createRecord("data-v-6c0a33b2", Component.options)
   } else {
-    hotAPI.reload("data-v-7d94acf1", Component.options)
+    hotAPI.reload("data-v-6c0a33b2", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -425,23 +425,23 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 87:
+/***/ 78:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(88);
+var content = __webpack_require__(79);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(72)("f755a266", content, false, {});
+var update = __webpack_require__(72)("dacd05b4", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7d94acf1\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Feed.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7d94acf1\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Feed.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6c0a33b2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Home.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6c0a33b2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Home.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 88:
+/***/ 79:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
@@ -460,14 +460,14 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.container.fill-height > .layout[data-v-7d94acf1] {\n  -webkit-box-align: baseline;\n      -ms-flex-align: baseline;\n          align-items: baseline;\n}\n.news li[data-v-7d94acf1] {\n  padding: 15px 0;\n  min-width: 40vw;\n  max-width: 100%;\n}\n.news[data-v-7d94acf1] {\n  width: 100%;\n}\n", ""]);
+exports.push([module.i, "\n.logo[data-v-6c0a33b2] {\n  color: #ffffff;\n  text-decoration: none;\n}\n.active-link .v-icon[data-v-6c0a33b2] {\n  color: rgba(0, 0, 0, 0.54) !important;\n}\n.v-list__tile__action .v-badge[data-v-6c0a33b2] {\n  margin: 0 10px 0 0;\n}\n.nav-btn[data-v-6c0a33b2] {\n  color: #ffffff !important;\n  height: 100%;\n}\n.v-menu[data-v-6c0a33b2] {\n  height: 100%;\n}\n.v-content[data-v-6c0a33b2] {\n  padding-top: 0px !important;\n}\n.hidden[data-v-6c0a33b2] {\n  overflow: hidden !important;\n}\n.wrapper[data-v-6c0a33b2] {\n  overflow-y: scroll;\n}\n.v-navigation-drawer[data-v-6c0a33b2] {\n  z-index: 6;\n}\n.v-bottom-nav[data-v-6c0a33b2] {\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n.target-link .v-list__tile__content .v-list__tile__title[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n.target-link .v-icon[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n.nav-btn i[data-v-6c0a33b2] {\n  margin-right: 15px;\n}\n.v-avatar .v-icon[data-v-6c0a33b2],\n.v-avatar[data-v-6c0a33b2] {\n  margin-right: 15px;\n}\n.fade-enter-active[data-v-6c0a33b2],\n.fade-leave-active[data-v-6c0a33b2] {\n  -webkit-transition-duration: 0.3s;\n          transition-duration: 0.3s;\n  -webkit-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-timing-function: ease;\n          transition-timing-function: ease;\n}\n.v-list__tile__title[data-v-6c0a33b2] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.v-list__tile__title i[data-v-6c0a33b2] {\n  margin-right: 10px;\n}\n.v-avatar .fade-enter[data-v-6c0a33b2],\n.fade-leave-active[data-v-6c0a33b2] {\n  opacity: 0;\n}\n.search-bar[data-v-6c0a33b2] {\n  margin: 5px 0;\n}\n.v-list__tile--active .v-list__tile[data-v-6c0a33b2] {\n  color: #f80b37;\n}\n.company[data-v-6c0a33b2] {\n  background: rgba(0, 0, 0, 0.1);\n}\n.v-bottom-nav .v-btn--active[data-v-6c0a33b2] {\n  color: #f80b37;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 89:
+/***/ 80:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -561,26 +561,152 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      show: false
+      dialog: false,
+      drawer: false,
+      search: "",
+      bottomNav: "recent",
+      items: [{ icon: "contacts", text: "Contacts" }, { icon: "history", text: "Frequently contacted" }, { icon: "content_copy", text: "Duplicates" }, {
+        icon: "keyboard_arrow_up",
+        "icon-alt": "keyboard_arrow_down",
+        text: "Labels",
+        model: true,
+        children: [{ icon: "add", text: "Create label" }]
+      }, {
+        icon: "keyboard_arrow_up",
+        "icon-alt": "keyboard_arrow_down",
+        text: "More",
+        model: false,
+        children: [{ text: "Import" }, { text: "Export" }, { text: "Print" }, { text: "Undo changes" }, { text: "Other contacts" }]
+      }, { icon: "settings", text: "Settings" }, { icon: "chat_bubble", text: "Send feedback" }, { icon: "help", text: "Help" }, { icon: "phonelink", text: "App downloads" }, { icon: "keyboard", text: "Go to the old version" }]
     };
   },
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({ ResetState: "user/ResetState" }), {
+    logout: function logout() {
+      var init = this;
+      axios.get("/api/auth/logout").then(function (resp) {
+        init.ResetState();
+        init.$router.push("/login");
+      });
+    }
+  }),
   computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-    windowWidth: "config/windowWidth"
+    windowWidth: "config/windowWidth",
+    windowHeight: "config/windowHeight",
+    company: "user/GetCompany"
   }), {
-    mobile: function mobile() {
-      if (this.windowWidth > 993) return false;else return true;
+    mobileAndTabletcheck: function mobileAndTabletcheck() {
+      var check = false;
+      (function (a) {
+        if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true;
+      })(navigator.userAgent || navigator.vendor || window.opera);
+      return check;
+    },
+    page: function page() {
+      if (this.windowWidth > 993) return this.windowHeight - 120;else return this.windowHeight - 112;
+    },
+    FiltredCompany: function FiltredCompany() {
+      var _this = this;
+
+      if (this.company !== undefined) return this.company.filter(function (elem) {
+        if (_this.search === "") return true;else if (elem.name.toLowerCase().indexOf(_this.search.toLowerCase()) > -1 || elem.company_type.name.toLowerCase().indexOf(_this.search.toLowerCase()) > -1) return elem;
+      });else return [];
     }
   })
 });
 
 /***/ }),
 
-/***/ 90:
+/***/ 81:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -588,258 +714,526 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-container",
+    "main",
+    { staticClass: "fullheight" },
     [
       _c(
-        "v-layout",
-        { attrs: { "justify-center": "", "align-center": "" } },
+        "v-navigation-drawer",
+        {
+          attrs: { fixed: "", app: "" },
+          model: {
+            value: _vm.drawer,
+            callback: function($$v) {
+              _vm.drawer = $$v
+            },
+            expression: "drawer"
+          }
+        },
         [
           _c(
-            "v-flex",
-            { attrs: { xl6: "", lg6: "", md6: "", sm12: "", xs12: "" } },
+            "v-list",
+            { attrs: { dense: "" } },
             [
-              _c("h3", [_vm._v("Новости")]),
+              _c(
+                "v-list-tile",
+                {
+                  attrs: {
+                    to: "/app",
+                    "exact-active-class": "target-link",
+                    "active-class": "active-link"
+                  }
+                },
+                [
+                  _c("v-list-tile-action", [_c("v-icon", [_vm._v("home")])], 1),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-tile-content",
+                    [_c("v-list-tile-title", [_vm._v("Домашняя страница")])],
+                    1
+                  )
+                ],
+                1
+              ),
               _vm._v(" "),
-              _c("ul", { staticClass: "news" }, [
-                _c(
-                  "li",
+              _c("v-divider", { attrs: { dark: "" } }),
+              _vm._v(" "),
+              _c("v-subheader", [_vm._v("Мои компании")]),
+              _vm._v(" "),
+              _c(
+                "v-list-tile",
+                { staticClass: "search-bar" },
+                [
+                  _c(
+                    "v-list-tile-content",
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          outline: "",
+                          label: "Поиск по компаниям",
+                          "append-icon": "search"
+                        },
+                        model: {
+                          value: _vm.search,
+                          callback: function($$v) {
+                            _vm.search = $$v
+                          },
+                          expression: "search"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _vm._l(_vm.FiltredCompany, function(comp, index) {
+                return _c(
+                  "v-list-group",
+                  { key: index, attrs: { avatar: "" } },
                   [
                     _c(
-                      "v-card",
+                      "v-list-tile",
+                      { attrs: { slot: "activator" }, slot: "activator" },
                       [
-                        _c("v-card-title", { attrs: { "primary-title": "" } }, [
-                          _c("div", [
-                            _c("div", { staticClass: "headline" }, [
-                              _vm._v("Top western road trips")
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "grey--text" }, [
-                              _vm._v("1,000 miles of wonder")
+                        comp.logo
+                          ? _c("v-list-tile-avatar", [
+                              _c("img", {
+                                attrs: {
+                                  src: "/storage/uploads/" + comp.logo,
+                                  alt: comp.name
+                                }
+                              })
                             ])
-                          ])
-                        ]),
+                          : _vm._e(),
                         _vm._v(" "),
                         _c(
-                          "v-card-actions",
+                          "v-list-tile-content",
                           [
-                            _c("v-btn", { attrs: { flat: "" } }, [
-                              _vm._v("Share")
+                            _c("v-list-tile-title", [
+                              _vm._v(
+                                _vm._s(comp.company_type.name) +
+                                  " " +
+                                  _vm._s(comp.name)
+                              )
                             ]),
                             _vm._v(" "),
-                            _c(
-                              "v-btn",
-                              { attrs: { flat: "", color: "purple" } },
-                              [_vm._v("Explore")]
-                            ),
-                            _vm._v(" "),
-                            _c("v-spacer"),
-                            _vm._v(" "),
-                            _c(
-                              "v-btn",
-                              {
-                                attrs: { icon: "" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.show = !_vm.show
-                                  }
-                                }
-                              },
-                              [
-                                _c("v-icon", [
-                                  _vm._v(
-                                    _vm._s(
-                                      _vm.show
-                                        ? "keyboard_arrow_down"
-                                        : "keyboard_arrow_up"
-                                    )
-                                  )
-                                ])
-                              ],
-                              1
-                            )
+                            _c("v-list-tile-sub-title", [_vm._v("Владелец")])
                           ],
                           1
                         ),
                         _vm._v(" "),
                         _c(
-                          "v-slide-y-transition",
+                          "v-list-tile-action",
                           [
-                            _c(
-                              "v-card-text",
-                              {
-                                directives: [
-                                  {
-                                    name: "show",
-                                    rawName: "v-show",
-                                    value: _vm.show,
-                                    expression: "show"
-                                  }
-                                ]
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier,\n                                not with all the bed making you'll be doing. Then we'll go with that data file! Hey,\n                                you add a one and two zeros to that or we walk! You're going to do his laundry? I've\n                                got to find a way to escape.\n                            "
-                                )
-                              ]
-                            )
-                          ],
-                          1
-                        )
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  [
-                    _c(
-                      "v-card",
-                      [
-                        _c("v-card-title", { attrs: { "primary-title": "" } }, [
-                          _c("div", [
-                            _c("div", { staticClass: "headline" }, [
-                              _vm._v("Top western road trips")
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "grey--text" }, [
-                              _vm._v("1,000 miles of wonder")
-                            ])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "v-card-actions",
-                          [
-                            _c("v-btn", { attrs: { flat: "" } }, [
-                              _vm._v("Share")
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "v-btn",
-                              { attrs: { flat: "", color: "purple" } },
-                              [_vm._v("Explore")]
-                            ),
-                            _vm._v(" "),
-                            _c("v-spacer"),
-                            _vm._v(" "),
-                            _c(
-                              "v-btn",
-                              {
-                                attrs: { icon: "" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.show = !_vm.show
-                                  }
-                                }
-                              },
-                              [
-                                _c("v-icon", [
-                                  _vm._v(
-                                    _vm._s(
-                                      _vm.show
-                                        ? "keyboard_arrow_down"
-                                        : "keyboard_arrow_up"
-                                    )
-                                  )
-                                ])
-                              ],
-                              1
-                            )
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "v-slide-y-transition",
-                          [
-                            _c(
-                              "v-card-text",
-                              {
-                                directives: [
-                                  {
-                                    name: "show",
-                                    rawName: "v-show",
-                                    value: _vm.show,
-                                    expression: "show"
-                                  }
-                                ]
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier,\n                                not with all the bed making you'll be doing. Then we'll go with that data file! Hey,\n                                you add a one and two zeros to that or we walk! You're going to do his laundry? I've\n                                got to find a way to escape.\n                            "
-                                )
-                              ]
-                            )
-                          ],
-                          1
-                        )
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  [
-                    _c(
-                      "v-card",
-                      [
-                        _c("v-card-media", {
-                          attrs: {
-                            src:
-                              "https://cdn.vuetifyjs.com/images/cards/desert.jpg",
-                            height: "200px"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("v-card-title", { attrs: { "primary-title": "" } }, [
-                          _c("div", [
-                            _c("h3", { staticClass: "headline mb-0" }, [
-                              _vm._v("Kangaroo Valley Safari")
-                            ]),
-                            _vm._v(" "),
-                            _c("div", [
-                              _vm._v(
-                                "Located two hours south of Sydney in the "
-                              ),
-                              _c("br"),
-                              _vm._v(
-                                "Southern Highlands of New South Wales,\n                                    ...\n                                "
+                            _c("v-badge", { attrs: { color: "secondary" } }, [
+                              _c(
+                                "span",
+                                { attrs: { slot: "badge" }, slot: "badge" },
+                                [_vm._v("6")]
                               )
                             ])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "v-card-actions",
-                          [
-                            _c(
-                              "v-btn",
-                              { attrs: { flat: "", color: "orange" } },
-                              [_vm._v("Share")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "v-btn",
-                              { attrs: { flat: "", color: "orange" } },
-                              [_vm._v("Explore")]
-                            )
                           ],
                           1
                         )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-list-tile",
+                      {
+                        attrs: {
+                          "active-class": "secondary--text target-link",
+                          to: {
+                            name: "company-structure",
+                            params: { slug: comp.slug }
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "v-list-tile-action",
+                          [_c("v-icon", [_vm._v("view_module")])],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-list-tile-content",
+                          [_c("v-list-tile-title", [_vm._v("Структура")])],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("v-list-tile-action")
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-list-tile",
+                      [
+                        _c(
+                          "v-list-tile-action",
+                          [_c("v-icon", [_vm._v("group")])],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-list-tile-content",
+                          [_c("v-list-tile-title", [_vm._v("Сотрудники")])],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("v-list-tile-action")
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-list-tile",
+                      [
+                        _c(
+                          "v-list-tile-action",
+                          [_c("v-icon", [_vm._v("book")])],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-list-tile-content",
+                          [_c("v-list-tile-title", [_vm._v("Справочник")])],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("v-list-tile-action")
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-list-tile",
+                      [
+                        _c(
+                          "v-list-tile-action",
+                          [_c("v-icon", [_vm._v("work")])],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-list-tile-content",
+                          [_c("v-list-tile-title", [_vm._v("Поручения")])],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("v-list-tile-action")
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-list-tile",
+                      [
+                        _c(
+                          "v-list-tile-action",
+                          [_c("v-icon", [_vm._v("timelapse")])],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-list-tile-content",
+                          [_c("v-list-tile-title", [_vm._v("Трудозатраты")])],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("v-list-tile-action")
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-list-tile",
+                      [
+                        _c(
+                          "v-list-tile-action",
+                          [_c("v-icon", [_vm._v("timeline")])],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-list-tile-content",
+                          [
+                            _c("v-list-tile-title", [
+                              _vm._v("Поэтапная деятельность")
+                            ])
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("v-list-tile-action")
                       ],
                       1
                     )
                   ],
                   1
                 )
-              ])
+              }),
+              _vm._v(" "),
+              _c("v-divider", { attrs: { dark: "" } }),
+              _vm._v(" "),
+              _c(
+                "v-list-tile",
+                {
+                  attrs: {
+                    to: { name: "add_company" },
+                    "exact-active-class": "target-link"
+                  }
+                },
+                [
+                  _c(
+                    "v-list-tile-action",
+                    [_c("v-icon", [_vm._v("add_circle_outline")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-tile-content",
+                    [_c("v-list-tile-title", [_vm._v("Создать компанию")])],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            2
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-toolbar",
+        { attrs: { color: "primary", dark: "", fixed: "", app: "" } },
+        [
+          _c("v-toolbar-side-icon", {
+            on: {
+              click: function($event) {
+                $event.stopPropagation()
+                _vm.drawer = !_vm.drawer
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("v-list-tile-avatar", [
+            _c("img", {
+              staticClass: "img_logo",
+              attrs: {
+                src: "/storage/logo/temp_shark_logo.png",
+                alt: "Бизнес - Акула"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _vm.windowWidth > 993
+            ? _c(
+                "v-toolbar-title",
+                [
+                  _c(
+                    "router-link",
+                    { staticClass: "logo", attrs: { to: "/home" } },
+                    [_vm._v("Бизнес - Акула")]
+                  )
+                ],
+                1
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _c("v-spacer"),
+          _vm._v(" "),
+          _c(
+            "v-menu",
+            { attrs: { "offset-y": "" } },
+            [
+              _c(
+                "v-btn",
+                {
+                  staticClass: "nav-btn",
+                  attrs: { slot: "activator", dark: "", flat: "" },
+                  slot: "activator"
+                },
+                [
+                  _c(
+                    "v-avatar",
+                    [
+                      !_vm.$store.state.user.user.avatar
+                        ? _c("v-icon", [_vm._v("account_circle")])
+                        : _c("img", {
+                            attrs: {
+                              src:
+                                "/storage/uploads/" +
+                                _vm.$store.state.user.user.avatar,
+                              alt: _vm.$store.state.user.user.name
+                            }
+                          })
+                    ],
+                    1
+                  ),
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(_vm.$store.state.user.user.name) +
+                      "\n            "
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list",
+                [
+                  _c(
+                    "v-list-tile",
+                    {
+                      attrs: { "active-class": "secondary--text target-link" },
+                      on: { click: _vm.logout }
+                    },
+                    [
+                      _c(
+                        "v-list-tile-title",
+                        [
+                          _c("v-icon", [_vm._v("exit_to_app")]),
+                          _vm._v("Выход")
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-tile",
+                    {
+                      attrs: {
+                        to: { name: "user-settings" },
+                        "active-class": "secondary--text target-link"
+                      }
+                    },
+                    [
+                      _c(
+                        "v-list-tile-title",
+                        [
+                          _c("v-icon", [_vm._v("settings")]),
+                          _vm._v("Настройки профиля")
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-badge",
+            { attrs: { color: "secondary", overlap: "" } },
+            [
+              _c("span", { attrs: { slot: "badge" }, slot: "badge" }, [
+                _vm._v("6")
+              ]),
+              _vm._v(" "),
+              _c(
+                "v-btn",
+                { attrs: { icon: "" } },
+                [_c("v-icon", [_vm._v("notifications")])],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      !_vm.mobileAndTabletcheck
+        ? _c(
+            "div",
+            {
+              directives: [{ name: "bar", rawName: "v-bar" }],
+              staticClass: "wrapper hidden",
+              style: { height: _vm.page + "px" }
+            },
+            [
+              _c(
+                "div",
+                [
+                  _c(
+                    "transition",
+                    { attrs: { name: "fade", mode: "out-in", appear: "" } },
+                    [_c("router-view", { key: _vm.$route.fullPath })],
+                    1
+                  )
+                ],
+                1
+              )
             ]
+          )
+        : _c(
+            "div",
+            { staticClass: "wrapper", style: { height: _vm.page + "px" } },
+            [
+              _c(
+                "transition",
+                { attrs: { name: "fade", mode: "out-in", appear: "" } },
+                [_c("router-view", { key: _vm.$route.fullPath })],
+                1
+              )
+            ],
+            1
+          ),
+      _vm._v(" "),
+      _c(
+        "v-bottom-nav",
+        {
+          attrs: { active: _vm.bottomNav, value: true, absolute: "" },
+          on: {
+            "update:active": function($event) {
+              _vm.bottomNav = $event
+            }
+          }
+        },
+        [
+          _c(
+            "v-btn",
+            { attrs: { flat: "", to: { name: "communication" } } },
+            [
+              _c("span", [_vm._v("Общение")]),
+              _vm._v(" "),
+              _c("v-icon", [_vm._v("question_answer")])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-btn",
+            { attrs: { flat: "", to: { name: "news" } } },
+            [
+              _c("span", [_vm._v("Новости")]),
+              _vm._v(" "),
+              _c("v-icon", [_vm._v("description")])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-btn",
+            { attrs: { flat: "", to: { name: "platform" } } },
+            [
+              _c("span", [_vm._v("Бизнес площадка")]),
+              _vm._v(" "),
+              _c("v-icon", [_vm._v("business")])
+            ],
+            1
           )
         ],
         1
@@ -854,7 +1248,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7d94acf1", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-6c0a33b2", module.exports)
   }
 }
 

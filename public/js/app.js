@@ -26190,40 +26190,43 @@ if (__WEBPACK_IMPORTED_MODULE_5__store_index__["a" /* default */].state.user.tok
     axios.defaults.headers.common['Authorization'] = __WEBPACK_IMPORTED_MODULE_5__store_index__["a" /* default */].state.user.token.token_type + " " + __WEBPACK_IMPORTED_MODULE_5__store_index__["a" /* default */].state.user.token.access_token;
 }
 var App = function App() {
-    return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 59));
+    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 59));
 };
 var Home = function Home() {
-    return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 60));
+    return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 60));
 };
 var Registration = function Registration() {
-    return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 61));
+    return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 61));
 };
 var Login = function Login() {
-    return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 62));
+    return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 62));
 };
 var IndexPage = function IndexPage() {
     return __webpack_require__.e/* import() */(9).then(__webpack_require__.bind(null, 63));
 };
 var Feed = function Feed() {
-    return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 64));
+    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 64));
 };
 var AddCompany = function AddCompany() {
-    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 65));
+    return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 65));
 };
 var Dashboard = function Dashboard() {
     return __webpack_require__.e/* import() */(10).then(__webpack_require__.bind(null, 66));
 };
 var VerifyEmail = function VerifyEmail() {
-    return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 67));
+    return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 67));
 };
 var CompanyStructure = function CompanyStructure() {
-    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 68));
+    return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 68));
 };
 var Communication = function Communication() {
     return __webpack_require__.e/* import() */(11).then(__webpack_require__.bind(null, 69));
 };
 var Platform = function Platform() {
-    return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 70));
+    return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 70));
+};
+var UserSettings = function UserSettings() {
+    return __webpack_require__.e/* import() */(14).then(__webpack_require__.bind(null, 112));
 };
 
 var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
@@ -26262,6 +26265,10 @@ var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
             path: "",
             component: Dashboard,
             name: "app"
+        }, {
+            path: "/user/settings",
+            component: UserSettings,
+            name: "user-settings"
         }, {
             path: 'company/:slug/structure',
             name: "company-structure",
@@ -71941,6 +71948,9 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
     getters: {
         GetUserId: function GetUserId(state) {
             return state.user.id;
+        },
+        GetUser: function GetUser(state) {
+            return state.user;
         },
         GetCompany: function GetCompany(state) {
             return state.company;

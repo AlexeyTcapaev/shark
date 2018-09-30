@@ -14,17 +14,16 @@
     transition: 0.2s linear;
 }
 
-.v-toolbar__content {
-    height: 64px !important;
-}
 
 .v-badge--overlap .v-badge__badge {
     top: -4px;
     right: -4px;
 }
+
 aside .v-list {
     padding-top: 0;
 }
+
 
 * {
     outline: none !important;
