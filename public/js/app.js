@@ -29,7 +29,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		14: 0
+/******/ 		15: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -26229,7 +26229,7 @@ var UserSettings = function UserSettings() {
     return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 71));
 };
 var Chat = function Chat() {
-    return __webpack_require__.e/* import() */(15).then(__webpack_require__.bind(null, 119));
+    return __webpack_require__.e/* import() */(13).then(__webpack_require__.bind(null, 72));
 };
 
 var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
