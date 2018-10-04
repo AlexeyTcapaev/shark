@@ -14248,6 +14248,10 @@ h3 {
   border-bottom: 2px solid #f80b37;
 }
 
+.v-list__tile {
+  border-left: 2px solid transparent;
+}
+
 .target-link {
   border-left: 2px solid #f80b37;
   -webkit-box-sizing: border-box;
@@ -14278,8 +14282,8 @@ div {
   backface-visibility: hidden;
   -webkit-transform: rotate3d(0, 0, 0, 0);
   transform: rotate3d(0, 0, 0, 0);
-  -webkit-transition: background-color 100ms ease-out, margin 100ms ease-out, height 100ms ease-out;
-  transition: background-color 100ms ease-out, margin 100ms ease-out, height 100ms ease-out;
+  -webkit-transition: background-color 100ms ease-out, margin 100ms ease-out, height 100ms ease-out;
+  transition: background-color 100ms ease-out, margin 100ms ease-out, height 100ms ease-out;
   background-color: rgba(248, 11, 55, 0.1);
   margin: 5px 5px 5px 0;
   height: calc(100% - 10px);

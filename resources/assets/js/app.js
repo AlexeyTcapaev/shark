@@ -62,93 +62,100 @@ const UserSettings = () =>
     import('./views/UserSettings.vue');
 const Chat = () =>
     import('./views/Chat.vue');
+const ChatStartPage = () =>
+    import('./views/ChatStartPage.vue');
+
 
 const router = new VueRouter({
     mode: 'history',
     routes: [{
-            path: '/',
-            name: 'IndexPage',
-            component: IndexPage
+        path: '/',
+        name: 'IndexPage',
+        component: IndexPage
+    },
+    {
+        path: "/registration",
+        name: "registration",
+        component: Registration,
+    },
+    {
+        path: "/login",
+        name: "login",
+        component: Login,
+    },
+    {
+        path: "/app",
+        component: Home,
+        beforeEnter: (to, from, next) => {
+            axios.get('/api/auth/user').then(function (resp) {
+                store.state.user.user = resp.data
+                Cookies.set('user', JSON.stringify(store.state.user.user), {
+                    expires: 2,
+                    domain: location.hostname
+                });
+                axios.get("/api/auth/company/" + store.state.user.user.id).then(function (resp) {
+                    store.state.user.company = resp.data
+                });
+                next();
+            }).catch(error => {
+                router.push("/login");
+            })
+        },
+        children: [{
+            path: "",
+            component: Dashboard,
+            name: "app",
         },
         {
-            path: "/registration",
-            name: "registration",
-            component: Registration,
+            path: "/user/settings",
+            component: UserSettings,
+            name: "user-settings",
         },
         {
-            path: "/login",
-            name: "login",
-            component: Login,
+            path: 'company/:slug/structure',
+            name: "company-structure",
+            component: CompanyStructure,
         },
         {
-            path: "/app",
-            component: Home,
-            beforeEnter: (to, from, next) => {
-                axios.get('/api/auth/user').then(function (resp) {
-                    store.state.user.user = resp.data
-                    Cookies.set('user', JSON.stringify(store.state.user.user), {
-                        expires: 2,
-                        domain: location.hostname
-                    });
-                    axios.get("/api/auth/company/" + store.state.user.user.id).then(function (resp) {
-                        store.state.user.company = resp.data
-                    });
-                    next();
-                }).catch(error => {
-                    router.push("/login");
-                })
-            },
-            children: [{
+            path: 'verifyemail/:token',
+            name: "verifyemail",
+            component: VerifyEmail,
+        },
+        {
+            path: "add_company",
+            component: AddCompany,
+            name: "add_company",
+        },
+        {
+            path: "news",
+            component: Feed,
+            name: "news",
+        },
+        {
+            path: "communication",
+            component: Communication,
+            children: [
+                {
                     path: "",
-                    component: Dashboard,
-                    name: "app",
-                },
-                {
-                    path: "/user/settings",
-                    component: UserSettings,
-                    name: "user-settings",
-                },
-                {
-                    path: 'company/:slug/structure',
-                    name: "company-structure",
-                    component: CompanyStructure,
-                },
-                {
-                    path: 'verifyemail/:token',
-                    name: "verifyemail",
-                    component: VerifyEmail,
-                },
-                {
-                    path: "add_company",
-                    component: AddCompany,
-                    name: "add_company",
-                },
-                {
-                    path: "news",
-                    component: Feed,
-                    name: "news",
-                },
-                {
-                    path: "communication",
-                    component: Communication,
+                    component: ChatStartPage,
                     name: "communication",
-                    children: [{
-                        path: ":chatid",
-                        component: Chat,
-                        name: "chat",
-                    }]
-                },
-                {
-                    path: "platform",
-                    component: Platform,
-                    name: "platform",
-                }
-            ]
+                }, {
+                    path: ":chatid",
+                    component: Chat,
+                    name: "chat",
+                }]
         },
         {
-            path: '*',
-            redirect: '/'
+            path: "platform",
+            component: Platform,
+            name: "platform",
         }
+        ]
+    },
+    {
+        path: '*',
+        redirect: '/'
+    }
     ],
 });
 router.beforeEach((to, from, next) => {

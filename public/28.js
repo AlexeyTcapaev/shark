@@ -1,106 +1,14 @@
-webpackJsonp([23],{
+webpackJsonp([28],{
 
-/***/ 100:
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "v-container",
-    [
-      _c(
-        "v-layout",
-        { attrs: { "justify-center": "", "align-center": "" } },
-        [
-          _c(
-            "v-flex",
-            { attrs: { xl6: "", lg6: "", md6: "", sm12: "", xs12: "" } },
-            [
-              _c(
-                "v-card",
-                { staticClass: "elevation-12" },
-                [
-                  _c(
-                    "v-toolbar",
-                    { attrs: { dark: "", color: "primary" } },
-                    [
-                      _c("v-toolbar-title", [_vm._v("Подтверждение почты")]),
-                      _vm._v(" "),
-                      _c("v-spacer")
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-text",
-                    [
-                      _c(
-                        "v-alert",
-                        {
-                          attrs: { type: "error", dismissible: "" },
-                          model: {
-                            value: _vm.alert.enable,
-                            callback: function($$v) {
-                              _vm.$set(_vm.alert, "enable", $$v)
-                            },
-                            expression: "alert.enable"
-                          }
-                        },
-                        [_vm._v(_vm._s(_vm.alert.message))]
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-actions",
-                    [
-                      _c("v-spacer"),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        { attrs: { color: "secondary", to: "/app" } },
-                        [_vm._v("На главную")]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-6f6d33a0", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 67:
+/***/ 66:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(73)
 /* script */
-var __vue_script__ = __webpack_require__(99)
+var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(100)
+var __vue_template__ = __webpack_require__(98)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -117,7 +25,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/VerifyEmail.vue"
+Component.options.__file = "resources/assets/js/views/Dashboard.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -126,9 +34,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6f6d33a0", Component.options)
+    hotAPI.createRecord("data-v-361a3c51", Component.options)
   } else {
-    hotAPI.reload("data-v-6f6d33a0", Component.options)
+    hotAPI.reload("data-v-361a3c51", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -250,56 +158,24 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 99:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 98:
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      show: false,
-      alert: {
-        enable: false
-      }
-    };
-  },
-  beforeCreate: function beforeCreate() {
-    var init = this;
-    axios.post("/api/auth/verify", {
-      token: init.$route.params.token
-    }).then(function (resp) {
-      init.alert.message = resp.data.message;
-      init.alert.enable = true;
-    }).catch(function (error) {
-      init.alert.message = error.response.data.message;
-      init.alert.enable = true;
-    });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [_vm._v("1")])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-361a3c51", module.exports)
   }
-});
+}
 
 /***/ })
 

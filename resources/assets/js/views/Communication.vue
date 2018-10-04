@@ -3,8 +3,8 @@
         <v-layout justify-center align-center>
             <v-flex>
                 <aside class="room-list">
-                    <v-list subheader>
-                        <v-subheader>Recent chat</v-subheader>
+                    <v-list subheader :class="{shortChat:!toggleChat}">
+                        <v-subheader>Чаты<v-spacer></v-spacer><v-icon :class="{active:!toggleChat}" @click="ToggleChats">arrow_back_ios</v-icon></v-subheader>
                         <v-list-tile
                         active-class="secondary--text target-link"
                         v-for="(item,i) in items"
@@ -59,12 +59,29 @@ export default {
         title: "Ali Connors",
         avatar: "https://cdn.vuetifyjs.com/images/lists/4.jpg"
       }
-    ]
-  })
+    ],
+    toggleChat: true
+  }),
+  methods: {
+    ToggleChats() {
+      this.toggleChat = !this.toggleChat;
+    }
+  }
 };
 </script>
 
 <style scoped>
+.v-list {
+  transition: width 0.2s linear;
+}
+.shortChat {
+  width: 70px !important;
+  transition: 0.2s linear;
+  overflow: hidden;
+}
+.chat {
+  width: 100%;
+}
 .no-padding {
   padding: 0;
 }
@@ -77,6 +94,9 @@ export default {
 .flex {
   height: 100%;
 }
+i.active {
+  transform: rotate(180deg);
+}
 .room-list .v-list {
   height: 100%;
 }
@@ -86,7 +106,10 @@ export default {
 .target-link .v-list__tile__content .v-list__tile__title {
   color: #f80b37 !important;
 }
+.material-icons {
+  width: 24px;
 
+}
 .target-link .v-icon {
   color: #f80b37 !important;
 }
