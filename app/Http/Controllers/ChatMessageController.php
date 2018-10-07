@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\ChatMessage;
 use Illuminate\Http\Request;
-use App\User;
 
-class UserController extends Controller
+class ChatMessageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -41,24 +41,21 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\ChatMessage  $chatMessage
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(ChatMessage $chatMessage)
     {
-    }
-    public function for_chat_create($id)
-    {
-        return User::where('id', '!=', $id)->get();
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\ChatMessage  $chatMessage
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(ChatMessage $chatMessage)
     {
         //
     }
@@ -67,34 +64,21 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\ChatMessage  $chatMessage
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, ChatMessage $chatMessage)
     {
-        try {
-            $user = User::findOrFail($id);
-            if (empty($user))
-                return response()->json(['error' => 'Пользователь не найдена'], 404);
-            else {
-                $user->update($request->all());
-                if ($request->hasFile('avatar')) {
-                    $user->uploadImage($request->file('avatar'));
-                }
-            }
-        } catch (Exception $e) {
-            return response()->json(['error' => $e->getMessage()], 500);
-        }
-        return $user;
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\ChatMessage  $chatMessage
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(ChatMessage $chatMessage)
     {
         //
     }

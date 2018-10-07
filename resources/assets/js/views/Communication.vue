@@ -2,44 +2,37 @@
     <v-container fluid class="no-padding">
         <v-layout justify-center align-center>
             <v-flex>
-                    <v-navigation-drawer
-                        v-model="drawer"
-                        absolute
-                        temporary
-                        >
+                <v-navigation-drawer v-model="drawer" absolute temporary>
 
-                        <v-list class="pt-0" dense>
-                              <v-list >
-                                <v-list-tile class="search-bar">
-                                    <v-list-tile-content>
-                                        <v-text-field outline label="Поиск по чатам" append-icon="search" v-model="search"></v-text-field>
-                                    </v-list-tile-content>
-                                </v-list-tile>
-                            </v-list>
-                            <v-divider></v-divider>
-                              <v-list-tile
-                        active-class="secondary--text target-link"
-                        v-for="(item,i) in items"
-                        :key="item.title"
-                        avatar
-                        :to="{ name:'chat',params:{chatid:i} }"
-                        >
-                        <v-list-tile-avatar>
-                            <img :src="item.avatar">
-                        </v-list-tile-avatar>
+                    <v-list class="pt-0" dense>
+                        <v-list>
+                            <v-subheader>Мои диалоги</v-subheader>
+                            <v-list-tile class="search-bar">
+                                <v-list-tile-content>
+                                    <v-text-field outline label="Поиск по чатам" append-icon="search" v-model="search"></v-text-field>
+                                </v-list-tile-content>
+                            </v-list-tile>
+                        </v-list>
+                        <v-divider></v-divider>
+                        <v-list-tile active-class="secondary--text target-link" v-for="(chat,i) in chats" :key="i"
+                            avatar :to="{ name:'chat',params:{chatid:chat.id} }">
+                            <v-list-tile-avatar>
+                                <v-icon v-if="!chat.users[0].avatar">account_circle</v-icon>
+                                <img v-else :src="'/storage/uploads/'+chat.users[0].avatar" :alt="chat.users[0].name">
+                            </v-list-tile-avatar>
 
-                        <v-list-tile-content>
-                            <v-list-tile-title v-html="item.title"></v-list-tile-title>
-                        </v-list-tile-content>
+                            <v-list-tile-content>
+                                <v-list-tile-title v-html="chat.users[0].name"></v-list-tile-title>
+                            </v-list-tile-content>
 
-                        <v-list-tile-action>
-                             <v-badge color="secondary" class="relative-badge">
-                                        <span slot="badge">6</span>
-                                    </v-badge>
-                        </v-list-tile-action>
+                            <v-list-tile-action>
+                                <v-badge color="secondary" class="relative-badge">
+                                    <span slot="badge">6</span>
+                                </v-badge>
+                            </v-list-tile-action>
                         </v-list-tile>
-                                                <v-divider dark></v-divider>
-                        <v-list-tile :to="{name:'add_company'}" exact-active-class="target-link">
+                        <v-divider dark></v-divider>
+                        <v-list-tile :to="{name:'add_chat'}" exact-active-class="target-link">
                             <v-list-tile-action>
                                 <v-icon>add_circle_outline</v-icon>
                             </v-list-tile-action>
@@ -47,8 +40,8 @@
                                 <v-list-tile-title>Создать чат</v-list-tile-title>
                             </v-list-tile-content>
                         </v-list-tile>
-                        </v-list>
-                        </v-navigation-drawer>
+                    </v-list>
+                </v-navigation-drawer>
                 <main class="chat">
                     <transition name="fade" mode="out-in" appear>
                         <router-view @toggleChat="drawer=!drawer" :key="$router.fullPath"></router-view>
@@ -58,35 +51,30 @@
         </v-layout>
     </v-container>
 </template>
+
 <script>
+import { mapGetters } from "vuex";
 export default {
   data: () => ({
     search: "",
-    items: [
-      {
-        active: true,
-        title: "Jason Oner",
-        avatar: "https://cdn.vuetifyjs.com/images/lists/1.jpg"
-      },
-      {
-        active: true,
-        title: "Ranee Carlson",
-        avatar: "https://cdn.vuetifyjs.com/images/lists/2.jpg"
-      },
-      {
-        title: "Cindy Baker",
-        avatar: "https://cdn.vuetifyjs.com/images/lists/3.jpg"
-      },
-      {
-        title: "Ali Connors",
-        avatar: "https://cdn.vuetifyjs.com/images/lists/4.jpg"
-      }
-    ],
+    chats: [],
     mini: true,
     right: null,
-    drawer: true
+    drawer: false
   }),
-  methods: {}
+  methods: {},
+  computed: {
+    ...mapGetters({ user: "user/GetUser" })
+  },
+  mounted() {
+    const init = this;
+    axios
+      .get("/api/auth/chats/" + this.user.id)
+      .then(resp => {
+        init.chats = resp.data;
+      })
+      .catch(error => {});
+  }
 };
 </script>
 
@@ -135,6 +123,5 @@ i.active {
 .target-link .v-icon {
   color: #f80b37 !important;
 }
-
 </style>
 

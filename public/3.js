@@ -1,309 +1,24 @@
 webpackJsonp([3],{
 
-/***/ 102:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(103);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(75)("d1a2535e", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-40d62849\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CompanyStructure.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-40d62849\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CompanyStructure.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 103:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(14)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.creator[data-v-40d62849] {\n  margin-bottom: 15px;\n}\ndiv[data-v-40d62849] {\n  text-align: left;\n}\n.department-header[data-v-40d62849] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  overflow: hidden;\n}\n.department-header i[data-v-40d62849] {\n  margin-right: 5px;\n}\n.department-header p[data-v-40d62849] {\n  font-weight: bold;\n  padding: 0 10px;\n  margin: 0;\n}\n.department-header .v-divider--vertical[data-v-40d62849] {\n  height: 50px;\n}\n.v-expansion-panel__body .v-card[data-v-40d62849]{\n  border-top: 1px solid rgba(0, 0, 0, 0.12);\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 104:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-var RecursivePalet = function RecursivePalet() {
-  return __webpack_require__.e/* import() */(15).then(__webpack_require__.bind(null, 77));
-};
-/* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    RecursivePalet: RecursivePalet
-  },
-  data: function data() {
-    return {
-      root: {
-        descendants: []
-      },
-      NewDepartment: "",
-      panel: []
-    };
-  },
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-    GetCompanyBySlug: "user/GetCompanyBySlug"
-  }), {
-    Company: function Company() {
-      return this.GetCompanyBySlug(this.$route.params.slug);
-    }
-  }),
-  methods: {
-    AddDepartment: function AddDepartment() {
-      var init = this;
-      axios.post("/api/auth/departments", {
-        name: this.root.newDepartment,
-        root: this.root.slug
-      }).then(function (resp) {
-        init.root.children.push(resp.data);
-      }).catch(function (error) {});
-    }
-  },
-  mounted: function mounted() {
-    var init = this;
-    axios.get("/api/auth/departments/" + this.$route.params.slug).then(function (resp) {
-      init.root = resp.data;
-    }).catch(function (error) {});
-  }
-});
-
-/***/ }),
-
-/***/ 109:
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "v-container",
-    { attrs: { fluid: "" } },
-    [
-      _c(
-        "v-layout",
-        { attrs: { "justify-center": "", "align-center": "" } },
-        [
-          _c(
-            "v-flex",
-            [
-              _c(
-                "v-expansion-panel",
-                { staticClass: "creator" },
-                [
-                  _c(
-                    "v-expansion-panel-content",
-                    [
-                      _c("div", { attrs: { slot: "header" }, slot: "header" }, [
-                        _vm._v("Информация о владельце и создателе")
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "v-card",
-                        [
-                          _c("v-card-text", { staticClass: "grey lighten-3" }, [
-                            _vm._v(
-                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                            )
-                          ])
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-expansion-panel",
-                { staticClass: "creator" },
-                [
-                  _c(
-                    "v-expansion-panel-content",
-                    [
-                      _c("div", { attrs: { slot: "header" }, slot: "header" }, [
-                        _vm._v("Добавить отдел")
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "v-card",
-                        [
-                          _c(
-                            "v-card-text",
-                            { staticClass: "grey lighten-3" },
-                            [
-                              _c(
-                                "v-flex",
-                                [
-                                  _c("v-text-field", {
-                                    attrs: {
-                                      outline: "",
-                                      label: "Введите название отдела",
-                                      "append-icon": "add"
-                                    },
-                                    on: {
-                                      "click:append": _vm.AddDepartment,
-                                      keyup: function($event) {
-                                        if (
-                                          !("button" in $event) &&
-                                          _vm._k(
-                                            $event.keyCode,
-                                            "enter",
-                                            13,
-                                            $event.key,
-                                            "Enter"
-                                          )
-                                        ) {
-                                          return null
-                                        }
-                                        return _vm.AddDepartment($event)
-                                      }
-                                    },
-                                    model: {
-                                      value: _vm.root.newDepartment,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.root, "newDepartment", $$v)
-                                      },
-                                      expression: "root.newDepartment"
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-expansion-panel",
-                {
-                  attrs: { expand: "" },
-                  model: {
-                    value: _vm.panel,
-                    callback: function($$v) {
-                      _vm.panel = $$v
-                    },
-                    expression: "panel"
-                  }
-                },
-                _vm._l(_vm.root.children, function(item, i) {
-                  return _c("recursive-palet", {
-                    key: i,
-                    attrs: { item: item }
-                  })
-                })
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-40d62849", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 68:
+/***/ 64:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(102)
+  __webpack_require__(91)
 }
 var normalizeComponent = __webpack_require__(74)
 /* script */
-var __vue_script__ = __webpack_require__(104)
+var __vue_script__ = __webpack_require__(93)
 /* template */
-var __vue_template__ = __webpack_require__(109)
+var __vue_template__ = __webpack_require__(94)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-40d62849"
+var __vue_scopeId__ = "data-v-7d94acf1"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -314,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/CompanyStructure.vue"
+Component.options.__file = "resources/assets/js/views/Feed.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -323,9 +38,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-40d62849", Component.options)
+    hotAPI.createRecord("data-v-7d94acf1", Component.options)
   } else {
-    hotAPI.reload("data-v-40d62849", Component.options)
+    hotAPI.reload("data-v-7d94acf1", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -707,6 +422,441 @@ module.exports = function listToStyles (parentId, list) {
   return styles
 }
 
+
+/***/ }),
+
+/***/ 91:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(92);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(75)("f755a266", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7d94acf1\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Feed.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7d94acf1\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Feed.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 92:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(14)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.container.fill-height > .layout[data-v-7d94acf1] {\n  -webkit-box-align: baseline;\n      -ms-flex-align: baseline;\n          align-items: baseline;\n}\n.news li[data-v-7d94acf1] {\n  padding: 15px 0;\n  min-width: 40vw;\n  max-width: 100%;\n}\n.news[data-v-7d94acf1] {\n  width: 100%;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 93:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      show: false
+    };
+  },
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+    windowWidth: "config/windowWidth"
+  }), {
+    mobile: function mobile() {
+      if (this.windowWidth > 993) return false;else return true;
+    }
+  })
+});
+
+/***/ }),
+
+/***/ 94:
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-container",
+    [
+      _c(
+        "v-layout",
+        { attrs: { "justify-center": "", "align-center": "" } },
+        [
+          _c(
+            "v-flex",
+            { attrs: { xl6: "", lg6: "", md6: "", sm12: "", xs12: "" } },
+            [
+              _c("h3", [_vm._v("Новости")]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "news" }, [
+                _c(
+                  "li",
+                  [
+                    _c(
+                      "v-card",
+                      [
+                        _c("v-card-title", { attrs: { "primary-title": "" } }, [
+                          _c("div", [
+                            _c("div", { staticClass: "headline" }, [
+                              _vm._v("Top western road trips")
+                            ]),
+                            _vm._v(" "),
+                            _c("span", { staticClass: "grey--text" }, [
+                              _vm._v("1,000 miles of wonder")
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "v-card-actions",
+                          [
+                            _c("v-btn", { attrs: { flat: "" } }, [
+                              _vm._v("Share")
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "v-btn",
+                              { attrs: { flat: "", color: "purple" } },
+                              [_vm._v("Explore")]
+                            ),
+                            _vm._v(" "),
+                            _c("v-spacer"),
+                            _vm._v(" "),
+                            _c(
+                              "v-btn",
+                              {
+                                attrs: { icon: "" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.show = !_vm.show
+                                  }
+                                }
+                              },
+                              [
+                                _c("v-icon", [
+                                  _vm._v(
+                                    _vm._s(
+                                      _vm.show
+                                        ? "keyboard_arrow_down"
+                                        : "keyboard_arrow_up"
+                                    )
+                                  )
+                                ])
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-slide-y-transition",
+                          [
+                            _c(
+                              "v-card-text",
+                              {
+                                directives: [
+                                  {
+                                    name: "show",
+                                    rawName: "v-show",
+                                    value: _vm.show,
+                                    expression: "show"
+                                  }
+                                ]
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier,\n                                not with all the bed making you'll be doing. Then we'll go with that data file! Hey,\n                                you add a one and two zeros to that or we walk! You're going to do his laundry? I've\n                                got to find a way to escape.\n                            "
+                                )
+                              ]
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  [
+                    _c(
+                      "v-card",
+                      [
+                        _c("v-card-title", { attrs: { "primary-title": "" } }, [
+                          _c("div", [
+                            _c("div", { staticClass: "headline" }, [
+                              _vm._v("Top western road trips")
+                            ]),
+                            _vm._v(" "),
+                            _c("span", { staticClass: "grey--text" }, [
+                              _vm._v("1,000 miles of wonder")
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "v-card-actions",
+                          [
+                            _c("v-btn", { attrs: { flat: "" } }, [
+                              _vm._v("Share")
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "v-btn",
+                              { attrs: { flat: "", color: "purple" } },
+                              [_vm._v("Explore")]
+                            ),
+                            _vm._v(" "),
+                            _c("v-spacer"),
+                            _vm._v(" "),
+                            _c(
+                              "v-btn",
+                              {
+                                attrs: { icon: "" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.show = !_vm.show
+                                  }
+                                }
+                              },
+                              [
+                                _c("v-icon", [
+                                  _vm._v(
+                                    _vm._s(
+                                      _vm.show
+                                        ? "keyboard_arrow_down"
+                                        : "keyboard_arrow_up"
+                                    )
+                                  )
+                                ])
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-slide-y-transition",
+                          [
+                            _c(
+                              "v-card-text",
+                              {
+                                directives: [
+                                  {
+                                    name: "show",
+                                    rawName: "v-show",
+                                    value: _vm.show,
+                                    expression: "show"
+                                  }
+                                ]
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier,\n                                not with all the bed making you'll be doing. Then we'll go with that data file! Hey,\n                                you add a one and two zeros to that or we walk! You're going to do his laundry? I've\n                                got to find a way to escape.\n                            "
+                                )
+                              ]
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  [
+                    _c(
+                      "v-card",
+                      [
+                        _c("v-card-media", {
+                          attrs: {
+                            src:
+                              "https://cdn.vuetifyjs.com/images/cards/desert.jpg",
+                            height: "200px"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("v-card-title", { attrs: { "primary-title": "" } }, [
+                          _c("div", [
+                            _c("h3", { staticClass: "headline mb-0" }, [
+                              _vm._v("Kangaroo Valley Safari")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _vm._v(
+                                "Located two hours south of Sydney in the "
+                              ),
+                              _c("br"),
+                              _vm._v(
+                                "Southern Highlands of New South Wales,\n                                    ...\n                                "
+                              )
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "v-card-actions",
+                          [
+                            _c(
+                              "v-btn",
+                              { attrs: { flat: "", color: "orange" } },
+                              [_vm._v("Share")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-btn",
+                              { attrs: { flat: "", color: "orange" } },
+                              [_vm._v("Explore")]
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ])
+            ]
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-7d94acf1", module.exports)
+  }
+}
 
 /***/ })
 

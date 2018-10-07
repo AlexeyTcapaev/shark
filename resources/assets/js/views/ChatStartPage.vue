@@ -1,7 +1,7 @@
 <template>
         <v-layout class="chat-wrapper">
             <div class="chat-head">
-                <v-btn @click="toggleChat" flat><v-icon>question_answer</v-icon>Чаты</v-btn>
+                <v-btn @click="toggleChat" flat><v-icon>question_answer</v-icon>Диалоги</v-btn>
                 <v-spacer></v-spacer>
             </div>
             <v-flex xs12 justify-center align-center>
@@ -14,6 +14,10 @@
 <style scoped>
 .chat-head {
   width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  flex-wrap: nowrap;
   display: flex;
   background-color: #ffffff;
 }

@@ -1,22 +1,22 @@
 webpackJsonp([4],{
 
-/***/ 110:
+/***/ 102:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(111);
+var content = __webpack_require__(103);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(75)("390d3a5e", content, false, {});
+var update = __webpack_require__(75)("d1a2535e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-32de9613\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Communication.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-32de9613\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Communication.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-40d62849\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CompanyStructure.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-40d62849\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CompanyStructure.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -27,7 +27,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 111:
+/***/ 103:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
@@ -35,46 +35,21 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.search-bar[data-v-32de9613] {\n  margin: 5px 0;\n}\n.v-list[data-v-32de9613] {\n  -webkit-transition: width 0.2s linear;\n  transition: width 0.2s linear;\n}\n.shortChat[data-v-32de9613] {\n  width: 70px !important;\n  -webkit-transition: 0.2s linear;\n  transition: 0.2s linear;\n  overflow: hidden;\n}\n.chat[data-v-32de9613] {\n  width: 100%;\n}\n.no-padding[data-v-32de9613] {\n  padding: 0;\n}\n.room-list[data-v-32de9613] {\n  max-width: 300px;\n  height: 100%;\n}\n.container[data-v-32de9613],\n.layout[data-v-32de9613],\n.flex[data-v-32de9613] {\n  height: 100%;\n}\ni.active[data-v-32de9613] {\n  -webkit-transform: rotate(180deg);\n          transform: rotate(180deg);\n}\n.room-list .v-list[data-v-32de9613] {\n  height: 100%;\n}\n.flex[data-v-32de9613] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.target-link .v-list__tile__content .v-list__tile__title[data-v-32de9613] {\n  color: #f80b37 !important;\n}\n.material-icons[data-v-32de9613] {\n  width: 24px;\n}\n.target-link .v-icon[data-v-32de9613] {\n  color: #f80b37 !important;\n}\n\n", ""]);
+exports.push([module.i, "\n.creator[data-v-40d62849] {\n  margin-bottom: 15px;\n}\ndiv[data-v-40d62849] {\n  text-align: left;\n}\n.department-header[data-v-40d62849] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  overflow: hidden;\n}\n.department-header i[data-v-40d62849] {\n  margin-right: 5px;\n}\n.department-header p[data-v-40d62849] {\n  font-weight: bold;\n  padding: 0 10px;\n  margin: 0;\n}\n.department-header .v-divider--vertical[data-v-40d62849] {\n  height: 50px;\n}\n.v-expansion-panel__body .v-card[data-v-40d62849]{\n  border-top: 1px solid rgba(0, 0, 0, 0.12);\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 112:
+/***/ 104:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 //
 //
 //
@@ -108,36 +83,52 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
+var RecursivePalet = function RecursivePalet() {
+  return __webpack_require__.e/* import() */(15).then(__webpack_require__.bind(null, 77));
+};
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    RecursivePalet: RecursivePalet
+  },
   data: function data() {
     return {
-      search: "",
-      items: [{
-        active: true,
-        title: "Jason Oner",
-        avatar: "https://cdn.vuetifyjs.com/images/lists/1.jpg"
-      }, {
-        active: true,
-        title: "Ranee Carlson",
-        avatar: "https://cdn.vuetifyjs.com/images/lists/2.jpg"
-      }, {
-        title: "Cindy Baker",
-        avatar: "https://cdn.vuetifyjs.com/images/lists/3.jpg"
-      }, {
-        title: "Ali Connors",
-        avatar: "https://cdn.vuetifyjs.com/images/lists/4.jpg"
-      }],
-      mini: true,
-      right: null,
-      drawer: true
+      root: {
+        descendants: []
+      },
+      NewDepartment: "",
+      panel: []
     };
   },
-  methods: {}
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+    GetCompanyBySlug: "user/GetCompanyBySlug"
+  }), {
+    Company: function Company() {
+      return this.GetCompanyBySlug(this.$route.params.slug);
+    }
+  }),
+  methods: {
+    AddDepartment: function AddDepartment() {
+      var init = this;
+      axios.post("/api/auth/departments", {
+        name: this.root.newDepartment,
+        root: this.root.slug
+      }).then(function (resp) {
+        init.root.children.push(resp.data);
+      }).catch(function (error) {});
+    }
+  },
+  mounted: function mounted() {
+    var init = this;
+    axios.get("/api/auth/departments/" + this.$route.params.slug).then(function (resp) {
+      init.root = resp.data;
+    }).catch(function (error) {});
+  }
 });
 
 /***/ }),
 
-/***/ 113:
+/***/ 109:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -146,7 +137,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-container",
-    { staticClass: "no-padding", attrs: { fluid: "" } },
+    { attrs: { fluid: "" } },
     [
       _c(
         "v-layout",
@@ -156,44 +147,85 @@ var render = function() {
             "v-flex",
             [
               _c(
-                "v-navigation-drawer",
-                {
-                  attrs: { absolute: "", temporary: "" },
-                  model: {
-                    value: _vm.drawer,
-                    callback: function($$v) {
-                      _vm.drawer = $$v
-                    },
-                    expression: "drawer"
-                  }
-                },
+                "v-expansion-panel",
+                { staticClass: "creator" },
                 [
                   _c(
-                    "v-list",
-                    { staticClass: "pt-0", attrs: { dense: "" } },
+                    "v-expansion-panel-content",
                     [
+                      _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                        _vm._v("Информация о владельце и создателе")
+                      ]),
+                      _vm._v(" "),
                       _c(
-                        "v-list",
+                        "v-card",
+                        [
+                          _c("v-card-text", { staticClass: "grey lighten-3" }, [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                            )
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-expansion-panel",
+                { staticClass: "creator" },
+                [
+                  _c(
+                    "v-expansion-panel-content",
+                    [
+                      _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                        _vm._v("Добавить отдел")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-card",
                         [
                           _c(
-                            "v-list-tile",
-                            { staticClass: "search-bar" },
+                            "v-card-text",
+                            { staticClass: "grey lighten-3" },
                             [
                               _c(
-                                "v-list-tile-content",
+                                "v-flex",
                                 [
                                   _c("v-text-field", {
                                     attrs: {
                                       outline: "",
-                                      label: "Поиск по чатам",
-                                      "append-icon": "search"
+                                      label: "Введите название отдела",
+                                      "append-icon": "add"
+                                    },
+                                    on: {
+                                      "click:append": _vm.AddDepartment,
+                                      keyup: function($event) {
+                                        if (
+                                          !("button" in $event) &&
+                                          _vm._k(
+                                            $event.keyCode,
+                                            "enter",
+                                            13,
+                                            $event.key,
+                                            "Enter"
+                                          )
+                                        ) {
+                                          return null
+                                        }
+                                        return _vm.AddDepartment($event)
+                                      }
                                     },
                                     model: {
-                                      value: _vm.search,
+                                      value: _vm.root.newDepartment,
                                       callback: function($$v) {
-                                        _vm.search = $$v
+                                        _vm.$set(_vm.root, "newDepartment", $$v)
                                       },
-                                      expression: "search"
+                                      expression: "root.newDepartment"
                                     }
                                   })
                                 ],
@@ -204,117 +236,32 @@ var render = function() {
                           )
                         ],
                         1
-                      ),
-                      _vm._v(" "),
-                      _c("v-divider"),
-                      _vm._v(" "),
-                      _vm._l(_vm.items, function(item, i) {
-                        return _c(
-                          "v-list-tile",
-                          {
-                            key: item.title,
-                            attrs: {
-                              "active-class": "secondary--text target-link",
-                              avatar: "",
-                              to: { name: "chat", params: { chatid: i } }
-                            }
-                          },
-                          [
-                            _c("v-list-tile-avatar", [
-                              _c("img", { attrs: { src: item.avatar } })
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "v-list-tile-content",
-                              [
-                                _c("v-list-tile-title", {
-                                  domProps: { innerHTML: _vm._s(item.title) }
-                                })
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "v-list-tile-action",
-                              [
-                                _c(
-                                  "v-badge",
-                                  {
-                                    staticClass: "relative-badge",
-                                    attrs: { color: "secondary" }
-                                  },
-                                  [
-                                    _c(
-                                      "span",
-                                      {
-                                        attrs: { slot: "badge" },
-                                        slot: "badge"
-                                      },
-                                      [_vm._v("6")]
-                                    )
-                                  ]
-                                )
-                              ],
-                              1
-                            )
-                          ],
-                          1
-                        )
-                      }),
-                      _vm._v(" "),
-                      _c("v-divider", { attrs: { dark: "" } }),
-                      _vm._v(" "),
-                      _c(
-                        "v-list-tile",
-                        {
-                          attrs: {
-                            to: { name: "add_company" },
-                            "exact-active-class": "target-link"
-                          }
-                        },
-                        [
-                          _c(
-                            "v-list-tile-action",
-                            [_c("v-icon", [_vm._v("add_circle_outline")])],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-list-tile-content",
-                            [_c("v-list-tile-title", [_vm._v("Создать чат")])],
-                            1
-                          )
-                        ],
-                        1
                       )
                     ],
-                    2
+                    1
                   )
                 ],
                 1
               ),
               _vm._v(" "),
               _c(
-                "main",
-                { staticClass: "chat" },
-                [
-                  _c(
-                    "transition",
-                    { attrs: { name: "fade", mode: "out-in", appear: "" } },
-                    [
-                      _c("router-view", {
-                        key: _vm.$router.fullPath,
-                        on: {
-                          toggleChat: function($event) {
-                            _vm.drawer = !_vm.drawer
-                          }
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ],
-                1
+                "v-expansion-panel",
+                {
+                  attrs: { expand: "" },
+                  model: {
+                    value: _vm.panel,
+                    callback: function($$v) {
+                      _vm.panel = $$v
+                    },
+                    expression: "panel"
+                  }
+                },
+                _vm._l(_vm.root.children, function(item, i) {
+                  return _c("recursive-palet", {
+                    key: i,
+                    attrs: { item: item }
+                  })
+                })
               )
             ],
             1
@@ -332,31 +279,31 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-32de9613", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-40d62849", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ 69:
+/***/ 68:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(110)
+  __webpack_require__(102)
 }
 var normalizeComponent = __webpack_require__(74)
 /* script */
-var __vue_script__ = __webpack_require__(112)
+var __vue_script__ = __webpack_require__(104)
 /* template */
-var __vue_template__ = __webpack_require__(113)
+var __vue_template__ = __webpack_require__(109)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-32de9613"
+var __vue_scopeId__ = "data-v-40d62849"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -367,7 +314,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/Communication.vue"
+Component.options.__file = "resources/assets/js/views/CompanyStructure.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -376,9 +323,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-32de9613", Component.options)
+    hotAPI.createRecord("data-v-40d62849", Component.options)
   } else {
-    hotAPI.reload("data-v-32de9613", Component.options)
+    hotAPI.reload("data-v-40d62849", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true

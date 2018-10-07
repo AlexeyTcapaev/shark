@@ -35,7 +35,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.message-content p[data-v-429c24aa] {\n  background: #ebebeb none repeat scroll 0 0;\n  border-radius: 3px;\n  color: black;\n  font-size: 14px;\n  margin: 0;\n  padding: 5px 10px 5px 12px;\n  width: 100%;\n}\n.message-content span[data-v-429c24aa] {\n  color: #747474;\n  display: block;\n  font-size: 12px;\n  text-align: left;\n  margin: 8px 0 0;\n}\n.message-line[data-v-429c24aa] {\n}\n.whois *[data-v-429c24aa] {\n}\n.whois[data-v-429c24aa] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n.message-sender-img[data-v-429c24aa] {\n  padding: 0 10px 0 0;\n}\n.message-sender-img img[data-v-429c24aa] {\n  width: 56px;\n  height: 56px;\n}\n.message-bubble[data-v-429c24aa] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-wrap: nowrap;\n      flex-wrap: nowrap;\n  max-width: 60%;\n  margin: 5px 0;\n}\n.chat-wrapper[data-v-429c24aa] {\n  width: 100%;\n  height: 100%;\n}\n.chat-head[data-v-429c24aa] {\n  width: 100%;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  padding: 15px;\n  -ms-flex-wrap: nowrap;\n      flex-wrap: nowrap;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  background-color: #ffffff;\n}\n.chat-head p[data-v-429c24aa]{\n    margin: 0;\n    font-weight: bold;\n}\n.chat-body[data-v-429c24aa] {\n  width: 100%;\n  height: 100%;\n}\n.flex[data-v-429c24aa] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n.chat-footer[data-v-429c24aa] {\n  background-color: #ffffff;\n  width: 100%;\n}\n", ""]);
+exports.push([module.i, "\n.message-content p[data-v-429c24aa] {\n  background: #ebebeb none repeat scroll 0 0;\n  border-radius: 3px;\n  color: black;\n  font-size: 14px;\n  margin: 0;\n  padding: 5px 10px 5px 12px;\n  width: 100%;\n}\n.message-content span[data-v-429c24aa] {\n  color: #747474;\n  display: block;\n  font-size: 12px;\n  text-align: left;\n  margin: 8px 0 0;\n}\n.message-line[data-v-429c24aa] {\n}\n.whois *[data-v-429c24aa] {\n}\n.whois[data-v-429c24aa] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n.message-sender-img[data-v-429c24aa] {\n  padding: 0 10px 0 0;\n}\n.message-sender-img img[data-v-429c24aa] {\n  width: 56px;\n  height: 56px;\n}\n.message-bubble[data-v-429c24aa] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-wrap: nowrap;\n      flex-wrap: nowrap;\n  max-width: 60%;\n  margin: 5px 0;\n}\n.chat-wrapper[data-v-429c24aa] {\n  width: 100%;\n  height: 100%;\n}\n.chat-head[data-v-429c24aa] {\n  width: 100%;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  padding: 15px;\n  -ms-flex-wrap: nowrap;\n      flex-wrap: nowrap;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  background-color: #ffffff;\n}\n.chat-head p[data-v-429c24aa]{\n    margin: 0;\n    font-weight: bold;\n}\n.chat-body[data-v-429c24aa] {\n  width: 100%;\n  height: 100%;\n}\n.flex[data-v-429c24aa] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n.chat-footer .container[data-v-429c24aa]{\n    padding: 10px;\n}\n.chat-footer[data-v-429c24aa] {\n  background-color: #ffffff;\n  width: 100%;\n}\n", ""]);
 
 // exports
 
@@ -212,7 +212,7 @@ var render = function() {
               _c(
                 "v-btn",
                 { attrs: { flat: "" }, on: { click: _vm.toggleChat } },
-                [_c("v-icon", [_vm._v("question_answer")]), _vm._v("Чаты")],
+                [_c("v-icon", [_vm._v("question_answer")]), _vm._v("Диалоги")],
                 1
               ),
               _vm._v(" "),
@@ -242,9 +242,7 @@ var render = function() {
                   )
                 ],
                 1
-              ),
-              _vm._v(" "),
-              _c("p", [_vm._v(_vm._s(new Date().toLocaleString("ru")))])
+              )
             ],
             1
           ),
@@ -271,22 +269,6 @@ var render = function() {
                         },
                         [
                           _c("div", { staticClass: "message-bubble" }, [
-                            _vm.user.id !== message.creator.id
-                              ? _c(
-                                  "div",
-                                  { staticClass: "message-sender-img" },
-                                  [
-                                    _c("img", {
-                                      attrs: {
-                                        src:
-                                          "https://ptetutorials.com/images/user-profile.png",
-                                        alt: message.creator.name
-                                      }
-                                    })
-                                  ]
-                                )
-                              : _vm._e(),
-                            _vm._v(" "),
                             _c("div", { staticClass: "message-content" }, [
                               _c("p", [_vm._v(_vm._s(message.message))]),
                               _vm._v(" "),
@@ -319,6 +301,7 @@ var render = function() {
                 { attrs: { fluid: "" } },
                 [
                   _c("v-text-field", {
+                    staticClass: "message-input",
                     attrs: {
                       outline: "",
                       label: "Сообщение",

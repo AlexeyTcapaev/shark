@@ -25,11 +25,11 @@ Route::group([
         'middleware' => 'auth:api'
     ], function () {
         Route::post('verify', 'AuthController@verify');
-        Route::post('verify_from_site', 'AuthController@verify_from_site');
         Route::get('logout', 'AuthController@logout');
         Route::get('user', 'AuthController@user');
-        Route::apiResource('users', 'UserController');
+        Route::get('users/{id}', 'UserController@for_chat_create');
         Route::apiResource('company', 'CompanyController');
+        Route::apiResource('chats', 'ChatController');
         Route::apiResource('departments', 'DepartmentController');
         Route::apiResource('activities', 'ActivityController');
         Route::apiResource('company_types', 'CompanyTypeController');

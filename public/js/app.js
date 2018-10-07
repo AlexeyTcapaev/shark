@@ -26193,7 +26193,7 @@ var App = function App() {
     return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 59));
 };
 var Home = function Home() {
-    return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 60));
+    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 60));
 };
 var Registration = function Registration() {
     return __webpack_require__.e/* import() */(10).then(__webpack_require__.bind(null, 61));
@@ -26205,7 +26205,7 @@ var IndexPage = function IndexPage() {
     return __webpack_require__.e/* import() */(13).then(__webpack_require__.bind(null, 63));
 };
 var Feed = function Feed() {
-    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 64));
+    return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 64));
 };
 var AddCompany = function AddCompany() {
     return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 65));
@@ -26217,22 +26217,25 @@ var VerifyEmail = function VerifyEmail() {
     return __webpack_require__.e/* import() */(9).then(__webpack_require__.bind(null, 67));
 };
 var CompanyStructure = function CompanyStructure() {
-    return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 68));
+    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 68));
 };
 var Communication = function Communication() {
-    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 69));
+    return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 69));
 };
 var Platform = function Platform() {
     return __webpack_require__.e/* import() */(12).then(__webpack_require__.bind(null, 70));
 };
 var UserSettings = function UserSettings() {
-    return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 71));
+    return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 71));
 };
 var Chat = function Chat() {
     return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 72));
 };
 var ChatStartPage = function ChatStartPage() {
-    return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 73));
+    return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 73));
+};
+var AddChat = function AddChat() {
+    return __webpack_require__.e/* import() */(17).then(__webpack_require__.bind(null, 130));
 };
 
 var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
@@ -26298,6 +26301,10 @@ var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
                 path: "",
                 component: ChatStartPage,
                 name: "communication"
+            }, {
+                path: "create_chat",
+                component: AddChat,
+                name: "add_chat"
             }, {
                 path: ":chatid",
                 component: Chat,

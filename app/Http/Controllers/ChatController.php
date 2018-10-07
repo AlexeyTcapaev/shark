@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Chat;
 use Illuminate\Http\Request;
-use App\User;
 
-class UserController extends Controller
+class ChatController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -35,30 +35,47 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $chat = Chat::create();
+            foreach (json_decode($request->users) as $user) {
+                $chat->users()->attach($user->id);
+            }
+
+            if (empty($chat))
+                throw new Exception('Ошибка при создании компании');
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+        return $chat;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Chat  $chat
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-    }
-    public function for_chat_create($id)
-    {
-        return User::where('id', '!=', $id)->get();
+        try {
+            $chat = Chat::whereHas('users', function ($q) use ($id) {
+                $q->where('user_id', '=', $id);
+            })->ForChat($id)->get();
+            if (empty($chat))
+                return response()->json(['error' => 'Диалоги не найдены'], 404);
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+        return $chat;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Chat  $chat
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Chat $chat)
     {
         //
     }
@@ -67,34 +84,21 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Chat  $chat
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Chat $chat)
     {
-        try {
-            $user = User::findOrFail($id);
-            if (empty($user))
-                return response()->json(['error' => 'Пользователь не найдена'], 404);
-            else {
-                $user->update($request->all());
-                if ($request->hasFile('avatar')) {
-                    $user->uploadImage($request->file('avatar'));
-                }
-            }
-        } catch (Exception $e) {
-            return response()->json(['error' => $e->getMessage()], 500);
-        }
-        return $user;
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Chat  $chat
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Chat $chat)
     {
         //
     }

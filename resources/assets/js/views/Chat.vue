@@ -2,7 +2,7 @@
         <v-layout class="chat-wrapper">
             <v-flex xs12 justify-center align-center>
                <div class="chat-head">
-                   <v-btn @click="toggleChat" flat><v-icon>question_answer</v-icon>Чаты</v-btn>
+                   <v-btn @click="toggleChat" flat><v-icon>question_answer</v-icon>Диалоги</v-btn>
                     <div>
                         <v-avatar>
                             <v-icon v-if="!$store.state.user.user.avatar">account_circle</v-icon>
@@ -10,16 +10,12 @@
                         </v-avatar>
                         {{$store.state.user.user.name}}
                     </div>
-                    <p>{{new Date().toLocaleString('ru')}}</p>
                 </div>
                 <div class="chat-body">
                     <v-container fluid>
                         <template v-for="(message,index) in Messages">
                             <div :key="index" class="message-line"  :class="{whois: user.id == message.creator.id ? true : false}">
                                 <div class="message-bubble">
-                                    <div class="message-sender-img" v-if="user.id !== message.creator.id">
-                                        <img src="https://ptetutorials.com/images/user-profile.png" :alt="message.creator.name">
-                                    </div>
                                     <div class="message-content">
                                         <p>{{message.message}}</p>
                                         <span>{{message.created_at.toLocaleString("ru")}}</span>
@@ -31,7 +27,7 @@
                 </div>
                 <div class="chat-footer">
                     <v-container fluid>
-                         <v-text-field v-model="newMessage" outline label="Сообщение" append-icon="send" @click:append="SendMessage"></v-text-field>
+                         <v-text-field class="message-input" v-model="newMessage" outline label="Сообщение" append-icon="send" @click:append="SendMessage"></v-text-field>
                     </v-container>
                 </div>
             </v-flex>
@@ -69,6 +65,7 @@
   width: 56px;
   height: 56px;
 }
+
 .message-bubble {
   display: flex;
   flex-direction: row;
@@ -100,6 +97,9 @@
 .flex {
   display: flex;
   flex-direction: column;
+}
+.chat-footer .container{
+    padding: 10px;
 }
 .chat-footer {
   background-color: #ffffff;

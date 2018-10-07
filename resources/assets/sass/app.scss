@@ -13,7 +13,12 @@
     background: rgba(0, 0, 0, 0.1);
     transition: 0.2s linear;
 }
-
+.message-input .v-text-field__details{
+    display: none;
+}
+.message-input .v-input__slot{
+    margin: 0;
+}
 .v-icon--link:hover{
  color: #f80b37!important;
 }

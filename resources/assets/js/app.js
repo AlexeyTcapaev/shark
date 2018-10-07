@@ -64,98 +64,102 @@ const Chat = () =>
     import('./views/Chat.vue');
 const ChatStartPage = () =>
     import('./views/ChatStartPage.vue');
-
+const AddChat = () =>
+    import('./views/AddChat.vue');
 
 const router = new VueRouter({
     mode: 'history',
     routes: [{
-        path: '/',
-        name: 'IndexPage',
-        component: IndexPage
-    },
-    {
-        path: "/registration",
-        name: "registration",
-        component: Registration,
-    },
-    {
-        path: "/login",
-        name: "login",
-        component: Login,
-    },
-    {
-        path: "/app",
-        component: Home,
-        beforeEnter: (to, from, next) => {
-            axios.get('/api/auth/user').then(function (resp) {
-                store.state.user.user = resp.data
-                Cookies.set('user', JSON.stringify(store.state.user.user), {
-                    expires: 2,
-                    domain: location.hostname
-                });
-                axios.get("/api/auth/company/" + store.state.user.user.id).then(function (resp) {
-                    store.state.user.company = resp.data
-                });
-                next();
-            }).catch(error => {
-                router.push("/login");
-            })
-        },
-        children: [{
-            path: "",
-            component: Dashboard,
-            name: "app",
+            path: '/',
+            name: 'IndexPage',
+            component: IndexPage
         },
         {
-            path: "/user/settings",
-            component: UserSettings,
-            name: "user-settings",
+            path: "/registration",
+            name: "registration",
+            component: Registration,
         },
         {
-            path: 'company/:slug/structure',
-            name: "company-structure",
-            component: CompanyStructure,
+            path: "/login",
+            name: "login",
+            component: Login,
         },
         {
-            path: 'verifyemail/:token',
-            name: "verifyemail",
-            component: VerifyEmail,
-        },
-        {
-            path: "add_company",
-            component: AddCompany,
-            name: "add_company",
-        },
-        {
-            path: "news",
-            component: Feed,
-            name: "news",
-        },
-        {
-            path: "communication",
-            component: Communication,
-            children: [
-                {
+            path: "/app",
+            component: Home,
+            beforeEnter: (to, from, next) => {
+                axios.get('/api/auth/user').then(function (resp) {
+                    store.state.user.user = resp.data
+                    Cookies.set('user', JSON.stringify(store.state.user.user), {
+                        expires: 2,
+                        domain: location.hostname
+                    });
+                    axios.get("/api/auth/company/" + store.state.user.user.id).then(function (resp) {
+                        store.state.user.company = resp.data
+                    });
+                    next();
+                }).catch(error => {
+                    router.push("/login");
+                })
+            },
+            children: [{
                     path: "",
-                    component: ChatStartPage,
-                    name: "communication",
-                }, {
-                    path: ":chatid",
-                    component: Chat,
-                    name: "chat",
-                }]
+                    component: Dashboard,
+                    name: "app",
+                },
+                {
+                    path: "/user/settings",
+                    component: UserSettings,
+                    name: "user-settings",
+                },
+                {
+                    path: 'company/:slug/structure',
+                    name: "company-structure",
+                    component: CompanyStructure,
+                },
+                {
+                    path: 'verifyemail/:token',
+                    name: "verifyemail",
+                    component: VerifyEmail,
+                },
+                {
+                    path: "add_company",
+                    component: AddCompany,
+                    name: "add_company",
+                },
+                {
+                    path: "news",
+                    component: Feed,
+                    name: "news",
+                },
+                {
+                    path: "communication",
+                    component: Communication,
+                    children: [{
+                        path: "",
+                        component: ChatStartPage,
+                        name: "communication",
+                    }, {
+                        path: "create_chat",
+                        component: AddChat,
+                        name: "add_chat",
+                    }, {
+                        path: ":chatid",
+                        component: Chat,
+                        name: "chat",
+                    }]
+                },
+                {
+                    path: "platform",
+                    component: Platform,
+                    name: "platform",
+                }
+            ]
         },
         {
-            path: "platform",
-            component: Platform,
-            name: "platform",
+            path: '*',
+            redirect: '/'
         }
-        ]
-    },
-    {
-        path: '*',
-        redirect: '/'
-    }
     ],
 });
 router.beforeEach((to, from, next) => {
