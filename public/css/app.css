@@ -14170,8 +14170,8 @@ table.v-table tfoot tr td {
   transition: 0.2s linear;
 }
 
-.v-icon.v-icon.v-icon--link:hover {
-  color: #f80b37;
+.v-icon--link:hover {
+  color: #f80b37 !important;
 }
 
 .v-badge--overlap .v-badge__badge {
@@ -14282,8 +14282,8 @@ div {
   backface-visibility: hidden;
   -webkit-transform: rotate3d(0, 0, 0, 0);
   transform: rotate3d(0, 0, 0, 0);
-  -webkit-transition: background-color 100ms ease-out, margin 100ms ease-out, height 100ms ease-out;
-  transition: background-color 100ms ease-out, margin 100ms ease-out, height 100ms ease-out;
+  -webkit-transition: background-color 100ms ease-out, margin 100ms ease-out, height 100ms ease-out;
+  transition: background-color 100ms ease-out, margin 100ms ease-out, height 100ms ease-out;
   background-color: rgba(248, 11, 55, 0.1);
   margin: 5px 5px 5px 0;
   height: calc(100% - 10px);

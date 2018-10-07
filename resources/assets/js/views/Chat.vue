@@ -1,9 +1,17 @@
 <template>
         <v-layout class="chat-wrapper">
             <v-flex xs12 justify-center align-center>
-               <!-- <div class="chat-head">
-
-                </div>-->
+               <div class="chat-head">
+                   <v-btn @click="toggleChat" flat><v-icon>question_answer</v-icon>Чаты</v-btn>
+                    <div>
+                        <v-avatar>
+                            <v-icon v-if="!$store.state.user.user.avatar">account_circle</v-icon>
+                            <img v-else :src="'/storage/uploads/'+$store.state.user.user.avatar" :alt="$store.state.user.user.name">
+                        </v-avatar>
+                        {{$store.state.user.user.name}}
+                    </div>
+                    <p>{{new Date().toLocaleString('ru')}}</p>
+                </div>
                 <div class="chat-body">
                     <v-container fluid>
                         <template v-for="(message,index) in Messages">
@@ -24,7 +32,7 @@
                 <div class="chat-footer">
                     <v-container fluid>
                          <v-text-field v-model="newMessage" outline label="Сообщение" append-icon="send" @click:append="SendMessage"></v-text-field>
-                    </v-container>                
+                    </v-container>
                 </div>
             </v-flex>
         </v-layout>
@@ -47,10 +55,8 @@
   margin: 8px 0 0;
 }
 .message-line {
-
 }
-.whois *{
-  
+.whois * {
 }
 .whois {
   display: flex;
@@ -71,14 +77,21 @@
   margin: 5px 0;
 }
 .chat-wrapper {
- 
   width: 100%;
   height: 100%;
 }
 .chat-head {
-  height: 64px;
   width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  flex-wrap: nowrap;
+  display: flex;
   background-color: #ffffff;
+}
+.chat-head p{
+    margin: 0;
+    font-weight: bold;
 }
 .chat-body {
   width: 100%;
@@ -116,6 +129,9 @@ export default {
           created_at: new Date(),
           status: "new"
         });
+    },
+    toggleChat() {
+      this.$emit("toggleChat");
     }
   },
   computed: {

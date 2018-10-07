@@ -1,16 +1,16 @@
 webpackJsonp([0],{
 
-/***/ 114:
+/***/ 115:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(115);
+var content = __webpack_require__(116);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(74)("52d95e18", content, false, {});
+var update = __webpack_require__(75)("52d95e18", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -27,7 +27,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 115:
+/***/ 116:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
@@ -35,14 +35,14 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.verified-mail p[data-v-66f8b561] {\r\n  margin: 0;\n}\n.verified-mail[data-v-66f8b561] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n  -ms-flex-wrap: nowrap;\r\n      flex-wrap: nowrap;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\n}\n.verified-mail i[data-v-66f8b561] {\r\n  margin: 0 10px 0 0;\n}\n.v-avatar[data-v-66f8b561] {\r\n  position: absolute;\r\n  left: 25px;\r\n  overflow: hidden;\r\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n  top: -128px;\r\n  border-radius: 50% !important;\r\n  -webkit-transition: 0.2s linear;\r\n  transition: 0.2s linear;\n}\n.v-avatar img[data-v-66f8b561] {\r\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n}\n.file[data-v-66f8b561] {\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 100%;\r\n  border-radius: 64px;\r\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n  top: 0;\r\n  left: 0;\r\n  cursor: pointer;\r\n  z-index: 4;\r\n  opacity: 0;\n}\n.v-card__title[data-v-66f8b561] {\r\n  padding-top: 148px !important;\n}\n.v-card[data-v-66f8b561] {\r\n  margin: 128px 0 0 0;\n}\n.v-card .v-avatar[data-v-66f8b561] {\r\n  cursor: pointer;\n}\n.chips-list[data-v-66f8b561] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\n}\r\n", ""]);
+exports.push([module.i, "\n.verified-mail p[data-v-66f8b561] {\n  margin: 0;\n}\n.verified-mail[data-v-66f8b561] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-wrap: nowrap;\n      flex-wrap: nowrap;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.verified-mail i[data-v-66f8b561] {\n  margin: 0 10px 0 0;\n}\n.v-avatar[data-v-66f8b561] {\n  position: absolute;\n  left: 25px;\n  overflow: hidden;\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n  top: -128px;\n  border-radius: 50% !important;\n  -webkit-transition: 0.2s linear;\n  transition: 0.2s linear;\n}\n.v-avatar img[data-v-66f8b561] {\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n}\n.file[data-v-66f8b561] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 64px;\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n  top: 0;\n  left: 0;\n  cursor: pointer;\n  z-index: 4;\n  opacity: 0;\n}\n.v-card__title[data-v-66f8b561] {\n  padding-top: 148px !important;\n}\n.v-card[data-v-66f8b561] {\n  margin: 128px 0 0 0;\n}\n.v-card .v-avatar[data-v-66f8b561] {\n  cursor: pointer;\n}\n.chips-list[data-v-66f8b561] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 116:
+/***/ 117:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -159,7 +159,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 /***/ }),
 
-/***/ 117:
+/***/ 118:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -339,13 +339,13 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(114)
+  __webpack_require__(115)
 }
-var normalizeComponent = __webpack_require__(73)
+var normalizeComponent = __webpack_require__(74)
 /* script */
-var __vue_script__ = __webpack_require__(116)
+var __vue_script__ = __webpack_require__(117)
 /* template */
-var __vue_template__ = __webpack_require__(117)
+var __vue_template__ = __webpack_require__(118)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -385,7 +385,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 73:
+/***/ 74:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -495,7 +495,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 74:
+/***/ 75:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -514,7 +514,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(75)
+var listToStyles = __webpack_require__(76)
 
 /*
 type StyleObject = {
@@ -724,7 +724,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 75:
+/***/ 76:
 /***/ (function(module, exports) {
 
 /**

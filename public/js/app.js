@@ -29,7 +29,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		15: 0
+/******/ 		16: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -26190,49 +26190,49 @@ if (__WEBPACK_IMPORTED_MODULE_5__store_index__["a" /* default */].state.user.tok
     axios.defaults.headers.common['Authorization'] = __WEBPACK_IMPORTED_MODULE_5__store_index__["a" /* default */].state.user.token.token_type + " " + __WEBPACK_IMPORTED_MODULE_5__store_index__["a" /* default */].state.user.token.access_token;
 }
 var App = function App() {
-    return __webpack_require__.e/* import() */(21).then(__webpack_require__.bind(null, 59));
+    return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 59));
 };
 var Home = function Home() {
-    return __webpack_require__.e/* import() */(17).then(__webpack_require__.bind(null, 60));
+    return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 60));
 };
 var Registration = function Registration() {
-    return __webpack_require__.e/* import() */(24).then(__webpack_require__.bind(null, 61));
+    return __webpack_require__.e/* import() */(10).then(__webpack_require__.bind(null, 61));
 };
 var Login = function Login() {
-    return __webpack_require__.e/* import() */(25).then(__webpack_require__.bind(null, 62));
+    return __webpack_require__.e/* import() */(11).then(__webpack_require__.bind(null, 62));
 };
 var IndexPage = function IndexPage() {
-    return __webpack_require__.e/* import() */(27).then(__webpack_require__.bind(null, 63));
+    return __webpack_require__.e/* import() */(13).then(__webpack_require__.bind(null, 63));
 };
 var Feed = function Feed() {
-    return __webpack_require__.e/* import() */(18).then(__webpack_require__.bind(null, 64));
+    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 64));
 };
 var AddCompany = function AddCompany() {
-    return __webpack_require__.e/* import() */(22).then(__webpack_require__.bind(null, 65));
+    return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 65));
 };
 var Dashboard = function Dashboard() {
-    return __webpack_require__.e/* import() */(28).then(__webpack_require__.bind(null, 66));
+    return __webpack_require__.e/* import() */(14).then(__webpack_require__.bind(null, 66));
 };
 var VerifyEmail = function VerifyEmail() {
-    return __webpack_require__.e/* import() */(23).then(__webpack_require__.bind(null, 67));
+    return __webpack_require__.e/* import() */(9).then(__webpack_require__.bind(null, 67));
 };
 var CompanyStructure = function CompanyStructure() {
-    return __webpack_require__.e/* import() */(19).then(__webpack_require__.bind(null, 68));
+    return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 68));
 };
 var Communication = function Communication() {
-    return __webpack_require__.e/* import() */(20).then(__webpack_require__.bind(null, 69));
+    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 69));
 };
 var Platform = function Platform() {
-    return __webpack_require__.e/* import() */(26).then(__webpack_require__.bind(null, 70));
+    return __webpack_require__.e/* import() */(12).then(__webpack_require__.bind(null, 70));
 };
 var UserSettings = function UserSettings() {
-    return __webpack_require__.e/* import() */(16).then(__webpack_require__.bind(null, 71));
+    return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 71));
 };
 var Chat = function Chat() {
-    return __webpack_require__.e/* import() */(30).then(__webpack_require__.bind(null, 72));
+    return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 72));
 };
 var ChatStartPage = function ChatStartPage() {
-    return __webpack_require__.e/* import() */(29).then(__webpack_require__.bind(null, 120));
+    return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 73));
 };
 
 var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({

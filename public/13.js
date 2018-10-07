@@ -1,35 +1,14 @@
 webpackJsonp([13],{
 
-/***/ 118:
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    1\n")])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-429c24aa", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 72:
+/***/ 63:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(73)
+var normalizeComponent = __webpack_require__(74)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(118)
+var __vue_template__ = __webpack_require__(90)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -46,7 +25,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/Chat.vue"
+Component.options.__file = "resources/assets/js/views/IndexPage.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -55,9 +34,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-429c24aa", Component.options)
+    hotAPI.createRecord("data-v-795c4c84", Component.options)
   } else {
-    hotAPI.reload("data-v-429c24aa", Component.options)
+    hotAPI.reload("data-v-795c4c84", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -69,7 +48,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 73:
+/***/ 74:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -176,6 +155,35 @@ module.exports = function normalizeComponent (
   }
 }
 
+
+/***/ }),
+
+/***/ 90:
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("router-link", { attrs: { to: "/login" } }, [_vm._v("login")]),
+      _vm._v(" "),
+      _c("router-link", { attrs: { to: "/app" } }, [_vm._v("app")])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-795c4c84", module.exports)
+  }
+}
 
 /***/ })
 

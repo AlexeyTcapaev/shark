@@ -6,13 +6,13 @@ webpackJsonp([1],{
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(81)
+  __webpack_require__(82)
 }
-var normalizeComponent = __webpack_require__(73)
+var normalizeComponent = __webpack_require__(74)
 /* script */
-var __vue_script__ = __webpack_require__(83)
+var __vue_script__ = __webpack_require__(84)
 /* template */
-var __vue_template__ = __webpack_require__(84)
+var __vue_template__ = __webpack_require__(85)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52,7 +52,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 73:
+/***/ 74:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -162,7 +162,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 74:
+/***/ 75:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -181,7 +181,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(75)
+var listToStyles = __webpack_require__(76)
 
 /*
 type StyleObject = {
@@ -391,7 +391,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 75:
+/***/ 76:
 /***/ (function(module, exports) {
 
 /**
@@ -425,17 +425,17 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 81:
+/***/ 82:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(82);
+var content = __webpack_require__(83);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(74)("dacd05b4", content, false, {});
+var update = __webpack_require__(75)("dacd05b4", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 82:
+/***/ 83:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
@@ -460,14 +460,14 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.logo[data-v-6c0a33b2] {\r\n  color: #ffffff;\r\n  text-decoration: none;\n}\n.active-link .v-icon[data-v-6c0a33b2] {\r\n  color: rgba(0, 0, 0, 0.54) !important;\n}\n.v-list__tile__action .v-badge[data-v-6c0a33b2] {\r\n  margin: 0 10px 0 0;\n}\n.nav-btn[data-v-6c0a33b2] {\r\n  color: #ffffff !important;\r\n  height: 100%;\n}\n.v-menu[data-v-6c0a33b2] {\r\n  height: 100%;\n}\n.v-content[data-v-6c0a33b2] {\r\n  padding-top: 0px !important;\n}\n.hidden[data-v-6c0a33b2] {\r\n  overflow: hidden !important;\n}\n.wrapper[data-v-6c0a33b2] {\r\n  overflow-y: scroll;\r\n  -webkit-overflow-scrolling: touch;\n}\n.v-navigation-drawer[data-v-6c0a33b2] {\r\n  z-index: 6;\n}\n.v-bottom-nav[data-v-6c0a33b2] {\r\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\r\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n.target-link .v-list__tile__content .v-list__tile__title[data-v-6c0a33b2] {\r\n  color: #f80b37 !important;\n}\n.target-link .v-icon[data-v-6c0a33b2] {\r\n  color: #f80b37 !important;\n}\n.nav-btn i[data-v-6c0a33b2] {\r\n  margin-right: 15px;\n}\n.v-avatar[data-v-6c0a33b2] {\r\n  margin-right: 15px;\n}\n.fade-enter-active[data-v-6c0a33b2],\r\n.fade-leave-active[data-v-6c0a33b2] {\r\n  -webkit-transition-duration: 0.3s;\r\n          transition-duration: 0.3s;\r\n  -webkit-transition-property: opacity;\r\n  transition-property: opacity;\r\n  -webkit-transition-timing-function: ease;\r\n          transition-timing-function: ease;\n}\n.v-list__tile__title[data-v-6c0a33b2] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\n}\n.v-list__tile__title i[data-v-6c0a33b2] {\r\n  margin-right: 10px;\n}\n.v-avatar .fade-enter[data-v-6c0a33b2],\r\n.fade-leave-active[data-v-6c0a33b2] {\r\n  opacity: 0;\n}\n.search-bar[data-v-6c0a33b2] {\r\n  margin: 5px 0;\n}\n.v-list__tile--active .v-list__tile[data-v-6c0a33b2] {\r\n  color: #f80b37;\n}\n.company[data-v-6c0a33b2] {\r\n  background: rgba(0, 0, 0, 0.1);\n}\n.v-bottom-nav .v-btn--active[data-v-6c0a33b2] {\r\n  color: #f80b37;\n}\r\n", ""]);
+exports.push([module.i, "\n.logo[data-v-6c0a33b2] {\n  color: #ffffff;\n  text-decoration: none;\n}\n.active-link .v-icon[data-v-6c0a33b2] {\n  color: rgba(0, 0, 0, 0.54) !important;\n}\n.v-list__tile__action .v-badge[data-v-6c0a33b2] {\n  margin: 0 10px 0 0;\n}\n.nav-btn[data-v-6c0a33b2] {\n  color: #ffffff !important;\n  height: 100%;\n}\n.v-menu[data-v-6c0a33b2] {\n  height: 100%;\n}\n.v-content[data-v-6c0a33b2] {\n  padding-top: 0px !important;\n}\n.hidden[data-v-6c0a33b2] {\n  overflow: hidden !important;\n}\n.badge-slot[data-v-6c0a33b2]{\n    color: #ffffff!important;\n}\n.wrapper[data-v-6c0a33b2] {\n  overflow-y: scroll;\n  -webkit-overflow-scrolling: touch;\n}\n.v-navigation-drawer[data-v-6c0a33b2] {\n  z-index: 6;\n}\n.nav-badge[data-v-6c0a33b2] {\n  right: -40px;\n}\n.v-bottom-nav[data-v-6c0a33b2] {\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n.target-link .v-list__tile__content .v-list__tile__title[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n.target-link .v-icon[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n.nav-btn i[data-v-6c0a33b2] {\n  margin-right: 15px;\n}\n.v-avatar[data-v-6c0a33b2] {\n  margin-right: 15px;\n}\n.fade-enter-active[data-v-6c0a33b2],\n.fade-leave-active[data-v-6c0a33b2] {\n  -webkit-transition-duration: 0.3s;\n          transition-duration: 0.3s;\n  -webkit-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-timing-function: ease;\n          transition-timing-function: ease;\n}\n.v-list__tile__title[data-v-6c0a33b2] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.v-list__tile__title i[data-v-6c0a33b2] {\n  margin-right: 10px;\n}\n.v-avatar .fade-enter[data-v-6c0a33b2],\n.fade-leave-active[data-v-6c0a33b2] {\n  opacity: 0;\n}\n.search-bar[data-v-6c0a33b2] {\n  margin: 5px 0;\n}\n.v-list__tile--active .v-list__tile[data-v-6c0a33b2] {\n  color: #f80b37;\n}\n.company[data-v-6c0a33b2] {\n  background: rgba(0, 0, 0, 0.1);\n}\n.v-bottom-nav .v-btn--active[data-v-6c0a33b2] {\n  color: #f80b37;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 83:
+/***/ 84:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -475,6 +475,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
+//
 //
 //
 //
@@ -682,7 +685,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
     windowWidth: "config/windowWidth",
     windowHeight: "config/windowHeight",
-    company: "user/GetCompany"
+    company: "user/GetCompany",
+    user: "user/GetUser"
   }), {
     mobileAndTabletcheck: function mobileAndTabletcheck() {
       var check = false;
@@ -706,7 +710,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 /***/ }),
 
-/***/ 84:
+/***/ 85:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1063,14 +1067,12 @@ var render = function() {
                   _c(
                     "v-avatar",
                     [
-                      !_vm.$store.state.user.user.avatar
+                      !_vm.user.avatar
                         ? _c("v-icon", [_vm._v("account_circle")])
                         : _c("img", {
                             attrs: {
-                              src:
-                                "/storage/uploads/" +
-                                _vm.$store.state.user.user.avatar,
-                              alt: _vm.$store.state.user.user.name
+                              src: "/storage/uploads/" + _vm.user.avatar,
+                              alt: _vm.user.name
                             }
                           })
                     ],
@@ -1078,7 +1080,7 @@ var render = function() {
                   ),
                   _vm._v(
                     "\n                " +
-                      _vm._s(_vm.$store.state.user.user.name) +
+                      _vm._s(_vm.user.name) +
                       "\n            "
                   )
                 ],
@@ -1126,26 +1128,50 @@ var render = function() {
                       )
                     ],
                     1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-tile",
+                    {
+                      attrs: {
+                        to: { name: "notifications" },
+                        "active-class": "secondary--text target-link"
+                      }
+                    },
+                    [
+                      _c(
+                        "v-list-tile-title",
+                        [
+                          _c("v-icon", [_vm._v("notifications")]),
+                          _vm._v("Уведомления")
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-list-tile-action",
+                        [
+                          _c(
+                            "v-badge",
+                            {
+                              staticClass: "nav-badge",
+                              attrs: { color: "secondary" }
+                            },
+                            [
+                              _c(
+                                "span",
+                                { attrs: { slot: "badge" }, slot: "badge" },
+                                [_vm._v("6")]
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
                   )
                 ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-badge",
-            { attrs: { color: "secondary", overlap: "" } },
-            [
-              _c("span", { attrs: { slot: "badge" }, slot: "badge" }, [
-                _vm._v("6")
-              ]),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                { attrs: { icon: "" } },
-                [_c("v-icon", [_vm._v("notifications")])],
                 1
               )
             ],

@@ -117,10 +117,10 @@
             <v-menu offset-y>
                 <v-btn slot="activator" dark flat class="nav-btn">
                     <v-avatar>
-                        <v-icon v-if="!$store.state.user.user.avatar">account_circle</v-icon>
-                        <img v-else :src="'/storage/uploads/'+$store.state.user.user.avatar" :alt="$store.state.user.user.name">
+                        <v-icon v-if="!user.avatar">account_circle</v-icon>
+                        <img v-else :src="'/storage/uploads/'+user.avatar" :alt="user.name">
                     </v-avatar>
-                    {{$store.state.user.user.name}}
+                    {{user.name}}
                 </v-btn>
                 <v-list>
                     <v-list-tile @click="logout" active-class="secondary--text target-link">
@@ -129,14 +129,17 @@
                     <v-list-tile :to="{name:'user-settings'}" active-class="secondary--text target-link">
                         <v-list-tile-title><v-icon>settings</v-icon>Настройки профиля</v-list-tile-title>
                     </v-list-tile>
+                     <v-list-tile :to="{name:'notifications'}" active-class="secondary--text target-link">
+                        <v-list-tile-title><v-icon>notifications</v-icon>Уведомления</v-list-tile-title>
+                        <v-list-tile-action>
+                            <v-badge color="secondary" class="nav-badge">
+                                <span slot="badge">6</span>
+                            </v-badge>
+                        </v-list-tile-action>
+                    </v-list-tile>
                 </v-list>
             </v-menu>
-            <v-badge color="secondary" overlap>
-                <span slot="badge">6</span>
-                <v-btn icon>
-                    <v-icon>notifications</v-icon>
-                </v-btn>
-            </v-badge>
+
         </v-toolbar>
         <div v-if="!mobileAndTabletcheck" class="wrapper hidden" v-bar :style=" { height: page + 'px' } ">
             <div>
@@ -222,8 +225,10 @@ export default {
     ...mapGetters({
       windowWidth: "config/windowWidth",
       windowHeight: "config/windowHeight",
-      company: "user/GetCompany"
+      company: "user/GetCompany",
+      user: "user/GetUser"
     }),
+
     mobileAndTabletcheck() {
       var check = false;
       (function(a) {
@@ -284,12 +289,18 @@ export default {
 .hidden {
   overflow: hidden !important;
 }
+.badge-slot{
+    color: #ffffff!important;
+}
 .wrapper {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
 .v-navigation-drawer {
   z-index: 6;
+}
+.nav-badge {
+  right: -40px;
 }
 .v-bottom-nav {
   box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);

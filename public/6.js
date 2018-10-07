@@ -1,24 +1,381 @@
 webpackJsonp([6],{
 
-/***/ 65:
+/***/ 119:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(120);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(75)("9349afbc", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-429c24aa\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Chat.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-429c24aa\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Chat.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 120:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(14)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.message-content p[data-v-429c24aa] {\n  background: #ebebeb none repeat scroll 0 0;\n  border-radius: 3px;\n  color: black;\n  font-size: 14px;\n  margin: 0;\n  padding: 5px 10px 5px 12px;\n  width: 100%;\n}\n.message-content span[data-v-429c24aa] {\n  color: #747474;\n  display: block;\n  font-size: 12px;\n  text-align: left;\n  margin: 8px 0 0;\n}\n.message-line[data-v-429c24aa] {\n}\n.whois *[data-v-429c24aa] {\n}\n.whois[data-v-429c24aa] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n.message-sender-img[data-v-429c24aa] {\n  padding: 0 10px 0 0;\n}\n.message-sender-img img[data-v-429c24aa] {\n  width: 56px;\n  height: 56px;\n}\n.message-bubble[data-v-429c24aa] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-wrap: nowrap;\n      flex-wrap: nowrap;\n  max-width: 60%;\n  margin: 5px 0;\n}\n.chat-wrapper[data-v-429c24aa] {\n  width: 100%;\n  height: 100%;\n}\n.chat-head[data-v-429c24aa] {\n  width: 100%;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  padding: 15px;\n  -ms-flex-wrap: nowrap;\n      flex-wrap: nowrap;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  background-color: #ffffff;\n}\n.chat-head p[data-v-429c24aa]{\n    margin: 0;\n    font-weight: bold;\n}\n.chat-body[data-v-429c24aa] {\n  width: 100%;\n  height: 100%;\n}\n.flex[data-v-429c24aa] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n.chat-footer[data-v-429c24aa] {\n  background-color: #ffffff;\n  width: 100%;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 121:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      Messages: [{
+        creator: { id: 3, name: "123" },
+        message: "its a test message",
+        created_at: "",
+        status: ""
+      }],
+      newMessage: ""
+    };
+  },
+  methods: {
+    SendMessage: function SendMessage() {
+      if (this.newMessage !== "" || this.newMessage !== " ") this.Messages.push({
+        creator: this.user,
+        message: this.newMessage,
+        created_at: new Date(),
+        status: "new"
+      });
+    },
+    toggleChat: function toggleChat() {
+      this.$emit("toggleChat");
+    }
+  },
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({ user: "user/GetUser" }))
+});
+
+/***/ }),
+
+/***/ 122:
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-layout",
+    { staticClass: "chat-wrapper" },
+    [
+      _c(
+        "v-flex",
+        { attrs: { xs12: "", "justify-center": "", "align-center": "" } },
+        [
+          _c(
+            "div",
+            { staticClass: "chat-head" },
+            [
+              _c(
+                "v-btn",
+                { attrs: { flat: "" }, on: { click: _vm.toggleChat } },
+                [_c("v-icon", [_vm._v("question_answer")]), _vm._v("Чаты")],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                [
+                  _c(
+                    "v-avatar",
+                    [
+                      !_vm.$store.state.user.user.avatar
+                        ? _c("v-icon", [_vm._v("account_circle")])
+                        : _c("img", {
+                            attrs: {
+                              src:
+                                "/storage/uploads/" +
+                                _vm.$store.state.user.user.avatar,
+                              alt: _vm.$store.state.user.user.name
+                            }
+                          })
+                    ],
+                    1
+                  ),
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(_vm.$store.state.user.user.name) +
+                      "\n            "
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(new Date().toLocaleString("ru")))])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "chat-body" },
+            [
+              _c(
+                "v-container",
+                { attrs: { fluid: "" } },
+                [
+                  _vm._l(_vm.Messages, function(message, index) {
+                    return [
+                      _c(
+                        "div",
+                        {
+                          key: index,
+                          staticClass: "message-line",
+                          class: {
+                            whois:
+                              _vm.user.id == message.creator.id ? true : false
+                          }
+                        },
+                        [
+                          _c("div", { staticClass: "message-bubble" }, [
+                            _vm.user.id !== message.creator.id
+                              ? _c(
+                                  "div",
+                                  { staticClass: "message-sender-img" },
+                                  [
+                                    _c("img", {
+                                      attrs: {
+                                        src:
+                                          "https://ptetutorials.com/images/user-profile.png",
+                                        alt: message.creator.name
+                                      }
+                                    })
+                                  ]
+                                )
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "message-content" }, [
+                              _c("p", [_vm._v(_vm._s(message.message))]),
+                              _vm._v(" "),
+                              _c("span", [
+                                _vm._v(
+                                  _vm._s(
+                                    message.created_at.toLocaleString("ru")
+                                  )
+                                )
+                              ])
+                            ])
+                          ])
+                        ]
+                      )
+                    ]
+                  })
+                ],
+                2
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "chat-footer" },
+            [
+              _c(
+                "v-container",
+                { attrs: { fluid: "" } },
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      outline: "",
+                      label: "Сообщение",
+                      "append-icon": "send"
+                    },
+                    on: { "click:append": _vm.SendMessage },
+                    model: {
+                      value: _vm.newMessage,
+                      callback: function($$v) {
+                        _vm.newMessage = $$v
+                      },
+                      expression: "newMessage"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-429c24aa", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ 72:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(94)
+  __webpack_require__(119)
 }
-var normalizeComponent = __webpack_require__(73)
+var normalizeComponent = __webpack_require__(74)
 /* script */
-var __vue_script__ = __webpack_require__(96)
+var __vue_script__ = __webpack_require__(121)
 /* template */
-var __vue_template__ = __webpack_require__(97)
+var __vue_template__ = __webpack_require__(122)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-bc5e96a2"
+var __vue_scopeId__ = "data-v-429c24aa"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -29,7 +386,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/AddCompany.vue"
+Component.options.__file = "resources/assets/js/views/Chat.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -38,9 +395,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-bc5e96a2", Component.options)
+    hotAPI.createRecord("data-v-429c24aa", Component.options)
   } else {
-    hotAPI.reload("data-v-bc5e96a2", Component.options)
+    hotAPI.reload("data-v-429c24aa", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -52,7 +409,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 73:
+/***/ 74:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -162,7 +519,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 74:
+/***/ 75:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -181,7 +538,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(75)
+var listToStyles = __webpack_require__(76)
 
 /*
 type StyleObject = {
@@ -391,7 +748,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 75:
+/***/ 76:
 /***/ (function(module, exports) {
 
 /**
@@ -422,671 +779,6 @@ module.exports = function listToStyles (parentId, list) {
   return styles
 }
 
-
-/***/ }),
-
-/***/ 94:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(95);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(74)("f2834252", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-bc5e96a2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AddCompany.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-bc5e96a2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AddCompany.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 95:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(14)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.v-avatar[data-v-bc5e96a2] {\r\n  position: absolute;\r\n  left: 25px;\r\n  overflow: hidden;\r\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n  top: -128px;\r\n  border-radius: 50% !important;\r\n  -webkit-transition: 0.2s linear;\r\n  transition: 0.2s linear;\n}\n.v-avatar img[data-v-bc5e96a2] {\r\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n}\n.file[data-v-bc5e96a2] {\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 100%;\r\n  border-radius: 64px;\r\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\r\n  top: 0;\r\n  left: 0;\r\n  cursor: pointer;\r\n  z-index: 4;\r\n  opacity: 0;\n}\n.v-card__title[data-v-bc5e96a2] {\r\n  padding-top: 148px !important;\n}\n.v-card[data-v-bc5e96a2] {\r\n  margin: 128px 0 0 0;\n}\n.v-card .v-avatar[data-v-bc5e96a2] {\r\n  cursor: pointer;\n}\n.chips-list[data-v-bc5e96a2] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\n}\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 96:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      show: false,
-      avatarSize: 256,
-      tile: true,
-      switch1: false,
-      Company: {
-        name: "",
-        activities: [],
-        logo: undefined
-      },
-      alert: {
-        enable: false
-      },
-      NewActivity: "",
-      NewActivities: [],
-      activities: [{
-        name: "IT"
-      }, {
-        name: "Проектирование"
-      }],
-      types: [{
-        name: "ООО"
-      }, {
-        name: "ОАО"
-      }, {
-        name: "АО"
-      }, {
-        name: " ПАО"
-      }, {
-        name: " ИП"
-      }]
-    };
-  },
-  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({ AddCompany: "user/AddCompany" }), {
-    remove: function remove(item) {
-      console.log(item);
-      var index = this.Company.activities.indexOf(item);
-      if (index >= 0) this.Company.activities.splice(index, 1);
-    },
-    removeItem: function removeItem(index) {
-      this.Company.activities.splice(index, 1);
-    },
-    onFileChange: function onFileChange(e) {
-      var files = e.target.files || e.dataTransfer.files;
-      if (!files.length) return;
-      this.createImage(this.Company, files[0]);
-    },
-    createImage: function createImage(item, file) {
-      var image = new Image();
-      var reader = new FileReader();
-      reader.onload = function (e) {
-        item.logo = e.target.result;
-      };
-      reader.readAsDataURL(file);
-    },
-
-    removeImage: function removeImage(item) {
-      item.image = false;
-    },
-    ResetNewActivities: function ResetNewActivities() {
-      if (this.NewActivities.length > 0) this.NewActivities = [];
-    },
-    submit: function submit() {
-      this.alert = {
-        enable: false
-      };
-      var data = new FormData();
-      data.append("logo", this.$refs.file.files[0]);
-      data.append("name", this.Company.name);
-      data.append("company_type_id", this.Company.type.id);
-      data.append("creator_id", this.user);
-      data.append("website", this.Company.website);
-      data.append("activities", JSON.stringify(this.Company.activities));
-      var init = this;
-      axios.post("/api/auth/company", data).then(function (resp) {
-        init.AddCompany(resp.data);
-        init.alert.message = "Компания успешно создана.";
-        init.alert.enable = true;
-        init.alert.type = "success";
-        init.Company = {
-          name: "",
-          activities: [],
-          logo: undefined,
-          type: {
-            name: "ООО"
-          }
-        };
-      }).catch(function (error) {
-        init.alert.message = error.response.data.message;
-        init.alert.enable = true;
-        init.alert.type = "error";
-      });
-    },
-    AddActivity: function AddActivity() {
-      this.Company.activities.push({ name: this.NewActivity });
-      this.NewActivity = "";
-    }
-  }),
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-    user: "user/GetUserId"
-  })),
-  beforeCreate: function beforeCreate() {
-    var init = this;
-    axios.get("/api/auth/activities").then(function (resp) {
-      init.activities = resp.data;
-    }).catch(function (error) {});
-    axios.get("/api/auth/company_types").then(function (resp) {
-      init.types = resp.data;
-    }).catch(function (error) {});
-  }
-});
-
-/***/ }),
-
-/***/ 97:
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "v-container",
-    [
-      _c(
-        "v-layout",
-        { attrs: { "justify-center": "", "align-center": "" } },
-        [
-          _c(
-            "v-flex",
-            { attrs: { xl6: "", lg6: "", md6: "", sm12: "", xs12: "" } },
-            [
-              _c(
-                "v-card",
-                [
-                  _c(
-                    "v-avatar",
-                    {
-                      attrs: {
-                        tile: _vm.tile,
-                        size: _vm.avatarSize,
-                        color: "grey lighten-4"
-                      }
-                    },
-                    [
-                      _c("input", {
-                        ref: "file",
-                        staticClass: "file",
-                        attrs: {
-                          type: "file",
-                          accept: "image/jpeg,image/png,image/gif"
-                        },
-                        on: { change: _vm.onFileChange }
-                      }),
-                      _vm._v(" "),
-                      !_vm.Company.logo
-                        ? _c("v-icon", { attrs: { alt: "avatar" } }, [
-                            _vm._v("add_circle_outline")
-                          ])
-                        : _c("img", { attrs: { src: _vm.Company.logo } })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-title",
-                    { attrs: { "primary-title": "" } },
-                    [
-                      _c(
-                        "v-flex",
-                        { attrs: { row: "" } },
-                        [
-                          _c(
-                            "v-alert",
-                            {
-                              attrs: { type: _vm.alert.type, dismissible: "" },
-                              model: {
-                                value: _vm.alert.enable,
-                                callback: function($$v) {
-                                  _vm.$set(_vm.alert, "enable", $$v)
-                                },
-                                expression: "alert.enable"
-                              }
-                            },
-                            [_vm._v(_vm._s(_vm.alert.message))]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-layout",
-                            {
-                              attrs: {
-                                "align-center": "",
-                                "justify-center": "",
-                                row: "",
-                                "fill-height": "",
-                                wrap: ""
-                              }
-                            },
-                            [
-                              _c(
-                                "v-flex",
-                                { attrs: { xl4: "", md12: "", sm12: "" } },
-                                [
-                                  _c("v-select", {
-                                    attrs: {
-                                      items: _vm.types,
-                                      outline: "",
-                                      "offset-y": "",
-                                      "return-object": "",
-                                      label: "Тип юридического лица",
-                                      "item-text": "name",
-                                      "item-value": "name"
-                                    },
-                                    model: {
-                                      value: _vm.Company.type,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.Company, "type", $$v)
-                                      },
-                                      expression: "Company.type"
-                                    }
-                                  })
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-flex",
-                                {
-                                  attrs: {
-                                    xl7: "",
-                                    "offset-xl1": "",
-                                    md12: "",
-                                    sm12: ""
-                                  }
-                                },
-                                [
-                                  _c("v-text-field", {
-                                    attrs: {
-                                      outline: "",
-                                      label: "Название компании",
-                                      "append-icon": "business"
-                                    },
-                                    model: {
-                                      value: _vm.Company.name,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.Company, "name", $$v)
-                                      },
-                                      expression: "Company.name"
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c("v-text-field", {
-                            attrs: {
-                              outline: "",
-                              label: "Сайт компании",
-                              "append-icon": "web"
-                            },
-                            model: {
-                              value: _vm.Company.website,
-                              callback: function($$v) {
-                                _vm.$set(_vm.Company, "website", $$v)
-                              },
-                              expression: "Company.website"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _vm.switch1 == false
-                            ? _c("v-autocomplete", {
-                                attrs: {
-                                  items: _vm.activities,
-                                  outline: "",
-                                  chips: "",
-                                  label: "Сферы деятельности",
-                                  "item-text": "name",
-                                  "item-value": "name",
-                                  "return-object": "",
-                                  multiple: ""
-                                },
-                                scopedSlots: _vm._u([
-                                  {
-                                    key: "selection",
-                                    fn: function(data) {
-                                      return [
-                                        _c(
-                                          "v-chip",
-                                          {
-                                            staticClass: "chip--select-multi",
-                                            attrs: {
-                                              selected: data.selected,
-                                              close: ""
-                                            },
-                                            on: {
-                                              input: function($event) {
-                                                _vm.remove(data.item)
-                                              }
-                                            }
-                                          },
-                                          [
-                                            _vm._v(
-                                              "\n                                " +
-                                                _vm._s(data.item.name) +
-                                                "\n                            "
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    }
-                                  },
-                                  {
-                                    key: "item",
-                                    fn: function(data) {
-                                      return [
-                                        typeof data.item !== "object"
-                                          ? [
-                                              _c("v-list-tile-content", {
-                                                domProps: {
-                                                  textContent: _vm._s(data.item)
-                                                }
-                                              })
-                                            ]
-                                          : [
-                                              _c(
-                                                "v-list-tile-content",
-                                                [
-                                                  _c("v-list-tile-title", {
-                                                    domProps: {
-                                                      innerHTML: _vm._s(
-                                                        data.item.name
-                                                      )
-                                                    }
-                                                  }),
-                                                  _vm._v(" "),
-                                                  _c("v-list-tile-sub-title", {
-                                                    domProps: {
-                                                      innerHTML: _vm._s(
-                                                        data.item.group
-                                                      )
-                                                    }
-                                                  })
-                                                ],
-                                                1
-                                              )
-                                            ]
-                                      ]
-                                    }
-                                  }
-                                ]),
-                                model: {
-                                  value: _vm.Company.activities,
-                                  callback: function($$v) {
-                                    _vm.$set(_vm.Company, "activities", $$v)
-                                  },
-                                  expression: "Company.activities"
-                                }
-                              })
-                            : _c("v-text-field", {
-                                attrs: {
-                                  chips: "",
-                                  outline: "",
-                                  label:
-                                    "Введите свой вариант сферы деятельности",
-                                  "append-icon": "add"
-                                },
-                                on: {
-                                  "click:append": _vm.AddActivity,
-                                  keyup: function($event) {
-                                    if (
-                                      !("button" in $event) &&
-                                      _vm._k(
-                                        $event.keyCode,
-                                        "enter",
-                                        13,
-                                        $event.key,
-                                        "Enter"
-                                      )
-                                    ) {
-                                      return null
-                                    }
-                                    return _vm.AddActivity($event)
-                                  }
-                                },
-                                model: {
-                                  value: _vm.NewActivity,
-                                  callback: function($$v) {
-                                    _vm.NewActivity = $$v
-                                  },
-                                  expression: "NewActivity"
-                                }
-                              }),
-                          _vm._v(" "),
-                          _vm.switch1
-                            ? _c(
-                                "ul",
-                                { staticClass: "chips-list" },
-                                _vm._l(_vm.Company.activities, function(
-                                  activity,
-                                  index
-                                ) {
-                                  return _c(
-                                    "li",
-                                    { key: index },
-                                    [
-                                      _c(
-                                        "v-chip",
-                                        {
-                                          staticClass: "chip--select-multi",
-                                          attrs: { close: "" },
-                                          on: {
-                                            input: function($event) {
-                                              _vm.remove(activity)
-                                            }
-                                          }
-                                        },
-                                        [
-                                          _vm._v(
-                                            "\n                                " +
-                                              _vm._s(activity.name) +
-                                              "\n                            "
-                                          )
-                                        ]
-                                      )
-                                    ],
-                                    1
-                                  )
-                                })
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _c("v-switch", {
-                            attrs: {
-                              label: "Нет подходящего варианта",
-                              color: "primary",
-                              disabled: _vm.Company.activities.length > 0
-                            },
-                            on: { change: _vm.ResetNewActivities },
-                            model: {
-                              value: _vm.switch1,
-                              callback: function($$v) {
-                                _vm.switch1 = $$v
-                              },
-                              expression: "switch1"
-                            }
-                          })
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-actions",
-                    [
-                      _c("v-spacer"),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { color: "secondary" },
-                          on: { click: _vm.submit }
-                        },
-                        [_vm._v("Создать")]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-bc5e96a2", module.exports)
-  }
-}
 
 /***/ })
 

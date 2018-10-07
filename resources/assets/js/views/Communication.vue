@@ -2,10 +2,22 @@
     <v-container fluid class="no-padding">
         <v-layout justify-center align-center>
             <v-flex>
-                <aside class="room-list">
-                    <v-list subheader :class="{shortChat:!toggleChat}">
-                        <v-subheader>Чаты<v-spacer></v-spacer><v-icon :class="{active:!toggleChat}" @click="ToggleChats">arrow_back_ios</v-icon></v-subheader>
-                        <v-list-tile
+                    <v-navigation-drawer
+                        v-model="drawer"
+                        absolute
+                        temporary
+                        >
+
+                        <v-list class="pt-0" dense>
+                              <v-list >
+                                <v-list-tile class="search-bar">
+                                    <v-list-tile-content>
+                                        <v-text-field outline label="Поиск по чатам" append-icon="search" v-model="search"></v-text-field>
+                                    </v-list-tile-content>
+                                </v-list-tile>
+                            </v-list>
+                            <v-divider></v-divider>
+                              <v-list-tile
                         active-class="secondary--text target-link"
                         v-for="(item,i) in items"
                         :key="item.title"
@@ -26,11 +38,20 @@
                                     </v-badge>
                         </v-list-tile-action>
                         </v-list-tile>
-                    </v-list>
-                </aside>
+                                                <v-divider dark></v-divider>
+                        <v-list-tile :to="{name:'add_company'}" exact-active-class="target-link">
+                            <v-list-tile-action>
+                                <v-icon>add_circle_outline</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                                <v-list-tile-title>Создать чат</v-list-tile-title>
+                            </v-list-tile-content>
+                        </v-list-tile>
+                        </v-list>
+                        </v-navigation-drawer>
                 <main class="chat">
                     <transition name="fade" mode="out-in" appear>
-                        <router-view></router-view>
+                        <router-view @toggleChat="drawer=!drawer" :key="$router.fullPath"></router-view>
                     </transition>
                 </main>
             </v-flex>
@@ -40,6 +61,7 @@
 <script>
 export default {
   data: () => ({
+    search: "",
     items: [
       {
         active: true,
@@ -60,17 +82,18 @@ export default {
         avatar: "https://cdn.vuetifyjs.com/images/lists/4.jpg"
       }
     ],
-    toggleChat: true
+    mini: true,
+    right: null,
+    drawer: true
   }),
-  methods: {
-    ToggleChats() {
-      this.toggleChat = !this.toggleChat;
-    }
-  }
+  methods: {}
 };
 </script>
 
 <style scoped>
+.search-bar {
+  margin: 5px 0;
+}
 .v-list {
   transition: width 0.2s linear;
 }
@@ -108,10 +131,10 @@ i.active {
 }
 .material-icons {
   width: 24px;
-
 }
 .target-link .v-icon {
   color: #f80b37 !important;
 }
+
 </style>
 

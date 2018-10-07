@@ -1,16 +1,16 @@
 webpackJsonp([3],{
 
-/***/ 101:
+/***/ 102:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(102);
+var content = __webpack_require__(103);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(74)("d1a2535e", content, false, {});
+var update = __webpack_require__(75)("d1a2535e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -27,7 +27,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 102:
+/***/ 103:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
@@ -35,14 +35,14 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.creator[data-v-40d62849] {\r\n  margin-bottom: 15px;\n}\ndiv[data-v-40d62849] {\r\n  text-align: left;\n}\n.department-header[data-v-40d62849] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  overflow: hidden;\n}\n.department-header i[data-v-40d62849] {\r\n  margin-right: 5px;\n}\n.department-header p[data-v-40d62849] {\r\n  font-weight: bold;\r\n  padding: 0 10px;\r\n  margin: 0;\n}\n.department-header .v-divider--vertical[data-v-40d62849] {\r\n  height: 50px;\n}\n.v-expansion-panel__body .v-card[data-v-40d62849]{\r\n  border-top: 1px solid rgba(0, 0, 0, 0.12);\n}\r\n", ""]);
+exports.push([module.i, "\n.creator[data-v-40d62849] {\n  margin-bottom: 15px;\n}\ndiv[data-v-40d62849] {\n  text-align: left;\n}\n.department-header[data-v-40d62849] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  overflow: hidden;\n}\n.department-header i[data-v-40d62849] {\n  margin-right: 5px;\n}\n.department-header p[data-v-40d62849] {\n  font-weight: bold;\n  padding: 0 10px;\n  margin: 0;\n}\n.department-header .v-divider--vertical[data-v-40d62849] {\n  height: 50px;\n}\n.v-expansion-panel__body .v-card[data-v-40d62849]{\n  border-top: 1px solid rgba(0, 0, 0, 0.12);\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 103:
+/***/ 104:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -85,7 +85,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 var RecursivePalet = function RecursivePalet() {
-  return __webpack_require__.e/* import() */(14).then(__webpack_require__.bind(null, 76));
+  return __webpack_require__.e/* import() */(15).then(__webpack_require__.bind(null, 77));
 };
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -128,7 +128,7 @@ var RecursivePalet = function RecursivePalet() {
 
 /***/ }),
 
-/***/ 108:
+/***/ 109:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -291,13 +291,13 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(101)
+  __webpack_require__(102)
 }
-var normalizeComponent = __webpack_require__(73)
+var normalizeComponent = __webpack_require__(74)
 /* script */
-var __vue_script__ = __webpack_require__(103)
+var __vue_script__ = __webpack_require__(104)
 /* template */
-var __vue_template__ = __webpack_require__(108)
+var __vue_template__ = __webpack_require__(109)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -337,7 +337,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 73:
+/***/ 74:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -447,7 +447,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 74:
+/***/ 75:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -466,7 +466,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(75)
+var listToStyles = __webpack_require__(76)
 
 /*
 type StyleObject = {
@@ -676,7 +676,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 75:
+/***/ 76:
 /***/ (function(module, exports) {
 
 /**
