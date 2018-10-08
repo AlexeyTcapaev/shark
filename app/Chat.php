@@ -10,6 +10,10 @@ class Chat extends Model
     {
         return $this->belongsToMany(User::class)->withTimestamps();
     }
+    public function comments()
+    {
+      return $this->hasMany(ChatMessage::class,'chat_id','id');
+    }
 
     public $load_map = [
         'users'

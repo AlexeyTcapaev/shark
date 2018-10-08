@@ -35,7 +35,15 @@ class ChatMessageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $message = ChatMessage::create($request->all());
+
+            if (empty($message))
+                throw new Exception('Ошибка при сохранении сообщения');
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+        return $message->load('creator');
     }
 
     /**
@@ -44,9 +52,17 @@ class ChatMessageController extends Controller
      * @param  \App\ChatMessage  $chatMessage
      * @return \Illuminate\Http\Response
      */
-    public function show(ChatMessage $chatMessage)
+    public function show($id)
     {
-        //
+        try {
+            $messages = ChatMessage::where('chat_id',$id)->with('creator')->get();
+
+            if (empty($messages))
+                throw new Exception('Ошибка при сохранении сообщения');
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+        return $messages;
     }
 
     /**

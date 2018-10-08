@@ -30,6 +30,8 @@ Route::group([
         Route::get('users/{id}', 'UserController@for_chat_create');
         Route::apiResource('company', 'CompanyController');
         Route::apiResource('chats', 'ChatController');
+        Route::get('chats/room/{id}', 'ChatController@chat_room');
+        Route::apiResource('messages', 'ChatMessageController');
         Route::apiResource('departments', 'DepartmentController');
         Route::apiResource('activities', 'ActivityController');
         Route::apiResource('company_types', 'CompanyTypeController');

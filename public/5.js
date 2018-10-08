@@ -1,22 +1,22 @@
 webpackJsonp([5],{
 
-/***/ 110:
+/***/ 124:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(111);
+var content = __webpack_require__(125);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(75)("390d3a5e", content, false, {});
+var update = __webpack_require__(76)("9685d6b2", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-32de9613\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Communication.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-32de9613\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Communication.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4eb2d354\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ChatStartPage.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4eb2d354\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ChatStartPage.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -27,7 +27,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 111:
+/***/ 125:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
@@ -35,21 +35,18 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.search-bar[data-v-32de9613] {\n  margin: 5px 0;\n}\n.v-list[data-v-32de9613] {\n  -webkit-transition: width 0.2s linear;\n  transition: width 0.2s linear;\n}\n.shortChat[data-v-32de9613] {\n  width: 70px !important;\n  -webkit-transition: 0.2s linear;\n  transition: 0.2s linear;\n  overflow: hidden;\n}\n.chat[data-v-32de9613] {\n  width: 100%;\n}\n.no-padding[data-v-32de9613] {\n  padding: 0;\n}\n.room-list[data-v-32de9613] {\n  max-width: 300px;\n  height: 100%;\n}\n.container[data-v-32de9613],\n.layout[data-v-32de9613],\n.flex[data-v-32de9613] {\n  height: 100%;\n}\ni.active[data-v-32de9613] {\n  -webkit-transform: rotate(180deg);\n          transform: rotate(180deg);\n}\n.room-list .v-list[data-v-32de9613] {\n  height: 100%;\n}\n.flex[data-v-32de9613] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.target-link .v-list__tile__content .v-list__tile__title[data-v-32de9613] {\n  color: #f80b37 !important;\n}\n.material-icons[data-v-32de9613] {\n  width: 24px;\n}\n.target-link .v-icon[data-v-32de9613] {\n  color: #f80b37 !important;\n}\n", ""]);
+exports.push([module.i, "\n.chat-head[data-v-4eb2d354] {\r\n  width: 100%;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\r\n  padding: 15px;\r\n  -ms-flex-wrap: nowrap;\r\n      flex-wrap: nowrap;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  background-color: #ffffff;\n}\n.chat-wrapper[data-v-4eb2d354] {\r\n  width: 100%;\r\n  height: 100%;\r\n  -webkit-box-orient: vertical;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: column;\r\n          flex-direction: column;\n}\n.big-i[data-v-4eb2d354] {\r\n  font-size: 300px;\n}\n.flex[data-v-4eb2d354] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: vertical;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: column;\r\n          flex-direction: column;\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 112:
+/***/ 126:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 //
 //
 //
@@ -86,49 +83,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      search: "",
-      chats: [],
-      mini: true,
-      right: null,
-      drawer: false
-    };
-  },
-  methods: {},
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({ user: "user/GetUser" })),
-  mounted: function mounted() {
-    var init = this;
-    axios.get("/api/auth/chats/" + this.user.id).then(function (resp) {
-      init.chats = resp.data;
-    }).catch(function (error) {});
+  methods: {
+    toggleChat: function toggleChat() {
+      this.$emit("toggleChat");
+    }
   }
 });
 
 /***/ }),
 
-/***/ 113:
+/***/ 127:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -136,197 +102,31 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-container",
-    { staticClass: "no-padding", attrs: { fluid: "" } },
+    "v-layout",
+    { staticClass: "chat-wrapper" },
     [
       _c(
-        "v-layout",
-        { attrs: { "justify-center": "", "align-center": "" } },
+        "div",
+        { staticClass: "chat-head" },
         [
-          _c(
-            "v-flex",
-            [
-              _c(
-                "v-navigation-drawer",
-                {
-                  attrs: { absolute: "", temporary: "" },
-                  model: {
-                    value: _vm.drawer,
-                    callback: function($$v) {
-                      _vm.drawer = $$v
-                    },
-                    expression: "drawer"
-                  }
-                },
-                [
-                  _c(
-                    "v-list",
-                    { staticClass: "pt-0", attrs: { dense: "" } },
-                    [
-                      _c(
-                        "v-list",
-                        [
-                          _c("v-subheader", [_vm._v("Мои диалоги")]),
-                          _vm._v(" "),
-                          _c(
-                            "v-list-tile",
-                            { staticClass: "search-bar" },
-                            [
-                              _c(
-                                "v-list-tile-content",
-                                [
-                                  _c("v-text-field", {
-                                    attrs: {
-                                      outline: "",
-                                      label: "Поиск по чатам",
-                                      "append-icon": "search"
-                                    },
-                                    model: {
-                                      value: _vm.search,
-                                      callback: function($$v) {
-                                        _vm.search = $$v
-                                      },
-                                      expression: "search"
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("v-divider"),
-                      _vm._v(" "),
-                      _vm._l(_vm.chats, function(chat, i) {
-                        return _c(
-                          "v-list-tile",
-                          {
-                            key: i,
-                            attrs: {
-                              "active-class": "secondary--text target-link",
-                              avatar: "",
-                              to: { name: "chat", params: { chatid: chat.id } }
-                            }
-                          },
-                          [
-                            _c(
-                              "v-list-tile-avatar",
-                              [
-                                !chat.users[0].avatar
-                                  ? _c("v-icon", [_vm._v("account_circle")])
-                                  : _c("img", {
-                                      attrs: {
-                                        src:
-                                          "/storage/uploads/" +
-                                          chat.users[0].avatar,
-                                        alt: chat.users[0].name
-                                      }
-                                    })
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "v-list-tile-content",
-                              [
-                                _c("v-list-tile-title", {
-                                  domProps: {
-                                    innerHTML: _vm._s(chat.users[0].name)
-                                  }
-                                })
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "v-list-tile-action",
-                              [
-                                _c(
-                                  "v-badge",
-                                  {
-                                    staticClass: "relative-badge",
-                                    attrs: { color: "secondary" }
-                                  },
-                                  [
-                                    _c(
-                                      "span",
-                                      {
-                                        attrs: { slot: "badge" },
-                                        slot: "badge"
-                                      },
-                                      [_vm._v("6")]
-                                    )
-                                  ]
-                                )
-                              ],
-                              1
-                            )
-                          ],
-                          1
-                        )
-                      }),
-                      _vm._v(" "),
-                      _c("v-divider", { attrs: { dark: "" } }),
-                      _vm._v(" "),
-                      _c(
-                        "v-list-tile",
-                        {
-                          attrs: {
-                            to: { name: "add_chat" },
-                            "exact-active-class": "target-link"
-                          }
-                        },
-                        [
-                          _c(
-                            "v-list-tile-action",
-                            [_c("v-icon", [_vm._v("add_circle_outline")])],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-list-tile-content",
-                            [_c("v-list-tile-title", [_vm._v("Создать чат")])],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    2
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "main",
-                { staticClass: "chat" },
-                [
-                  _c(
-                    "transition",
-                    { attrs: { name: "fade", mode: "out-in", appear: "" } },
-                    [
-                      _c("router-view", {
-                        key: _vm.$router.fullPath,
-                        on: {
-                          toggleChat: function($event) {
-                            _vm.drawer = !_vm.drawer
-                          }
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
+          _c("v-btn", { attrs: { flat: "" }, on: { click: _vm.toggleChat } }, [
+            _vm._v("Диалоги")
+          ]),
+          _vm._v(" "),
+          _c("v-spacer")
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-flex",
+        { attrs: { xs12: "", "justify-center": "", "align-center": "" } },
+        [
+          _c("v-icon", { staticClass: "big-i", attrs: { color: "primary" } }, [
+            _vm._v("chat_bubble")
+          ]),
+          _vm._v(" "),
+          _c("h1", [_vm._v("Для начала выберите диалог")])
         ],
         1
       )
@@ -340,31 +140,31 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-32de9613", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-4eb2d354", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ 69:
+/***/ 73:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(110)
+  __webpack_require__(124)
 }
-var normalizeComponent = __webpack_require__(74)
+var normalizeComponent = __webpack_require__(75)
 /* script */
-var __vue_script__ = __webpack_require__(112)
+var __vue_script__ = __webpack_require__(126)
 /* template */
-var __vue_template__ = __webpack_require__(113)
+var __vue_template__ = __webpack_require__(127)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-32de9613"
+var __vue_scopeId__ = "data-v-4eb2d354"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -375,7 +175,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/Communication.vue"
+Component.options.__file = "resources/assets/js/views/ChatStartPage.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -384,9 +184,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-32de9613", Component.options)
+    hotAPI.createRecord("data-v-4eb2d354", Component.options)
   } else {
-    hotAPI.reload("data-v-32de9613", Component.options)
+    hotAPI.reload("data-v-4eb2d354", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -398,7 +198,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 74:
+/***/ 75:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -508,7 +308,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 75:
+/***/ 76:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -527,7 +327,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(76)
+var listToStyles = __webpack_require__(77)
 
 /*
 type StyleObject = {
@@ -737,7 +537,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 76:
+/***/ 77:
 /***/ (function(module, exports) {
 
 /**

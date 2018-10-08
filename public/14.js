@@ -1,14 +1,14 @@
 webpackJsonp([14],{
 
-/***/ 66:
+/***/ 63:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(74)
+var normalizeComponent = __webpack_require__(75)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(99)
+var __vue_template__ = __webpack_require__(91)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -25,7 +25,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/Dashboard.vue"
+Component.options.__file = "resources/assets/js/views/IndexPage.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -34,9 +34,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-361a3c51", Component.options)
+    hotAPI.createRecord("data-v-795c4c84", Component.options)
   } else {
-    hotAPI.reload("data-v-361a3c51", Component.options)
+    hotAPI.reload("data-v-795c4c84", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -48,7 +48,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 74:
+/***/ 75:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -158,14 +158,22 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 99:
+/***/ 91:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("1")])
+  return _c(
+    "div",
+    [
+      _c("router-link", { attrs: { to: "/login" } }, [_vm._v("login")]),
+      _vm._v(" "),
+      _c("router-link", { attrs: { to: "/app" } }, [_vm._v("app")])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -173,7 +181,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-361a3c51", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-795c4c84", module.exports)
   }
 }
 

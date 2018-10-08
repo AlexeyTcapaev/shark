@@ -14,23 +14,25 @@
                             </v-list-tile>
                         </v-list>
                         <v-divider></v-divider>
-                        <v-list-tile active-class="secondary--text target-link" v-for="(chat,i) in chats" :key="i"
-                            avatar :to="{ name:'chat',params:{chatid:chat.id} }">
-                            <v-list-tile-avatar>
-                                <v-icon v-if="!chat.users[0].avatar">account_circle</v-icon>
-                                <img v-else :src="'/storage/uploads/'+chat.users[0].avatar" :alt="chat.users[0].name">
-                            </v-list-tile-avatar>
+                        <template v-for="(chat,i) in chats">
+                            <v-list-tile v-if="chat && chat.users" active-class="secondary--text target-link" 
+                                avatar :to="{ name:'chat',params:{chatid:chat.id} }"  :key="i">
+                                <v-list-tile-avatar>
+                                    <v-icon v-if="!chat.users[0].avatar">account_circle</v-icon>
+                                    <img v-else :src="'/storage/uploads/'+chat.users[0].avatar" :alt="chat.users[0].name">
+                                </v-list-tile-avatar>
 
-                            <v-list-tile-content>
-                                <v-list-tile-title v-html="chat.users[0].name"></v-list-tile-title>
-                            </v-list-tile-content>
+                                <v-list-tile-content>
+                                    <v-list-tile-title v-html="chat.users[0].name"></v-list-tile-title>
+                                </v-list-tile-content>
 
-                            <v-list-tile-action>
-                                <v-badge color="secondary" class="relative-badge">
-                                    <span slot="badge">6</span>
-                                </v-badge>
-                            </v-list-tile-action>
-                        </v-list-tile>
+                                <v-list-tile-action>
+                                    <v-badge color="secondary" class="relative-badge">
+                                        <span slot="badge">6</span>
+                                    </v-badge>
+                                </v-list-tile-action>
+                            </v-list-tile>
+                        </template>
                         <v-divider dark></v-divider>
                         <v-list-tile :to="{name:'add_chat'}" exact-active-class="target-link">
                             <v-list-tile-action>
@@ -53,25 +55,28 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapState } from "vuex";
+import { mapActions } from "vuex";
 export default {
   data: () => ({
     search: "",
-    chats: [],
     mini: true,
     right: null,
     drawer: false
   }),
-  methods: {},
+  methods: {
+    ...mapActions({ SetChats: "chat/SetChats" })
+  },
   computed: {
-    ...mapGetters({ user: "user/GetUser" })
+    ...mapState("user", ["user"]),
+    ...mapState("chat", ["chats"])
   },
   mounted() {
     const init = this;
     axios
       .get("/api/auth/chats/" + this.user.id)
       .then(resp => {
-        init.chats = resp.data;
+        init.SetChats(resp.data);
       })
       .catch(error => {});
   }

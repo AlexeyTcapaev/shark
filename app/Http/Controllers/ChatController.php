@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Chat;
+use App\ChatUser;
 use Illuminate\Http\Request;
 
 class ChatController extends Controller
@@ -61,6 +62,17 @@ class ChatController extends Controller
             $chat = Chat::whereHas('users', function ($q) use ($id) {
                 $q->where('user_id', '=', $id);
             })->ForChat($id)->get();
+            if (empty($chat))
+                return response()->json(['error' => 'Диалоги не найдены'], 404);
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+        return $chat;
+    }
+    public function chat_room($id)
+    {
+        try {
+            $chat = Chat::findOrFail($id);
             if (empty($chat))
                 return response()->json(['error' => 'Диалоги не найдены'], 404);
         } catch (Exception $e) {

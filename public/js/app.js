@@ -29,7 +29,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		16: 0
+/******/ 		17: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -11559,7 +11559,7 @@ module.exports = Vue;
 "use strict";
 /* unused harmony export Store */
 /* unused harmony export install */
-/* unused harmony export mapState */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return mapState; });
 /* unused harmony export mapMutations */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return mapGetters; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return mapActions; });
@@ -26193,7 +26193,7 @@ var App = function App() {
     return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 59));
 };
 var Home = function Home() {
-    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 60));
+    return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 60));
 };
 var Registration = function Registration() {
     return __webpack_require__.e/* import() */(10).then(__webpack_require__.bind(null, 61));
@@ -26202,40 +26202,40 @@ var Login = function Login() {
     return __webpack_require__.e/* import() */(11).then(__webpack_require__.bind(null, 62));
 };
 var IndexPage = function IndexPage() {
-    return __webpack_require__.e/* import() */(13).then(__webpack_require__.bind(null, 63));
+    return __webpack_require__.e/* import() */(14).then(__webpack_require__.bind(null, 63));
 };
 var Feed = function Feed() {
-    return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 64));
+    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 64));
 };
 var AddCompany = function AddCompany() {
     return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 65));
 };
 var Dashboard = function Dashboard() {
-    return __webpack_require__.e/* import() */(14).then(__webpack_require__.bind(null, 66));
+    return __webpack_require__.e/* import() */(15).then(__webpack_require__.bind(null, 66));
 };
 var VerifyEmail = function VerifyEmail() {
     return __webpack_require__.e/* import() */(9).then(__webpack_require__.bind(null, 67));
 };
 var CompanyStructure = function CompanyStructure() {
-    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 68));
+    return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 68));
 };
 var Communication = function Communication() {
-    return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 69));
+    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 69));
 };
 var Platform = function Platform() {
-    return __webpack_require__.e/* import() */(12).then(__webpack_require__.bind(null, 70));
+    return __webpack_require__.e/* import() */(13).then(__webpack_require__.bind(null, 70));
 };
 var UserSettings = function UserSettings() {
-    return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 71));
+    return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 71));
 };
 var Chat = function Chat() {
     return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 72));
 };
 var ChatStartPage = function ChatStartPage() {
-    return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 73));
+    return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 73));
 };
 var AddChat = function AddChat() {
-    return __webpack_require__.e/* import() */(17).then(__webpack_require__.bind(null, 130));
+    return __webpack_require__.e/* import() */(12).then(__webpack_require__.bind(null, 74));
 };
 
 var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
@@ -71939,6 +71939,8 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_vue__;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__user__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chat__ = __webpack_require__(131);
+
 
 
 
@@ -71947,7 +71949,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 /* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
     modules: {
         user: __WEBPACK_IMPORTED_MODULE_2__user__["a" /* default */],
-        config: __WEBPACK_IMPORTED_MODULE_3__config__["a" /* default */]
+        config: __WEBPACK_IMPORTED_MODULE_3__config__["a" /* default */],
+        chat: __WEBPACK_IMPORTED_MODULE_4__chat__["a" /* default */]
     }
 }));
 
@@ -72972,6 +72975,117 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    namespaced: true,
+    state: {
+        chats: [{
+            users: null
+        }]
+    },
+    getters: {
+        GetChats: function GetChats(state) {
+            return state.chats;
+        },
+
+
+        GetChatById: function GetChatById(state) {
+            return function (id) {
+                return state.chats.find(function (chat) {
+                    return chat.id == id;
+                });
+            };
+        }
+    },
+    mutations: {
+        SetChats: function SetChats(state, input_data) {
+            state.chats = input_data;
+        }
+    },
+    actions: {
+        SetChats: function SetChats(state, input_data) {
+            state.commit('SetChats', input_data);
+        }
+    }
+});
 
 /***/ })
 /******/ ]);

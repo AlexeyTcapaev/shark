@@ -2,13 +2,13 @@
         <v-layout class="chat-wrapper">
             <v-flex xs12 justify-center align-center>
                <div class="chat-head">
-                   <v-btn @click="toggleChat" flat><v-icon>question_answer</v-icon>Диалоги</v-btn>
-                    <div>
+                   <v-btn @click="toggleChat" flat>Диалоги</v-btn>
+                    <div v-if="chat && chat.users">
                         <v-avatar>
-                            <v-icon v-if="!$store.state.user.user.avatar">account_circle</v-icon>
-                            <img v-else :src="'/storage/uploads/'+$store.state.user.user.avatar" :alt="$store.state.user.user.name">
+                            <v-icon v-if="!chat.users[0].avatar">account_circle</v-icon>
+                            <img v-else :src="'/storage/uploads/'+chat.users[0].avatar" :alt="chat.users[0].name">
                         </v-avatar>
-                        {{$store.state.user.user.name}}
+                        {{chat.users[0].name}}
                     </div>
                 </div>
                 <div class="chat-body">
@@ -17,7 +17,7 @@
                             <div :key="index" class="message-line"  :class="{whois: user.id == message.creator.id ? true : false}">
                                 <div class="message-bubble">
                                     <div class="message-content">
-                                        <p>{{message.message}}</p>
+                                        <p>{{message.text}}</p>
                                         <span>{{message.created_at.toLocaleString("ru")}}</span>
                                     </div>
                                 </div>
@@ -86,9 +86,9 @@
   display: flex;
   background-color: #ffffff;
 }
-.chat-head p{
-    margin: 0;
-    font-weight: bold;
+.chat-head p {
+  margin: 0;
+  font-weight: bold;
 }
 .chat-body {
   width: 100%;
@@ -98,8 +98,8 @@
   display: flex;
   flex-direction: column;
 }
-.chat-footer .container{
-    padding: 10px;
+.chat-footer .container {
+  padding: 10px;
 }
 .chat-footer {
   background-color: #ffffff;
@@ -110,32 +110,39 @@
 import { mapGetters } from "vuex";
 export default {
   data: () => ({
-    Messages: [
-      {
-        creator: { id: 3, name: "123" },
-        message: "its a test message",
-        created_at: "",
-        status: ""
-      }
-    ],
+    Messages: [],
     newMessage: ""
   }),
   methods: {
     SendMessage() {
+      const init = this;
       if (this.newMessage !== "" || this.newMessage !== " ")
-        this.Messages.push({
-          creator: this.user,
-          message: this.newMessage,
-          created_at: new Date(),
-          status: "new"
-        });
+        axios
+          .post("/api/auth/messages", {
+            creator_id: this.user.id,
+            text: this.newMessage,
+            chat_id: this.$route.params.chatid,
+            status: "new"
+          })
+          .then(resp => {
+            init.Messages.push(resp.data);
+          });
     },
     toggleChat() {
       this.$emit("toggleChat");
     }
   },
   computed: {
-    ...mapGetters({ user: "user/GetUser" })
+    ...mapGetters({ user: "user/GetUser", GetChatById: "chat/GetChatById" }),
+    chat() {
+      return this.GetChatById(this.$route.params.chatid);
+    }
+  },
+  beforeCreate() {
+    const init = this;
+    axios.get("/api/auth/messages/" + init.$route.params.chatid).then(resp => {
+      init.Messages = resp.data;
+    });
   }
 };
 </script>

@@ -1,22 +1,22 @@
 webpackJsonp([4],{
 
-/***/ 102:
+/***/ 111:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(103);
+var content = __webpack_require__(112);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(75)("d1a2535e", content, false, {});
+var update = __webpack_require__(76)("390d3a5e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-40d62849\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CompanyStructure.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-40d62849\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CompanyStructure.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-32de9613\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Communication.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-32de9613\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Communication.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -27,7 +27,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 103:
+/***/ 112:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
@@ -35,14 +35,14 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.creator[data-v-40d62849] {\n  margin-bottom: 15px;\n}\ndiv[data-v-40d62849] {\n  text-align: left;\n}\n.department-header[data-v-40d62849] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  overflow: hidden;\n}\n.department-header i[data-v-40d62849] {\n  margin-right: 5px;\n}\n.department-header p[data-v-40d62849] {\n  font-weight: bold;\n  padding: 0 10px;\n  margin: 0;\n}\n.department-header .v-divider--vertical[data-v-40d62849] {\n  height: 50px;\n}\n.v-expansion-panel__body .v-card[data-v-40d62849]{\n  border-top: 1px solid rgba(0, 0, 0, 0.12);\n}\n", ""]);
+exports.push([module.i, "\n.search-bar[data-v-32de9613] {\r\n  margin: 5px 0;\n}\n.v-list[data-v-32de9613] {\r\n  -webkit-transition: width 0.2s linear;\r\n  transition: width 0.2s linear;\n}\n.shortChat[data-v-32de9613] {\r\n  width: 70px !important;\r\n  -webkit-transition: 0.2s linear;\r\n  transition: 0.2s linear;\r\n  overflow: hidden;\n}\n.chat[data-v-32de9613] {\r\n  width: 100%;\n}\n.no-padding[data-v-32de9613] {\r\n  padding: 0;\n}\n.room-list[data-v-32de9613] {\r\n  max-width: 300px;\r\n  height: 100%;\n}\n.container[data-v-32de9613],\r\n.layout[data-v-32de9613],\r\n.flex[data-v-32de9613] {\r\n  height: 100%;\n}\ni.active[data-v-32de9613] {\r\n  -webkit-transform: rotate(180deg);\r\n          transform: rotate(180deg);\n}\n.room-list .v-list[data-v-32de9613] {\r\n  height: 100%;\n}\n.flex[data-v-32de9613] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\n}\n.target-link .v-list__tile__content .v-list__tile__title[data-v-32de9613] {\r\n  color: #f80b37 !important;\n}\n.material-icons[data-v-32de9613] {\r\n  width: 24px;\n}\n.target-link .v-icon[data-v-32de9613] {\r\n  color: #f80b37 !important;\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 104:
+/***/ 113:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -82,53 +82,55 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
-var RecursivePalet = function RecursivePalet() {
-  return __webpack_require__.e/* import() */(15).then(__webpack_require__.bind(null, 77));
-};
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    RecursivePalet: RecursivePalet
-  },
   data: function data() {
     return {
-      root: {
-        descendants: []
-      },
-      NewDepartment: "",
-      panel: []
+      search: "",
+      mini: true,
+      right: null,
+      drawer: false
     };
   },
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-    GetCompanyBySlug: "user/GetCompanyBySlug"
-  }), {
-    Company: function Company() {
-      return this.GetCompanyBySlug(this.$route.params.slug);
-    }
-  }),
-  methods: {
-    AddDepartment: function AddDepartment() {
-      var init = this;
-      axios.post("/api/auth/departments", {
-        name: this.root.newDepartment,
-        root: this.root.slug
-      }).then(function (resp) {
-        init.root.children.push(resp.data);
-      }).catch(function (error) {});
-    }
-  },
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({ SetChats: "chat/SetChats" })),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])("user", ["user"]), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])("chat", ["chats"])),
   mounted: function mounted() {
     var init = this;
-    axios.get("/api/auth/departments/" + this.$route.params.slug).then(function (resp) {
-      init.root = resp.data;
+    axios.get("/api/auth/chats/" + this.user.id).then(function (resp) {
+      init.SetChats(resp.data);
     }).catch(function (error) {});
   }
 });
 
 /***/ }),
 
-/***/ 109:
+/***/ 114:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -137,7 +139,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-container",
-    { attrs: { fluid: "" } },
+    { staticClass: "no-padding", attrs: { fluid: "" } },
     [
       _c(
         "v-layout",
@@ -147,85 +149,46 @@ var render = function() {
             "v-flex",
             [
               _c(
-                "v-expansion-panel",
-                { staticClass: "creator" },
+                "v-navigation-drawer",
+                {
+                  attrs: { absolute: "", temporary: "" },
+                  model: {
+                    value: _vm.drawer,
+                    callback: function($$v) {
+                      _vm.drawer = $$v
+                    },
+                    expression: "drawer"
+                  }
+                },
                 [
                   _c(
-                    "v-expansion-panel-content",
+                    "v-list",
+                    { staticClass: "pt-0", attrs: { dense: "" } },
                     [
-                      _c("div", { attrs: { slot: "header" }, slot: "header" }, [
-                        _vm._v("Информация о владельце и создателе")
-                      ]),
-                      _vm._v(" "),
                       _c(
-                        "v-card",
+                        "v-list",
                         [
-                          _c("v-card-text", { staticClass: "grey lighten-3" }, [
-                            _vm._v(
-                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                            )
-                          ])
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-expansion-panel",
-                { staticClass: "creator" },
-                [
-                  _c(
-                    "v-expansion-panel-content",
-                    [
-                      _c("div", { attrs: { slot: "header" }, slot: "header" }, [
-                        _vm._v("Добавить отдел")
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "v-card",
-                        [
+                          _c("v-subheader", [_vm._v("Мои диалоги")]),
+                          _vm._v(" "),
                           _c(
-                            "v-card-text",
-                            { staticClass: "grey lighten-3" },
+                            "v-list-tile",
+                            { staticClass: "search-bar" },
                             [
                               _c(
-                                "v-flex",
+                                "v-list-tile-content",
                                 [
                                   _c("v-text-field", {
                                     attrs: {
                                       outline: "",
-                                      label: "Введите название отдела",
-                                      "append-icon": "add"
-                                    },
-                                    on: {
-                                      "click:append": _vm.AddDepartment,
-                                      keyup: function($event) {
-                                        if (
-                                          !("button" in $event) &&
-                                          _vm._k(
-                                            $event.keyCode,
-                                            "enter",
-                                            13,
-                                            $event.key,
-                                            "Enter"
-                                          )
-                                        ) {
-                                          return null
-                                        }
-                                        return _vm.AddDepartment($event)
-                                      }
+                                      label: "Поиск по чатам",
+                                      "append-icon": "search"
                                     },
                                     model: {
-                                      value: _vm.root.newDepartment,
+                                      value: _vm.search,
                                       callback: function($$v) {
-                                        _vm.$set(_vm.root, "newDepartment", $$v)
+                                        _vm.search = $$v
                                       },
-                                      expression: "root.newDepartment"
+                                      expression: "search"
                                     }
                                   })
                                 ],
@@ -236,32 +199,142 @@ var render = function() {
                           )
                         ],
                         1
+                      ),
+                      _vm._v(" "),
+                      _c("v-divider"),
+                      _vm._v(" "),
+                      _vm._l(_vm.chats, function(chat, i) {
+                        return [
+                          chat && chat.users
+                            ? _c(
+                                "v-list-tile",
+                                {
+                                  key: i,
+                                  attrs: {
+                                    "active-class":
+                                      "secondary--text target-link",
+                                    avatar: "",
+                                    to: {
+                                      name: "chat",
+                                      params: { chatid: chat.id }
+                                    }
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "v-list-tile-avatar",
+                                    [
+                                      !chat.users[0].avatar
+                                        ? _c("v-icon", [
+                                            _vm._v("account_circle")
+                                          ])
+                                        : _c("img", {
+                                            attrs: {
+                                              src:
+                                                "/storage/uploads/" +
+                                                chat.users[0].avatar,
+                                              alt: chat.users[0].name
+                                            }
+                                          })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list-tile-content",
+                                    [
+                                      _c("v-list-tile-title", {
+                                        domProps: {
+                                          innerHTML: _vm._s(chat.users[0].name)
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list-tile-action",
+                                    [
+                                      _c(
+                                        "v-badge",
+                                        {
+                                          staticClass: "relative-badge",
+                                          attrs: { color: "secondary" }
+                                        },
+                                        [
+                                          _c(
+                                            "span",
+                                            {
+                                              attrs: { slot: "badge" },
+                                              slot: "badge"
+                                            },
+                                            [_vm._v("6")]
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            : _vm._e()
+                        ]
+                      }),
+                      _vm._v(" "),
+                      _c("v-divider", { attrs: { dark: "" } }),
+                      _vm._v(" "),
+                      _c(
+                        "v-list-tile",
+                        {
+                          attrs: {
+                            to: { name: "add_chat" },
+                            "exact-active-class": "target-link"
+                          }
+                        },
+                        [
+                          _c(
+                            "v-list-tile-action",
+                            [_c("v-icon", [_vm._v("add_circle_outline")])],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-list-tile-content",
+                            [_c("v-list-tile-title", [_vm._v("Создать чат")])],
+                            1
+                          )
+                        ],
+                        1
                       )
                     ],
-                    1
+                    2
                   )
                 ],
                 1
               ),
               _vm._v(" "),
               _c(
-                "v-expansion-panel",
-                {
-                  attrs: { expand: "" },
-                  model: {
-                    value: _vm.panel,
-                    callback: function($$v) {
-                      _vm.panel = $$v
-                    },
-                    expression: "panel"
-                  }
-                },
-                _vm._l(_vm.root.children, function(item, i) {
-                  return _c("recursive-palet", {
-                    key: i,
-                    attrs: { item: item }
-                  })
-                })
+                "main",
+                { staticClass: "chat" },
+                [
+                  _c(
+                    "transition",
+                    { attrs: { name: "fade", mode: "out-in", appear: "" } },
+                    [
+                      _c("router-view", {
+                        key: _vm.$router.fullPath,
+                        on: {
+                          toggleChat: function($event) {
+                            _vm.drawer = !_vm.drawer
+                          }
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ],
+                1
               )
             ],
             1
@@ -279,31 +352,31 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-40d62849", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-32de9613", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ 68:
+/***/ 69:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(102)
+  __webpack_require__(111)
 }
-var normalizeComponent = __webpack_require__(74)
+var normalizeComponent = __webpack_require__(75)
 /* script */
-var __vue_script__ = __webpack_require__(104)
+var __vue_script__ = __webpack_require__(113)
 /* template */
-var __vue_template__ = __webpack_require__(109)
+var __vue_template__ = __webpack_require__(114)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-40d62849"
+var __vue_scopeId__ = "data-v-32de9613"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -314,7 +387,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/CompanyStructure.vue"
+Component.options.__file = "resources/assets/js/views/Communication.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -323,9 +396,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-40d62849", Component.options)
+    hotAPI.createRecord("data-v-32de9613", Component.options)
   } else {
-    hotAPI.reload("data-v-40d62849", Component.options)
+    hotAPI.reload("data-v-32de9613", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -337,7 +410,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 74:
+/***/ 75:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -447,7 +520,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 75:
+/***/ 76:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -466,7 +539,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(76)
+var listToStyles = __webpack_require__(77)
 
 /*
 type StyleObject = {
@@ -676,7 +749,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 76:
+/***/ 77:
 /***/ (function(module, exports) {
 
 /**
