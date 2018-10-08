@@ -46,7 +46,7 @@
                 </v-navigation-drawer>
                 <main class="chat">
                     <transition name="fade" mode="out-in" appear>
-                        <router-view @toggleChat="drawer=!drawer" :key="$router.fullPath"></router-view>
+                        <router-view @toggleChat="drawer=!drawer" :key="$route.fullPath"></router-view>
                     </transition>
                 </main>
             </v-flex>
