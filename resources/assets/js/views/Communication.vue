@@ -84,6 +84,11 @@ export default {
 </script>
 
 <style scoped>
+.v-navigation-drawer {
+  z-index: 999;
+  box-shadow: none;
+}
+
 .search-bar {
   margin: 5px 0;
 }

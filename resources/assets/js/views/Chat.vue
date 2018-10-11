@@ -11,23 +11,25 @@
                         {{chat.users[0].name}}
                     </div>
                 </div>
-                <div class="chat-body">
-                    <v-container fluid>
-                        <template v-for="(message,index) in Messages">
-                            <div :key="index" class="message-line"  :class="{whois: user.id == message.creator.id ? true : false}">
-                                <div class="message-bubble">
-                                    <div class="message-content">
-                                        <p>{{message.text}}</p>
-                                        <span>{{message.created_at.toLocaleString("ru")}}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </template>
-                    </v-container>
+                <div v-bar class="chat-body">
+                  <div>
+                      <v-container fluid>
+                          <template v-for="(message,index) in Messages">
+                              <div :key="index" class="message-line"  :class="{whois: user.id == message.creator.id ? true : false}">
+                                  <div class="message-bubble">
+                                      <div class="message-content">
+                                          <p>{{message.text}}</p>
+                                          <span>{{message.created_at.toLocaleString("ru")}}</span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </template>
+                      </v-container>
+                  </div>
                 </div>
                 <div class="chat-footer">
                     <v-container fluid>
-                         <v-text-field class="message-input" v-model="newMessage" outline label="Сообщение" append-icon="send" @click:append="SendMessage"></v-text-field>
+                         <v-text-field class="message-input" v-model="newMessage" outline label="Сообщение" @keyup.enter="SendMessage" append-icon="send" @click:append="SendMessage"></v-text-field>
                     </v-container>
                 </div>
             </v-flex>
@@ -76,6 +78,7 @@
 .chat-wrapper {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 .chat-head {
   width: 100%;
@@ -85,6 +88,9 @@
   flex-wrap: nowrap;
   display: flex;
   background-color: #ffffff;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12);
+  z-index: 9;
 }
 .chat-head p {
   margin: 0;
@@ -104,6 +110,7 @@
 .chat-footer {
   background-color: #ffffff;
   width: 100%;
+  box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
 </style>
 <script>
@@ -126,6 +133,7 @@ export default {
           })
           .then(resp => {
             init.Messages.push(resp.data);
+            init.newMessage = "";
           });
     },
     toggleChat() {

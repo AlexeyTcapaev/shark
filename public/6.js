@@ -35,7 +35,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n.message-content p[data-v-429c24aa] {\r\n  background: #ebebeb none repeat scroll 0 0;\r\n  border-radius: 3px;\r\n  color: black;\r\n  font-size: 14px;\r\n  margin: 0;\r\n  padding: 5px 10px 5px 12px;\r\n  width: 100%;\n}\n.message-content span[data-v-429c24aa] {\r\n  color: #747474;\r\n  display: block;\r\n  font-size: 12px;\r\n  text-align: left;\r\n  margin: 8px 0 0;\n}\n.message-line[data-v-429c24aa] {\n}\n.whois *[data-v-429c24aa] {\n}\n.whois[data-v-429c24aa] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: end;\r\n      -ms-flex-pack: end;\r\n          justify-content: flex-end;\n}\n.message-sender-img[data-v-429c24aa] {\r\n  padding: 0 10px 0 0;\n}\n.message-sender-img img[data-v-429c24aa] {\r\n  width: 56px;\r\n  height: 56px;\n}\n.message-bubble[data-v-429c24aa] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n  -ms-flex-wrap: nowrap;\r\n      flex-wrap: nowrap;\r\n  max-width: 60%;\r\n  margin: 5px 0;\n}\n.chat-wrapper[data-v-429c24aa] {\r\n  width: 100%;\r\n  height: 100%;\n}\n.chat-head[data-v-429c24aa] {\r\n  width: 100%;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\r\n  padding: 15px;\r\n  -ms-flex-wrap: nowrap;\r\n      flex-wrap: nowrap;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  background-color: #ffffff;\n}\n.chat-head p[data-v-429c24aa] {\r\n  margin: 0;\r\n  font-weight: bold;\n}\n.chat-body[data-v-429c24aa] {\r\n  width: 100%;\r\n  height: 100%;\n}\n.flex[data-v-429c24aa] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: vertical;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: column;\r\n          flex-direction: column;\n}\n.chat-footer .container[data-v-429c24aa] {\r\n  padding: 10px;\n}\n.chat-footer[data-v-429c24aa] {\r\n  background-color: #ffffff;\r\n  width: 100%;\n}\r\n", ""]);
+exports.push([module.i, "\n.message-content p[data-v-429c24aa] {\r\n  background: #ebebeb none repeat scroll 0 0;\r\n  border-radius: 3px;\r\n  color: black;\r\n  font-size: 14px;\r\n  margin: 0;\r\n  padding: 5px 10px 5px 12px;\r\n  width: 100%;\n}\n.message-content span[data-v-429c24aa] {\r\n  color: #747474;\r\n  display: block;\r\n  font-size: 12px;\r\n  text-align: left;\r\n  margin: 8px 0 0;\n}\n.message-line[data-v-429c24aa] {\n}\n.whois *[data-v-429c24aa] {\n}\n.whois[data-v-429c24aa] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: end;\r\n      -ms-flex-pack: end;\r\n          justify-content: flex-end;\n}\n.message-sender-img[data-v-429c24aa] {\r\n  padding: 0 10px 0 0;\n}\n.message-sender-img img[data-v-429c24aa] {\r\n  width: 56px;\r\n  height: 56px;\n}\n.message-bubble[data-v-429c24aa] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n  -ms-flex-wrap: nowrap;\r\n      flex-wrap: nowrap;\r\n  max-width: 60%;\r\n  margin: 5px 0;\n}\n.chat-wrapper[data-v-429c24aa] {\r\n  width: 100%;\r\n  height: 100%;\r\n  overflow: hidden;\n}\n.chat-head[data-v-429c24aa] {\r\n  width: 100%;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\r\n  padding: 15px;\r\n  -ms-flex-wrap: nowrap;\r\n      flex-wrap: nowrap;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  background-color: #ffffff;\r\n  -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 10px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 10px 0 rgba(0, 0, 0, 0.12);\r\n  z-index: 9;\n}\n.chat-head p[data-v-429c24aa] {\r\n  margin: 0;\r\n  font-weight: bold;\n}\n.chat-body[data-v-429c24aa] {\r\n  width: 100%;\r\n  height: 100%;\n}\n.flex[data-v-429c24aa] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: vertical;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: column;\r\n          flex-direction: column;\n}\n.chat-footer .container[data-v-429c24aa] {\r\n  padding: 10px;\n}\n.chat-footer[data-v-429c24aa] {\r\n  background-color: #ffffff;\r\n  width: 100%;\r\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\r\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\r\n", ""]);
 
 // exports
 
@@ -50,6 +50,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -177,6 +184,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         status: "new"
       }).then(function (resp) {
         init.Messages.push(resp.data);
+        init.newMessage = "";
       });
     },
     toggleChat: function toggleChat() {
@@ -258,47 +266,57 @@ var render = function() {
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "chat-body" },
+            {
+              directives: [{ name: "bar", rawName: "v-bar" }],
+              staticClass: "chat-body"
+            },
             [
               _c(
-                "v-container",
-                { attrs: { fluid: "" } },
+                "div",
                 [
-                  _vm._l(_vm.Messages, function(message, index) {
-                    return [
-                      _c(
-                        "div",
-                        {
-                          key: index,
-                          staticClass: "message-line",
-                          class: {
-                            whois:
-                              _vm.user.id == message.creator.id ? true : false
-                          }
-                        },
-                        [
-                          _c("div", { staticClass: "message-bubble" }, [
-                            _c("div", { staticClass: "message-content" }, [
-                              _c("p", [_vm._v(_vm._s(message.text))]),
-                              _vm._v(" "),
-                              _c("span", [
-                                _vm._v(
-                                  _vm._s(
-                                    message.created_at.toLocaleString("ru")
-                                  )
-                                )
+                  _c(
+                    "v-container",
+                    { attrs: { fluid: "" } },
+                    [
+                      _vm._l(_vm.Messages, function(message, index) {
+                        return [
+                          _c(
+                            "div",
+                            {
+                              key: index,
+                              staticClass: "message-line",
+                              class: {
+                                whois:
+                                  _vm.user.id == message.creator.id
+                                    ? true
+                                    : false
+                              }
+                            },
+                            [
+                              _c("div", { staticClass: "message-bubble" }, [
+                                _c("div", { staticClass: "message-content" }, [
+                                  _c("p", [_vm._v(_vm._s(message.text))]),
+                                  _vm._v(" "),
+                                  _c("span", [
+                                    _vm._v(
+                                      _vm._s(
+                                        message.created_at.toLocaleString("ru")
+                                      )
+                                    )
+                                  ])
+                                ])
                               ])
-                            ])
-                          ])
+                            ]
+                          )
                         ]
-                      )
-                    ]
-                  })
+                      })
+                    ],
+                    2
+                  )
                 ],
-                2
+                1
               )
-            ],
-            1
+            ]
           ),
           _vm._v(" "),
           _c(
@@ -316,7 +334,24 @@ var render = function() {
                       label: "Сообщение",
                       "append-icon": "send"
                     },
-                    on: { "click:append": _vm.SendMessage },
+                    on: {
+                      keyup: function($event) {
+                        if (
+                          !("button" in $event) &&
+                          _vm._k(
+                            $event.keyCode,
+                            "enter",
+                            13,
+                            $event.key,
+                            "Enter"
+                          )
+                        ) {
+                          return null
+                        }
+                        return _vm.SendMessage($event)
+                      },
+                      "click:append": _vm.SendMessage
+                    },
                     model: {
                       value: _vm.newMessage,
                       callback: function($$v) {

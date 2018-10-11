@@ -14191,6 +14191,10 @@ aside .v-list {
   padding-top: 0;
 }
 
+.vb-content {
+  -webkit-overflow-scrolling: touch;
+}
+
 .relative-badge .v-badge__badge {
   position: static !important;
 }
