@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ChatMessage;
+use App\Events\Message;
 use Illuminate\Http\Request;
 
 class ChatMessageController extends Controller
@@ -43,7 +44,9 @@ class ChatMessageController extends Controller
         } catch (Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
-        return $message->load('creator');
+        $message->load('creator');
+        Message::dispatch($message);
+        return $message;
     }
 
     /**

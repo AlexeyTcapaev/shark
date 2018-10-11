@@ -22,8 +22,7 @@
                             </div>
                             <div class="verified-mail" v-else>
                                 <v-icon color="error">error</v-icon>
-                                <p>Ваш почтовый адрес не подтверждён</p>
-                                <v-btn flat @click="VerifyEmail">Подтвердить</v-btn>
+                                <p>Ваш почтовый адрес не подтверждён</p>                          
                             </div>
                         </v-flex>
                     </v-card-title>

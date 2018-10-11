@@ -87,7 +87,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 
@@ -272,16 +271,7 @@ var render = function() {
                                   _vm._v(" "),
                                   _c("p", [
                                     _vm._v("Ваш почтовый адрес не подтверждён")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-btn",
-                                    {
-                                      attrs: { flat: "" },
-                                      on: { click: _vm.VerifyEmail }
-                                    },
-                                    [_vm._v("Подтвердить")]
-                                  )
+                                  ])
                                 ],
                                 1
                               )
