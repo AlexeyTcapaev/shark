@@ -153,9 +153,12 @@ export default {
     });
   },
   mounted() {
-    window.Echo.channel("chat").listen("Message", ({ message }) => {
-      this.Messages.push(message);
-    });
+    window.Echo.private("chat." + this.$route.params.chatid).listen(
+      "Message",
+      ({ message }) => {
+        this.Messages.push(message);
+      }
+    );
   }
 };
 </script>

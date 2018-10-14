@@ -28,10 +28,10 @@ class Message implements ShouldBroadcast
     /**
      * Get the channels the event should broadcast on.
      *
-     * @return \Illuminate\Broadcasting\Channel|array
+     * @return \Illuminate\Broadcasting\PrivateChannel|array
      */
     public function broadcastOn()
     {
-        return new Channel('chat');
+        return new PrivateChannel('chat.' . $this->message->chat_id);
     }
 }

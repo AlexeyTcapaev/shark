@@ -1,411 +1,18 @@
 webpackJsonp([6],{
 
-/***/ 121:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(122);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(77)("9349afbc", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-429c24aa\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Chat.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-429c24aa\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Chat.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 122:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(14)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.message-content p[data-v-429c24aa] {\r\n  background: #ebebeb none repeat scroll 0 0;\r\n  border-radius: 3px;\r\n  color: black;\r\n  font-size: 14px;\r\n  margin: 0;\r\n  padding: 5px 10px 5px 12px;\r\n  width: 100%;\n}\n.message-content span[data-v-429c24aa] {\r\n  color: #747474;\r\n  display: block;\r\n  font-size: 12px;\r\n  text-align: left;\r\n  margin: 8px 0 0;\n}\n.message-line[data-v-429c24aa] {\n}\n.whois *[data-v-429c24aa] {\n}\n.whois[data-v-429c24aa] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: end;\r\n      -ms-flex-pack: end;\r\n          justify-content: flex-end;\n}\n.message-sender-img[data-v-429c24aa] {\r\n  padding: 0 10px 0 0;\n}\n.message-sender-img img[data-v-429c24aa] {\r\n  width: 56px;\r\n  height: 56px;\n}\n.message-bubble[data-v-429c24aa] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n  -ms-flex-wrap: nowrap;\r\n      flex-wrap: nowrap;\r\n  max-width: 60%;\r\n  margin: 5px 0;\n}\n.chat-wrapper[data-v-429c24aa] {\r\n  width: 100%;\r\n  height: 100%;\r\n  overflow: hidden;\n}\n.chat-head[data-v-429c24aa] {\r\n  width: 100%;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\r\n  padding: 15px;\r\n  -ms-flex-wrap: nowrap;\r\n      flex-wrap: nowrap;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  background-color: #ffffff;\r\n  -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 10px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 10px 0 rgba(0, 0, 0, 0.12);\r\n  z-index: 4;\n}\n.chat-head p[data-v-429c24aa] {\r\n  margin: 0;\r\n  font-weight: bold;\n}\n.chat-body[data-v-429c24aa] {\r\n  width: 100%;\r\n  height: 100%;\n}\n.flex[data-v-429c24aa] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: vertical;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: column;\r\n          flex-direction: column;\n}\n.chat-footer .container[data-v-429c24aa] {\r\n  padding: 10px;\n}\n.chat-footer[data-v-429c24aa] {\r\n  background-color: #ffffff;\r\n  width: 100%;\r\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\r\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 123:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      Messages: [],
-      newMessage: ""
-    };
-  },
-  methods: {
-    SendMessage: function SendMessage() {
-      var init = this;
-      if (this.newMessage !== "" || this.newMessage !== " ") axios.post("/api/auth/messages", {
-        creator_id: this.user.id,
-        text: this.newMessage,
-        chat_id: this.$route.params.chatid,
-        status: "new"
-      }).then(function (resp) {
-        init.Messages.push(resp.data);
-        init.newMessage = "";
-      });
-    },
-    toggleChat: function toggleChat() {
-      this.$emit("toggleChat");
-    }
-  },
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({ user: "user/GetUser", GetChatById: "chat/GetChatById" }), {
-    chat: function chat() {
-      return this.GetChatById(this.$route.params.chatid);
-    }
-  }),
-  beforeCreate: function beforeCreate() {
-    var init = this;
-    axios.get("/api/auth/messages/" + init.$route.params.chatid).then(function (resp) {
-      init.Messages = resp.data;
-    });
-  },
-  mounted: function mounted() {
-    var _this = this;
-
-    window.Echo.channel("chat").listen("Message", function (_ref) {
-      var message = _ref.message;
-
-      _this.Messages.push(message);
-    });
-  }
-});
-
-/***/ }),
-
-/***/ 124:
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "v-layout",
-    { staticClass: "chat-wrapper" },
-    [
-      _c(
-        "v-flex",
-        { attrs: { xs12: "", "justify-center": "", "align-center": "" } },
-        [
-          _c(
-            "div",
-            { staticClass: "chat-head" },
-            [
-              _c(
-                "v-btn",
-                { attrs: { flat: "" }, on: { click: _vm.toggleChat } },
-                [_vm._v("Диалоги")]
-              ),
-              _vm._v(" "),
-              _vm.chat && _vm.chat.users
-                ? _c(
-                    "div",
-                    [
-                      _c(
-                        "v-avatar",
-                        [
-                          !_vm.chat.users[0].avatar
-                            ? _c("v-icon", [_vm._v("account_circle")])
-                            : _c("img", {
-                                attrs: {
-                                  src:
-                                    "/storage/uploads/" +
-                                    _vm.chat.users[0].avatar,
-                                  alt: _vm.chat.users[0].name
-                                }
-                              })
-                        ],
-                        1
-                      ),
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(_vm.chat.users[0].name) +
-                          "\n            "
-                      )
-                    ],
-                    1
-                  )
-                : _vm._e()
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              directives: [{ name: "bar", rawName: "v-bar" }],
-              staticClass: "chat-body"
-            },
-            [
-              _c(
-                "div",
-                [
-                  _c(
-                    "v-container",
-                    { attrs: { fluid: "" } },
-                    [
-                      _vm._l(_vm.Messages, function(message, index) {
-                        return [
-                          _c(
-                            "div",
-                            {
-                              key: index,
-                              staticClass: "message-line",
-                              class: {
-                                whois:
-                                  _vm.user.id == message.creator.id
-                                    ? true
-                                    : false
-                              }
-                            },
-                            [
-                              _c("div", { staticClass: "message-bubble" }, [
-                                _c("div", { staticClass: "message-content" }, [
-                                  _c("p", [_vm._v(_vm._s(message.text))]),
-                                  _vm._v(" "),
-                                  _c("span", [
-                                    _vm._v(
-                                      _vm._s(
-                                        message.created_at.toLocaleString("ru")
-                                      )
-                                    )
-                                  ])
-                                ])
-                              ])
-                            ]
-                          )
-                        ]
-                      })
-                    ],
-                    2
-                  )
-                ],
-                1
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "chat-footer" },
-            [
-              _c(
-                "v-container",
-                { attrs: { fluid: "" } },
-                [
-                  _c("v-text-field", {
-                    staticClass: "message-input",
-                    attrs: {
-                      outline: "",
-                      label: "Сообщение",
-                      "append-icon": "send"
-                    },
-                    on: {
-                      keyup: function($event) {
-                        if (
-                          !("button" in $event) &&
-                          _vm._k(
-                            $event.keyCode,
-                            "enter",
-                            13,
-                            $event.key,
-                            "Enter"
-                          )
-                        ) {
-                          return null
-                        }
-                        return _vm.SendMessage($event)
-                      },
-                      "click:append": _vm.SendMessage
-                    },
-                    model: {
-                      value: _vm.newMessage,
-                      callback: function($$v) {
-                        _vm.newMessage = $$v
-                      },
-                      expression: "newMessage"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ]
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-429c24aa", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 73:
+/***/ 119:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(121)
+  __webpack_require__(167)
 }
-var normalizeComponent = __webpack_require__(76)
+var normalizeComponent = __webpack_require__(122)
 /* script */
-var __vue_script__ = __webpack_require__(123)
+var __vue_script__ = __webpack_require__(169)
 /* template */
-var __vue_template__ = __webpack_require__(124)
+var __vue_template__ = __webpack_require__(170)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -445,7 +52,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 76:
+/***/ 122:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -555,7 +162,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 77:
+/***/ 123:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -574,7 +181,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(78)
+var listToStyles = __webpack_require__(124)
 
 /*
 type StyleObject = {
@@ -784,7 +391,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 78:
+/***/ 124:
 /***/ (function(module, exports) {
 
 /**
@@ -815,6 +422,399 @@ module.exports = function listToStyles (parentId, list) {
   return styles
 }
 
+
+/***/ }),
+
+/***/ 167:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(168);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(123)("9349afbc", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-429c24aa\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Chat.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-429c24aa\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Chat.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 168:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(35)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.message-content p[data-v-429c24aa] {\n  background: #ebebeb none repeat scroll 0 0;\n  border-radius: 3px;\n  color: black;\n  font-size: 14px;\n  margin: 0;\n  padding: 5px 10px 5px 12px;\n  width: 100%;\n}\n.message-content span[data-v-429c24aa] {\n  color: #747474;\n  display: block;\n  font-size: 12px;\n  text-align: left;\n  margin: 8px 0 0;\n}\n.message-line[data-v-429c24aa] {\n}\n.whois *[data-v-429c24aa] {\n}\n.whois[data-v-429c24aa] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n.message-sender-img[data-v-429c24aa] {\n  padding: 0 10px 0 0;\n}\n.message-sender-img img[data-v-429c24aa] {\n  width: 56px;\n  height: 56px;\n}\n.message-bubble[data-v-429c24aa] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-wrap: nowrap;\n      flex-wrap: nowrap;\n  max-width: 60%;\n  margin: 5px 0;\n}\n.chat-wrapper[data-v-429c24aa] {\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n}\n.chat-head[data-v-429c24aa] {\n  width: 100%;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  padding: 15px;\n  -ms-flex-wrap: nowrap;\n      flex-wrap: nowrap;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  background-color: #ffffff;\n  -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),\n    0 1px 10px 0 rgba(0, 0, 0, 0.12);\n          box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),\n    0 1px 10px 0 rgba(0, 0, 0, 0.12);\n  z-index: 4;\n}\n.chat-head p[data-v-429c24aa] {\n  margin: 0;\n  font-weight: bold;\n}\n.chat-body[data-v-429c24aa] {\n  width: 100%;\n  height: 100%;\n}\n.flex[data-v-429c24aa] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n.chat-footer .container[data-v-429c24aa] {\n  padding: 10px;\n}\n.chat-footer[data-v-429c24aa] {\n  background-color: #ffffff;\n  width: 100%;\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 169:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(13);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      Messages: [],
+      newMessage: ""
+    };
+  },
+  methods: {
+    SendMessage: function SendMessage() {
+      var init = this;
+      if (this.newMessage !== "" || this.newMessage !== " ") axios.post("/api/auth/messages", {
+        creator_id: this.user.id,
+        text: this.newMessage,
+        chat_id: this.$route.params.chatid,
+        status: "new"
+      }).then(function (resp) {
+        init.Messages.push(resp.data);
+        init.newMessage = "";
+      });
+    },
+    toggleChat: function toggleChat() {
+      this.$emit("toggleChat");
+    }
+  },
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({ user: "user/GetUser", GetChatById: "chat/GetChatById" }), {
+    chat: function chat() {
+      return this.GetChatById(this.$route.params.chatid);
+    }
+  }),
+  beforeCreate: function beforeCreate() {
+    var init = this;
+    axios.get("/api/auth/messages/" + init.$route.params.chatid).then(function (resp) {
+      init.Messages = resp.data;
+    });
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    window.Echo.private("chat." + this.$route.params.chatid).listen("Message", function (_ref) {
+      var message = _ref.message;
+
+      _this.Messages.push(message);
+    });
+  }
+});
+
+/***/ }),
+
+/***/ 170:
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-layout",
+    { staticClass: "chat-wrapper" },
+    [
+      _c(
+        "v-flex",
+        { attrs: { xs12: "", "justify-center": "", "align-center": "" } },
+        [
+          _c(
+            "div",
+            { staticClass: "chat-head" },
+            [
+              _c(
+                "v-btn",
+                { attrs: { flat: "" }, on: { click: _vm.toggleChat } },
+                [_vm._v("Диалоги")]
+              ),
+              _vm._v(" "),
+              _vm.chat && _vm.chat.users
+                ? _c(
+                    "div",
+                    [
+                      _c(
+                        "v-avatar",
+                        [
+                          !_vm.chat.users[0].avatar
+                            ? _c("v-icon", [_vm._v("account_circle")])
+                            : _c("img", {
+                                attrs: {
+                                  src:
+                                    "/storage/uploads/" +
+                                    _vm.chat.users[0].avatar,
+                                  alt: _vm.chat.users[0].name
+                                }
+                              })
+                        ],
+                        1
+                      ),
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(_vm.chat.users[0].name) +
+                          "\n            "
+                      )
+                    ],
+                    1
+                  )
+                : _vm._e()
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              directives: [{ name: "bar", rawName: "v-bar" }],
+              staticClass: "chat-body"
+            },
+            [
+              _c(
+                "div",
+                [
+                  _c(
+                    "v-container",
+                    { attrs: { fluid: "" } },
+                    [
+                      _vm._l(_vm.Messages, function(message, index) {
+                        return [
+                          _c(
+                            "div",
+                            {
+                              key: index,
+                              staticClass: "message-line",
+                              class: {
+                                whois:
+                                  _vm.user.id == message.creator.id
+                                    ? true
+                                    : false
+                              }
+                            },
+                            [
+                              _c("div", { staticClass: "message-bubble" }, [
+                                _c("div", { staticClass: "message-content" }, [
+                                  _c("p", [_vm._v(_vm._s(message.text))]),
+                                  _vm._v(" "),
+                                  _c("span", [
+                                    _vm._v(
+                                      _vm._s(
+                                        message.created_at.toLocaleString("ru")
+                                      )
+                                    )
+                                  ])
+                                ])
+                              ])
+                            ]
+                          )
+                        ]
+                      })
+                    ],
+                    2
+                  )
+                ],
+                1
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "chat-footer" },
+            [
+              _c(
+                "v-container",
+                { attrs: { fluid: "" } },
+                [
+                  _c("v-text-field", {
+                    staticClass: "message-input",
+                    attrs: {
+                      outline: "",
+                      label: "Сообщение",
+                      "append-icon": "send"
+                    },
+                    on: {
+                      keyup: function($event) {
+                        if (
+                          !("button" in $event) &&
+                          _vm._k(
+                            $event.keyCode,
+                            "enter",
+                            13,
+                            $event.key,
+                            "Enter"
+                          )
+                        ) {
+                          return null
+                        }
+                        return _vm.SendMessage($event)
+                      },
+                      "click:append": _vm.SendMessage
+                    },
+                    model: {
+                      value: _vm.newMessage,
+                      callback: function($$v) {
+                        _vm.newMessage = $$v
+                      },
+                      expression: "newMessage"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-429c24aa", module.exports)
+  }
+}
 
 /***/ })
 

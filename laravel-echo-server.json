@@ -1,7 +1,12 @@
 {
 	"authHost": "http://localhost",
 	"authEndpoint": "/broadcasting/auth",
-	"clients": [],
+	"clients": [
+		{
+			"appId": "160a7d6d7cd0b011",
+			"key": "7945326d65d93fd5a585c2a78bd357e5"
+		}
+	],
 	"database": "redis",
 	"databaseConfig": {
 		"redis": {},

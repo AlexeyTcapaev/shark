@@ -24,6 +24,7 @@ Route::group([
     Route::group([
         'middleware' => 'auth:api'
     ], function () {
+
         Route::post('verify', 'AuthController@verify');
         Route::get('logout', 'AuthController@logout');
         Route::get('user', 'AuthController@user');

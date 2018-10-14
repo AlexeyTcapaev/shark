@@ -9,6 +9,9 @@ import store from './store/index'
 import * as Cookies from 'js-cookie'
 import Vuebar from 'vuebar';
 import VueProgressBar from 'vue-progressbar'
+import Echo from 'laravel-echo'
+window.io = require('socket.io-client');
+let token = document.head.querySelector('meta[name="csrf-token"]');
 Vue.use(Vuebar);
 Vue.use(Vuex)
 Vue.use(Vuetify, {
@@ -33,6 +36,18 @@ Vue.use(VueProgressBar, {
 })
 if (store.state.user.token !== undefined) {
     axios.defaults.headers.common['Authorization'] = store.state.user.token.token_type + " " + store.state.user.token.access_token
+    window.Echo = new Echo({
+        broadcaster: 'socket.io',
+        host: window.location.hostname + ':6001',
+        auth: {
+            headers: {
+                Accept: 'application/json',
+                Authorization: store.state.user.token.token_type + " " + store.state.user.token.access_token
+            },
+        },
+        csrfToken: token.content
+    });
+
 }
 const App = () =>
     import('./views/App.vue');
