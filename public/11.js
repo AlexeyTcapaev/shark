@@ -1,14 +1,14 @@
 webpackJsonp([11],{
 
-/***/ 59:
+/***/ 109:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(62)
+var normalizeComponent = __webpack_require__(122)
 /* script */
-var __vue_script__ = __webpack_require__(75)
+var __vue_script__ = __webpack_require__(136)
 /* template */
-var __vue_template__ = __webpack_require__(76)
+var __vue_template__ = __webpack_require__(137)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -48,7 +48,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 62:
+/***/ 122:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -158,14 +158,15 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 75:
+/***/ 136:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(13);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
 //
 //
 //
@@ -200,6 +201,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       remember_me: false,
       login: "",
       password: "",
+      alert: {
+        enable: false
+      },
+      loading: false,
       show1: false,
       passwordRules: [function (v) {
         return !!v || "Password is required";
@@ -209,13 +214,19 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({ SetToken: "user/SetToken" }), {
     submit: function submit() {
       var init = this;
+      this.loading = true;
       if (this.login.indexOf("@") > -1) axios.post("/api/auth/login", {
         email: init.login,
         password: init.password,
         remember_me: true
       }).then(function (resp) {
         init.SetToken(resp.data);
+        init.loading = false;
         init.$router.push("/app");
+      }).catch(function (error) {
+        init.loading = false;
+        init.alert.message = error.response.data.message;
+        init.alert.enable = true;
       });else axios.post("/api/auth/login", {
         name: init.login,
         password: init.password,
@@ -233,14 +244,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   },
   beforeCreate: function beforeCreate() {
     if (this.$store.state.user.token) {
-      this.$router.push('/app');
+      if (Object.keys(this.$store.state.user.token).length > 0) this.$router.push("/app");
     }
   }
 });
 
 /***/ }),
 
-/***/ 76:
+/***/ 137:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -278,13 +289,29 @@ var render = function() {
                     "v-card-text",
                     [
                       _c(
+                        "v-alert",
+                        {
+                          attrs: { type: "error", dismissible: "" },
+                          model: {
+                            value: _vm.alert.enable,
+                            callback: function($$v) {
+                              _vm.$set(_vm.alert, "enable", $$v)
+                            },
+                            expression: "alert.enable"
+                          }
+                        },
+                        [_vm._v(_vm._s(_vm.alert.message))]
+                      ),
+                      _vm._v(" "),
+                      _c(
                         "v-form",
                         [
                           _c("v-text-field", {
                             attrs: {
                               outline: "",
                               label: "Login or E-mail",
-                              "append-icon": "person"
+                              "append-icon": "person",
+                              loading: _vm.loading
                             },
                             model: {
                               value: _vm.login,
@@ -297,6 +324,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("v-text-field", {
                             attrs: {
+                              loading: _vm.loading,
                               outline: "",
                               label: "Password",
                               "append-icon": _vm.show1
@@ -321,7 +349,10 @@ var render = function() {
                           }),
                           _vm._v(" "),
                           _c("v-switch", {
-                            attrs: { label: "Запомнить меня" },
+                            attrs: {
+                              color: "primary",
+                              label: "Запомнить меня"
+                            },
                             model: {
                               value: _vm.remember_me,
                               callback: function($$v) {
@@ -357,7 +388,11 @@ var render = function() {
                       _c(
                         "v-btn",
                         {
-                          attrs: { disabled: !_vm.valid, color: "primary" },
+                          attrs: {
+                            disabled: !_vm.valid,
+                            color: "primary",
+                            loading: _vm.loading
+                          },
                           on: { click: _vm.submit }
                         },
                         [_vm._v("Отправить")]

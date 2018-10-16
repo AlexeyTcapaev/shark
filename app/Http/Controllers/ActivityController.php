@@ -14,7 +14,8 @@ class ActivityController extends Controller
      */
     public function index()
     {
-        //
+        $activity = Activity::all();
+        return $activity;
     }
 
     /**

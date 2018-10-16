@@ -1,20 +1,24 @@
 webpackJsonp([4],{
 
-/***/ 61:
+/***/ 116:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(66)
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(158)
+}
+var normalizeComponent = __webpack_require__(122)
 /* script */
-var __vue_script__ = __webpack_require__(77)
+var __vue_script__ = __webpack_require__(160)
 /* template */
-var __vue_template__ = __webpack_require__(78)
+var __vue_template__ = __webpack_require__(161)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-32de9613"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -25,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/Registration.vue"
+Component.options.__file = "resources/assets/js/views/Communication.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -34,9 +38,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7ae5bf8c", Component.options)
+    hotAPI.createRecord("data-v-32de9613", Component.options)
   } else {
-    hotAPI.reload("data-v-7ae5bf8c", Component.options)
+    hotAPI.reload("data-v-32de9613", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -48,7 +52,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 66:
+/***/ 122:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -158,12 +162,317 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 77:
+/***/ 123:
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+  Modified by Evan You @yyx990803
+*/
+
+var hasDocument = typeof document !== 'undefined'
+
+if (typeof DEBUG !== 'undefined' && DEBUG) {
+  if (!hasDocument) {
+    throw new Error(
+    'vue-style-loader cannot be used in a non-browser environment. ' +
+    "Use { target: 'node' } in your Webpack config to indicate a server-rendering environment."
+  ) }
+}
+
+var listToStyles = __webpack_require__(124)
+
+/*
+type StyleObject = {
+  id: number;
+  parts: Array<StyleObjectPart>
+}
+
+type StyleObjectPart = {
+  css: string;
+  media: string;
+  sourceMap: ?string
+}
+*/
+
+var stylesInDom = {/*
+  [id: number]: {
+    id: number,
+    refs: number,
+    parts: Array<(obj?: StyleObjectPart) => void>
+  }
+*/}
+
+var head = hasDocument && (document.head || document.getElementsByTagName('head')[0])
+var singletonElement = null
+var singletonCounter = 0
+var isProduction = false
+var noop = function () {}
+var options = null
+var ssrIdKey = 'data-vue-ssr-id'
+
+// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+// tags it will allow on a page
+var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\b/.test(navigator.userAgent.toLowerCase())
+
+module.exports = function (parentId, list, _isProduction, _options) {
+  isProduction = _isProduction
+
+  options = _options || {}
+
+  var styles = listToStyles(parentId, list)
+  addStylesToDom(styles)
+
+  return function update (newList) {
+    var mayRemove = []
+    for (var i = 0; i < styles.length; i++) {
+      var item = styles[i]
+      var domStyle = stylesInDom[item.id]
+      domStyle.refs--
+      mayRemove.push(domStyle)
+    }
+    if (newList) {
+      styles = listToStyles(parentId, newList)
+      addStylesToDom(styles)
+    } else {
+      styles = []
+    }
+    for (var i = 0; i < mayRemove.length; i++) {
+      var domStyle = mayRemove[i]
+      if (domStyle.refs === 0) {
+        for (var j = 0; j < domStyle.parts.length; j++) {
+          domStyle.parts[j]()
+        }
+        delete stylesInDom[domStyle.id]
+      }
+    }
+  }
+}
+
+function addStylesToDom (styles /* Array<StyleObject> */) {
+  for (var i = 0; i < styles.length; i++) {
+    var item = styles[i]
+    var domStyle = stylesInDom[item.id]
+    if (domStyle) {
+      domStyle.refs++
+      for (var j = 0; j < domStyle.parts.length; j++) {
+        domStyle.parts[j](item.parts[j])
+      }
+      for (; j < item.parts.length; j++) {
+        domStyle.parts.push(addStyle(item.parts[j]))
+      }
+      if (domStyle.parts.length > item.parts.length) {
+        domStyle.parts.length = item.parts.length
+      }
+    } else {
+      var parts = []
+      for (var j = 0; j < item.parts.length; j++) {
+        parts.push(addStyle(item.parts[j]))
+      }
+      stylesInDom[item.id] = { id: item.id, refs: 1, parts: parts }
+    }
+  }
+}
+
+function createStyleElement () {
+  var styleElement = document.createElement('style')
+  styleElement.type = 'text/css'
+  head.appendChild(styleElement)
+  return styleElement
+}
+
+function addStyle (obj /* StyleObjectPart */) {
+  var update, remove
+  var styleElement = document.querySelector('style[' + ssrIdKey + '~="' + obj.id + '"]')
+
+  if (styleElement) {
+    if (isProduction) {
+      // has SSR styles and in production mode.
+      // simply do nothing.
+      return noop
+    } else {
+      // has SSR styles but in dev mode.
+      // for some reason Chrome can't handle source map in server-rendered
+      // style tags - source maps in <style> only works if the style tag is
+      // created and inserted dynamically. So we remove the server rendered
+      // styles and inject new ones.
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  if (isOldIE) {
+    // use singleton mode for IE9.
+    var styleIndex = singletonCounter++
+    styleElement = singletonElement || (singletonElement = createStyleElement())
+    update = applyToSingletonTag.bind(null, styleElement, styleIndex, false)
+    remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true)
+  } else {
+    // use multi-style-tag mode in all other cases
+    styleElement = createStyleElement()
+    update = applyToTag.bind(null, styleElement)
+    remove = function () {
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  update(obj)
+
+  return function updateStyle (newObj /* StyleObjectPart */) {
+    if (newObj) {
+      if (newObj.css === obj.css &&
+          newObj.media === obj.media &&
+          newObj.sourceMap === obj.sourceMap) {
+        return
+      }
+      update(obj = newObj)
+    } else {
+      remove()
+    }
+  }
+}
+
+var replaceText = (function () {
+  var textStore = []
+
+  return function (index, replacement) {
+    textStore[index] = replacement
+    return textStore.filter(Boolean).join('\n')
+  }
+})()
+
+function applyToSingletonTag (styleElement, index, remove, obj) {
+  var css = remove ? '' : obj.css
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = replaceText(index, css)
+  } else {
+    var cssNode = document.createTextNode(css)
+    var childNodes = styleElement.childNodes
+    if (childNodes[index]) styleElement.removeChild(childNodes[index])
+    if (childNodes.length) {
+      styleElement.insertBefore(cssNode, childNodes[index])
+    } else {
+      styleElement.appendChild(cssNode)
+    }
+  }
+}
+
+function applyToTag (styleElement, obj) {
+  var css = obj.css
+  var media = obj.media
+  var sourceMap = obj.sourceMap
+
+  if (media) {
+    styleElement.setAttribute('media', media)
+  }
+  if (options.ssrId) {
+    styleElement.setAttribute(ssrIdKey, obj.id)
+  }
+
+  if (sourceMap) {
+    // https://developer.chrome.com/devtools/docs/javascript-debugging
+    // this makes source maps inside style tags work properly in Chrome
+    css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */'
+    // http://stackoverflow.com/a/26603875
+    css += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + ' */'
+  }
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild)
+    }
+    styleElement.appendChild(document.createTextNode(css))
+  }
+}
+
+
+/***/ }),
+
+/***/ 124:
+/***/ (function(module, exports) {
+
+/**
+ * Translates the list format produced by css-loader into something
+ * easier to manipulate.
+ */
+module.exports = function listToStyles (parentId, list) {
+  var styles = []
+  var newStyles = {}
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i]
+    var id = item[0]
+    var css = item[1]
+    var media = item[2]
+    var sourceMap = item[3]
+    var part = {
+      id: parentId + ':' + i,
+      css: css,
+      media: media,
+      sourceMap: sourceMap
+    }
+    if (!newStyles[id]) {
+      styles.push(newStyles[id] = { id: id, parts: [part] })
+    } else {
+      newStyles[id].parts.push(part)
+    }
+  }
+  return styles
+}
+
+
+/***/ }),
+
+/***/ 158:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(159);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(123)("390d3a5e", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-32de9613\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Communication.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-32de9613\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Communication.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 159:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(35)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.v-navigation-drawer[data-v-32de9613] {\r\n  z-index: 999;\r\n  -webkit-box-shadow: none;\r\n          box-shadow: none;\n}\n.search-bar[data-v-32de9613] {\r\n  margin: 5px 0;\n}\n.v-list[data-v-32de9613] {\r\n  -webkit-transition: width 0.2s linear;\r\n  transition: width 0.2s linear;\n}\n.shortChat[data-v-32de9613] {\r\n  width: 70px !important;\r\n  -webkit-transition: 0.2s linear;\r\n  transition: 0.2s linear;\r\n  overflow: hidden;\n}\n.chat[data-v-32de9613] {\r\n  width: 100%;\n}\n.no-padding[data-v-32de9613] {\r\n  padding: 0;\n}\n.room-list[data-v-32de9613] {\r\n  max-width: 300px;\r\n  height: 100%;\n}\n.container[data-v-32de9613],\r\n.layout[data-v-32de9613],\r\n.flex[data-v-32de9613] {\r\n  height: 100%;\n}\ni.active[data-v-32de9613] {\r\n  -webkit-transform: rotate(180deg);\r\n          transform: rotate(180deg);\n}\n.room-list .v-list[data-v-32de9613] {\r\n  height: 100%;\n}\n.flex[data-v-32de9613] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\n}\n.target-link .v-list__tile__content .v-list__tile__title[data-v-32de9613] {\r\n  color: #f80b37 !important;\n}\n.material-icons[data-v-32de9613] {\r\n  width: 24px;\n}\n.target-link .v-icon[data-v-32de9613] {\r\n  color: #f80b37 !important;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 160:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(13);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -195,88 +504,58 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      valid: false,
-      passwordValid: false,
-      login: "",
-      show1: false,
-      show2: false,
-      password: "",
-      err: [],
-      alert: false,
-      type: "success",
-      alert_message: "",
-      confrim_password: "",
-      loginRules: [function (v) {
-        return !!v || "Name is required";
-      }, function (v) {
-        return v && v.length <= 15 || "Name must be less than 15 characters";
-      }],
-      email: "",
-      emailRules: [function (v) {
-        return !!v || "E-mail is required";
-      }, function (v) {
-        return (/.+@.+/.test(v) || "E-mail must be valid"
-        );
-      }],
-      passwordRules: [function (v) {
-        return !!v || "Password is required";
-      }]
+      search: "",
+      mini: true,
+      right: null,
+      drawer: false
     };
   },
-  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({ SetToken: "user/SetToken" }), {
-    submit: function submit() {
-      var init = this;
-      axios.post("/api/auth/signup", {
-        email: this.email,
-        password: this.password,
-        password_confirmation: this.confrim_password,
-        name: this.login
-      }).then(function (resp) {
-        init.alert = true;
-        init.alert_message = resp.data;
-        init.type = "success";
-        axios.post("/api/auth/login", {
-          email: init.email,
-          password: init.password,
-          remember_me: true
-        }).then(function (resp) {
-          init.SetToken(resp.data);
-          init.$router.push("/app");
-        });
-      }).catch(function (error) {
-        Object.keys(error.response.data.errors).forEach(function (element) {
-          error.response.data.errors[element].forEach(function (err) {
-            var e = {};
-            e.message = err;
-            e.alert = true;
-            init.err.push(e);
-          });
-        });
-        console.log(error.response.data.errors);
-      });
-    },
-    passwordCheck: function passwordCheck() {
-      if (this.password === this.confrim_password) this.passwordValid = true;else this.passwordValid = false;
-    }
-  }),
-  watch: {
-    password: function password() {
-      this.passwordCheck();
-    },
-    confrim_password: function confrim_password() {
-      this.passwordCheck();
-    }
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({ SetChats: "chat/SetChats" })),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])("user", ["user"]), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])("chat", ["chats"])),
+  mounted: function mounted() {
+    var init = this;
+    axios.get("/api/auth/chats/" + this.user.id).then(function (resp) {
+      init.SetChats(resp.data);
+    }).catch(function (error) {});
   }
 });
 
 /***/ }),
 
-/***/ 78:
+/***/ 161:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -285,193 +564,197 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-container",
-    { attrs: { fluid: "", "fill-height": "" } },
+    { staticClass: "no-padding", attrs: { fluid: "" } },
     [
       _c(
         "v-layout",
-        { attrs: { "align-center": "", "justify-center": "" } },
+        { attrs: { "justify-center": "", "align-center": "" } },
         [
           _c(
             "v-flex",
-            { attrs: { xs12: "", sm8: "", md4: "" } },
             [
               _c(
-                "v-card",
-                { staticClass: "elevation-12" },
+                "v-navigation-drawer",
+                {
+                  attrs: { absolute: "", temporary: "" },
+                  model: {
+                    value: _vm.drawer,
+                    callback: function($$v) {
+                      _vm.drawer = $$v
+                    },
+                    expression: "drawer"
+                  }
+                },
                 [
                   _c(
-                    "v-toolbar",
-                    { attrs: { dark: "", color: "primary" } },
-                    [
-                      _c("v-toolbar-title", [_vm._v("Регистрация")]),
-                      _vm._v(" "),
-                      _c("v-spacer")
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-text",
+                    "v-list",
+                    { staticClass: "pt-0", attrs: { dense: "" } },
                     [
                       _c(
-                        "v-alert",
-                        {
-                          attrs: { type: _vm.type, dismissible: "" },
-                          model: {
-                            value: _vm.alert,
-                            callback: function($$v) {
-                              _vm.alert = $$v
-                            },
-                            expression: "alert"
-                          }
-                        },
-                        [_vm._v(_vm._s(_vm.alert_message.message))]
+                        "v-list",
+                        [
+                          _c("v-subheader", [_vm._v("Мои диалоги")]),
+                          _vm._v(" "),
+                          _c(
+                            "v-list-tile",
+                            { staticClass: "search-bar" },
+                            [
+                              _c(
+                                "v-list-tile-content",
+                                [
+                                  _c("v-text-field", {
+                                    attrs: {
+                                      outline: "",
+                                      label: "Поиск по чатам",
+                                      "append-icon": "search"
+                                    },
+                                    model: {
+                                      value: _vm.search,
+                                      callback: function($$v) {
+                                        _vm.search = $$v
+                                      },
+                                      expression: "search"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
                       ),
                       _vm._v(" "),
-                      _vm._l(_vm.err, function(error, index) {
-                        return _c(
-                          "v-alert",
-                          {
-                            key: index,
-                            attrs: { type: "error", dismissible: "" },
-                            model: {
-                              value: error.alert,
-                              callback: function($$v) {
-                                _vm.$set(error, "alert", $$v)
-                              },
-                              expression: "error.alert"
-                            }
-                          },
-                          [_vm._v(_vm._s(error.message))]
-                        )
+                      _c("v-divider"),
+                      _vm._v(" "),
+                      _vm._l(_vm.chats, function(chat, i) {
+                        return [
+                          chat && chat.users
+                            ? _c(
+                                "v-list-tile",
+                                {
+                                  key: i,
+                                  attrs: {
+                                    "active-class":
+                                      "secondary--text target-link",
+                                    avatar: "",
+                                    to: {
+                                      name: "chat",
+                                      params: { chatid: chat.id }
+                                    }
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "v-list-tile-avatar",
+                                    [
+                                      !chat.users[0].avatar
+                                        ? _c("v-icon", [
+                                            _vm._v("account_circle")
+                                          ])
+                                        : _c("img", {
+                                            attrs: {
+                                              src:
+                                                "/storage/uploads/" +
+                                                chat.users[0].avatar,
+                                              alt: chat.users[0].name
+                                            }
+                                          })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list-tile-content",
+                                    [
+                                      _c("v-list-tile-title", {
+                                        domProps: {
+                                          innerHTML: _vm._s(chat.users[0].name)
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list-tile-action",
+                                    [
+                                      _c(
+                                        "v-badge",
+                                        {
+                                          staticClass: "relative-badge",
+                                          attrs: { color: "secondary" }
+                                        },
+                                        [
+                                          _c(
+                                            "span",
+                                            {
+                                              attrs: { slot: "badge" },
+                                              slot: "badge"
+                                            },
+                                            [_vm._v("6")]
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            : _vm._e()
+                        ]
                       }),
                       _vm._v(" "),
+                      _c("v-divider", { attrs: { dark: "" } }),
+                      _vm._v(" "),
                       _c(
-                        "v-form",
+                        "v-list-tile",
                         {
-                          ref: "form",
-                          model: {
-                            value: _vm.valid,
-                            callback: function($$v) {
-                              _vm.valid = $$v
-                            },
-                            expression: "valid"
+                          attrs: {
+                            to: { name: "add_chat" },
+                            "exact-active-class": "target-link"
                           }
                         },
                         [
-                          _c("v-text-field", {
-                            attrs: {
-                              outline: "",
-                              label: "Login",
-                              "append-icon": "person",
-                              required: "",
-                              rules: _vm.loginRules
-                            },
-                            model: {
-                              value: _vm.login,
-                              callback: function($$v) {
-                                _vm.login = $$v
-                              },
-                              expression: "login"
-                            }
-                          }),
+                          _c(
+                            "v-list-tile-action",
+                            [_c("v-icon", [_vm._v("add_circle_outline")])],
+                            1
+                          ),
                           _vm._v(" "),
-                          _c("v-text-field", {
-                            attrs: {
-                              outline: "",
-                              label: "E-mail",
-                              "append-icon": "mail",
-                              required: "",
-                              rules: _vm.emailRules
-                            },
-                            model: {
-                              value: _vm.email,
-                              callback: function($$v) {
-                                _vm.email = $$v
-                              },
-                              expression: "email"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("v-text-field", {
-                            attrs: {
-                              outline: "",
-                              label: "Password",
-                              "append-icon": _vm.show1
-                                ? "visibility_off"
-                                : "visibility",
-                              type: _vm.show1 ? "text" : "password",
-                              required: "",
-                              rules: _vm.passwordRules
-                            },
-                            on: {
-                              "click:append": function($event) {
-                                _vm.show1 = !_vm.show1
-                              }
-                            },
-                            model: {
-                              value: _vm.password,
-                              callback: function($$v) {
-                                _vm.password = $$v
-                              },
-                              expression: "password"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("v-text-field", {
-                            attrs: {
-                              outline: "",
-                              label: "Confrim",
-                              "append-icon": _vm.show2
-                                ? "visibility_off"
-                                : "visibility",
-                              type: _vm.show2 ? "text" : "password",
-                              required: ""
-                            },
-                            on: {
-                              "click:append": function($event) {
-                                _vm.show2 = !_vm.show2
-                              }
-                            },
-                            model: {
-                              value: _vm.confrim_password,
-                              callback: function($$v) {
-                                _vm.confrim_password = $$v
-                              },
-                              expression: "confrim_password"
-                            }
-                          })
+                          _c(
+                            "v-list-tile-content",
+                            [_c("v-list-tile-title", [_vm._v("Создать чат")])],
+                            1
+                          )
                         ],
                         1
                       )
                     ],
                     2
-                  ),
-                  _vm._v(" "),
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "main",
+                { staticClass: "chat" },
+                [
                   _c(
-                    "v-card-actions",
+                    "transition",
+                    { attrs: { name: "fade", mode: "out-in", appear: "" } },
                     [
-                      _c("v-spacer"),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        { attrs: { flat: "", color: "primary", to: "/login" } },
-                        [_vm._v("Есть аккаунт?")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: {
-                            color: "primary",
-                            disabled: !(
-                              _vm.valid == true && _vm.passwordValid == true
-                            )
-                          },
-                          on: { click: _vm.submit }
-                        },
-                        [_vm._v("Отправить")]
-                      )
+                      _c("router-view", {
+                        key: _vm.$route.fullPath,
+                        on: {
+                          toggleChat: function($event) {
+                            _vm.drawer = !_vm.drawer
+                          }
+                        }
+                      })
                     ],
                     1
                   )
@@ -494,7 +777,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7ae5bf8c", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-32de9613", module.exports)
   }
 }
 

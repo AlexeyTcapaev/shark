@@ -18,9 +18,9 @@ class CreateсompanyTable extends Migration
             $table->timestamps();
             $table->string('name')->unique();
             $table->string('slug')->unique();
-            $table->string('creator');
+            $table->integer('creator_id');
             $table->string('logo')->nullable();
-            $table->string('website')->unique()->nullable(); 
+            $table->string('website')->unique()->nullable();
         });
     }
 

@@ -14170,10 +14170,41 @@ table.v-table tfoot tr td {
   transition: 0.2s linear;
 }
 
+.message-input .v-text-field__details {
+  display: none;
+}
+
+.message-input .v-input__slot {
+  margin: 0;
+}
+
+.v-icon--link:hover {
+  color: #f80b37 !important;
+}
+
+.v-badge--overlap .v-badge__badge {
+  top: -4px;
+  right: -4px;
+}
+
+aside .v-list {
+  padding-top: 0;
+}
+
 .vb-content {
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.relative-badge .v-badge__badge {
+  position: static !important;
+}
+
+* {
+  outline: none !important;
+}
+
+.v-list__tile__sub-title {
+  text-align: left;
 }
 
 .application .theme--light.v-bottom-nav,
@@ -14184,6 +14215,10 @@ table.v-table tfoot tr td {
 ul {
   list-style-type: none;
   padding: 0;
+}
+
+.v-input__control .v-input__slot {
+  width: initial !important;
 }
 
 .application {
@@ -14211,6 +14246,35 @@ h3 {
   text-align: left;
 }
 
+.v-list__tile__content .v-input {
+  width: 100%;
+}
+
+.v-bottom-nav .v-btn:not(.v-btn--active) {
+  -webkit-filter: none !important;
+          filter: none !important;
+}
+
+.target-link-bottom {
+  color: #f80b37 !important;
+  border-bottom: 2px solid #f80b37;
+}
+
+.v-list__tile {
+  border-left: 2px solid transparent;
+}
+
+.target-link {
+  border-left: 2px solid #f80b37;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.v-navigation-drawer > .v-list .v-list__tile {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 div {
   text-align: center;
 }
@@ -14230,8 +14294,8 @@ div {
   backface-visibility: hidden;
   -webkit-transform: rotate3d(0, 0, 0, 0);
   transform: rotate3d(0, 0, 0, 0);
-  -webkit-transition: background-color 100ms ease-out, margin 100ms ease-out, height 100ms ease-out;
-  transition: background-color 100ms ease-out, margin 100ms ease-out, height 100ms ease-out;
+  -webkit-transition: background-color 100ms ease-out, margin 100ms ease-out, height 100ms ease-out;
+  transition: background-color 100ms ease-out, margin 100ms ease-out, height 100ms ease-out;
   background-color: rgba(248, 11, 55, 0.1);
   margin: 5px 5px 5px 0;
   height: calc(100% - 10px);

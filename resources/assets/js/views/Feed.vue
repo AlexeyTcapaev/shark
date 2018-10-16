@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-layout justify-center align-center>
-            <v-flex :xs6="!mobile">
+            <v-flex xl6 lg6 md6 sm12 xs12>
                 <h3>Новости</h3>
                 <ul class="news">
                     <li>

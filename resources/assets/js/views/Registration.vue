@@ -11,21 +11,21 @@
                 <v-alert v-model="alert" :type="type" dismissible>{{alert_message.message}}</v-alert>
                 <v-alert v-model="error.alert" v-for="(error,index) in err" :key="index" type="error" dismissible>{{error.message}}</v-alert>
                 <v-form ref="form" v-model="valid">
-                    <v-text-field outline label="Login"  append-icon="person" required :rules="loginRules" v-model="login"></v-text-field>
-                    <v-text-field outline label="E-mail" append-icon="mail" required :rules="emailRules" v-model="email"></v-text-field>
-                    <v-text-field outline label="Password" @click:append="show1 = !show1" :append-icon="show1 ? 'visibility_off' : 'visibility'" :type="show1 ? 'text' : 'password'" required v-model="password" :rules="passwordRules"></v-text-field>
-                    <v-text-field outline label="Confrim" @click:append="show2 = !show2" :append-icon="show2 ? 'visibility_off' : 'visibility'" :type="show2 ? 'text' : 'password'" required v-model="confrim_password"></v-text-field>
+                    <v-text-field :loading="loading" outline label="Login"  append-icon="person" required :rules="loginRules" v-model="login"></v-text-field>
+                    <v-text-field :loading="loading" outline label="E-mail" append-icon="mail" required :rules="emailRules" v-model="email"></v-text-field>
+                    <v-text-field :loading="loading" outline label="Password" @click:append="show1 = !show1" :append-icon="show1 ? 'visibility_off' : 'visibility'" :type="show1 ? 'text' : 'password'" required v-model="password" :rules="passwordRules"></v-text-field>
+                    <v-text-field :loading="loading" outline label="Confrim" @click:append="show2 = !show2" :append-icon="show2 ? 'visibility_off' : 'visibility'" :type="show2 ? 'text' : 'password'" required v-model="confrim_password"></v-text-field>
                 </v-form>
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn flat color="primary" to="/login">Есть аккаунт?</v-btn>
-                <v-btn color="primary" :disabled="!(valid == true && passwordValid == true)" @click="submit">Отправить</v-btn>
+                <v-btn color="primary" :disabled="!(valid == true && passwordValid == true)" @click="submit" :loading="loading">Отправить</v-btn>
               </v-card-actions>
             </v-card>
           </v-flex>
         </v-layout>
-      </v-container>    
+      </v-container>
 </template>
 <script>
 import { mapActions } from "vuex";
@@ -37,6 +37,7 @@ export default {
     show1: false,
     show2: false,
     password: "",
+    loading: false,
     err: [],
     alert: false,
     type: "success",
@@ -56,6 +57,7 @@ export default {
   methods: {
     ...mapActions({ SetToken: "user/SetToken" }),
     submit() {
+      this.loading = true;
       const init = this;
       axios
         .post("/api/auth/signup", {
@@ -68,6 +70,7 @@ export default {
           init.alert = true;
           init.alert_message = resp.data;
           init.type = "success";
+          init.loading = false;
           axios
             .post("/api/auth/login", {
               email: init.email,
@@ -85,6 +88,7 @@ export default {
               let e = {};
               e.message = err;
               e.alert = true;
+              init.loading = false;
               init.err.push(e);
             });
           });

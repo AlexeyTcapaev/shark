@@ -1,24 +1,24 @@
 webpackJsonp([3],{
 
-/***/ 65:
+/***/ 115:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(86)
+  __webpack_require__(150)
 }
-var normalizeComponent = __webpack_require__(66)
+var normalizeComponent = __webpack_require__(122)
 /* script */
-var __vue_script__ = __webpack_require__(88)
+var __vue_script__ = __webpack_require__(152)
 /* template */
-var __vue_template__ = __webpack_require__(89)
+var __vue_template__ = __webpack_require__(157)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-bc5e96a2"
+var __vue_scopeId__ = "data-v-40d62849"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -29,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/AddCompany.vue"
+Component.options.__file = "resources/assets/js/views/CompanyStructure.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -38,9 +38,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-bc5e96a2", Component.options)
+    hotAPI.createRecord("data-v-40d62849", Component.options)
   } else {
-    hotAPI.reload("data-v-bc5e96a2", Component.options)
+    hotAPI.reload("data-v-40d62849", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -52,7 +52,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 66:
+/***/ 122:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -162,7 +162,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 67:
+/***/ 123:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -181,7 +181,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(68)
+var listToStyles = __webpack_require__(124)
 
 /*
 type StyleObject = {
@@ -391,7 +391,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 68:
+/***/ 124:
 /***/ (function(module, exports) {
 
 /**
@@ -425,23 +425,23 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 86:
+/***/ 150:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(87);
+var content = __webpack_require__(151);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(67)("f2834252", content, false, {});
+var update = __webpack_require__(123)("d1a2535e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-bc5e96a2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AddCompany.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-bc5e96a2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AddCompany.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-40d62849\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CompanyStructure.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-40d62849\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CompanyStructure.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -452,27 +452,27 @@ if(false) {
 
 /***/ }),
 
-/***/ 87:
+/***/ 151:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(14)(false);
+exports = module.exports = __webpack_require__(35)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n.v-avatar[data-v-bc5e96a2] {\n  position: absolute;\n  left: 25px;\n  border-radius: 64px;\n  height: 128px;\n  width: 128px;\n  overflow: hidden;\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n  top: -64px;\n  border-radius: 50% !important;\n  -webkit-transition: 0.2s linear;\n  transition: 0.2s linear;\n}\n.v-avatar img[data-v-bc5e96a2] {\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n}\n.file[data-v-bc5e96a2] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 64px;\n  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),\n    0 1px 3px 0 rgba(0, 0, 0, 0.12);\n  top: 0;\n  left: 0;\n  cursor: pointer;\n  z-index: 4;\n  opacity: 0;\n}\n.v-card__title[data-v-bc5e96a2] {\n  padding-top: 84px !important;\n}\n.v-card[data-v-bc5e96a2]{\n    margin: 64px 0 0 0 ;\n}\n.v-card .v-avatar[data-v-bc5e96a2] {\n  cursor: pointer;\n}\n", ""]);
+exports.push([module.i, "\n.creator[data-v-40d62849] {\n  margin-bottom: 15px;\n}\ndiv[data-v-40d62849] {\n  text-align: left;\n}\n.department-header[data-v-40d62849] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  overflow: hidden;\n}\n.department-header i[data-v-40d62849] {\n  margin-right: 5px;\n}\n.department-header p[data-v-40d62849] {\n  font-weight: bold;\n  padding: 0 10px;\n  margin: 0;\n}\n.department-header .v-divider--vertical[data-v-40d62849] {\n  height: 50px;\n}\n.v-expansion-panel__body .v-card[data-v-40d62849]{\n  border-top: 1px solid rgba(0, 0, 0, 0.12);\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 88:
+/***/ 152:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(13);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -507,128 +507,53 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
+var RecursivePalet = function RecursivePalet() {
+  return __webpack_require__.e/* import() */(16).then(__webpack_require__.bind(null, 125));
+};
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    RecursivePalet: RecursivePalet
+  },
   data: function data() {
     return {
-      show: false,
-      avatarSize: 128,
-      tile: true,
-      switch1: false,
-      Company: {
-        name: "",
-        activities: [],
-        logo: undefined
+      root: {
+        descendants: []
       },
-      NewActivity: "",
-      activities: [{
-        name: "IT"
-      }, {
-        name: "Проектирование"
-      }]
+      NewDepartment: "",
+      panel: []
     };
   },
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+    GetCompanyBySlug: "user/GetCompanyBySlug"
+  }), {
+    Company: function Company() {
+      return this.GetCompanyBySlug(this.$route.params.slug);
+    }
+  }),
   methods: {
-    remove: function remove(item) {
-      console.log(item);
-      var index = this.Company.activities.indexOf(item.name);
-      if (index >= 0) this.Company.activities.splice(index, 1);
-    },
-    onFileChange: function onFileChange(e) {
-      var files = e.target.files || e.dataTransfer.files;
-      if (!files.length) return;
-      this.createImage(this.Company, files[0]);
-      this.isActive = false;
-    },
-    createImage: function createImage(item, file) {
-      var image = new Image();
-      var reader = new FileReader();
-      reader.onload = function (e) {
-        item.logo = e.target.result;
-      };
-      reader.readAsDataURL(file);
-    },
-
-    removeImage: function removeImage(item) {
-      item.image = false;
-    },
-    submit: function submit() {
-      var data = new FormData();
-      data.append("logo", this.$refs.file.files[0]);
-      data.append("name", this.Company.name);
-      data.append("creator", this.user);
-      data.append("activities", JSON.stringify(this.Company.activities));
+    AddDepartment: function AddDepartment() {
       var init = this;
-      axios.post("/api/auth/company", data).then(function (resp) {
-        console.log(resp);
-      }).catch(function (resp) {
-        console.log(resp);
-      });
+      axios.post("/api/auth/departments", {
+        name: this.root.newDepartment,
+        root: this.root.slug
+      }).then(function (resp) {
+        init.root.children.push(resp.data);
+      }).catch(function (error) {});
     }
   },
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
-    windowWidth: "config/windowWidth",
-    user: "user/GetUserId"
-  }), {
-    mobile: function mobile() {
-      if (this.windowWidth > 993) return false;else return true;
-    }
-  })
+  mounted: function mounted() {
+    var init = this;
+    axios.get("/api/auth/departments/" + this.$route.params.slug).then(function (resp) {
+      init.root = resp.data;
+    }).catch(function (error) {});
+  }
 });
 
 /***/ }),
 
-/***/ 89:
+/***/ 157:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -637,6 +562,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-container",
+    { attrs: { fluid: "" } },
     [
       _c(
         "v-layout",
@@ -644,222 +570,123 @@ var render = function() {
         [
           _c(
             "v-flex",
-            { attrs: { xs6: !_vm.mobile } },
             [
               _c(
-                "v-card",
+                "v-expansion-panel",
+                { staticClass: "creator" },
                 [
                   _c(
-                    "v-avatar",
-                    {
-                      attrs: {
-                        tile: _vm.tile,
-                        size: _vm.avatarSize,
-                        color: "grey lighten-4"
-                      }
-                    },
+                    "v-expansion-panel-content",
                     [
-                      _c("input", {
-                        ref: "file",
-                        staticClass: "file",
-                        attrs: {
-                          type: "file",
-                          accept: "image/jpeg,image/png,image/gif"
-                        },
-                        on: { change: _vm.onFileChange }
-                      }),
+                      _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                        _vm._v("Информация о владельце и создателе")
+                      ]),
                       _vm._v(" "),
-                      !_vm.Company.logo
-                        ? _c("v-icon", { attrs: { alt: "avatar" } }, [
-                            _vm._v("add_circle_outline")
-                          ])
-                        : _c("img", { attrs: { src: _vm.Company.logo } })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-title",
-                    { attrs: { "primary-title": "" } },
-                    [
                       _c(
-                        "v-flex",
-                        { attrs: { xs12: "", row: "" } },
+                        "v-card",
                         [
-                          _c("v-text-field", {
-                            attrs: {
-                              outline: "",
-                              label: "Название компании",
-                              "append-icon": "business"
-                            },
-                            model: {
-                              value: _vm.Company.name,
-                              callback: function($$v) {
-                                _vm.$set(_vm.Company, "name", $$v)
-                              },
-                              expression: "Company.name"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("v-text-field", {
-                            attrs: {
-                              outline: "",
-                              label: "Сайт компании",
-                              "append-icon": "web"
-                            },
-                            model: {
-                              value: _vm.Company.website,
-                              callback: function($$v) {
-                                _vm.$set(_vm.Company, "website", $$v)
-                              },
-                              expression: "Company.website"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _vm.switch1 == false
-                            ? _c("v-autocomplete", {
-                                attrs: {
-                                  items: _vm.activities,
-                                  outline: "",
-                                  chips: "",
-                                  clearable: "",
-                                  label: "Сферы деятельности",
-                                  "item-text": "name",
-                                  "item-value": "name",
-                                  multiple: ""
-                                },
-                                scopedSlots: _vm._u([
-                                  {
-                                    key: "selection",
-                                    fn: function(data) {
-                                      return [
-                                        _c(
-                                          "v-chip",
-                                          {
-                                            staticClass: "chip--select-multi",
-                                            attrs: {
-                                              selected: data.selected,
-                                              close: ""
-                                            },
-                                            on: {
-                                              input: function($event) {
-                                                _vm.remove(data.item)
-                                              }
-                                            }
-                                          },
-                                          [
-                                            _vm._v(
-                                              "\n                                " +
-                                                _vm._s(data.item.name) +
-                                                "\n                            "
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    }
-                                  },
-                                  {
-                                    key: "item",
-                                    fn: function(data) {
-                                      return [
-                                        typeof data.item !== "object"
-                                          ? [
-                                              _c("v-list-tile-content", {
-                                                domProps: {
-                                                  textContent: _vm._s(data.item)
-                                                }
-                                              })
-                                            ]
-                                          : [
-                                              _c(
-                                                "v-list-tile-content",
-                                                [
-                                                  _c("v-list-tile-title", {
-                                                    domProps: {
-                                                      innerHTML: _vm._s(
-                                                        data.item.name
-                                                      )
-                                                    }
-                                                  }),
-                                                  _vm._v(" "),
-                                                  _c("v-list-tile-sub-title", {
-                                                    domProps: {
-                                                      innerHTML: _vm._s(
-                                                        data.item.group
-                                                      )
-                                                    }
-                                                  })
-                                                ],
-                                                1
-                                              )
-                                            ]
-                                      ]
-                                    }
-                                  }
-                                ]),
-                                model: {
-                                  value: _vm.Company.activities,
-                                  callback: function($$v) {
-                                    _vm.$set(_vm.Company, "activities", $$v)
-                                  },
-                                  expression: "Company.activities"
-                                }
-                              })
-                            : _c("v-text-field", {
-                                attrs: {
-                                  outline: "",
-                                  label:
-                                    "Введите свой вариант сферы деятельности",
-                                  "append-icon": "edit"
-                                },
-                                model: {
-                                  value: _vm.NewActivity,
-                                  callback: function($$v) {
-                                    _vm.NewActivity = $$v
-                                  },
-                                  expression: "NewActivity"
-                                }
-                              }),
-                          _vm._v(" "),
-                          _c("v-switch", {
-                            attrs: {
-                              label: "Нет подходящего варианта",
-                              color: "primary",
-                              disabled: _vm.Company.activities.length > 0
-                            },
-                            model: {
-                              value: _vm.switch1,
-                              callback: function($$v) {
-                                _vm.switch1 = $$v
-                              },
-                              expression: "switch1"
-                            }
-                          })
+                          _c("v-card-text", { staticClass: "grey lighten-3" }, [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                            )
+                          ])
                         ],
                         1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-actions",
-                    [
-                      _c("v-spacer"),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { color: "secondary" },
-                          on: { click: _vm.submit }
-                        },
-                        [_vm._v("Создать")]
                       )
                     ],
                     1
                   )
                 ],
                 1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-expansion-panel",
+                { staticClass: "creator" },
+                [
+                  _c(
+                    "v-expansion-panel-content",
+                    [
+                      _c("div", { attrs: { slot: "header" }, slot: "header" }, [
+                        _vm._v("Добавить отдел")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-card",
+                        [
+                          _c(
+                            "v-card-text",
+                            { staticClass: "grey lighten-3" },
+                            [
+                              _c(
+                                "v-flex",
+                                [
+                                  _c("v-text-field", {
+                                    attrs: {
+                                      outline: "",
+                                      label: "Введите название отдела",
+                                      "append-icon": "add"
+                                    },
+                                    on: {
+                                      "click:append": _vm.AddDepartment,
+                                      keyup: function($event) {
+                                        if (
+                                          !("button" in $event) &&
+                                          _vm._k(
+                                            $event.keyCode,
+                                            "enter",
+                                            13,
+                                            $event.key,
+                                            "Enter"
+                                          )
+                                        ) {
+                                          return null
+                                        }
+                                        return _vm.AddDepartment($event)
+                                      }
+                                    },
+                                    model: {
+                                      value: _vm.root.newDepartment,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.root, "newDepartment", $$v)
+                                      },
+                                      expression: "root.newDepartment"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-expansion-panel",
+                {
+                  attrs: { expand: "" },
+                  model: {
+                    value: _vm.panel,
+                    callback: function($$v) {
+                      _vm.panel = $$v
+                    },
+                    expression: "panel"
+                  }
+                },
+                _vm._l(_vm.root.children, function(item, i) {
+                  return _c("recursive-palet", {
+                    key: i,
+                    attrs: { item: item }
+                  })
+                })
               )
             ],
             1
@@ -877,7 +704,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-bc5e96a2", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-40d62849", module.exports)
   }
 }
 

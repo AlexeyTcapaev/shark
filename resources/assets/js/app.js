@@ -1,5 +1,4 @@
 require('./bootstrap');
-
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -9,6 +8,7 @@ import store from './store/index'
 import * as Cookies from 'js-cookie'
 import Vuebar from 'vuebar';
 import VueProgressBar from 'vue-progressbar'
+import Echo from 'laravel-echo'
 Vue.use(Vuebar);
 Vue.use(Vuex)
 Vue.use(Vuetify, {
@@ -33,6 +33,17 @@ Vue.use(VueProgressBar, {
 })
 if (store.state.user.token !== undefined) {
     axios.defaults.headers.common['Authorization'] = store.state.user.token.token_type + " " + store.state.user.token.access_token
+
+    window.Echo = new Echo({
+        broadcaster: 'socket.io',
+        host: window.location.hostname + ':6001',
+        auth: {
+            headers: {
+                Authorization: store.state.user.token.token_type + " " + store.state.user.token.access_token
+            }
+        }
+    });
+
 }
 const App = () =>
     import('./views/App.vue');
@@ -48,11 +59,28 @@ const Feed = () =>
     import('./views/Feed.vue');
 const AddCompany = () =>
     import('./views/AddCompany.vue');
+const Dashboard = () =>
+    import('./views/Dashboard.vue');
+const VerifyEmail = () =>
+    import('./views/VerifyEmail.vue');
+const CompanyStructure = () =>
+    import('./views/CompanyStructure.vue');
+const Communication = () =>
+    import('./views/Communication.vue');
+const Platform = () =>
+    import('./views/Platform.vue');
+const UserSettings = () =>
+    import('./views/UserSettings.vue');
+const Chat = () =>
+    import('./views/Chat.vue');
+const ChatStartPage = () =>
+    import('./views/ChatStartPage.vue');
+const AddChat = () =>
+    import('./views/AddChat.vue');
 
 const router = new VueRouter({
     mode: 'history',
-    routes: [
-        {
+    routes: [{
             path: '/',
             name: 'IndexPage',
             component: IndexPage
@@ -77,7 +105,7 @@ const router = new VueRouter({
                         expires: 2,
                         domain: location.hostname
                     });
-                    axios.get("/api/auth/company/"+store.state.user.user.id).then(function (resp) {
+                    axios.get("/api/auth/company/" + store.state.user.user.id).then(function (resp) {
                         store.state.user.company = resp.data
                     });
                     next();
@@ -85,16 +113,57 @@ const router = new VueRouter({
                     router.push("/login");
                 })
             },
-            children: [
-                {
+            children: [{
                     path: "",
-                    component: Feed,
+                    component: Dashboard,
                     name: "app",
+                },
+                {
+                    path: "/user/settings",
+                    component: UserSettings,
+                    name: "user-settings",
+                },
+                {
+                    path: 'company/:slug/structure',
+                    name: "company-structure",
+                    component: CompanyStructure,
+                },
+                {
+                    path: 'verifyemail/:token',
+                    name: "verifyemail",
+                    component: VerifyEmail,
                 },
                 {
                     path: "add_company",
                     component: AddCompany,
                     name: "add_company",
+                },
+                {
+                    path: "news",
+                    component: Feed,
+                    name: "news",
+                },
+                {
+                    path: "communication",
+                    component: Communication,
+                    children: [{
+                        path: "",
+                        component: ChatStartPage,
+                        name: "communication",
+                    }, {
+                        path: "create_chat",
+                        component: AddChat,
+                        name: "add_chat",
+                    }, {
+                        path: ":chatid",
+                        component: Chat,
+                        name: "chat",
+                    }]
+                },
+                {
+                    path: "platform",
+                    component: Platform,
+                    name: "platform",
                 }
             ]
         },

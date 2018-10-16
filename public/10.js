@@ -1,14 +1,14 @@
 webpackJsonp([10],{
 
-/***/ 58:
+/***/ 108:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(62)
+var normalizeComponent = __webpack_require__(122)
 /* script */
-var __vue_script__ = __webpack_require__(73)
+var __vue_script__ = __webpack_require__(134)
 /* template */
-var __vue_template__ = __webpack_require__(74)
+var __vue_template__ = __webpack_require__(135)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -48,7 +48,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 62:
+/***/ 122:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -158,12 +158,12 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 73:
+/***/ 134:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(13);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -206,6 +206,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       show1: false,
       show2: false,
       password: "",
+      loading: false,
       err: [],
       alert: false,
       type: "success",
@@ -230,6 +231,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   },
   methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({ SetToken: "user/SetToken" }), {
     submit: function submit() {
+      this.loading = true;
       var init = this;
       axios.post("/api/auth/signup", {
         email: this.email,
@@ -240,6 +242,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         init.alert = true;
         init.alert_message = resp.data;
         init.type = "success";
+        init.loading = false;
         axios.post("/api/auth/login", {
           email: init.email,
           password: init.password,
@@ -254,6 +257,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             var e = {};
             e.message = err;
             e.alert = true;
+            init.loading = false;
             init.err.push(e);
           });
         });
@@ -276,7 +280,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 /***/ }),
 
-/***/ 74:
+/***/ 135:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -361,6 +365,7 @@ var render = function() {
                         [
                           _c("v-text-field", {
                             attrs: {
+                              loading: _vm.loading,
                               outline: "",
                               label: "Login",
                               "append-icon": "person",
@@ -378,6 +383,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("v-text-field", {
                             attrs: {
+                              loading: _vm.loading,
                               outline: "",
                               label: "E-mail",
                               "append-icon": "mail",
@@ -395,6 +401,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("v-text-field", {
                             attrs: {
+                              loading: _vm.loading,
                               outline: "",
                               label: "Password",
                               "append-icon": _vm.show1
@@ -420,6 +427,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("v-text-field", {
                             attrs: {
+                              loading: _vm.loading,
                               outline: "",
                               label: "Confrim",
                               "append-icon": _vm.show2
@@ -466,7 +474,8 @@ var render = function() {
                             color: "primary",
                             disabled: !(
                               _vm.valid == true && _vm.passwordValid == true
-                            )
+                            ),
+                            loading: _vm.loading
                           },
                           on: { click: _vm.submit }
                         },
