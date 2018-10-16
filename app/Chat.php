@@ -12,7 +12,7 @@ class Chat extends Model
     }
     public function comments()
     {
-      return $this->hasMany(ChatMessage::class,'chat_id','id');
+        return $this->hasMany(ChatMessage::class, 'chat_id', 'id');
     }
 
     public $load_map = [

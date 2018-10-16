@@ -13,6 +13,9 @@ export default {
         GetUser(state) {
             return state.user;
         },
+        GetToken(state) {
+            return state.token;
+        },
         GetCompany(state) {
             return state.company;
         },

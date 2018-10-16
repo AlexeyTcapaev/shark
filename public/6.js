@@ -616,7 +616,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       this.$emit("toggleChat");
     }
   },
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({ user: "user/GetUser", GetChatById: "chat/GetChatById" }), {
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+    user: "user/GetUser",
+    GetChatById: "chat/GetChatById"
+  }), {
     chat: function chat() {
       return this.GetChatById(this.$route.params.chatid);
     }
@@ -633,6 +636,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     window.Echo.private("chat." + this.$route.params.chatid).listen("Message", function (_ref) {
       var message = _ref.message;
 
+      console.log(message);
       _this.Messages.push(message);
     });
   }

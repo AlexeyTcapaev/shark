@@ -141,11 +141,15 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({ user: "user/GetUser", GetChatById: "chat/GetChatById" }),
+    ...mapGetters({
+      user: "user/GetUser",
+      GetChatById: "chat/GetChatById"
+    }),
     chat() {
       return this.GetChatById(this.$route.params.chatid);
     }
   },
+
   beforeCreate() {
     const init = this;
     axios.get("/api/auth/messages/" + init.$route.params.chatid).then(resp => {
@@ -156,6 +160,7 @@ export default {
     window.Echo.private("chat." + this.$route.params.chatid).listen(
       "Message",
       ({ message }) => {
+        console.log(message);
         this.Messages.push(message);
       }
     );

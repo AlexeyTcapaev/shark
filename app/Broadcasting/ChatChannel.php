@@ -4,7 +4,7 @@ namespace App\Broadcasting;
 
 use App\User;
 
-class MessagesChannel
+class ChatChannel
 {
     /**
      * Create a new channel instance.
@@ -24,6 +24,6 @@ class MessagesChannel
      */
     public function join(User $user)
     {
-        return true || false;
+        return true;
     }
 }

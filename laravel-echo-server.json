@@ -1,12 +1,8 @@
 {
-	"authHost": "http://localhost",
+    "appKey": "base64:7o0MbOmAeEwSoayL/Xa35HWhzzBj6rD+Uz/PU7rJBVY=",
+    "authHost": "http://bizakula",
 	"authEndpoint": "/broadcasting/auth",
-	"clients": [
-		{
-			"appId": "160a7d6d7cd0b011",
-			"key": "7945326d65d93fd5a585c2a78bd357e5"
-		}
-	],
+	"clients": [],
 	"database": "redis",
 	"databaseConfig": {
 		"redis": {},
