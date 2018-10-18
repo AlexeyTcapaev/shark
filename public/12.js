@@ -233,7 +233,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       loading: false
     };
   },
-  methods: {
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({ AddChat: "chat/AddChat" }), {
     submit: function submit() {
       var init = this;
       this.newChat.users.push(this.user);
@@ -241,6 +241,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       axios.post("/api/auth/chats", this.newChat).then(function (resp) {
         init.alert.message = "Диалог успешно создан.";
         init.alert.enable = true;
+        init.AddChat(resp.data);
+        init.$forceUpdate();
       }).catch(function (error) {
         init.alert.message = "Ошибка при создании диалога.";
         init.alert.enable = true;
@@ -251,7 +253,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       var index = this.newChat.users.indexOf(item);
       if (index >= 0) this.newChat.users.splice(index, 1);
     }
-  },
+  }),
   computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({ user: "user/GetUser" }), {
     valid: function valid() {
       return true;

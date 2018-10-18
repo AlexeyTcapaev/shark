@@ -47,7 +47,7 @@ class UserController extends Controller
     public function show($id)
     {
     }
-    public function for_chat_create($id)
+    public function chat_room($id)
     {
         return User::where('id', '!=', $id)->get();
     }
@@ -98,4 +98,5 @@ class UserController extends Controller
     {
         //
     }
+
 }

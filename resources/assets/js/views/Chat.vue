@@ -1,16 +1,21 @@
 <template>
         <v-layout class="chat-wrapper">
             <v-flex xs12 justify-center align-center>
-               <div class="chat-head">
-                   <v-btn @click="toggleChat" flat>Диалоги</v-btn>
-                    <div v-if="chat && chat.users">
+            <v-toolbar color="white">
+                <v-toolbar-items>
+                    <v-btn flat @click="toggleChat">Диалоги</v-btn>
+                </v-toolbar-items>
+                <v-spacer></v-spacer>
+                <v-toolbar-items>
+                    <v-btn v-if="chat && chat.users" flat >
                         <v-avatar>
                             <v-icon v-if="!chat.users[0].avatar">account_circle</v-icon>
-                            <img v-else :src="'/storage/uploads/'+chat.users[0].avatar" :alt="chat.users[0].name">
+                            <img class="btn-img" v-else :src="'/storage/uploads/'+chat.users[0].avatar" :alt="chat.users[0].name">
                         </v-avatar>
                         {{chat.users[0].name}}
-                    </div>
-                </div>
+                    </v-btn>
+                </v-toolbar-items>
+            </v-toolbar>
                 <div v-bar class="chat-body">
                   <div>
                       <v-container fluid>
@@ -60,6 +65,10 @@
   display: flex;
   justify-content: flex-end;
 }
+.v-btn .v-avatar {
+  margin: 0 10px 0 0;
+}
+
 .message-sender-img {
   padding: 0 10px 0 0;
 }
@@ -67,8 +76,11 @@
   width: 56px;
   height: 56px;
 }
-
+.message-content{
+    z-index: -1;
+}
 .message-bubble {
+  z-index: -1;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -136,6 +148,9 @@ export default {
             init.newMessage = "";
           });
     },
+    SetMessages(data) {
+      this.Messages = data;
+    },
     toggleChat() {
       this.$emit("toggleChat");
     }
@@ -152,15 +167,22 @@ export default {
 
   beforeCreate() {
     const init = this;
-    axios.get("/api/auth/messages/" + init.$route.params.chatid).then(resp => {
-      init.Messages = resp.data;
-    });
+    axios
+      .get("/api/auth/messages/" + this.$route.params.chatid)
+      .then(resp => {
+        init.Messages = resp.data;
+      })
+      .catch(error => {
+        init.$router.push("/app/communication");
+      });
   },
   mounted() {
     window.Echo.private("chat." + this.$route.params.chatid).listen(
       "Message",
       ({ message }) => {
-        console.log(message);
+        var audio = new Audio("/storage/audio/message.mp3");
+        new Notification({ title: message.text });
+        audio.play();
         this.Messages.push(message);
       }
     );

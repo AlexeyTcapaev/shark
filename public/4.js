@@ -460,7 +460,7 @@ exports = module.exports = __webpack_require__(35)(false);
 
 
 // module
-exports.push([module.i, "\n.v-navigation-drawer[data-v-32de9613] {\r\n  z-index: 999;\r\n  -webkit-box-shadow: none;\r\n          box-shadow: none;\n}\n.search-bar[data-v-32de9613] {\r\n  margin: 5px 0;\n}\n.v-list[data-v-32de9613] {\r\n  -webkit-transition: width 0.2s linear;\r\n  transition: width 0.2s linear;\n}\n.shortChat[data-v-32de9613] {\r\n  width: 70px !important;\r\n  -webkit-transition: 0.2s linear;\r\n  transition: 0.2s linear;\r\n  overflow: hidden;\n}\n.chat[data-v-32de9613] {\r\n  width: 100%;\n}\n.no-padding[data-v-32de9613] {\r\n  padding: 0;\n}\n.room-list[data-v-32de9613] {\r\n  max-width: 300px;\r\n  height: 100%;\n}\n.container[data-v-32de9613],\r\n.layout[data-v-32de9613],\r\n.flex[data-v-32de9613] {\r\n  height: 100%;\n}\ni.active[data-v-32de9613] {\r\n  -webkit-transform: rotate(180deg);\r\n          transform: rotate(180deg);\n}\n.room-list .v-list[data-v-32de9613] {\r\n  height: 100%;\n}\n.flex[data-v-32de9613] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\n}\n.target-link .v-list__tile__content .v-list__tile__title[data-v-32de9613] {\r\n  color: #f80b37 !important;\n}\n.material-icons[data-v-32de9613] {\r\n  width: 24px;\n}\n.target-link .v-icon[data-v-32de9613] {\r\n  color: #f80b37 !important;\n}\r\n", ""]);
+exports.push([module.i, "\naside[data-v-32de9613] {\n  overflow: hidden;\n}\n.pt-0[data-v-32de9613] {\n  position: relative;\n}\n.v-navigation-drawer[data-v-32de9613] {\n  z-index: 999;\n  -webkit-box-shadow: none;\n          box-shadow: none;\n}\n.search-bar[data-v-32de9613] {\n  margin: 5px 0;\n}\n.v-list[data-v-32de9613] {\n  -webkit-transition: width 0.2s linear;\n  transition: width 0.2s linear;\n}\n.shortChat[data-v-32de9613] {\n  width: 70px !important;\n  -webkit-transition: 0.2s linear;\n  transition: 0.2s linear;\n  overflow: hidden;\n}\n.chat[data-v-32de9613] {\n  width: 100%;\n}\n.no-padding[data-v-32de9613] {\n  padding: 0;\n}\n.room-list[data-v-32de9613] {\n  max-width: 300px;\n  height: 100%;\n}\n.container[data-v-32de9613],\n.layout[data-v-32de9613],\n.flex[data-v-32de9613] {\n  height: 100%;\n}\ni.active[data-v-32de9613] {\n  -webkit-transform: rotate(180deg);\n          transform: rotate(180deg);\n}\n.room-list .v-list[data-v-32de9613] {\n  height: 100%;\n}\n.flex[data-v-32de9613] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.target-link .v-list__tile__content .v-list__tile__title[data-v-32de9613] {\n  color: #f80b37 !important;\n}\n.material-icons[data-v-32de9613] {\n  width: 24px;\n}\n.target-link .v-icon[data-v-32de9613] {\n  color: #f80b37 !important;\n}\n", ""]);
 
 // exports
 
@@ -531,6 +531,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
 
 
 
@@ -544,7 +547,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     };
   },
   methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({ SetChats: "chat/SetChats" })),
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])("user", ["user"]), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])("chat", ["chats"])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])("user", ["user"]), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])("chat", ["chats"]), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({
+    windowWidth: "config/windowWidth",
+    windowHeight: "config/windowHeight"
+  }), {
+    page: function page() {
+      if (this.windowWidth > 993) return this.windowHeight - 120;else return this.windowHeight - 112;
+    }
+  }),
   mounted: function mounted() {
     var init = this;
     axios.get("/api/auth/chats/" + this.user.id).then(function (resp) {
@@ -586,155 +596,173 @@ var render = function() {
                   }
                 },
                 [
-                  _c(
-                    "v-list",
-                    { staticClass: "pt-0", attrs: { dense: "" } },
-                    [
-                      _c(
-                        "v-list",
-                        [
-                          _c("v-subheader", [_vm._v("Мои диалоги")]),
-                          _vm._v(" "),
-                          _c(
-                            "v-list-tile",
-                            { staticClass: "search-bar" },
-                            [
-                              _c(
-                                "v-list-tile-content",
-                                [
-                                  _c("v-text-field", {
-                                    attrs: {
-                                      outline: "",
-                                      label: "Поиск по чатам",
-                                      "append-icon": "search"
-                                    },
-                                    model: {
-                                      value: _vm.search,
-                                      callback: function($$v) {
-                                        _vm.search = $$v
-                                      },
-                                      expression: "search"
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("v-divider"),
-                      _vm._v(" "),
-                      _vm._l(_vm.chats, function(chat, i) {
-                        return [
-                          chat && chat.users
-                            ? _c(
-                                "v-list-tile",
-                                {
-                                  key: i,
-                                  attrs: {
-                                    "active-class":
-                                      "secondary--text target-link",
-                                    avatar: "",
-                                    to: {
-                                      name: "chat",
-                                      params: { chatid: chat.id }
-                                    }
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "v-list-tile-avatar",
-                                    [
-                                      !chat.users[0].avatar
-                                        ? _c("v-icon", [
-                                            _vm._v("account_circle")
-                                          ])
-                                        : _c("img", {
-                                            attrs: {
-                                              src:
-                                                "/storage/uploads/" +
-                                                chat.users[0].avatar,
-                                              alt: chat.users[0].name
-                                            }
-                                          })
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-content",
-                                    [
-                                      _c("v-list-tile-title", {
-                                        domProps: {
-                                          innerHTML: _vm._s(chat.users[0].name)
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-tile-action",
-                                    [
-                                      _c(
-                                        "v-badge",
-                                        {
-                                          staticClass: "relative-badge",
-                                          attrs: { color: "secondary" }
-                                        },
-                                        [
-                                          _c(
-                                            "span",
-                                            {
-                                              attrs: { slot: "badge" },
-                                              slot: "badge"
+                  _c("v-list", { staticClass: "pt-0", attrs: { dense: "" } }, [
+                    _c(
+                      "div",
+                      {
+                        directives: [{ name: "bar", rawName: "v-bar" }],
+                        style: { height: _vm.page + "px" }
+                      },
+                      [
+                        _c(
+                          "div",
+                          [
+                            _c(
+                              "v-list",
+                              [
+                                _c("v-subheader", [_vm._v("Мои диалоги")]),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-tile",
+                                  { staticClass: "search-bar" },
+                                  [
+                                    _c(
+                                      "v-list-tile-content",
+                                      [
+                                        _c("v-text-field", {
+                                          attrs: {
+                                            outline: "",
+                                            label: "Поиск по чатам",
+                                            "append-icon": "search"
+                                          },
+                                          model: {
+                                            value: _vm.search,
+                                            callback: function($$v) {
+                                              _vm.search = $$v
                                             },
-                                            [_vm._v("6")]
-                                          )
-                                        ]
-                                      )
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              )
-                            : _vm._e()
-                        ]
-                      }),
-                      _vm._v(" "),
-                      _c("v-divider", { attrs: { dark: "" } }),
-                      _vm._v(" "),
-                      _c(
-                        "v-list-tile",
-                        {
-                          attrs: {
-                            to: { name: "add_chat" },
-                            "exact-active-class": "target-link"
-                          }
-                        },
-                        [
-                          _c(
-                            "v-list-tile-action",
-                            [_c("v-icon", [_vm._v("add_circle_outline")])],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-list-tile-content",
-                            [_c("v-list-tile-title", [_vm._v("Создать чат")])],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    2
-                  )
+                                            expression: "search"
+                                          }
+                                        })
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c("v-divider"),
+                            _vm._v(" "),
+                            _vm._l(_vm.chats, function(chat, i) {
+                              return [
+                                chat && chat.users
+                                  ? _c(
+                                      "v-list-tile",
+                                      {
+                                        key: i,
+                                        attrs: {
+                                          "active-class":
+                                            "secondary--text target-link",
+                                          avatar: "",
+                                          to: {
+                                            name: "chat",
+                                            params: { chatid: chat.id }
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "v-list-tile-avatar",
+                                          [
+                                            !chat.users[0].avatar
+                                              ? _c("v-icon", [
+                                                  _vm._v("account_circle")
+                                                ])
+                                              : _c("img", {
+                                                  attrs: {
+                                                    src:
+                                                      "/storage/uploads/" +
+                                                      chat.users[0].avatar,
+                                                    alt: chat.users[0].name
+                                                  }
+                                                })
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-list-tile-content",
+                                          [
+                                            _c("v-list-tile-title", {
+                                              domProps: {
+                                                innerHTML: _vm._s(
+                                                  chat.users[0].name
+                                                )
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-list-tile-action",
+                                          [
+                                            _c(
+                                              "v-badge",
+                                              {
+                                                staticClass: "relative-badge",
+                                                attrs: { color: "secondary" }
+                                              },
+                                              [
+                                                _c(
+                                                  "span",
+                                                  {
+                                                    attrs: { slot: "badge" },
+                                                    slot: "badge"
+                                                  },
+                                                  [_vm._v("6")]
+                                                )
+                                              ]
+                                            )
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  : _vm._e()
+                              ]
+                            }),
+                            _vm._v(" "),
+                            _c("v-divider", { attrs: { dark: "" } }),
+                            _vm._v(" "),
+                            _c(
+                              "v-list-tile",
+                              {
+                                attrs: {
+                                  to: { name: "add_chat" },
+                                  "exact-active-class": "target-link"
+                                }
+                              },
+                              [
+                                _c(
+                                  "v-list-tile-action",
+                                  [
+                                    _c("v-icon", [_vm._v("add_circle_outline")])
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-tile-content",
+                                  [
+                                    _c("v-list-tile-title", [
+                                      _vm._v("Создать чат")
+                                    ])
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          2
+                        )
+                      ]
+                    )
+                  ])
                 ],
                 1
               ),

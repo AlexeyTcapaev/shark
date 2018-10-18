@@ -80597,11 +80597,17 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
     mutations: {
         SetChats: function SetChats(state, input_data) {
             state.chats = input_data;
+        },
+        AddChat: function AddChat(state, input_data) {
+            state.chats.push(input_data);
         }
     },
     actions: {
         SetChats: function SetChats(state, input_data) {
             state.commit('SetChats', input_data);
+        },
+        AddChat: function AddChat(state, input_data) {
+            state.commit('AddChat', input_data);
         }
     }
 });

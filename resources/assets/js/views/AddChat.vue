@@ -50,7 +50,7 @@
     </v-container>
 </template>
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 export default {
   data: () => ({
     alert: {
@@ -64,6 +64,7 @@ export default {
     loading: false
   }),
   methods: {
+    ...mapActions({ AddChat: "chat/AddChat" }),
     submit() {
       const init = this;
       this.newChat.users.push(this.user);
@@ -73,6 +74,8 @@ export default {
         .then(resp => {
           init.alert.message = "Диалог успешно создан.";
           init.alert.enable = true;
+          init.AddChat(resp.data);
+          init.$forceUpdate();
         })
         .catch(error => {
           init.alert.message = "Ошибка при создании диалога.";

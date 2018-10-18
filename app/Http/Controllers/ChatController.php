@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Chat;
+use App\User;
+use Auth;
 use App\ChatUser;
 use Illuminate\Http\Request;
 
@@ -47,6 +49,11 @@ class ChatController extends Controller
         } catch (Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
+        $id = Auth::user()->id;
+        $chat->load(['users'=> function ($query) use($id)
+        {
+            $query->where('user_id', '!=', $id);
+        }]);
         return $chat;
     }
 
@@ -58,6 +65,7 @@ class ChatController extends Controller
      */
     public function show($id)
     {
+       
         try {
             $chat = Chat::whereHas('users', function ($q) use ($id) {
                 $q->where('user_id', '=', $id);
@@ -80,7 +88,6 @@ class ChatController extends Controller
         }
         return $chat;
     }
-
     /**
      * Show the form for editing the specified resource.
      *

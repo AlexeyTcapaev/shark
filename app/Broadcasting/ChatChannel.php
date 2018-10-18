@@ -22,8 +22,8 @@ class ChatChannel
      * @param  \App\User  $user
      * @return array|bool
      */
-    public function join(User $user)
+    public function join(User $user,$chatid)
     {
-        return true;
+        return $user->chats->contains($chatid);
     }
 }
