@@ -16,7 +16,11 @@
                                     </v-list>
                                     <v-divider></v-divider>
                                     <template v-for="(chat,i) in chats">
+<<<<<<< HEAD
                                         <v-list-tile v-if="chat && chat.users" active-class="secondary--text target-link"
+=======
+                                        <v-list-tile v-if="chat && chat.users" active-class="secondary--text target-link" 
+>>>>>>> 287566ce743dc207996dd0cfb4a733f57d139197
                                             avatar :to="{ name:'chat',params:{chatid:chat.id} }"  :key="i">
                                             <v-list-tile-avatar>
                                                 <v-icon v-if="!chat.users[0].avatar">account_circle</v-icon>
@@ -102,7 +106,13 @@ aside {
 .pt-0 {
   position: relative;
 }
+<<<<<<< HEAD
 
+=======
+.vb-content{
+    padding: 0 13px 0 0;
+}
+>>>>>>> 287566ce743dc207996dd0cfb4a733f57d139197
 .v-navigation-drawer {
   z-index: 999;
   box-shadow: none;

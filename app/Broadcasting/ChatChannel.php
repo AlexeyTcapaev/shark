@@ -2,6 +2,7 @@
 
 namespace App\Broadcasting;
 
+
 use App\User;
 
 class ChatChannel

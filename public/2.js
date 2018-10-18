@@ -460,7 +460,7 @@ exports = module.exports = __webpack_require__(35)(false);
 
 
 // module
-exports.push([module.i, "\n.container.fill-height > .layout[data-v-7d94acf1] {\n  -webkit-box-align: baseline;\n      -ms-flex-align: baseline;\n          align-items: baseline;\n}\n.news li[data-v-7d94acf1] {\n  padding: 15px 0;\n  min-width: 40vw;\n  max-width: 100%;\n}\n.news[data-v-7d94acf1] {\n  width: 100%;\n}\n", ""]);
+exports.push([module.i, "\n.container.fill-height > .layout[data-v-7d94acf1] {\r\n  -webkit-box-align: baseline;\r\n      -ms-flex-align: baseline;\r\n          align-items: baseline;\n}\n.news li[data-v-7d94acf1] {\r\n  padding: 15px 0;\r\n  min-width: 40vw;\r\n  max-width: 100%;\n}\n.news[data-v-7d94acf1] {\r\n  width: 100%;\n}\r\n", ""]);
 
 // exports
 
