@@ -460,7 +460,7 @@ exports = module.exports = __webpack_require__(35)(false);
 
 
 // module
-exports.push([module.i, "\n.message-content p[data-v-429c24aa] {\n  background: #ebebeb none repeat scroll 0 0;\n  border-radius: 3px;\n  color: black;\n  font-size: 14px;\n  margin: 0;\n  padding: 5px 10px 5px 12px;\n  width: 100%;\n}\n.message-content span[data-v-429c24aa] {\n  color: #747474;\n  display: block;\n  font-size: 12px;\n  text-align: left;\n  margin: 8px 0 0;\n}\n.message-line[data-v-429c24aa] {\n}\n.whois *[data-v-429c24aa] {\n}\n.whois[data-v-429c24aa] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n.message-sender-img[data-v-429c24aa] {\n  padding: 0 10px 0 0;\n}\n.message-sender-img img[data-v-429c24aa] {\n  width: 56px;\n  height: 56px;\n}\n.message-bubble[data-v-429c24aa] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-wrap: nowrap;\n      flex-wrap: nowrap;\n  max-width: 60%;\n  margin: 5px 0;\n}\n.chat-wrapper[data-v-429c24aa] {\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n}\n.chat-head[data-v-429c24aa] {\n  width: 100%;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  padding: 15px;\n  -ms-flex-wrap: nowrap;\n      flex-wrap: nowrap;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  background-color: #ffffff;\n  -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),\n    0 1px 10px 0 rgba(0, 0, 0, 0.12);\n          box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),\n    0 1px 10px 0 rgba(0, 0, 0, 0.12);\n  z-index: 4;\n}\n.chat-head p[data-v-429c24aa] {\n  margin: 0;\n  font-weight: bold;\n}\n.chat-body[data-v-429c24aa] {\n  width: 100%;\n  height: 100%;\n}\n.flex[data-v-429c24aa] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n.chat-footer .container[data-v-429c24aa] {\n  padding: 10px;\n}\n.chat-footer[data-v-429c24aa] {\n  background-color: #ffffff;\n  width: 100%;\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n", ""]);
+exports.push([module.i, "\n.message-content p[data-v-429c24aa] {\r\n  background: #ebebeb none repeat scroll 0 0;\r\n  border-radius: 3px;\r\n  color: black;\r\n  font-size: 14px;\r\n  margin: 0;\r\n  padding: 5px 10px 5px 12px;\r\n  width: 100%;\n}\n.message-content span[data-v-429c24aa] {\r\n  color: #747474;\r\n  display: block;\r\n  font-size: 12px;\r\n  text-align: left;\r\n  margin: 8px 0 0;\n}\n.message-line[data-v-429c24aa] {\n}\n.whois *[data-v-429c24aa] {\n}\n.whois[data-v-429c24aa] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: end;\r\n      -ms-flex-pack: end;\r\n          justify-content: flex-end;\n}\n.message-sender-img[data-v-429c24aa] {\r\n  padding: 0 10px 0 0;\n}\n.message-sender-img img[data-v-429c24aa] {\r\n  width: 56px;\r\n  height: 56px;\n}\n.message-bubble[data-v-429c24aa] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n  -ms-flex-wrap: nowrap;\r\n      flex-wrap: nowrap;\r\n  max-width: 60%;\r\n  margin: 5px 0;\n}\n.chat-wrapper[data-v-429c24aa] {\r\n  width: 100%;\r\n  height: 100%;\r\n  overflow: hidden;\n}\n.chat-head[data-v-429c24aa] {\r\n  width: 100%;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\r\n  padding: 15px;\r\n  -ms-flex-wrap: nowrap;\r\n      flex-wrap: nowrap;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  background-color: #ffffff;\r\n  -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 10px 0 rgba(0, 0, 0, 0.12);\r\n          box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),\r\n    0 1px 10px 0 rgba(0, 0, 0, 0.12);\r\n  z-index: 4;\n}\n.chat-head p[data-v-429c24aa] {\r\n  margin: 0;\r\n  font-weight: bold;\n}\n.chat-body[data-v-429c24aa] {\r\n  width: 100%;\r\n  height: 100%;\n}\n.flex[data-v-429c24aa] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: vertical;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: column;\r\n          flex-direction: column;\n}\n.chat-footer .container[data-v-429c24aa] {\r\n  padding: 10px;\n}\n.chat-footer[data-v-429c24aa] {\r\n  background-color: #ffffff;\r\n  width: 100%;\r\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\r\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\r\n", ""]);
 
 // exports
 
@@ -612,6 +612,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         init.newMessage = "";
       });
     },
+    SetMessages: function SetMessages(data) {
+      this.Messages = data;
+    },
     toggleChat: function toggleChat() {
       this.$emit("toggleChat");
     }
@@ -624,10 +627,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       return this.GetChatById(this.$route.params.chatid);
     }
   }),
+
   beforeCreate: function beforeCreate() {
     var init = this;
-    axios.get("/api/auth/messages/" + init.$route.params.chatid).then(function (resp) {
+    axios.get("/api/auth/messages/" + this.$route.params.chatid).then(function (resp) {
       init.Messages = resp.data;
+    }).catch(function (error) {
+      init.$router.push("/app/communication");
     });
   },
   mounted: function mounted() {
@@ -636,7 +642,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     window.Echo.private("chat." + this.$route.params.chatid).listen("Message", function (_ref) {
       var message = _ref.message;
 
-      console.log(message);
+      var audio = new Audio("/storage/audio/message.mp3");
+      new Notification({ title: message.text });
+      audio.play();
       _this.Messages.push(message);
     });
   }

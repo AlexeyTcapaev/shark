@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\ChatMessage;
+use Auth;
+use App\User;
+use Illuminate\Support\Facades\Log;
 use App\Events\Message;
 use Illuminate\Http\Request;
 
@@ -36,6 +39,7 @@ class ChatMessageController extends Controller
      */
     public function store(Request $request)
     {
+
         try {
             $message = ChatMessage::create($request->all());
 
@@ -57,6 +61,9 @@ class ChatMessageController extends Controller
      */
     public function show($id)
     {
+
+        if(Auth::user()->chats->contains($id))
+        {
         try {
             $messages = ChatMessage::where('chat_id',$id)->with('creator')->get();
 
@@ -66,6 +73,10 @@ class ChatMessageController extends Controller
             return response()->json(['error' => $e->getMessage()], 500);
         }
         return $messages;
+    }
+    else{
+        return response()->json(['error' => "Ошибка доступа"], 403);
+    }
     }
 
     /**

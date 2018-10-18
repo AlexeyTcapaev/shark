@@ -136,6 +136,9 @@ export default {
             init.newMessage = "";
           });
     },
+    SetMessages(data) {
+      this.Messages = data;
+    },
     toggleChat() {
       this.$emit("toggleChat");
     }
@@ -152,15 +155,22 @@ export default {
 
   beforeCreate() {
     const init = this;
-    axios.get("/api/auth/messages/" + init.$route.params.chatid).then(resp => {
-      init.Messages = resp.data;
-    });
+    axios
+      .get("/api/auth/messages/" + this.$route.params.chatid)
+      .then(resp => {
+        init.Messages = resp.data;
+      })
+      .catch(error => {
+        init.$router.push("/app/communication");
+      });
   },
   mounted() {
     window.Echo.private("chat." + this.$route.params.chatid).listen(
       "Message",
       ({ message }) => {
-        console.log(message);
+        var audio = new Audio("/storage/audio/message.mp3");
+        new Notification({ title: message.text });
+        audio.play();
         this.Messages.push(message);
       }
     );

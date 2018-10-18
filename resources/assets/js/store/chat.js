@@ -19,11 +19,17 @@ export default {
         SetChats(state, input_data) {
             state.chats = input_data
         },
+        AddChat(state, input_data) {
+            state.chats.push(input_data)
+        }
 
     },
     actions: {
         SetChats(state, input_data) {
             state.commit('SetChats', input_data)
+        },
+        AddChat(state, input_data) {
+            state.commit('AddChat', input_data)
         },
 
     },
