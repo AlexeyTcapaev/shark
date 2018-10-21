@@ -75,7 +75,6 @@ export default {
           init.alert.message = "Диалог успешно создан.";
           init.alert.enable = true;
           init.AddChat(resp.data);
-          init.$forceUpdate();
         })
         .catch(error => {
           init.alert.message = "Ошибка при создании диалога.";

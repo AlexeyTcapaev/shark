@@ -1,6 +1,6 @@
 {
     "appKey": "base64:7o0MbOmAeEwSoayL/Xa35HWhzzBj6rD+Uz/PU7rJBVY=",
-    "authHost": "http://10.78.5.153",
+    "authHost": "http://shark",
 	"authEndpoint": "/broadcasting/auth",
 	"clients": [],
 	"database": "redis",
