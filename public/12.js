@@ -242,7 +242,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         init.alert.message = "Диалог успешно создан.";
         init.alert.enable = true;
         init.AddChat(resp.data);
-        init.$forceUpdate();
       }).catch(function (error) {
         init.alert.message = "Ошибка при создании диалога.";
         init.alert.enable = true;

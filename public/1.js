@@ -648,6 +648,16 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -918,57 +928,13 @@ var render = function() {
                       [
                         _c(
                           "v-list-tile-action",
-                          [_c("v-icon", [_vm._v("work")])],
+                          [_c("v-icon", [_vm._v("settings")])],
                           1
                         ),
                         _vm._v(" "),
                         _c(
                           "v-list-tile-content",
-                          [_c("v-list-tile-title", [_vm._v("Поручения")])],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c("v-list-tile-action")
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "v-list-tile",
-                      [
-                        _c(
-                          "v-list-tile-action",
-                          [_c("v-icon", [_vm._v("timelapse")])],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "v-list-tile-content",
-                          [_c("v-list-tile-title", [_vm._v("Трудозатраты")])],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c("v-list-tile-action")
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "v-list-tile",
-                      [
-                        _c(
-                          "v-list-tile-action",
-                          [_c("v-icon", [_vm._v("timeline")])],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "v-list-tile-content",
-                          [
-                            _c("v-list-tile-title", [
-                              _vm._v("Поэтапная деятельность")
-                            ])
-                          ],
+                          [_c("v-list-tile-title", [_vm._v("Настройки")])],
                           1
                         ),
                         _vm._v(" "),

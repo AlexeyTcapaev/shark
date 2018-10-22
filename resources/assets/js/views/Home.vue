@@ -65,6 +65,16 @@
                             </v-list-tile>
                             <v-list-tile >
                                 <v-list-tile-action>
+                                    <v-icon>settings</v-icon>
+                                </v-list-tile-action>
+                                <v-list-tile-content>
+                                    <v-list-tile-title>Настройки</v-list-tile-title>
+                                </v-list-tile-content>
+                                <v-list-tile-action>
+                                </v-list-tile-action>
+                            </v-list-tile>
+                            <!--<v-list-tile >
+                                <v-list-tile-action>
                                     <v-icon>work</v-icon>
                                 </v-list-tile-action>
                                 <v-list-tile-content>
@@ -92,7 +102,7 @@
                                 </v-list-tile-content>
                                 <v-list-tile-action>
                                 </v-list-tile-action>
-                            </v-list-tile>
+                            </v-list-tile>-->
                         </v-list-group>
                         <v-divider dark></v-divider>
                         <v-list-tile :to="{name:'add_company'}" exact-active-class="target-link">

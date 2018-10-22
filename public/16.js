@@ -87,7 +87,7 @@ exports = module.exports = __webpack_require__(35)(false);
 
 
 // module
-exports.push([module.i, "\n.creator[data-v-0f91c9e4] {\r\n  margin-bottom: 15px;\n}\ndiv[data-v-0f91c9e4] {\r\n  text-align: left;\n}\n.department-header[data-v-0f91c9e4] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  overflow: hidden;\n}\n.department-header i[data-v-0f91c9e4] {\r\n  margin-right: 5px;\n}\n.department-header p[data-v-0f91c9e4] {\r\n  font-weight: bold;\r\n  padding: 0 10px;\r\n  margin: 0;\n}\n.department-header .v-divider--vertical[data-v-0f91c9e4] {\r\n  height: 50px;\n}\n.v-expansion-panel__body .v-card[data-v-0f91c9e4] {\r\n  border-top: 1px solid rgba(0, 0, 0, 0.12);\n}\n.v-expansion-panel__container[data-v-0f91c9e4] {\r\n  border-left: 1px solid rgba(0, 0, 0, 0.12);\r\n  border-right: 1px solid rgba(0, 0, 0, 0.12);\n}\n.flex li[data-v-0f91c9e4]:last-of-type {\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n}\r\n", ""]);
+exports.push([module.i, "\nbutton.v-btn--flat[data-v-0f91c9e4] {\r\n  margin: 6px 0;\n}\n.v-input__slot[data-v-0f91c9e4] {\r\n  margin: 0 0 0 15px;\n}\n.creator[data-v-0f91c9e4] {\r\n  margin-bottom: 15px;\n}\ndiv[data-v-0f91c9e4] {\r\n  text-align: left;\n}\n.department-header[data-v-0f91c9e4] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  overflow: hidden;\n}\n.department-header i[data-v-0f91c9e4] {\r\n  margin-right: 5px;\n}\n.department-header p[data-v-0f91c9e4] {\r\n  font-weight: bold;\r\n  padding: 0 10px;\r\n  margin: 0;\n}\n.department-header .v-divider--vertical[data-v-0f91c9e4] {\r\n  height: 50px;\n}\n.v-expansion-panel__body .v-card[data-v-0f91c9e4] {\r\n  border-top: 1px solid rgba(0, 0, 0, 0.12);\n}\n.v-expansion-panel__container[data-v-0f91c9e4] {\r\n  border-left: 1px solid rgba(0, 0, 0, 0.12);\r\n  border-right: 1px solid rgba(0, 0, 0, 0.12);\n}\n.flex li[data-v-0f91c9e4]:last-of-type {\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n}\r\n", ""]);
 
 // exports
 
@@ -112,11 +112,62 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 var RecursivePalet = function RecursivePalet() {
   return new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 125));
 };
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      dialog: false
+    };
+  },
   components: {
     RecursivePalet: RecursivePalet
   },
@@ -126,9 +177,7 @@ var RecursivePalet = function RecursivePalet() {
       default: {}
     }
   },
-  data: function data() {
-    return {};
-  },
+
   methods: {
     AddDepartment: function AddDepartment() {
       var init = this;
@@ -162,6 +211,7 @@ var render = function() {
             _c("v-icon", [_vm._v("group")]),
             _vm._v("123 "),
             _c("v-divider", { staticClass: "mx-3", attrs: { vertical: "" } }),
+            _vm._v(" "),
             _c("p", [_vm._v(_vm._s(_vm.item.name))])
           ],
           1
@@ -217,7 +267,149 @@ var render = function() {
                           attrs: { item: item }
                         })
                       : _vm._e()
-                  })
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "v-layout",
+                    {
+                      attrs: {
+                        "align-center": "",
+                        "justify-center": "",
+                        row: "",
+                        "fill-height": "",
+                        wrap: ""
+                      }
+                    },
+                    [
+                      _c(
+                        "v-flex",
+                        { attrs: { xl2: "", md12: "", sm12: "", xs12: "" } },
+                        [_c("h2", [_vm._v("Сотрудники отдела")])]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { attrs: { xl10: "", md12: "", sm12: "", xs12: "" } },
+                        [
+                          _c("v-text-field", {
+                            staticClass: "message-input",
+                            attrs: {
+                              outline: "",
+                              label: "Поиск по сотрудникам",
+                              "append-icon": "search"
+                            },
+                            on: {
+                              "click:append": _vm.AddDepartment,
+                              keyup: function($event) {
+                                if (
+                                  !("button" in $event) &&
+                                  _vm._k(
+                                    $event.keyCode,
+                                    "enter",
+                                    13,
+                                    $event.key,
+                                    "Enter"
+                                  )
+                                ) {
+                                  return null
+                                }
+                                return _vm.AddDepartment($event)
+                              }
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-layout",
+                    [
+                      _c(
+                        "v-dialog",
+                        {
+                          attrs: { width: "500" },
+                          model: {
+                            value: _vm.dialog,
+                            callback: function($$v) {
+                              _vm.dialog = $$v
+                            },
+                            expression: "dialog"
+                          }
+                        },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { slot: "activator", flat: "" },
+                              slot: "activator"
+                            },
+                            [
+                              _c("v-icon", [_vm._v("add_circle_outline")]),
+                              _vm._v("Добавить\n                      ")
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-card",
+                            [
+                              _c(
+                                "v-card-title",
+                                {
+                                  staticClass: "headline grey lighten-2",
+                                  attrs: { "primary-title": "" }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                Privacy Policy\n                            "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("v-card-text", [
+                                _vm._v(
+                                  "\n                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud\n                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute\n                                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\n                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia\n                                deserunt mollit anim id est laborum.\n                            "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("v-divider"),
+                              _vm._v(" "),
+                              _c(
+                                "v-card-actions",
+                                [
+                                  _c("v-spacer"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      attrs: { color: "primary", flat: "" },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.dialog = false
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                                    I accept\n                                "
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
                 ],
                 2
               )
