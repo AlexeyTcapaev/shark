@@ -33,7 +33,7 @@ class AuthController extends Controller
             'email_token' => base64_encode($request->email)
         ]);
         $user->save();
-        dispatch(new SendVerificationEmail($user));
+       // dispatch(new SendVerificationEmail($user));
         return response()->json([
             'message' => 'Пользователь успешно зарегестрирован'
         ], 201);
@@ -51,27 +51,15 @@ class AuthController extends Controller
             }
         }
     }
-    public function verify_from_site(Request $request)
+    public function checkEmail(Request $request)
     {
         try {
-            $user = User::findOrFail($request->id);
-            if (empty($user))
-                throw new Exception('Ошибка при подтверждении почты');
-            else {
-                if ($user->email_token != null) {
-                    $user->verified = 1;
-                    $user->email_token = null;
-                    if ($user->save()) {
-                        return response()->json([
-                            'message' => 'Почта успешно подтверждена'
-                        ], 201);
-                    }
-                }
-            }
+            $request->validate([
+                'email' => 'required|string|email|unique:users'
+            ]);
         } catch (Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
-
     }
     /**
      * Login user and create token

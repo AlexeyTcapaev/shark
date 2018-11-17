@@ -306,6 +306,9 @@ export default {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
+.v-menu{
+    display: flex;
+}
 .v-navigation-drawer {
   z-index: 6;
 }

@@ -51,6 +51,8 @@ const Home = () =>
     import('./views/Home.vue');
 const Registration = () =>
     import('./views/Registration.vue');
+const NewRegistration = () =>
+    import('./views/NewRegistration.vue');
 const Login = () =>
     import('./views/Login.vue');
 const IndexPage = () =>
@@ -89,6 +91,11 @@ const router = new VueRouter({
             path: "/registration",
             name: "registration",
             component: Registration,
+        },
+        {
+            path: "/registration2",
+            name: "registration2",
+            component: NewRegistration,
         },
         {
             path: "/login",

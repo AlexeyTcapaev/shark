@@ -8,7 +8,9 @@ export default {
     },
     getters: {
         GetUserId(state) {
-            return state.user.id;
+            if (state.user)
+                return state.user.id;
+            else return null
         },
         GetUser(state) {
             return state.user;

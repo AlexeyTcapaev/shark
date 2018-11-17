@@ -4,11 +4,11 @@ webpackJsonp([11],{
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(122)
+var normalizeComponent = __webpack_require__(123)
 /* script */
-var __vue_script__ = __webpack_require__(136)
+var __vue_script__ = __webpack_require__(137)
 /* template */
-var __vue_template__ = __webpack_require__(137)
+var __vue_template__ = __webpack_require__(138)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -25,7 +25,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/Login.vue"
+Component.options.__file = "resources/assets/js/views/NewRegistration.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -34,9 +34,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-33212926", Component.options)
+    hotAPI.createRecord("data-v-1a481df6", Component.options)
   } else {
-    hotAPI.reload("data-v-33212926", Component.options)
+    hotAPI.reload("data-v-1a481df6", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -48,7 +48,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 122:
+/***/ 123:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -158,7 +158,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 136:
+/***/ 137:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -193,65 +193,154 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      remember_me: false,
+      user: {},
+      step: 1,
+      valid1: false,
+      valid2: false,
+      passwordValid: false,
       login: "",
-      password: "",
-      alert: {
-        enable: false
-      },
-      loading: false,
       show1: false,
+      show2: false,
+      password: "",
+      loading: false,
+      err: [],
+      alert: {
+        enable: false,
+        message: ""
+      },
+      type: "success",
+      confrim_password: "",
+      loginRules: [function (v) {
+        return !!v || "Name is required";
+      }, function (v) {
+        return v && v.length <= 15 || "Name must be less than 15 characters";
+      }],
+      email: "",
+      emailRules: [function (v) {
+        return !!v || "E-mail is required";
+      }, function (v) {
+        return (/.+@.+/.test(v) || "E-mail must be valid"
+        );
+      }],
       passwordRules: [function (v) {
         return !!v || "Password is required";
       }]
     };
   },
   methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({ SetToken: "user/SetToken" }), {
-    submit: function submit() {
-      var init = this;
+    BackWindow: function BackWindow() {
+      this.step--;
+      this.valid = true;
+    },
+    NextWindow: function NextWindow() {
+      var _this = this;
+
       this.loading = true;
-      if (this.login.indexOf("@") > -1) axios.post("/api/auth/login", {
-        email: init.login,
-        password: init.password,
-        remember_me: true
-      }).then(function (resp) {
-        init.SetToken(resp.data);
-        init.loading = false;
-        init.$router.push("/app");
-      }).catch(function (error) {
-        init.loading = false;
-        init.alert.message = error.response.data.message;
-        init.alert.enable = true;
-      });else axios.post("/api/auth/login", {
-        name: init.login,
-        password: init.password,
-        remember_me: true
-      }).then(function (resp) {
-        init.SetToken(resp.data);
-        init.$router.push("/app");
-      });
+      this.alert = {};
+      if (this.step == 1) {
+        axios.post("/api/auth/email", { email: this.user.email }).then(function (resp) {
+          _this.step++;
+          _this.loading = false;
+        }).catch(function (error) {
+          _this.alert.message = error.response.data.error;
+          _this.alert.enable = true;
+          _this.loading = false;
+        });
+      } else if (this.step == 2) {
+        axios.post("/api/auth/signup", this.user).then(function (resp) {
+          axios.post("/api/auth/login", {
+            email: _this.user.email,
+            password: _this.user.password,
+            remember_me: true
+          }).then(function (resp) {
+            _this.loading = false;
+            _this.SetToken(resp.data);
+            _this.step++;
+            setTimeout(function () {
+              _this.$router.push("/app");
+            }, 5000);
+          });
+        }).catch(function (error) {
+          Object.keys(error.response.data.errors).forEach(function (element) {
+            error.response.data.errors[element].forEach(function (err) {
+              var e = {};
+              e.message = err;
+              e.alert = true;
+              _this.loading = false;
+              init.err.push(e);
+            });
+          });
+          console.log(error.response.data.errors);
+        });
+      }
+      this.valid = false;
+      this.loading = false;
     }
   }),
+
   computed: {
-    valid: function valid() {
-      if (this.password !== "" && this.login !== "") return true;else return false;
-    }
-  },
-  beforeCreate: function beforeCreate() {
-    if (this.$store.state.user.token) {
-      if (Object.keys(this.$store.state.user.token).length > 0) this.$router.push("/app");
+    currentTitle: function currentTitle() {
+      switch (this.step) {
+        case 1:
+          return "E-mail";
+        case 2:
+          return "Логин и пароль";
+        default:
+          return "Учётная запись создана";
+      }
+    },
+    checkValid: function checkValid() {
+      if (this.step === 3) return true;
+      if (this.step == 1) if (this.valid1 == false) return true;
+      if (this.step == 2) if (this.valid2 == false) return true;
+      return false;
     }
   }
 });
 
 /***/ }),
 
-/***/ 137:
+/***/ 138:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -278,7 +367,7 @@ var render = function() {
                     "v-toolbar",
                     { attrs: { dark: "", color: "primary" } },
                     [
-                      _c("v-toolbar-title", [_vm._v("Вход")]),
+                      _c("v-toolbar-title", [_vm._v("Регистрация")]),
                       _vm._v(" "),
                       _c("v-spacer")
                     ],
@@ -286,116 +375,308 @@ var render = function() {
                   ),
                   _vm._v(" "),
                   _c(
-                    "v-card-text",
+                    "v-card-title",
+                    {
+                      staticClass:
+                        "title font-weight-regular justify-space-between"
+                    },
                     [
-                      _c(
-                        "v-alert",
-                        {
-                          attrs: { type: "error", dismissible: "" },
-                          model: {
-                            value: _vm.alert.enable,
-                            callback: function($$v) {
-                              _vm.$set(_vm.alert, "enable", $$v)
-                            },
-                            expression: "alert.enable"
-                          }
-                        },
-                        [_vm._v(_vm._s(_vm.alert.message))]
-                      ),
+                      _c("span", [_vm._v(_vm._s(_vm.currentTitle))]),
                       _vm._v(" "),
-                      _c(
-                        "v-form",
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              outline: "",
-                              label: "Login or E-mail",
-                              "append-icon": "person",
-                              loading: _vm.loading
-                            },
-                            model: {
-                              value: _vm.login,
-                              callback: function($$v) {
-                                _vm.login = $$v
-                              },
-                              expression: "login"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("v-text-field", {
-                            attrs: {
-                              loading: _vm.loading,
-                              outline: "",
-                              label: "Password",
-                              "append-icon": _vm.show1
-                                ? "visibility_off"
-                                : "visibility",
-                              type: _vm.show1 ? "text" : "password",
-                              required: "",
-                              rules: _vm.passwordRules
-                            },
-                            on: {
-                              "click:append": function($event) {
-                                _vm.show1 = !_vm.show1
-                              }
-                            },
-                            model: {
-                              value: _vm.password,
-                              callback: function($$v) {
-                                _vm.password = $$v
-                              },
-                              expression: "password"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("v-switch", {
-                            attrs: {
-                              color: "primary",
-                              label: "Запомнить меня"
-                            },
-                            model: {
-                              value: _vm.remember_me,
-                              callback: function($$v) {
-                                _vm.remember_me = $$v
-                              },
-                              expression: "remember_me"
-                            }
-                          })
-                        ],
-                        1
-                      )
+                      _c("v-avatar", {
+                        staticClass: "subheading secondary white--text",
+                        attrs: { color: "primary lighten-2", size: "24" },
+                        domProps: { textContent: _vm._s(_vm.step) }
+                      })
                     ],
                     1
                   ),
                   _vm._v(" "),
                   _c(
+                    "v-window",
+                    {
+                      model: {
+                        value: _vm.step,
+                        callback: function($$v) {
+                          _vm.step = $$v
+                        },
+                        expression: "step"
+                      }
+                    },
+                    [
+                      _c(
+                        "v-window-item",
+                        { attrs: { value: 1 } },
+                        [
+                          _c(
+                            "v-card-text",
+                            [
+                              _c(
+                                "v-alert",
+                                {
+                                  attrs: { type: "error", dismissible: "" },
+                                  model: {
+                                    value: _vm.alert.enable,
+                                    callback: function($$v) {
+                                      _vm.$set(_vm.alert, "enable", $$v)
+                                    },
+                                    expression: "alert.enable"
+                                  }
+                                },
+                                [_vm._v(_vm._s(_vm.alert.message))]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-form",
+                                {
+                                  ref: "form",
+                                  model: {
+                                    value: _vm.valid1,
+                                    callback: function($$v) {
+                                      _vm.valid1 = $$v
+                                    },
+                                    expression: "valid1"
+                                  }
+                                },
+                                [
+                                  _c("v-text-field", {
+                                    attrs: {
+                                      outline: "",
+                                      label: "E-mail",
+                                      "append-icon": "mail",
+                                      required: "",
+                                      rules: _vm.emailRules
+                                    },
+                                    model: {
+                                      value: _vm.user.email,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.user, "email", $$v)
+                                      },
+                                      expression: "user.email"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "span",
+                                    {
+                                      staticClass:
+                                        "caption grey--text text--darken-1"
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                                    Указанный почтовый адрес будет использован для создания учётной записи\n                                "
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-window-item",
+                        { attrs: { value: 2 } },
+                        [
+                          _c(
+                            "v-card-text",
+                            [
+                              _c(
+                                "v-alert",
+                                {
+                                  attrs: { type: "error", dismissible: "" },
+                                  model: {
+                                    value: _vm.alert.enable,
+                                    callback: function($$v) {
+                                      _vm.$set(_vm.alert, "enable", $$v)
+                                    },
+                                    expression: "alert.enable"
+                                  }
+                                },
+                                [_vm._v(_vm._s(_vm.alert.message))]
+                              ),
+                              _vm._v(" "),
+                              _vm._l(_vm.err, function(error, index) {
+                                return _c(
+                                  "v-alert",
+                                  {
+                                    key: index,
+                                    attrs: { type: "error", dismissible: "" },
+                                    model: {
+                                      value: error.alert,
+                                      callback: function($$v) {
+                                        _vm.$set(error, "alert", $$v)
+                                      },
+                                      expression: "error.alert"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(error.message))]
+                                )
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "v-form",
+                                {
+                                  ref: "form",
+                                  model: {
+                                    value: _vm.valid2,
+                                    callback: function($$v) {
+                                      _vm.valid2 = $$v
+                                    },
+                                    expression: "valid2"
+                                  }
+                                },
+                                [
+                                  _c("v-text-field", {
+                                    attrs: {
+                                      outline: "",
+                                      label: "Login",
+                                      "append-icon": "person",
+                                      required: "",
+                                      rules: _vm.loginRules
+                                    },
+                                    model: {
+                                      value: _vm.user.name,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.user, "name", $$v)
+                                      },
+                                      expression: "user.name"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c("v-text-field", {
+                                    attrs: {
+                                      outline: "",
+                                      label: "Password",
+                                      "append-icon": _vm.show1
+                                        ? "visibility_off"
+                                        : "visibility",
+                                      type: _vm.show1 ? "text" : "password",
+                                      required: "",
+                                      rules: _vm.passwordRules
+                                    },
+                                    on: {
+                                      "click:append": function($event) {
+                                        _vm.show1 = !_vm.show1
+                                      }
+                                    },
+                                    model: {
+                                      value: _vm.user.password,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.user, "password", $$v)
+                                      },
+                                      expression: "user.password"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c("v-text-field", {
+                                    attrs: {
+                                      outline: "",
+                                      label: "Confrim",
+                                      "append-icon": _vm.show2
+                                        ? "visibility_off"
+                                        : "visibility",
+                                      type: _vm.show2 ? "text" : "password",
+                                      required: "",
+                                      rules: _vm.passwordRules
+                                    },
+                                    on: {
+                                      "click:append": function($event) {
+                                        _vm.show2 = !_vm.show2
+                                      }
+                                    },
+                                    model: {
+                                      value: _vm.user.password_confirmation,
+                                      callback: function($$v) {
+                                        _vm.$set(
+                                          _vm.user,
+                                          "password_confirmation",
+                                          $$v
+                                        )
+                                      },
+                                      expression: "user.password_confirmation"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "span",
+                                    {
+                                      staticClass:
+                                        "caption grey--text text--darken-1"
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                                    Введите логин и пароль для вашего аккаунта\n                                "
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            2
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("v-window-item", { attrs: { value: 3 } }, [
+                        _c("div", { staticClass: "pa-3 text-xs-center" }, [
+                          _c(
+                            "h3",
+                            { staticClass: "title font-weight-light mb-2" },
+                            [_vm._v("Добро пожаловать!")]
+                          ),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "caption grey--text" }, [
+                            _vm._v("Спасибо за регистрацию!")
+                          ])
+                        ])
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-divider"),
+                  _vm._v(" "),
+                  _c(
                     "v-card-actions",
                     [
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { disabled: _vm.step === 1, flat: "" },
+                          on: { click: _vm.BackWindow }
+                        },
+                        [
+                          _vm._v(
+                            "\n                        Назад\n                    "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
                       _c("v-spacer"),
                       _vm._v(" "),
                       _c(
                         "v-btn",
                         {
                           attrs: {
-                            flat: "",
+                            disabled: _vm.checkValid,
                             color: "primary",
-                            to: "/registration"
-                          }
-                        },
-                        [_vm._v("Регистрация")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: {
-                            disabled: !_vm.valid,
-                            color: "primary",
+                            depressed: "",
                             loading: _vm.loading
                           },
-                          on: { click: _vm.submit }
+                          on: { click: _vm.NextWindow }
                         },
-                        [_vm._v("Отправить")]
+                        [
+                          _vm._v(
+                            "\n                        Далее\n                    "
+                          )
+                        ]
                       )
                     ],
                     1
@@ -419,7 +700,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-33212926", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-1a481df6", module.exports)
   }
 }
 
