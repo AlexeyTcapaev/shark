@@ -90,11 +90,6 @@ const router = new VueRouter({
         {
             path: "/registration",
             name: "registration",
-            component: Registration,
-        },
-        {
-            path: "/registration2",
-            name: "registration2",
             component: NewRegistration,
         },
         {

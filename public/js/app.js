@@ -29600,10 +29600,6 @@ var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
     }, {
         path: "/registration",
         name: "registration",
-        component: Registration
-    }, {
-        path: "/registration2",
-        name: "registration2",
         component: NewRegistration
     }, {
         path: "/login",
