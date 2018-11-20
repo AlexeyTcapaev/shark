@@ -2,7 +2,7 @@
     <v-container>
         <v-layout justify-center align-center>
             <v-flex xl6 lg6 md6 sm12 xs12>
-                <v-card>
+                <v-card class="margin-card">
                    <v-avatar
                     :tile="tile"
                     :size="avatarSize"
@@ -22,7 +22,7 @@
                             </div>
                             <div class="verified-mail" v-else>
                                 <v-icon color="error">error</v-icon>
-                                <p>Ваш почтовый адрес не подтверждён</p>                          
+                                <p>Ваш почтовый адрес не подтверждён</p>
                             </div>
                         </v-flex>
                     </v-card-title>
@@ -110,6 +110,9 @@ export default {
 };
 </script>
 <style scoped>
+.margin-card{
+    margin: 128px 0 0 0;
+}
 .verified-mail p {
   margin: 0;
 }
@@ -152,9 +155,7 @@ export default {
 .v-card__title {
   padding-top: 148px !important;
 }
-.v-card {
-  margin: 128px 0 0 0;
-}
+
 .v-card .v-avatar {
   cursor: pointer;
 }

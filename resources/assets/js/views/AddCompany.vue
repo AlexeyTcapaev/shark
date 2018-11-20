@@ -2,7 +2,7 @@
     <v-container>
         <v-layout justify-center align-center>
             <v-flex xl6 lg6 md6 sm12 xs12>
-                <v-card>
+                <v-card class="margin-card">
                    <v-avatar
                     :tile="tile"
                     :size="avatarSize"
@@ -274,12 +274,13 @@ export default {
   z-index: 4;
   opacity: 0;
 }
+.margin-card {
+  margin: 128px 0 0 0;
+}
 .v-card__title {
   padding-top: 148px !important;
 }
-.v-card {
-  margin: 128px 0 0 0;
-}
+
 .v-card .v-avatar {
   cursor: pointer;
 }
