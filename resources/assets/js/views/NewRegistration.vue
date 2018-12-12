@@ -47,7 +47,10 @@
                 </v-window>
                 <v-divider></v-divider>
                 <v-card-actions>
-                    <v-btn :disabled="step === 1" flat @click="BackWindow">
+                     <v-btn :to="{name:'login'}" flat color="primary">
+                        Вход
+                    </v-btn>
+                    <v-btn :disabled="step === 1" flat @click="BackWindow" color="primary">
                         Назад
                     </v-btn>
                     <v-spacer></v-spacer>
