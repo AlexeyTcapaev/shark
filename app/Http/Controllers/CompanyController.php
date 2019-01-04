@@ -9,8 +9,14 @@ use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use App\Activity;
 use App\CompanyType;
+use Illuminate\Support\Facades\Auth;
+
 class CompanyController extends Controller
 {
+    public function users($slug)
+    {
+        return Company::where('slug', $slug)->with('users')->first()->users;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -31,7 +37,10 @@ class CompanyController extends Controller
     {
         //
     }
-
+    public function attachUser(Request $request, $slug)
+    {
+        Company::where('slug', $slug)->first()->users()->attach($request->id);
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -42,6 +51,7 @@ class CompanyController extends Controller
     {
         try {
             $Company = Company::add($request);
+            $Company->users()->attach(Auth::user()->id);
             $Company->uploadImage($request->file('logo'));
             foreach (json_decode($request->activities) as $activity) {
                 $search = Activity::where('name', $activity->name)->first();

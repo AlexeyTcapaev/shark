@@ -76,6 +76,9 @@ const Chat = () =>
     import('./views/Chat.vue');
 const ChatStartPage = () =>
     import('./views/ChatStartPage.vue');
+const EmployeesPage = () =>
+    import('./views/pages/company/employees/EmployeesPage.vue');
+
 const AddChat = () =>
     import('./views/AddChat.vue');
 
@@ -128,6 +131,10 @@ const router = new VueRouter({
                     path: 'company/:slug/structure',
                     name: "company-structure",
                     component: CompanyStructure,
+                }, {
+                    path: 'company/:slug/employees',
+                    name: "company-employees",
+                    component: EmployeesPage,
                 },
                 {
                     path: 'verifyemail/:token',

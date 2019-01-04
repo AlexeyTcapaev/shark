@@ -7,6 +7,7 @@ use App\User;
 
 class UserController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -51,7 +52,10 @@ class UserController extends Controller
     {
         return User::where('id', '!=', $id)->get();
     }
-
+    public function search(Request $request)
+    {
+        return User::where('name', 'like', $request->search)->get();
+    }
     /**
      * Show the form for editing the specified resource.
      *

@@ -24,7 +24,7 @@
                     <v-layout>
                         <v-dialog v-model="dialog" width="500">
                           <v-btn flat slot="activator">
-                              <v-icon>add_circle_outline</v-icon>Добавить
+                            Добавить
                           </v-btn>
 
                             <v-card>

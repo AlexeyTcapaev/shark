@@ -43,7 +43,7 @@
                                 <v-list-tile-action>
                                 </v-list-tile-action>
                             </v-list-tile>
-                            <v-list-tile >
+                            <v-list-tile active-class="secondary--text target-link" :to="{name:'company-employees',params:{slug:comp.slug}}">
                                 <v-list-tile-action>
                                     <v-icon>group</v-icon>
                                 </v-list-tile-action>

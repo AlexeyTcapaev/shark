@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model
 {
-    protected $fillable = ['name', 'creator_id', 'website','company_type_id'];
+    protected $fillable = ['name', 'creator_id', 'website', 'company_type_id'];
     public $load_map = [
         'activities',
         'company_type'
@@ -29,7 +29,11 @@ class Company extends Model
     }
     public function company_type()
     {
-        return $this->belongsTo(CompanyType::class,'company_type_id','id');
+        return $this->belongsTo(CompanyType::class, 'company_type_id', 'id');
+    }
+    public function users()
+    {
+        return $this->belongsToMany(User::class)->withTimestamps();
     }
     public function uploadImage($image)
     {
@@ -53,7 +57,7 @@ class Company extends Model
         $company = Company::create($fields->all());
         Department::create([
             'name' => $company->name,
-          
+
         ]);
         $company->load($company->load_map);
         return $company;

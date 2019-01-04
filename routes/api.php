@@ -28,7 +28,10 @@ Route::group([
         Route::post('verify', 'AuthController@verify');
         Route::get('logout', 'AuthController@logout');
         Route::get('user', 'AuthController@user');
+        Route::get('search/users', 'UserController@search');
         Route::get('users/{id}', 'UserController@chat_room');
+        Route::get('{slug}/users', 'CompanyController@users');
+        Route::post('{slug}/users/attach', 'CompanyController@attachUser');
         Route::apiResource('company', 'CompanyController');
         Route::apiResource('chats', 'ChatController');
         Route::post('chats/guard', 'ChatController@navigationGuardForChat');
