@@ -36,6 +36,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Company::class)->withTimestamps();
     }
+    public function departments()
+    {
+        return $this->belongsToMany(Department::class)->withTimestamps();
+    }
     public function uploadImage($image)
     {
         if ($image == null) {

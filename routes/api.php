@@ -32,11 +32,15 @@ Route::group([
         Route::get('users/{id}', 'UserController@chat_room');
         Route::get('{slug}/users', 'CompanyController@users');
         Route::post('{slug}/users/attach', 'CompanyController@attachUser');
+        Route::post('{slug}/users/detach', 'CompanyController@detachUser');
+        Route::post('/department/{slug}/users/attach', 'DepartmentController@attachUser');
+        Route::post('/department/{slug}/users/detach', 'DepartmentController@detachUser');
         Route::apiResource('company', 'CompanyController');
         Route::apiResource('chats', 'ChatController');
         Route::post('chats/guard', 'ChatController@navigationGuardForChat');
         Route::get('chats/room/{id}', 'ChatController@chat_room');
         Route::apiResource('messages', 'ChatMessageController');
+        Route::apiResource('users', 'UserController');
         Route::apiResource('departments', 'DepartmentController');
         Route::apiResource('activities', 'ActivityController');
         Route::apiResource('company_types', 'CompanyTypeController');

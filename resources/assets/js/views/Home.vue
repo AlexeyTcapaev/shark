@@ -1,184 +1,210 @@
 <template>
-    <main class="fullheight">
-        <v-navigation-drawer fixed v-model="drawer" app>
-            <v-list dense >
-                        <v-list-tile  to="/app" exact-active-class="target-link" active-class="active-link">
-                            <v-list-tile-action>
-                                <v-icon>home</v-icon>
-                            </v-list-tile-action>
-                            <v-list-tile-content>
-                                <v-list-tile-title>Домашняя страница</v-list-tile-title>
-                            </v-list-tile-content>
-                        </v-list-tile>
-                        <v-divider dark></v-divider>
-                        <v-subheader>Мои компании</v-subheader>
-                        <v-list-tile class="search-bar">
-                            <v-list-tile-content>
-                                <v-text-field outline label="Поиск по компаниям" append-icon="search" v-model="search"></v-text-field>
-                            </v-list-tile-content>
-                        </v-list-tile>
-                        <v-list-group avatar v-for="(comp,index) in FiltredCompany"
-                            :key="index">
-                            <v-list-tile slot="activator">
-                                <v-list-tile-avatar v-if="comp.logo">
-                                    <img :src="'/storage/uploads/'+comp.logo" :alt="comp.name">
-                                </v-list-tile-avatar>
-                                <v-list-tile-content>
-                                    <v-list-tile-title>{{comp.company_type.name}} {{comp.name}}</v-list-tile-title>
-                                    <v-list-tile-sub-title>Владелец</v-list-tile-sub-title>
-                                </v-list-tile-content>
-                                <v-list-tile-action>
-                                    <v-badge color="secondary">
-                                        <span slot="badge">6</span>
-                                    </v-badge>
-                                </v-list-tile-action>
-                            </v-list-tile>
-                            <v-list-tile active-class="secondary--text target-link" :to="{name:'company-structure',params:{slug:comp.slug}}">
-                                <v-list-tile-action>
-                                    <v-icon>view_module</v-icon>
-                                </v-list-tile-action>
-                                <v-list-tile-content>
-                                    <v-list-tile-title>Структура</v-list-tile-title>
-                                </v-list-tile-content>
-                                <v-list-tile-action>
-                                </v-list-tile-action>
-                            </v-list-tile>
-                            <v-list-tile active-class="secondary--text target-link" :to="{name:'company-employees',params:{slug:comp.slug}}">
-                                <v-list-tile-action>
-                                    <v-icon>group</v-icon>
-                                </v-list-tile-action>
-                                <v-list-tile-content>
-                                    <v-list-tile-title>Сотрудники</v-list-tile-title>
-                                </v-list-tile-content>
-                                <v-list-tile-action>
-                                </v-list-tile-action>
-                            </v-list-tile>
-                            <v-list-tile >
-                                <v-list-tile-action>
-                                    <v-icon>book</v-icon>
-                                </v-list-tile-action>
-                                <v-list-tile-content>
-                                    <v-list-tile-title>Справочник</v-list-tile-title>
-                                </v-list-tile-content>
-                                <v-list-tile-action>
-                                </v-list-tile-action>
-                            </v-list-tile>
-                            <v-list-tile >
-                                <v-list-tile-action>
-                                    <v-icon>settings</v-icon>
-                                </v-list-tile-action>
-                                <v-list-tile-content>
-                                    <v-list-tile-title>Настройки</v-list-tile-title>
-                                </v-list-tile-content>
-                                <v-list-tile-action>
-                                </v-list-tile-action>
-                            </v-list-tile>
-                            <!--<v-list-tile >
-                                <v-list-tile-action>
-                                    <v-icon>work</v-icon>
-                                </v-list-tile-action>
-                                <v-list-tile-content>
-                                    <v-list-tile-title>Поручения</v-list-tile-title>
-                                </v-list-tile-content>
-                                <v-list-tile-action>
-                                </v-list-tile-action>
-                            </v-list-tile>
-                            <v-list-tile >
-                                <v-list-tile-action>
-                                    <v-icon>timelapse</v-icon>
-                                </v-list-tile-action>
-                                <v-list-tile-content>
-                                    <v-list-tile-title>Трудозатраты</v-list-tile-title>
-                                </v-list-tile-content>
-                                <v-list-tile-action>
-                                </v-list-tile-action>
-                            </v-list-tile>
-                            <v-list-tile >
-                                <v-list-tile-action>
-                                    <v-icon>timeline</v-icon>
-                                </v-list-tile-action>
-                                <v-list-tile-content>
-                                    <v-list-tile-title>Поэтапная деятельность</v-list-tile-title>
-                                </v-list-tile-content>
-                                <v-list-tile-action>
-                                </v-list-tile-action>
-                            </v-list-tile>-->
-                        </v-list-group>
-                        <v-divider dark></v-divider>
-                        <v-list-tile :to="{name:'add_company'}" exact-active-class="target-link">
-                            <v-list-tile-action>
-                                <v-icon>add_circle_outline</v-icon>
-                            </v-list-tile-action>
-                            <v-list-tile-content>
-                                <v-list-tile-title>Создать компанию</v-list-tile-title>
-                            </v-list-tile-content>
-                        </v-list-tile>
-            </v-list>
-        </v-navigation-drawer>
-        <v-toolbar color="primary" dark fixed app>
-            <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-            <v-list-tile-avatar>
-                <img class="img_logo" src="/storage/logo/temp_shark_logo.png" alt="Бизнес - Акула">
+  <main class="fullheight">
+    <v-navigation-drawer fixed v-model="drawer" app>
+      <v-list dense>
+        <v-list-tile to="/app" exact-active-class="target-link" active-class="active-link">
+          <v-list-tile-action>
+            <v-icon>home</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Домашняя страница</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-divider dark></v-divider>
+        <v-subheader>Мои компании</v-subheader>
+        <v-list-tile class="search-bar">
+          <v-list-tile-content>
+            <v-text-field outline label="Поиск по компаниям" append-icon="search" v-model="search"></v-text-field>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-group avatar v-for="(comp,index) in FiltredCompany" :key="index">
+          <v-list-tile slot="activator">
+            <v-list-tile-avatar v-if="comp.logo">
+              <img :src="'/storage/uploads/'+comp.logo" :alt="comp.name">
             </v-list-tile-avatar>
-            <v-toolbar-title v-if="windowWidth > 993">
-                <router-link to="/home" class="logo">Бизнес - Акула</router-link>
-            </v-toolbar-title>
-            <v-spacer></v-spacer>
-            <v-menu offset-y>
-                <v-btn slot="activator" dark flat class="nav-btn">
-                    <v-avatar>
-                        <v-icon v-if="!user.avatar">account_circle</v-icon>
-                        <img v-else :src="'/storage/uploads/'+user.avatar" :alt="user.name">
-                    </v-avatar>
-                    {{user.name}}
-                </v-btn>
-                <v-list>
-                    <v-list-tile @click="logout" active-class="secondary--text target-link">
-                        <v-list-tile-title><v-icon>exit_to_app</v-icon>Выход</v-list-tile-title>
-                    </v-list-tile>
-                    <v-list-tile :to="{name:'user-settings'}" active-class="secondary--text target-link">
-                        <v-list-tile-title><v-icon>settings</v-icon>Настройки профиля</v-list-tile-title>
-                    </v-list-tile>
-                     <v-list-tile :to="{name:'notifications'}" active-class="secondary--text target-link">
-                        <v-list-tile-title><v-icon>notifications</v-icon>Уведомления</v-list-tile-title>
-                        <v-list-tile-action>
-                            <v-badge color="secondary" class="nav-badge">
-                                <span slot="badge">6</span>
-                            </v-badge>
-                        </v-list-tile-action>
-                    </v-list-tile>
-                </v-list>
-            </v-menu>
+            <v-list-tile-content>
+              <v-list-tile-title>{{comp.company_type.name}} {{comp.name}}</v-list-tile-title>
+              <v-list-tile-sub-title>Владелец</v-list-tile-sub-title>
+            </v-list-tile-content>
+            <v-list-tile-action>
+              <v-badge color="secondary">
+                <span slot="badge">6</span>
+              </v-badge>
+            </v-list-tile-action>
+          </v-list-tile>
+          <v-list-tile
+            active-class="secondary--text target-link"
+            :to="{name:'company-structure',params:{slug:comp.slug}}"
+          >
+            <v-list-tile-action>
+              <v-icon>view_module</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>Структура</v-list-tile-title>
+            </v-list-tile-content>
+            <v-list-tile-action></v-list-tile-action>
+          </v-list-tile>
+          <v-list-tile
+            active-class="secondary--text target-link"
+            :to="{name:'company-employees',params:{slug:comp.slug}}"
+          >
+            <v-list-tile-action>
+              <v-icon>group</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>Сотрудники</v-list-tile-title>
+            </v-list-tile-content>
+            <v-list-tile-action></v-list-tile-action>
+          </v-list-tile>
+          <v-list-tile>
+            <v-list-tile-action>
+              <v-icon>book</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>Справочник</v-list-tile-title>
+            </v-list-tile-content>
+            <v-list-tile-action></v-list-tile-action>
+          </v-list-tile>
+          <v-list-tile
+            active-class="secondary--text target-link"
+            :to="{name:'company-settings',params:{slug:comp.slug}}"
+          >
+            <v-list-tile-action>
+              <v-icon>settings</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>Настройки</v-list-tile-title>
+            </v-list-tile-content>
+            <v-list-tile-action></v-list-tile-action>
+          </v-list-tile>
+          <v-list-tile>
+            <v-list-tile-action>
+              <v-icon>work</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>Поручения</v-list-tile-title>
+            </v-list-tile-content>
+            <v-list-tile-action></v-list-tile-action>
+          </v-list-tile>
+          <v-list-tile
+            active-class="secondary--text target-link"
+            :to="{name:'company-labor',params:{slug:comp.slug}}"
+          >
+            <v-list-tile-action>
+              <v-icon>timelapse</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>Трудозатраты</v-list-tile-title>
+            </v-list-tile-content>
+            <v-list-tile-action></v-list-tile-action>
+          </v-list-tile>
+          <v-list-tile>
+            <v-list-tile-action>
+              <v-icon>timeline</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>Поэтапная деятельность</v-list-tile-title>
+            </v-list-tile-content>
+            <v-list-tile-action></v-list-tile-action>
+          </v-list-tile>
+          <v-list-tile
+            active-class="secondary--text target-link"
+            :to="{name:'company-catalog',params:{slug:comp.slug}}"
+          >
+            <v-list-tile-action>
+              <v-icon>list</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>Каталог</v-list-tile-title>
+            </v-list-tile-content>
+            <v-list-tile-action></v-list-tile-action>
+          </v-list-tile>
+        </v-list-group>
+        <v-divider dark></v-divider>
+        <v-list-tile :to="{name:'add_company'}" exact-active-class="target-link">
+          <v-list-tile-action>
+            <v-icon>add_circle_outline</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Создать компанию</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
+    <v-toolbar color="primary" dark fixed app>
+      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+      <v-list-tile-avatar>
+        <img class="img_logo" src="/storage/logo/temp_shark_logo.png" alt="Бизнес - Акула">
+      </v-list-tile-avatar>
+      <v-toolbar-title v-if="windowWidth > 993">
+        <router-link to="/home" class="logo">Бизнес - Акула</router-link>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-menu offset-y>
+        <v-btn slot="activator" dark flat class="nav-btn">
+          <v-avatar>
+            <v-icon v-if="!user.avatar">account_circle</v-icon>
+            <img v-else :src="'/storage/uploads/'+user.avatar" :alt="user.name">
+          </v-avatar>
+          {{user.name}}
+        </v-btn>
+        <v-list>
+          <v-list-tile @click="logout" active-class="secondary--text target-link">
+            <v-list-tile-title>
+              <v-icon>exit_to_app</v-icon>Выход
+            </v-list-tile-title>
+          </v-list-tile>
+          <v-list-tile :to="{name:'user-settings'}" active-class="secondary--text target-link">
+            <v-list-tile-title>
+              <v-icon>settings</v-icon>Настройки профиля
+            </v-list-tile-title>
+          </v-list-tile>
+          <v-list-tile :to="{name:'notifications'}" active-class="secondary--text target-link">
+            <v-list-tile-title>
+              <v-icon>notifications</v-icon>Уведомления
+            </v-list-tile-title>
+            <v-list-tile-action>
+              <v-badge color="secondary" class="nav-badge">
+                <span slot="badge">6</span>
+              </v-badge>
+            </v-list-tile-action>
+          </v-list-tile>
+        </v-list>
+      </v-menu>
+    </v-toolbar>
+    <div
+      v-if="!mobileAndTabletcheck"
+      class="wrapper hidden"
+      v-bar
+      :style=" { height: page + 'px' } "
+    >
+      <div>
+        <transition name="fade" mode="out-in" appear>
+          <router-view :key="$route.fullPath"></router-view>
+        </transition>
+      </div>
+    </div>
+    <div v-else class="wrapper" :style=" { height: page + 'px' } ">
+      <transition name="fade" mode="out-in" appear>
+        <router-view :key="$route.fullPath"></router-view>
+      </transition>
+    </div>
+    <v-bottom-nav :value="true">
+      <v-btn flat :to="{name:'communication'}">
+        <span>Общение</span>
+        <v-icon>question_answer</v-icon>
+      </v-btn>
 
-        </v-toolbar>
-        <div v-if="!mobileAndTabletcheck" class="wrapper hidden" v-bar :style=" { height: page + 'px' } ">
-            <div>
-                <transition name="fade" mode="out-in" appear>
-                    <router-view ></router-view>
-                </transition>
-            </div>
-        </div>
-        <div v-else class="wrapper" :style=" { height: page + 'px' } ">
-            <transition name="fade" mode="out-in" appear>
-                <router-view ></router-view>
-            </transition>
-        </div>
-        <v-bottom-nav :active.sync="bottomNav" :value="true">
-            <v-btn flat :to="{name:'communication'}">
-                <span>Общение</span>
-                <v-icon>question_answer</v-icon>
-            </v-btn>
-
-            <v-btn flat :to="{name:'news'}">
-                <span>Новости</span>
-                <v-icon>description</v-icon>
-            </v-btn>
-            <v-btn flat :to="{name:'platform'}">
-                <span>Бизнес площадка</span>
-                <v-icon>business</v-icon>
-            </v-btn>
-        </v-bottom-nav>
-    </main>
+      <v-btn flat :to="{name:'news'}">
+        <span>Новости</span>
+        <v-icon>description</v-icon>
+      </v-btn>
+      <v-btn flat :to="{name:'platform'}">
+        <span>Бизнес площадка</span>
+        <v-icon>business</v-icon>
+      </v-btn>
+    </v-bottom-nav>
+  </main>
 </template>
 
 <script>
@@ -299,15 +325,15 @@ export default {
 .hidden {
   overflow: hidden !important;
 }
-.badge-slot{
-    color: #ffffff!important;
+.badge-slot {
+  color: #ffffff !important;
 }
 .wrapper {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
-.v-menu{
-    display: flex;
+.v-menu {
+  display: flex;
 }
 .v-navigation-drawer {
   z-index: 6;

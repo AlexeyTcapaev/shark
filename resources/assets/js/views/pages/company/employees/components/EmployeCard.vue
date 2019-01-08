@@ -5,19 +5,25 @@
         <div class="circle-1"></div>
         <div class="circle-2"></div>
         <img
-          src="http://100dayscss.com/codepen/jessica-potter.jpg"
+          v-if="user.avatar"
+          :src="'/storage/uploads/'+user.avatar"
           width="70"
           height="70"
-          alt="Jessica Potter"
+          :alt="user.name"
         >
+        <v-icon v-else size="70">account_circle</v-icon>
       </div>
 
       <div class="name">{{user.name}}</div>
       <div class="job">Visual Artist</div>
 
-      <div class="actions">
+      <div class="actions" v-if="user.id != AuthUser.id">
         <button class="btn" @click="DeleteMember">Убрать</button>
         <button class="btn" @click="WriteMember">Написать</button>
+      </div>
+      <div class="actions" v-else>
+        <div class="name">Это вы!</div>
+         <button class="btn" @click="DeleteMember">Покинуть</button>
       </div>
     </div>
     <div class="stats" v-if="actions">
@@ -104,8 +110,9 @@
   </div>
 </template>
 <script>
+import { mapState, mapActions } from "vuex";
 export default {
-  props: ["user"],
+  props: ["user", "index"],
   data: () => ({
     open: false,
     actions: false,
@@ -116,11 +123,33 @@ export default {
     members: []
   }),
   methods: {
+    ...mapActions({ AddChat: "chat/AddChat" }),
     Toggle() {
       this.open = !this.open;
     },
-    DeleteMember() {},
-    WriteMember() {},
+    DeleteMember() {
+      axios
+        .post("/api/auth/" + this.$route.params.slug + "/users/detach", {
+          id: this.user.id
+        })
+        .then(resp => {
+          this.$emit("UserDeleted", this.index);
+        });
+    },
+    WriteMember() {
+      axios
+        .post("/api/auth/chats", { users: [this.user.id, this.AuthUser.id] })
+        .then(resp => {
+          init.alert.message = "Диалог успешно создан.";
+          init.alert.enable = true;
+          init.AddChat(resp.data);
+        })
+        .catch(error => {
+          init.alert.message = "Ошибка при создании диалога.";
+          init.alert.enable = true;
+          init.alert.type = "error";
+        });
+    },
     AttachMembers() {
       this.members.map(member => {
         axios
@@ -144,6 +173,9 @@ export default {
           });
       }
     }
+  },
+  computed: {
+    ...mapState("user", { AuthUser: "user" })
   }
 };
 </script>

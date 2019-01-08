@@ -78,6 +78,12 @@ const ChatStartPage = () =>
     import('./views/ChatStartPage.vue');
 const EmployeesPage = () =>
     import('./views/pages/company/employees/EmployeesPage.vue');
+const SettingsPage = () =>
+    import('./views/pages/company/settings/SettingsPage.vue');
+const LaborCostsPage = () =>
+    import('./views/pages/company/laborCosts/LaborCostsPage.vue');
+const CatalogPage = () =>
+    import('./views/pages/company/catalog/CatalogPage.vue');
 
 const AddChat = () =>
     import('./views/AddChat.vue');
@@ -135,6 +141,20 @@ const router = new VueRouter({
                     path: 'company/:slug/employees',
                     name: "company-employees",
                     component: EmployeesPage,
+                },
+                {
+                    path: 'company/:slug/settings',
+                    name: "company-settings",
+                    component: SettingsPage,
+                }, {
+                    path: 'company/:slug/labor',
+                    name: "company-labor",
+                    component: LaborCostsPage,
+                },
+                {
+                    path: 'company/:slug/catalog',
+                    name: "company-catalog",
+                    component: CatalogPage,
                 },
                 {
                     path: 'verifyemail/:token',

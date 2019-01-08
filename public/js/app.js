@@ -29,7 +29,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		18: 0
+/******/ 		20: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -142,7 +142,7 @@
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 35);
+/******/ 	return __webpack_require__(__webpack_require__.s = 36);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -29384,12 +29384,18 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(36);
+module.exports = __webpack_require__(41);
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(37);
 module.exports = __webpack_require__(95);
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29409,7 +29415,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vue_progressbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_vue_progressbar__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_laravel_echo__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_laravel_echo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_laravel_echo__);
-__webpack_require__(37);
+__webpack_require__(38);
 
 
 
@@ -29455,34 +29461,34 @@ if (__WEBPACK_IMPORTED_MODULE_4__store_index__["a" /* default */].state.user.tok
     });
 }
 var App = function App() {
-    return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 97));
+    return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 97));
 };
 var Home = function Home() {
     return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 98));
 };
 var Registration = function Registration() {
-    return __webpack_require__.e/* import() */(10).then(__webpack_require__.bind(null, 99));
+    return __webpack_require__.e/* import() */(13).then(__webpack_require__.bind(null, 99));
 };
 var NewRegistration = function NewRegistration() {
-    return __webpack_require__.e/* import() */(11).then(__webpack_require__.bind(null, 100));
+    return __webpack_require__.e/* import() */(14).then(__webpack_require__.bind(null, 100));
 };
 var Login = function Login() {
-    return __webpack_require__.e/* import() */(12).then(__webpack_require__.bind(null, 101));
+    return __webpack_require__.e/* import() */(15).then(__webpack_require__.bind(null, 101));
 };
 var IndexPage = function IndexPage() {
-    return __webpack_require__.e/* import() */(15).then(__webpack_require__.bind(null, 102));
+    return __webpack_require__.e/* import() */(22).then(__webpack_require__.bind(null, 102));
 };
 var Feed = function Feed() {
     return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 103));
 };
 var AddCompany = function AddCompany() {
-    return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 104));
+    return __webpack_require__.e/* import() */(9).then(__webpack_require__.bind(null, 104));
 };
 var Dashboard = function Dashboard() {
-    return __webpack_require__.e/* import() */(16).then(__webpack_require__.bind(null, 105));
+    return __webpack_require__.e/* import() */(21).then(__webpack_require__.bind(null, 105));
 };
 var VerifyEmail = function VerifyEmail() {
-    return __webpack_require__.e/* import() */(9).then(__webpack_require__.bind(null, 106));
+    return __webpack_require__.e/* import() */(12).then(__webpack_require__.bind(null, 106));
 };
 var CompanyStructure = function CompanyStructure() {
     return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 107));
@@ -29491,23 +29497,32 @@ var Communication = function Communication() {
     return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 108));
 };
 var Platform = function Platform() {
-    return __webpack_require__.e/* import() */(14).then(__webpack_require__.bind(null, 109));
+    return __webpack_require__.e/* import() */(18).then(__webpack_require__.bind(null, 109));
 };
 var UserSettings = function UserSettings() {
     return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 110));
 };
 var Chat = function Chat() {
-    return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 111));
+    return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 111));
 };
 var ChatStartPage = function ChatStartPage() {
-    return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 112));
+    return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 112));
 };
 var EmployeesPage = function EmployeesPage() {
-    return __webpack_require__.e/* import() */(19).then(__webpack_require__.bind(null, 179));
+    return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 113));
+};
+var SettingsPage = function SettingsPage() {
+    return __webpack_require__.e/* import() */(10).then(__webpack_require__.bind(null, 190));
+};
+var LaborCostsPage = function LaborCostsPage() {
+    return __webpack_require__.e/* import() */(11).then(__webpack_require__.bind(null, 194));
+};
+var CatalogPage = function CatalogPage() {
+    return __webpack_require__.e/* import() */(17).then(__webpack_require__.bind(null, 197));
 };
 
 var AddChat = function AddChat() {
-    return __webpack_require__.e/* import() */(13).then(__webpack_require__.bind(null, 113));
+    return __webpack_require__.e/* import() */(16).then(__webpack_require__.bind(null, 114));
 };
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
@@ -29558,6 +29573,18 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
             path: 'company/:slug/employees',
             name: "company-employees",
             component: EmployeesPage
+        }, {
+            path: 'company/:slug/settings',
+            name: "company-settings",
+            component: SettingsPage
+        }, {
+            path: 'company/:slug/labor',
+            name: "company-labor",
+            component: LaborCostsPage
+        }, {
+            path: 'company/:slug/catalog',
+            name: "company-catalog",
+            component: CatalogPage
         }, {
             path: 'verifyemail/:token',
             name: "verifyemail",
@@ -29610,10 +29637,10 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 });
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
-window._ = __webpack_require__(38);
+window._ = __webpack_require__(39);
 window.Popper = __webpack_require__(15).default;
 
 /**
@@ -29625,7 +29652,7 @@ window.Popper = __webpack_require__(15).default;
 try {
   window.$ = window.jQuery = __webpack_require__(16);
 
-  __webpack_require__(39);
+  __webpack_require__(40);
 } catch (e) {}
 
 /**
@@ -29634,7 +29661,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(40);
+window.axios = __webpack_require__(35);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -29670,7 +29697,7 @@ window.io = __webpack_require__(59);
 // });
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -46783,7 +46810,7 @@ window.io = __webpack_require__(59);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(14)(module)))
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -50731,12 +50758,6 @@ window.io = __webpack_require__(59);
 })));
 //# sourceMappingURL=bootstrap.js.map
 
-
-/***/ }),
-/* 40 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(41);
 
 /***/ }),
 /* 41 */

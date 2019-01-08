@@ -7,7 +7,7 @@
             <EmployeesCard @UserAdded="addUser"></EmployeesCard>
           </li>
           <li v-for="(user,index) in employees" :key="index">
-            <EmployeesCard :user="user"></EmployeesCard>
+            <EmployeesCard :user="user" :index="index" @UserDeleted="deleteUser"></EmployeesCard>
           </li>
         </ul>
       </v-flex>
@@ -15,7 +15,7 @@
   </v-container>
 </template>
 <script>
-const EmployeesCard = () => import("./EmployeCard.vue");
+const EmployeesCard = () => import("./components/EmployeCard.vue");
 export default {
   data: () => ({
     employees: []
@@ -26,6 +26,9 @@ export default {
   methods: {
     addUser(user) {
       this.employees.push(user);
+    },
+    deleteUser(id) {
+      this.employees.splice(id, 1);
     }
   },
   mounted() {

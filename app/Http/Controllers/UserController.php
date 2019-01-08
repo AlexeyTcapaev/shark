@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Company;
 
 class UserController extends Controller
 {
@@ -54,7 +55,14 @@ class UserController extends Controller
     }
     public function search(Request $request)
     {
-        return User::where('name', 'like', $request->search)->get();
+        if ($request->has('company')) {
+            $comapny = $request->company;
+            return User::where('name', $request->search)->whereHas('companies', function ($query) use ($comapny) {
+                $query->where('companies.slug', $comapny);
+            })->get();
+        } else {
+            return User::where('name', 'like', $request->search)->get();
+        }
     }
     /**
      * Show the form for editing the specified resource.

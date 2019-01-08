@@ -1,54 +1,6 @@
 webpackJsonp([13],{
 
-/***/ 113:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(114)
-/* script */
-var __vue_script__ = __webpack_require__(169)
-/* template */
-var __vue_template__ = __webpack_require__(170)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/views/AddChat.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-08a8d7d4", Component.options)
-  } else {
-    hotAPI.reload("data-v-08a8d7d4", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 114:
+/***/ 115:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -158,7 +110,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 169:
+/***/ 127:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -195,80 +147,92 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      alert: {
-        enable: false,
-        type: "success"
-      },
-      newChat: {
-        users: []
-      },
-      users: [],
-      loading: false
+      valid: false,
+      passwordValid: false,
+      login: "",
+      show1: false,
+      show2: false,
+      password: "",
+      loading: false,
+      err: [],
+      alert: false,
+      type: "success",
+      alert_message: "",
+      confrim_password: "",
+      loginRules: [function (v) {
+        return !!v || "Name is required";
+      }, function (v) {
+        return v && v.length <= 15 || "Name must be less than 15 characters";
+      }],
+      email: "",
+      emailRules: [function (v) {
+        return !!v || "E-mail is required";
+      }, function (v) {
+        return (/.+@.+/.test(v) || "E-mail must be valid"
+        );
+      }],
+      passwordRules: [function (v) {
+        return !!v || "Password is required";
+      }]
     };
   },
-  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({ AddChat: "chat/AddChat" }), {
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({ SetToken: "user/SetToken" }), {
     submit: function submit() {
+      this.loading = true;
       var init = this;
-      this.newChat.users.push(this.user);
-      this.newChat.users = JSON.stringify(this.newChat.users);
-      axios.post("/api/auth/chats", this.newChat).then(function (resp) {
-        init.alert.message = "Диалог успешно создан.";
-        init.alert.enable = true;
-        init.AddChat(resp.data);
+      axios.post("/api/auth/signup", {
+        email: this.email,
+        password: this.password,
+        password_confirmation: this.confrim_password,
+        name: this.login
+      }).then(function (resp) {
+        init.alert = true;
+        init.alert_message = resp.data;
+        init.type = "success";
+        init.loading = false;
+        axios.post("/api/auth/login", {
+          email: init.email,
+          password: init.password,
+          remember_me: true
+        }).then(function (resp) {
+          init.SetToken(resp.data);
+          init.$router.push("/app");
+        });
       }).catch(function (error) {
-        init.alert.message = "Ошибка при создании диалога.";
-        init.alert.enable = true;
-        init.alert.type = "error";
+        Object.keys(error.response.data.errors).forEach(function (element) {
+          error.response.data.errors[element].forEach(function (err) {
+            var e = {};
+            e.message = err;
+            e.alert = true;
+            init.loading = false;
+            init.err.push(e);
+          });
+        });
+        console.log(error.response.data.errors);
       });
     },
-    remove: function remove(item) {
-      var index = this.newChat.users.indexOf(item);
-      if (index >= 0) this.newChat.users.splice(index, 1);
+    passwordCheck: function passwordCheck() {
+      if (this.password === this.confrim_password) this.passwordValid = true;else this.passwordValid = false;
     }
   }),
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])({ user: "user/GetUser" }), {
-    valid: function valid() {
-      return true;
+  watch: {
+    password: function password() {
+      this.passwordCheck();
+    },
+    confrim_password: function confrim_password() {
+      this.passwordCheck();
     }
-  }),
-  mounted: function mounted() {
-    var init = this;
-    axios.get("/api/auth/users/" + this.user.id).then(function (resp) {
-      init.users = resp.data;
-    }).catch(function (error) {});
   }
 });
 
 /***/ }),
 
-/***/ 170:
+/***/ 128:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -295,7 +259,7 @@ var render = function() {
                     "v-toolbar",
                     { attrs: { dark: "", color: "primary" } },
                     [
-                      _c("v-toolbar-title", [_vm._v("Cоздание чата")]),
+                      _c("v-toolbar-title", [_vm._v("Регистрация")]),
                       _vm._v(" "),
                       _c("v-spacer")
                     ],
@@ -308,150 +272,140 @@ var render = function() {
                       _c(
                         "v-alert",
                         {
-                          attrs: { type: _vm.alert.type, dismissible: "" },
+                          attrs: { type: _vm.type, dismissible: "" },
                           model: {
-                            value: _vm.alert.enable,
+                            value: _vm.alert,
                             callback: function($$v) {
-                              _vm.$set(_vm.alert, "enable", $$v)
+                              _vm.alert = $$v
                             },
-                            expression: "alert.enable"
+                            expression: "alert"
                           }
                         },
-                        [_vm._v(_vm._s(_vm.alert.message))]
+                        [_vm._v(_vm._s(_vm.alert_message.message))]
                       ),
+                      _vm._v(" "),
+                      _vm._l(_vm.err, function(error, index) {
+                        return _c(
+                          "v-alert",
+                          {
+                            key: index,
+                            attrs: { type: "error", dismissible: "" },
+                            model: {
+                              value: error.alert,
+                              callback: function($$v) {
+                                _vm.$set(error, "alert", $$v)
+                              },
+                              expression: "error.alert"
+                            }
+                          },
+                          [_vm._v(_vm._s(error.message))]
+                        )
+                      }),
                       _vm._v(" "),
                       _c(
                         "v-form",
-                        [
-                          _c("v-autocomplete", {
-                            attrs: {
-                              items: _vm.users,
-                              outline: "",
-                              chips: "",
-                              label: "Добавить участников",
-                              "item-text": "name",
-                              "item-value": "name",
-                              "return-object": "",
-                              multiple: ""
+                        {
+                          ref: "form",
+                          model: {
+                            value: _vm.valid,
+                            callback: function($$v) {
+                              _vm.valid = $$v
                             },
-                            scopedSlots: _vm._u([
-                              {
-                                key: "selection",
-                                fn: function(data) {
-                                  return [
-                                    _c(
-                                      "v-chip",
-                                      {
-                                        staticClass: "chip--select-multi",
-                                        attrs: {
-                                          selected: data.selected,
-                                          close: ""
-                                        },
-                                        on: {
-                                          input: function($event) {
-                                            _vm.remove(data.item)
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "v-avatar",
-                                          [
-                                            data.item.avatar
-                                              ? _c("img", {
-                                                  attrs: {
-                                                    src:
-                                                      "/storage/uploads/" +
-                                                      data.item.avatar
-                                                  }
-                                                })
-                                              : _c("v-icon", [
-                                                  _vm._v("account_circle")
-                                                ])
-                                          ],
-                                          1
-                                        ),
-                                        _vm._v(
-                                          "\n                                    " +
-                                            _vm._s(data.item.name) +
-                                            "\n                                "
-                                        )
-                                      ],
-                                      1
-                                    )
-                                  ]
-                                }
-                              },
-                              {
-                                key: "item",
-                                fn: function(data) {
-                                  return [
-                                    typeof data.item !== "object"
-                                      ? [
-                                          _c("v-list-tile-content", {
-                                            domProps: {
-                                              textContent: _vm._s(data.item)
-                                            }
-                                          })
-                                        ]
-                                      : [
-                                          _c(
-                                            "v-list-tile-avatar",
-                                            [
-                                              data.item.avatar
-                                                ? _c("img", {
-                                                    attrs: {
-                                                      src:
-                                                        "/storage/uploads/" +
-                                                        data.item.avatar
-                                                    }
-                                                  })
-                                                : _c("v-icon", [
-                                                    _vm._v("account_circle")
-                                                  ])
-                                            ],
-                                            1
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "v-list-tile-content",
-                                            [
-                                              _c("v-list-tile-title", {
-                                                domProps: {
-                                                  innerHTML: _vm._s(
-                                                    data.item.name
-                                                  )
-                                                }
-                                              }),
-                                              _vm._v(" "),
-                                              _c("v-list-tile-sub-title", {
-                                                domProps: {
-                                                  innerHTML: _vm._s(
-                                                    data.item.group
-                                                  )
-                                                }
-                                              })
-                                            ],
-                                            1
-                                          )
-                                        ]
-                                  ]
-                                }
-                              }
-                            ]),
+                            expression: "valid"
+                          }
+                        },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              loading: _vm.loading,
+                              outline: "",
+                              label: "Login",
+                              "append-icon": "person",
+                              required: "",
+                              rules: _vm.loginRules
+                            },
                             model: {
-                              value: _vm.newChat.users,
+                              value: _vm.login,
                               callback: function($$v) {
-                                _vm.$set(_vm.newChat, "users", $$v)
+                                _vm.login = $$v
                               },
-                              expression: "newChat.users"
+                              expression: "login"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("v-text-field", {
+                            attrs: {
+                              loading: _vm.loading,
+                              outline: "",
+                              label: "E-mail",
+                              "append-icon": "mail",
+                              required: "",
+                              rules: _vm.emailRules
+                            },
+                            model: {
+                              value: _vm.email,
+                              callback: function($$v) {
+                                _vm.email = $$v
+                              },
+                              expression: "email"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("v-text-field", {
+                            attrs: {
+                              loading: _vm.loading,
+                              outline: "",
+                              label: "Password",
+                              "append-icon": _vm.show1
+                                ? "visibility_off"
+                                : "visibility",
+                              type: _vm.show1 ? "text" : "password",
+                              required: "",
+                              rules: _vm.passwordRules
+                            },
+                            on: {
+                              "click:append": function($event) {
+                                _vm.show1 = !_vm.show1
+                              }
+                            },
+                            model: {
+                              value: _vm.password,
+                              callback: function($$v) {
+                                _vm.password = $$v
+                              },
+                              expression: "password"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("v-text-field", {
+                            attrs: {
+                              loading: _vm.loading,
+                              outline: "",
+                              label: "Confrim",
+                              "append-icon": _vm.show2
+                                ? "visibility_off"
+                                : "visibility",
+                              type: _vm.show2 ? "text" : "password",
+                              required: ""
+                            },
+                            on: {
+                              "click:append": function($event) {
+                                _vm.show2 = !_vm.show2
+                              }
+                            },
+                            model: {
+                              value: _vm.confrim_password,
+                              callback: function($$v) {
+                                _vm.confrim_password = $$v
+                              },
+                              expression: "confrim_password"
                             }
                           })
                         ],
                         1
                       )
                     ],
-                    1
+                    2
                   ),
                   _vm._v(" "),
                   _c(
@@ -461,15 +415,23 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "v-btn",
+                        { attrs: { flat: "", color: "primary", to: "/login" } },
+                        [_vm._v("Есть аккаунт?")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
                         {
                           attrs: {
-                            disabled: !_vm.valid,
                             color: "primary",
+                            disabled: !(
+                              _vm.valid == true && _vm.passwordValid == true
+                            ),
                             loading: _vm.loading
                           },
                           on: { click: _vm.submit }
                         },
-                        [_vm._v("Создать")]
+                        [_vm._v("Отправить")]
                       )
                     ],
                     1
@@ -493,9 +455,57 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-08a8d7d4", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-7ae5bf8c", module.exports)
   }
 }
+
+/***/ }),
+
+/***/ 99:
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(115)
+/* script */
+var __vue_script__ = __webpack_require__(127)
+/* template */
+var __vue_template__ = __webpack_require__(128)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/views/Registration.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7ae5bf8c", Component.options)
+  } else {
+    hotAPI.reload("data-v-7ae5bf8c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
 
 /***/ })
 

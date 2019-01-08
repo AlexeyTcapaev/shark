@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 114:
+/***/ 115:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -110,7 +110,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 115:
+/***/ 116:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -129,7 +129,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(116)
+var listToStyles = __webpack_require__(117)
 
 /*
 type StyleObject = {
@@ -339,7 +339,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 116:
+/***/ 117:
 /***/ (function(module, exports) {
 
 /**
@@ -373,17 +373,17 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 122:
+/***/ 123:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(123);
+var content = __webpack_require__(124);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(115)("dacd05b4", content, false, {});
+var update = __webpack_require__(116)("dacd05b4", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -400,7 +400,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 123:
+/***/ 124:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(96)(false);
@@ -408,14 +408,14 @@ exports = module.exports = __webpack_require__(96)(false);
 
 
 // module
-exports.push([module.i, "\n.logo[data-v-6c0a33b2] {\n  color: #ffffff;\n  text-decoration: none;\n}\n.active-link .v-icon[data-v-6c0a33b2] {\n  color: rgba(0, 0, 0, 0.54) !important;\n}\n.v-list__tile__action .v-badge[data-v-6c0a33b2] {\n  margin: 0 10px 0 0;\n}\n.nav-btn[data-v-6c0a33b2] {\n  color: #ffffff !important;\n  height: 100%;\n}\n.v-menu[data-v-6c0a33b2] {\n  height: 100%;\n}\n.v-content[data-v-6c0a33b2] {\n  padding-top: 0px !important;\n}\n.hidden[data-v-6c0a33b2] {\n  overflow: hidden !important;\n}\n.badge-slot[data-v-6c0a33b2]{\n    color: #ffffff!important;\n}\n.wrapper[data-v-6c0a33b2] {\n  overflow-y: scroll;\n  -webkit-overflow-scrolling: touch;\n}\n.v-menu[data-v-6c0a33b2]{\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n.v-navigation-drawer[data-v-6c0a33b2] {\n  z-index: 6;\n}\n.nav-badge[data-v-6c0a33b2] {\n  right: -40px;\n}\n.v-bottom-nav[data-v-6c0a33b2] {\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n.target-link .v-list__tile__content .v-list__tile__title[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n.target-link .v-icon[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n.nav-btn i[data-v-6c0a33b2] {\n  margin-right: 15px;\n}\n.v-avatar[data-v-6c0a33b2] {\n  margin-right: 15px;\n}\n.fade-enter-active[data-v-6c0a33b2],\n.fade-leave-active[data-v-6c0a33b2] {\n  -webkit-transition-duration: 0.3s;\n          transition-duration: 0.3s;\n  -webkit-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-timing-function: ease;\n          transition-timing-function: ease;\n}\n.v-list__tile__title[data-v-6c0a33b2] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.v-list__tile__title i[data-v-6c0a33b2] {\n  margin-right: 10px;\n}\n.v-avatar .fade-enter[data-v-6c0a33b2],\n.fade-leave-active[data-v-6c0a33b2] {\n  opacity: 0;\n}\n.search-bar[data-v-6c0a33b2] {\n  margin: 5px 0;\n}\n.v-list__tile--active .v-list__tile[data-v-6c0a33b2] {\n  color: #f80b37;\n}\n.company[data-v-6c0a33b2] {\n  background: rgba(0, 0, 0, 0.1);\n}\n.v-bottom-nav .v-btn--active[data-v-6c0a33b2] {\n  color: #f80b37;\n}\n", ""]);
+exports.push([module.i, "\n.logo[data-v-6c0a33b2] {\n  color: #ffffff;\n  text-decoration: none;\n}\n.active-link .v-icon[data-v-6c0a33b2] {\n  color: rgba(0, 0, 0, 0.54) !important;\n}\n.v-list__tile__action .v-badge[data-v-6c0a33b2] {\n  margin: 0 10px 0 0;\n}\n.nav-btn[data-v-6c0a33b2] {\n  color: #ffffff !important;\n  height: 100%;\n}\n.v-menu[data-v-6c0a33b2] {\n  height: 100%;\n}\n.v-content[data-v-6c0a33b2] {\n  padding-top: 0px !important;\n}\n.hidden[data-v-6c0a33b2] {\n  overflow: hidden !important;\n}\n.badge-slot[data-v-6c0a33b2] {\n  color: #ffffff !important;\n}\n.wrapper[data-v-6c0a33b2] {\n  overflow-y: scroll;\n  -webkit-overflow-scrolling: touch;\n}\n.v-menu[data-v-6c0a33b2] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.v-navigation-drawer[data-v-6c0a33b2] {\n  z-index: 6;\n}\n.nav-badge[data-v-6c0a33b2] {\n  right: -40px;\n}\n.v-bottom-nav[data-v-6c0a33b2] {\n  -webkit-box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n          box-shadow: 9px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n.target-link .v-list__tile__content .v-list__tile__title[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n.target-link .v-icon[data-v-6c0a33b2] {\n  color: #f80b37 !important;\n}\n.nav-btn i[data-v-6c0a33b2] {\n  margin-right: 15px;\n}\n.v-avatar[data-v-6c0a33b2] {\n  margin-right: 15px;\n}\n.fade-enter-active[data-v-6c0a33b2],\n.fade-leave-active[data-v-6c0a33b2] {\n  -webkit-transition-duration: 0.3s;\n          transition-duration: 0.3s;\n  -webkit-transition-property: opacity;\n  transition-property: opacity;\n  -webkit-transition-timing-function: ease;\n          transition-timing-function: ease;\n}\n.v-list__tile__title[data-v-6c0a33b2] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.v-list__tile__title i[data-v-6c0a33b2] {\n  margin-right: 10px;\n}\n.v-avatar .fade-enter[data-v-6c0a33b2],\n.fade-leave-active[data-v-6c0a33b2] {\n  opacity: 0;\n}\n.search-bar[data-v-6c0a33b2] {\n  margin: 5px 0;\n}\n.v-list__tile--active .v-list__tile[data-v-6c0a33b2] {\n  color: #f80b37;\n}\n.company[data-v-6c0a33b2] {\n  background: rgba(0, 0, 0, 0.1);\n}\n.v-bottom-nav .v-btn--active[data-v-6c0a33b2] {\n  color: #f80b37;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 124:
+/***/ 125:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -423,6 +423,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(13);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -668,7 +694,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 /***/ }),
 
-/***/ 125:
+/***/ 126:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -882,6 +908,15 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "v-list-tile",
+                      {
+                        attrs: {
+                          "active-class": "secondary--text target-link",
+                          to: {
+                            name: "company-settings",
+                            params: { slug: comp.slug }
+                          }
+                        }
+                      },
                       [
                         _c(
                           "v-list-tile-action",
@@ -892,6 +927,108 @@ var render = function() {
                         _c(
                           "v-list-tile-content",
                           [_c("v-list-tile-title", [_vm._v("Настройки")])],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("v-list-tile-action")
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-list-tile",
+                      [
+                        _c(
+                          "v-list-tile-action",
+                          [_c("v-icon", [_vm._v("work")])],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-list-tile-content",
+                          [_c("v-list-tile-title", [_vm._v("Поручения")])],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("v-list-tile-action")
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-list-tile",
+                      {
+                        attrs: {
+                          "active-class": "secondary--text target-link",
+                          to: {
+                            name: "company-labor",
+                            params: { slug: comp.slug }
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "v-list-tile-action",
+                          [_c("v-icon", [_vm._v("timelapse")])],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-list-tile-content",
+                          [_c("v-list-tile-title", [_vm._v("Трудозатраты")])],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("v-list-tile-action")
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-list-tile",
+                      [
+                        _c(
+                          "v-list-tile-action",
+                          [_c("v-icon", [_vm._v("timeline")])],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-list-tile-content",
+                          [
+                            _c("v-list-tile-title", [
+                              _vm._v("Поэтапная деятельность")
+                            ])
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("v-list-tile-action")
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-list-tile",
+                      {
+                        attrs: {
+                          "active-class": "secondary--text target-link",
+                          to: {
+                            name: "company-catalog",
+                            params: { slug: comp.slug }
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "v-list-tile-action",
+                          [_c("v-icon", [_vm._v("list")])],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-list-tile-content",
+                          [_c("v-list-tile-title", [_vm._v("Каталог")])],
                           1
                         ),
                         _vm._v(" "),
@@ -1001,11 +1138,7 @@ var render = function() {
                     ],
                     1
                   ),
-                  _vm._v(
-                    "\n                " +
-                      _vm._s(_vm.user.name) +
-                      "\n            "
-                  )
+                  _vm._v("\n        " + _vm._s(_vm.user.name) + "\n      ")
                 ],
                 1
               ),
@@ -1024,7 +1157,7 @@ var render = function() {
                         "v-list-tile-title",
                         [
                           _c("v-icon", [_vm._v("exit_to_app")]),
-                          _vm._v("Выход")
+                          _vm._v("Выход\n          ")
                         ],
                         1
                       )
@@ -1045,7 +1178,7 @@ var render = function() {
                         "v-list-tile-title",
                         [
                           _c("v-icon", [_vm._v("settings")]),
-                          _vm._v("Настройки профиля")
+                          _vm._v("Настройки профиля\n          ")
                         ],
                         1
                       )
@@ -1066,7 +1199,7 @@ var render = function() {
                         "v-list-tile-title",
                         [
                           _c("v-icon", [_vm._v("notifications")]),
-                          _vm._v("Уведомления")
+                          _vm._v("Уведомления\n          ")
                         ],
                         1
                       ),
@@ -1119,7 +1252,7 @@ var render = function() {
                   _c(
                     "transition",
                     { attrs: { name: "fade", mode: "out-in", appear: "" } },
-                    [_c("router-view")],
+                    [_c("router-view", { key: _vm.$route.fullPath })],
                     1
                   )
                 ],
@@ -1134,7 +1267,7 @@ var render = function() {
               _c(
                 "transition",
                 { attrs: { name: "fade", mode: "out-in", appear: "" } },
-                [_c("router-view")],
+                [_c("router-view", { key: _vm.$route.fullPath })],
                 1
               )
             ],
@@ -1143,14 +1276,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "v-bottom-nav",
-        {
-          attrs: { active: _vm.bottomNav, value: true },
-          on: {
-            "update:active": function($event) {
-              _vm.bottomNav = $event
-            }
-          }
-        },
+        { attrs: { value: true } },
         [
           _c(
             "v-btn",
@@ -1292,13 +1418,13 @@ function toComment(sourceMap) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(122)
+  __webpack_require__(123)
 }
-var normalizeComponent = __webpack_require__(114)
+var normalizeComponent = __webpack_require__(115)
 /* script */
-var __vue_script__ = __webpack_require__(124)
+var __vue_script__ = __webpack_require__(125)
 /* template */
-var __vue_template__ = __webpack_require__(125)
+var __vue_template__ = __webpack_require__(126)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */

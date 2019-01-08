@@ -37,9 +37,13 @@ class CompanyController extends Controller
     {
         //
     }
+    public function detachUser(Request $request, $slug)
+    {
+        return Company::where('slug', $slug)->first()->users()->detach($request->id);
+    }
     public function attachUser(Request $request, $slug)
     {
-        Company::where('slug', $slug)->first()->users()->attach($request->id);
+        return Company::where('slug', $slug)->first()->users()->attach($request->id);
     }
     /**
      * Store a newly created resource in storage.

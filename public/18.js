@@ -1,6 +1,54 @@
 webpackJsonp([18],{
 
-/***/ 122:
+/***/ 109:
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(115)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = __webpack_require__(158)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/views/Platform.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2d5467c6", Component.options)
+  } else {
+    hotAPI.reload("data-v-2d5467c6", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 115:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -110,250 +158,14 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 178:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(122)
-/* script */
-var __vue_script__ = __webpack_require__(180)
-/* template */
-var __vue_template__ = __webpack_require__(179)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/views/NewRegistration.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1a481df6", Component.options)
-  } else {
-    hotAPI.reload("data-v-1a481df6", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 179:
+/***/ 158:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "v-container",
-    { attrs: { fluid: "", "fill-height": "" } },
-    [
-      _c(
-        "v-layout",
-        { attrs: { "align-center": "", "justify-center": "" } },
-        [
-          _c(
-            "v-flex",
-            { attrs: { xs12: "", sm8: "", md4: "" } },
-            [
-              _c(
-                "v-card",
-                { staticClass: "elevation-12" },
-                [
-                  _c(
-                    "v-toolbar",
-                    { attrs: { dark: "", color: "primary" } },
-                    [
-                      _c("v-toolbar-title", [_vm._v("Регистрация")]),
-                      _vm._v(" "),
-                      _c("v-spacer")
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-title",
-                    {
-                      staticClass:
-                        "title font-weight-regular justify-space-between"
-                    },
-                    [
-                      _c("span", [_vm._v(_vm._s(_vm.currentTitle))]),
-                      _vm._v(" "),
-                      _c("v-avatar", {
-                        staticClass: "subheading white--text",
-                        attrs: { color: "primary lighten-2", size: "24" },
-                        domProps: { textContent: _vm._s(_vm.step) }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-window",
-                    {
-                      model: {
-                        value: _vm.step,
-                        callback: function($$v) {
-                          _vm.step = $$v
-                        },
-                        expression: "step"
-                      }
-                    },
-                    [
-                      _c(
-                        "v-window-item",
-                        { attrs: { value: 1 } },
-                        [
-                          _c(
-                            "v-card-text",
-                            [
-                              _c("v-text-field", {
-                                attrs: {
-                                  label: "Email",
-                                  value: "john@vuetifyjs.com"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "span",
-                                {
-                                  staticClass:
-                                    "caption grey--text text--darken-1"
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                This is the email you will use to login to your Vuetify account\n                            "
-                                  )
-                                ]
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-window-item",
-                        { attrs: { value: 2 } },
-                        [
-                          _c(
-                            "v-card-text",
-                            [
-                              _c("v-text-field", {
-                                attrs: { label: "Password", type: "password" }
-                              }),
-                              _vm._v(" "),
-                              _c("v-text-field", {
-                                attrs: {
-                                  label: "Confirm Password",
-                                  type: "password"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "span",
-                                {
-                                  staticClass:
-                                    "caption grey--text text--darken-1"
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                Please enter a password for your account\n                            "
-                                  )
-                                ]
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("v-divider"),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-actions",
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { disabled: _vm.step === 1, flat: "" },
-                          on: {
-                            click: function($event) {
-                              _vm.step--
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n                        Back\n                    "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("v-spacer"),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: {
-                            disabled: _vm.step === 3,
-                            color: "primary",
-                            depressed: ""
-                          },
-                          on: {
-                            click: function($event) {
-                              _vm.step++
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n                        Next\n                    "
-                          )
-                        ]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
+  return _c("div", [_vm._v("\n    2\n")])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -361,85 +173,9 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-1a481df6", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-2d5467c6", module.exports)
   }
 }
-
-/***/ }),
-
-/***/ 180:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      step: 1
-    };
-  },
-
-  computed: {
-    currentTitle: function currentTitle() {
-      switch (this.step) {
-        case 1:
-          return "Sign-up";
-        case 2:
-          return "Create a password";
-        default:
-          return "Account created";
-      }
-    }
-  }
-});
 
 /***/ })
 

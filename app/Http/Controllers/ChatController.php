@@ -38,23 +38,25 @@ class ChatController extends Controller
      */
     public function store(Request $request)
     {
-        try {
-            $chat = Chat::create();
-            foreach (json_decode($request->users) as $user) {
-                $chat->users()->attach($user->id);
-            }
+        if (Chat::CheckExist($request->users)) {
+            try {
 
-            if (empty($chat))
-                throw new Exception('Ошибка при создании компании');
-        } catch (Exception $e) {
-            return response()->json(['error' => $e->getMessage()], 500);
+                $chat = Chat::create();
+                $chat->users()->syncWithoutDetaching($request->users);
+                if (empty($chat))
+                    throw new Exception('Ошибка при создании компании');
+            } catch (Exception $e) {
+                return response()->json(['error' => $e->getMessage()], 500);
+            }
+            $id = Auth::user()->id;
+            $chat->load(['users' => function ($query) use ($id) {
+                $query->where('user_id', '!=', $id);
+            }]);
+            return $chat;
         }
-        $id = Auth::user()->id;
-        $chat->load(['users'=> function ($query) use($id)
-        {
-            $query->where('user_id', '!=', $id);
-        }]);
-        return $chat;
+        else {
+            return response()->json(['error' => "чат уже существует"], 406);
+        }
     }
 
     /**
@@ -65,7 +67,7 @@ class ChatController extends Controller
      */
     public function show($id)
     {
-       
+
         try {
             $chat = Chat::whereHas('users', function ($q) use ($id) {
                 $q->where('user_id', '=', $id);

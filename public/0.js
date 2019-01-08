@@ -1,24 +1,24 @@
 webpackJsonp([0],{
 
-/***/ 112:
+/***/ 113:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(165)
+  __webpack_require__(171)
 }
-var normalizeComponent = __webpack_require__(114)
+var normalizeComponent = __webpack_require__(115)
 /* script */
-var __vue_script__ = __webpack_require__(167)
+var __vue_script__ = __webpack_require__(173)
 /* template */
-var __vue_template__ = __webpack_require__(168)
+var __vue_template__ = __webpack_require__(179)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-4eb2d354"
+var __vue_scopeId__ = "data-v-2eac7eec"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -29,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/ChatStartPage.vue"
+Component.options.__file = "resources/assets/js/views/pages/company/employees/EmployeesPage.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -38,9 +38,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4eb2d354", Component.options)
+    hotAPI.createRecord("data-v-2eac7eec", Component.options)
   } else {
-    hotAPI.reload("data-v-4eb2d354", Component.options)
+    hotAPI.reload("data-v-2eac7eec", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -52,7 +52,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 114:
+/***/ 115:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -162,7 +162,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 115:
+/***/ 116:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -181,7 +181,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(116)
+var listToStyles = __webpack_require__(117)
 
 /*
 type StyleObject = {
@@ -391,7 +391,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 116:
+/***/ 117:
 /***/ (function(module, exports) {
 
 /**
@@ -425,23 +425,23 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 165:
+/***/ 171:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(166);
+var content = __webpack_require__(172);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(115)("9685d6b2", content, false, {});
+var update = __webpack_require__(116)("5b2ed784", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4eb2d354\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ChatStartPage.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4eb2d354\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ChatStartPage.vue");
+   module.hot.accept("!!../../../../../../../node_modules/css-loader/index.js!../../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2eac7eec\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./EmployeesPage.vue", function() {
+     var newContent = require("!!../../../../../../../node_modules/css-loader/index.js!../../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2eac7eec\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./EmployeesPage.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 166:
+/***/ 172:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(96)(false);
@@ -460,14 +460,14 @@ exports = module.exports = __webpack_require__(96)(false);
 
 
 // module
-exports.push([module.i, "\n.chat-head[data-v-4eb2d354] {\r\n  width: 100%;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\r\n  padding: 15px;\r\n  -ms-flex-wrap: nowrap;\r\n      flex-wrap: nowrap;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  background-color: #ffffff;\n}\n.chat-wrapper[data-v-4eb2d354] {\r\n  width: 100%;\r\n  height: 100%;\r\n  -webkit-box-orient: vertical;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: column;\r\n          flex-direction: column;\n}\n.big-i[data-v-4eb2d354] {\r\n  font-size: 300px;\n}\n.flex[data-v-4eb2d354] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: vertical;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: column;\r\n          flex-direction: column;\n}\r\n", ""]);
+exports.push([module.i, "\n.users-grid[data-v-2eac7eec] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 167:
+/***/ 173:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -488,38 +488,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
+var EmployeesCard = function EmployeesCard() {
+  return __webpack_require__.e/* import() */(19/* duplicate */).then(__webpack_require__.bind(null, 174));
+};
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      employees: []
+    };
+  },
+  components: {
+    EmployeesCard: EmployeesCard
+  },
   methods: {
-    toggleChat: function toggleChat() {
-      this.$emit("toggleChat");
+    addUser: function addUser(user) {
+      this.employees.push(user);
+    },
+    deleteUser: function deleteUser(id) {
+      this.employees.splice(id, 1);
     }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get("/api/auth/" + this.$route.params.slug + "/users").then(function (resp) {
+      _this.employees = resp.data;
+    });
   }
 });
 
 /***/ }),
 
-/***/ 168:
+/***/ 179:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -527,31 +528,41 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-layout",
-    { staticClass: "chat-wrapper" },
+    "v-container",
+    { staticClass: "no-padding", attrs: { fluid: "" } },
     [
       _c(
-        "div",
-        { staticClass: "chat-head" },
+        "v-layout",
+        { attrs: { "justify-center": "", "align-center": "" } },
         [
-          _c("v-btn", { attrs: { flat: "" }, on: { click: _vm.toggleChat } }, [
-            _vm._v("Диалоги")
-          ]),
-          _vm._v(" "),
-          _c("v-spacer")
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-flex",
-        { attrs: { xs12: "", "justify-center": "", "align-center": "" } },
-        [
-          _c("v-icon", { staticClass: "big-i", attrs: { color: "primary" } }, [
-            _vm._v("chat_bubble")
-          ]),
-          _vm._v(" "),
-          _c("h1", [_vm._v("Для начала выберите диалог")])
+          _c("v-flex", [
+            _c(
+              "ul",
+              { staticClass: "users-grid" },
+              [
+                _c(
+                  "li",
+                  [_c("EmployeesCard", { on: { UserAdded: _vm.addUser } })],
+                  1
+                ),
+                _vm._v(" "),
+                _vm._l(_vm.employees, function(user, index) {
+                  return _c(
+                    "li",
+                    { key: index },
+                    [
+                      _c("EmployeesCard", {
+                        attrs: { user: user, index: index },
+                        on: { UserDeleted: _vm.deleteUser }
+                      })
+                    ],
+                    1
+                  )
+                })
+              ],
+              2
+            )
+          ])
         ],
         1
       )
@@ -565,7 +576,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-4eb2d354", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-2eac7eec", module.exports)
   }
 }
 

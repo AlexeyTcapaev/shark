@@ -16,7 +16,15 @@ class DepartmentController extends Controller
     {
         //
     }
-
+    public function detachUser(Request $request, $slug)
+    {
+        return Department::where('slug', $request->slug)->first()->users()->detach($request->id);
+    }
+    public function attachUser(Request $request, $slug)
+    {
+        $root = Department::where('slug', $request->company)->first();
+        return Department::whereBetween('_lft', [$root->_lft, $root->_rgt])->where('slug', $slug)->first()->users()->attach($request->id);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -35,7 +43,9 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        $department = Department::create(['name' => $request->name],Department::where('slug', $request->root)->first());
+        if (Department::checkUniqueInThree($request->name, $request->root)) {
+            $department = Department::create(['name' => $request->name], Department::where('slug', $request->root)->first());
+        }
         try {
             if (empty($department))
                 return response()->json(['error' => 'Компания не найдены'], 404);
@@ -54,7 +64,7 @@ class DepartmentController extends Controller
     public function show($slug)
     {
         try {
-            $departments = Department::descendantsAndSelf(Department::where('slug',$slug)->first()->id)->toTree()->first();
+            $departments = Department::with('employees')->descendantsAndSelf(Department::where('slug', $slug)->first()->id)->toTree()->first();
             if (empty($departments))
                 return response()->json(['error' => 'Компания не найдены'], 404);
         } catch (Exception $e) {

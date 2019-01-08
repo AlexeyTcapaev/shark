@@ -1,24 +1,130 @@
 webpackJsonp([17],{
 
-/***/ 117:
+/***/ 115:
+/***/ (function(module, exports) {
+
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file.
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier /* server only */
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = injectStyles
+  }
+
+  if (hook) {
+    var functional = options.functional
+    var existing = functional
+      ? options.render
+      : options.beforeCreate
+
+    if (!functional) {
+      // inject component registration as beforeCreate hook
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    } else {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return existing(h, context)
+      }
+    }
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+
+/***/ 197:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(147)
-}
-var normalizeComponent = __webpack_require__(114)
+var normalizeComponent = __webpack_require__(115)
 /* script */
-var __vue_script__ = __webpack_require__(149)
+var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(150)
+var __vue_template__ = __webpack_require__(198)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = injectStyle
+var __vue_styles__ = null
 /* scopeId */
-var __vue_scopeId__ = "data-v-0f91c9e4"
+var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -29,7 +135,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/components/RecursivePalet.vue"
+Component.options.__file = "resources/assets/js/views/pages/company/catalog/CatalogPage.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -38,9 +144,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0f91c9e4", Component.options)
+    hotAPI.createRecord("data-v-e08ad19c", Component.options)
   } else {
-    hotAPI.reload("data-v-0f91c9e4", Component.options)
+    hotAPI.reload("data-v-e08ad19c", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -52,376 +158,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 147:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(148);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(115)("72c942dc", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0f91c9e4\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./RecursivePalet.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0f91c9e4\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./RecursivePalet.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 148:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(96)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\nbutton.v-btn--flat[data-v-0f91c9e4] {\n  margin: 6px 0;\n}\n.v-input__slot[data-v-0f91c9e4] {\n  margin: 0 0 0 15px;\n}\n.creator[data-v-0f91c9e4] {\n  margin-bottom: 15px;\n}\ndiv[data-v-0f91c9e4] {\n  text-align: left;\n}\n.department-header[data-v-0f91c9e4] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  overflow: hidden;\n}\n.department-header i[data-v-0f91c9e4] {\n  margin-right: 5px;\n}\n.department-header p[data-v-0f91c9e4] {\n  font-weight: bold;\n  padding: 0 10px;\n  margin: 0;\n}\n.department-header .v-divider--vertical[data-v-0f91c9e4] {\n  height: 50px;\n}\n.v-expansion-panel__body .v-card[data-v-0f91c9e4] {\n  border-top: 1px solid rgba(0, 0, 0, 0.12);\n}\n.v-expansion-panel__container[data-v-0f91c9e4] {\n  border-left: 1px solid rgba(0, 0, 0, 0.12);\n  border-right: 1px solid rgba(0, 0, 0, 0.12);\n}\n.flex li[data-v-0f91c9e4]:last-of-type {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.12);\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 149:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-var RecursivePalet = function RecursivePalet() {
-  return new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 117));
-};
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      dialog: false
-    };
-  },
-  components: {
-    RecursivePalet: RecursivePalet
-  },
-  props: {
-    item: {
-      type: Object,
-      default: {}
-    }
-  },
-
-  methods: {
-    AddDepartment: function AddDepartment() {
-      var init = this;
-      axios.post("/api/auth/departments", {
-        name: this.item.newDepartment,
-        root: this.item.slug
-      }).then(function (resp) {
-        init.item.children.push(resp.data);
-      }).catch(function (error) {});
-    }
-  }
-});
-
-/***/ }),
-
-/***/ 150:
+/***/ 198:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "v-expansion-panel-content",
-    [
-      _c("div", { attrs: { slot: "header" }, slot: "header" }, [
-        _c(
-          "div",
-          { staticClass: "department-header" },
-          [
-            _c("v-icon", [_vm._v("group")]),
-            _vm._v("123 "),
-            _c("v-divider", { staticClass: "mx-3", attrs: { vertical: "" } }),
-            _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(_vm.item.name))])
-          ],
-          1
-        )
-      ]),
-      _vm._v(" "),
-      _c(
-        "v-card",
-        [
-          _c(
-            "v-card-text",
-            [
-              _c(
-                "v-flex",
-                [
-                  _c("v-text-field", {
-                    attrs: {
-                      outline: "",
-                      label: "Введите название отдела",
-                      "append-icon": "add"
-                    },
-                    on: {
-                      "click:append": _vm.AddDepartment,
-                      keyup: function($event) {
-                        if (
-                          !("button" in $event) &&
-                          _vm._k(
-                            $event.keyCode,
-                            "enter",
-                            13,
-                            $event.key,
-                            "Enter"
-                          )
-                        ) {
-                          return null
-                        }
-                        return _vm.AddDepartment($event)
-                      }
-                    },
-                    model: {
-                      value: _vm.item.newDepartment,
-                      callback: function($$v) {
-                        _vm.$set(_vm.item, "newDepartment", $$v)
-                      },
-                      expression: "item.newDepartment"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _vm._l(_vm.item.children, function(item, index) {
-                    return item.children
-                      ? _c("RecursivePalet", {
-                          key: index,
-                          attrs: { item: item }
-                        })
-                      : _vm._e()
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "v-layout",
-                    {
-                      attrs: {
-                        "align-center": "",
-                        "justify-center": "",
-                        row: "",
-                        "fill-height": "",
-                        wrap: ""
-                      }
-                    },
-                    [
-                      _c(
-                        "v-flex",
-                        { attrs: { xl2: "", md12: "", sm12: "", xs12: "" } },
-                        [_c("h2", [_vm._v("Сотрудники отдела")])]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xl10: "", md12: "", sm12: "", xs12: "" } },
-                        [
-                          _c("v-text-field", {
-                            staticClass: "message-input",
-                            attrs: {
-                              outline: "",
-                              label: "Поиск по сотрудникам",
-                              "append-icon": "search"
-                            },
-                            on: {
-                              "click:append": _vm.AddDepartment,
-                              keyup: function($event) {
-                                if (
-                                  !("button" in $event) &&
-                                  _vm._k(
-                                    $event.keyCode,
-                                    "enter",
-                                    13,
-                                    $event.key,
-                                    "Enter"
-                                  )
-                                ) {
-                                  return null
-                                }
-                                return _vm.AddDepartment($event)
-                              }
-                            }
-                          })
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-layout",
-                    [
-                      _c(
-                        "v-dialog",
-                        {
-                          attrs: { width: "500" },
-                          model: {
-                            value: _vm.dialog,
-                            callback: function($$v) {
-                              _vm.dialog = $$v
-                            },
-                            expression: "dialog"
-                          }
-                        },
-                        [
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: { slot: "activator", flat: "" },
-                              slot: "activator"
-                            },
-                            [
-                              _vm._v(
-                                "\n                        Добавить\n                      "
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-card",
-                            [
-                              _c(
-                                "v-card-title",
-                                {
-                                  staticClass: "headline grey lighten-2",
-                                  attrs: { "primary-title": "" }
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                Privacy Policy\n                            "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("v-card-text", [
-                                _vm._v(
-                                  "\n                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud\n                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute\n                                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\n                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia\n                                deserunt mollit anim id est laborum.\n                            "
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("v-divider"),
-                              _vm._v(" "),
-                              _c(
-                                "v-card-actions",
-                                [
-                                  _c("v-spacer"),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-btn",
-                                    {
-                                      attrs: { color: "primary", flat: "" },
-                                      on: {
-                                        click: function($event) {
-                                          _vm.dialog = false
-                                        }
-                                      }
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n                                    I accept\n                                "
-                                      )
-                                    ]
-                                  )
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                2
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
+  return _c("div", [_vm._v("1")])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -429,7 +173,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-0f91c9e4", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-e08ad19c", module.exports)
   }
 }
 

@@ -1,54 +1,6 @@
 webpackJsonp([11],{
 
-/***/ 100:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(114)
-/* script */
-var __vue_script__ = __webpack_require__(128)
-/* template */
-var __vue_template__ = __webpack_require__(129)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/views/NewRegistration.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1a481df6", Component.options)
-  } else {
-    hotAPI.reload("data-v-1a481df6", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 114:
+/***/ 115:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -158,14 +110,59 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 128:
+/***/ 194:
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(115)
+/* script */
+var __vue_script__ = __webpack_require__(195)
+/* template */
+var __vue_template__ = __webpack_require__(196)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/views/pages/company/laborCosts/LaborCostsPage.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3cb2e8fe", Component.options)
+  } else {
+    hotAPI.reload("data-v-3cb2e8fe", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 195:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(13);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 //
 //
 //
@@ -231,119 +228,79 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      user: {},
-      step: 1,
-      valid1: false,
-      valid2: false,
-      passwordValid: false,
-      login: "",
-      show1: false,
-      show2: false,
-      password: "",
-      loading: false,
-      err: [],
-      alert: {
-        enable: false,
-        message: ""
+      showMenu: false,
+      x: 0,
+      y: 0,
+      items: [{ title: "Click Me" }, { title: "Click Me" }, { title: "Click Me" }, { title: "Click Me 2" }],
+      pagination: {
+        sortBy: "name"
       },
-      type: "success",
-      confrim_password: "",
-      loginRules: [function (v) {
-        return !!v || "Name is required";
-      }, function (v) {
-        return v && v.length <= 15 || "Name must be less than 15 characters";
+      selected: [],
+      headers: [{ text: "ID", value: "id", align: "left" }, { text: "Название", value: "name", align: "left" }, { text: "Аббревиатура", value: "abbr", align: "left" }, { text: "Менеджер", value: "manager", align: "left" }, { text: "Приоритет", value: "priority", align: "left" }, { text: "Договор", value: "contract", align: "left" }, {
+        text: "Зарубежный агрегатор",
+        value: "foreignAgregator",
+        align: "left"
+      }, { text: "Коэффициент", value: "coefficient", align: "left" }, { text: "Рассчёт", value: "calculation", align: "left" }],
+      aggregators: [{
+        id: 1,
+        name: "Admitad",
+        abbr: "AD",
+        manager: "!апк",
+        priority: 5,
+        contract: true,
+        foreignAgregator: false,
+        coefficient: 1.0,
+        calculation: "Базовый"
       }],
-      email: "",
-      emailRules: [function (v) {
-        return !!v || "E-mail is required";
-      }, function (v) {
-        return (/.+@.+/.test(v) || "E-mail must be valid"
-        );
-      }],
-      passwordRules: [function (v) {
-        return !!v || "Password is required";
-      }]
+      emptyTable: true
     };
   },
-  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])({ SetToken: "user/SetToken" }), {
-    BackWindow: function BackWindow() {
-      this.step--;
-      this.valid = true;
+  methods: {
+    toggleAll: function toggleAll() {
+      this.selected = this.selected.length === this.aggregators.length ? [] : this.aggregators;
     },
-    NextWindow: function NextWindow() {
+    show: function show(e) {
       var _this = this;
 
-      this.loading = true;
-      this.alert = {};
-      if (this.step == 1) {
-        axios.post("/api/auth/email", { email: this.user.email }).then(function (resp) {
-          _this.step++;
-          _this.loading = false;
-        }).catch(function (error) {
-          _this.alert.message = error.response.data.error;
-          _this.alert.enable = true;
-          _this.loading = false;
-        });
-      } else if (this.step == 2) {
-        axios.post("/api/auth/signup", this.user).then(function (resp) {
-          axios.post("/api/auth/login", {
-            email: _this.user.email,
-            password: _this.user.password,
-            remember_me: true
-          }).then(function (resp) {
-            _this.loading = false;
-            _this.SetToken(resp.data);
-            _this.step++;
-            setTimeout(function () {
-              _this.$router.push("/app");
-            }, 5000);
-          });
-        }).catch(function (error) {
-          Object.keys(error.response.data.errors).forEach(function (element) {
-            error.response.data.errors[element].forEach(function (err) {
-              var e = {};
-              e.message = err;
-              e.alert = true;
-              _this.loading = false;
-              init.err.push(e);
-            });
-          });
-          console.log(error.response.data.errors);
-        });
-      }
-      this.valid = false;
-      this.loading = false;
-    }
-  }),
-
-  computed: {
-    currentTitle: function currentTitle() {
-      switch (this.step) {
-        case 1:
-          return "E-mail";
-        case 2:
-          return "Логин и пароль";
-        default:
-          return "Учётная запись создана";
-      }
+      e.preventDefault();
+      this.showMenu = false;
+      this.x = e.clientX;
+      this.y = e.clientY;
+      this.$nextTick(function () {
+        _this.showMenu = true;
+      });
     },
-    checkValid: function checkValid() {
-      if (this.step === 3) return true;
-      if (this.step == 1) if (this.valid1 == false) return true;
-      if (this.step == 2) if (this.valid2 == false) return true;
-      return false;
+    changeSort: function changeSort(column) {
+      if (this.pagination.sortBy === column) {
+        this.pagination.descending = !this.pagination.descending;
+      } else {
+        this.pagination.sortBy = column;
+        this.pagination.descending = false;
+      }
     }
+  },
+  mounted: function mounted() {
+    console.log(this.aggregators.slice());
   }
 });
 
 /***/ }),
 
-/***/ 129:
+/***/ 196:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -352,357 +309,236 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-container",
-    { attrs: { fluid: "", "fill-height": "" } },
+    { attrs: { fluid: "" } },
     [
       _c(
         "v-layout",
-        { attrs: { "align-center": "", "justify-center": "" } },
+        { attrs: { "justify-center": "", "align-center": "" } },
         [
           _c(
             "v-flex",
-            { attrs: { xs12: "", sm8: "", md4: "" } },
             [
               _c(
-                "v-card",
-                { staticClass: "elevation-12" },
-                [
-                  _c(
-                    "v-toolbar",
-                    { attrs: { dark: "", color: "primary" } },
-                    [
-                      _c("v-toolbar-title", [_vm._v("Регистрация")]),
-                      _vm._v(" "),
-                      _c("v-spacer")
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-title",
+                "v-data-table",
+                {
+                  staticClass: "elevation-1",
+                  attrs: {
+                    headers: _vm.headers,
+                    items: _vm.aggregators,
+                    loading: true,
+                    "select-all": "",
+                    "item-key": "name"
+                  },
+                  scopedSlots: _vm._u([
                     {
-                      staticClass:
-                        "title font-weight-regular justify-space-between"
-                    },
-                    [
-                      _c("span", [_vm._v(_vm._s(_vm.currentTitle))]),
-                      _vm._v(" "),
-                      _c("v-avatar", {
-                        staticClass: "subheading secondary white--text",
-                        attrs: { color: "primary lighten-2", size: "24" },
-                        domProps: { textContent: _vm._s(_vm.step) }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-window",
-                    {
-                      model: {
-                        value: _vm.step,
-                        callback: function($$v) {
-                          _vm.step = $$v
-                        },
-                        expression: "step"
-                      }
-                    },
-                    [
-                      _c(
-                        "v-window-item",
-                        { attrs: { value: 1 } },
-                        [
+                      key: "headers",
+                      fn: function(props) {
+                        return [
                           _c(
-                            "v-card-text",
+                            "tr",
                             [
                               _c(
-                                "v-alert",
-                                {
-                                  attrs: { type: "error", dismissible: "" },
-                                  model: {
-                                    value: _vm.alert.enable,
-                                    callback: function($$v) {
-                                      _vm.$set(_vm.alert, "enable", $$v)
-                                    },
-                                    expression: "alert.enable"
-                                  }
-                                },
-                                [_vm._v(_vm._s(_vm.alert.message))]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-form",
-                                {
-                                  ref: "form",
-                                  model: {
-                                    value: _vm.valid1,
-                                    callback: function($$v) {
-                                      _vm.valid1 = $$v
-                                    },
-                                    expression: "valid1"
-                                  }
-                                },
+                                "th",
                                 [
-                                  _c("v-text-field", {
+                                  _c("v-checkbox", {
                                     attrs: {
-                                      outline: "",
-                                      label: "E-mail",
-                                      "append-icon": "mail",
-                                      required: "",
-                                      rules: _vm.emailRules
+                                      "input-value": props.all,
+                                      indeterminate: props.indeterminate,
+                                      primary: "",
+                                      "hide-details": ""
                                     },
-                                    model: {
-                                      value: _vm.user.email,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.user, "email", $$v)
-                                      },
-                                      expression: "user.email"
+                                    nativeOn: {
+                                      click: function($event) {
+                                        return _vm.toggleAll($event)
+                                      }
                                     }
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "span",
-                                    {
-                                      staticClass:
-                                        "caption grey--text text--darken-1"
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n                                    Указанный почтовый адрес будет использован для создания учётной записи\n                                "
-                                      )
-                                    ]
-                                  )
+                                  })
                                 ],
                                 1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-window-item",
-                        { attrs: { value: 2 } },
-                        [
-                          _c(
-                            "v-card-text",
-                            [
-                              _c(
-                                "v-alert",
-                                {
-                                  attrs: { type: "error", dismissible: "" },
-                                  model: {
-                                    value: _vm.alert.enable,
-                                    callback: function($$v) {
-                                      _vm.$set(_vm.alert, "enable", $$v)
-                                    },
-                                    expression: "alert.enable"
-                                  }
-                                },
-                                [_vm._v(_vm._s(_vm.alert.message))]
                               ),
                               _vm._v(" "),
-                              _vm._l(_vm.err, function(error, index) {
+                              _vm._l(props.headers, function(header) {
                                 return _c(
-                                  "v-alert",
+                                  "th",
                                   {
-                                    key: index,
-                                    attrs: { type: "error", dismissible: "" },
-                                    model: {
-                                      value: error.alert,
-                                      callback: function($$v) {
-                                        _vm.$set(error, "alert", $$v)
-                                      },
-                                      expression: "error.alert"
+                                    key: header.text,
+                                    class: [
+                                      "column sortable",
+                                      _vm.pagination.descending
+                                        ? "desc"
+                                        : "asc",
+                                      header.value === _vm.pagination.sortBy
+                                        ? "active"
+                                        : ""
+                                    ],
+                                    on: {
+                                      click: function($event) {
+                                        _vm.changeSort(header.value)
+                                      }
                                     }
                                   },
-                                  [_vm._v(_vm._s(error.message))]
+                                  [
+                                    _c("v-icon", { attrs: { small: "" } }, [
+                                      _vm._v("arrow_upward")
+                                    ]),
+                                    _vm._v(
+                                      "\n              " +
+                                        _vm._s(header.text) +
+                                        "\n            "
+                                    )
+                                  ],
+                                  1
                                 )
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "v-form",
-                                {
-                                  ref: "form",
-                                  model: {
-                                    value: _vm.valid2,
-                                    callback: function($$v) {
-                                      _vm.valid2 = $$v
-                                    },
-                                    expression: "valid2"
-                                  }
-                                },
-                                [
-                                  _c("v-text-field", {
-                                    attrs: {
-                                      outline: "",
-                                      label: "Login",
-                                      "append-icon": "person",
-                                      required: "",
-                                      rules: _vm.loginRules
-                                    },
-                                    model: {
-                                      value: _vm.user.name,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.user, "name", $$v)
-                                      },
-                                      expression: "user.name"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("v-text-field", {
-                                    attrs: {
-                                      outline: "",
-                                      label: "Password",
-                                      "append-icon": _vm.show1
-                                        ? "visibility_off"
-                                        : "visibility",
-                                      type: _vm.show1 ? "text" : "password",
-                                      required: "",
-                                      rules: _vm.passwordRules
-                                    },
-                                    on: {
-                                      "click:append": function($event) {
-                                        _vm.show1 = !_vm.show1
-                                      }
-                                    },
-                                    model: {
-                                      value: _vm.user.password,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.user, "password", $$v)
-                                      },
-                                      expression: "user.password"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("v-text-field", {
-                                    attrs: {
-                                      outline: "",
-                                      label: "Confrim",
-                                      "append-icon": _vm.show2
-                                        ? "visibility_off"
-                                        : "visibility",
-                                      type: _vm.show2 ? "text" : "password",
-                                      required: "",
-                                      rules: _vm.passwordRules
-                                    },
-                                    on: {
-                                      "click:append": function($event) {
-                                        _vm.show2 = !_vm.show2
-                                      }
-                                    },
-                                    model: {
-                                      value: _vm.user.password_confirmation,
-                                      callback: function($$v) {
-                                        _vm.$set(
-                                          _vm.user,
-                                          "password_confirmation",
-                                          $$v
-                                        )
-                                      },
-                                      expression: "user.password_confirmation"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "span",
-                                    {
-                                      staticClass:
-                                        "caption grey--text text--darken-1"
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n                                    Введите логин и пароль для вашего аккаунта\n                                "
-                                      )
-                                    ]
-                                  )
-                                ],
-                                1
-                              )
+                              })
                             ],
                             2
                           )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("v-window-item", { attrs: { value: 3 } }, [
-                        _c("div", { staticClass: "pa-3 text-xs-center" }, [
+                        ]
+                      }
+                    },
+                    {
+                      key: "items",
+                      fn: function(props) {
+                        return [
                           _c(
-                            "h3",
-                            { staticClass: "title font-weight-light mb-2" },
-                            [_vm._v("Добро пожаловать!")]
-                          ),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "caption grey--text" }, [
-                            _vm._v("Спасибо за регистрацию!")
-                          ])
-                        ])
-                      ])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("v-divider"),
+                            "tr",
+                            {
+                              attrs: { active: props.selected },
+                              on: {
+                                click: function($event) {
+                                  props.selected = !props.selected
+                                },
+                                contextmenu: _vm.show
+                              }
+                            },
+                            [
+                              _c(
+                                "td",
+                                { staticClass: "text-xs-center" },
+                                [
+                                  _c("v-checkbox", {
+                                    attrs: { primary: "", "hide-details": "" },
+                                    model: {
+                                      value: props.selected,
+                                      callback: function($$v) {
+                                        _vm.$set(props, "selected", $$v)
+                                      },
+                                      expression: "props.selected"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "text-xs-center" }, [
+                                _vm._v(_vm._s(props.item.id))
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "text-xs-center" }, [
+                                _vm._v(_vm._s(props.item.name))
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "text-xs-center" }, [
+                                _vm._v(_vm._s(props.item.abbr))
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "text-xs-center" }, [
+                                _vm._v(_vm._s(props.item.manager))
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "text-xs-center" }, [
+                                _vm._v(_vm._s(props.item.priority))
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "text-xs-center" }, [
+                                _vm._v(_vm._s(props.item.contract))
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "text-xs-center" }, [
+                                _vm._v(_vm._s(props.item.foreignAgregator))
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "text-xs-center" }, [
+                                _vm._v(_vm._s(props.item.coefficient))
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "text-xs-center" }, [
+                                _vm._v(_vm._s(props.item.calculation))
+                              ])
+                            ]
+                          )
+                        ]
+                      }
+                    }
+                  ]),
+                  model: {
+                    value: _vm.selected,
+                    callback: function($$v) {
+                      _vm.selected = $$v
+                    },
+                    expression: "selected"
+                  }
+                },
+                [
+                  _c("v-progress-linear", {
+                    attrs: {
+                      slot: "progress",
+                      color: "secondary",
+                      indeterminate: ""
+                    },
+                    slot: "progress"
+                  }),
                   _vm._v(" "),
                   _c(
-                    "v-card-actions",
+                    "template",
+                    { slot: "no-data" },
                     [
                       _c(
-                        "v-btn",
+                        "v-alert",
                         {
                           attrs: {
-                            to: { name: "login" },
-                            flat: "",
-                            color: "primary"
+                            value: _vm.emptyTable,
+                            color: "error",
+                            icon: "warning"
                           }
                         },
-                        [
-                          _vm._v(
-                            "\n                        Вход\n                    "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: {
-                            disabled: _vm.step === 1,
-                            flat: "",
-                            color: "primary"
-                          },
-                          on: { click: _vm.BackWindow }
-                        },
-                        [
-                          _vm._v(
-                            "\n                        Назад\n                    "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("v-spacer"),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: {
-                            disabled: _vm.checkValid,
-                            color: "primary",
-                            depressed: "",
-                            loading: _vm.loading
-                          },
-                          on: { click: _vm.NextWindow }
-                        },
-                        [
-                          _vm._v(
-                            "\n                        Далее\n                    "
-                          )
-                        ]
+                        [_vm._v("Sorry, nothing to display here :(")]
                       )
                     ],
                     1
+                  )
+                ],
+                2
+              ),
+              _vm._v(" "),
+              _c(
+                "v-menu",
+                {
+                  attrs: {
+                    "position-x": _vm.x,
+                    "position-y": _vm.y,
+                    absolute: "",
+                    "offset-y": ""
+                  },
+                  model: {
+                    value: _vm.showMenu,
+                    callback: function($$v) {
+                      _vm.showMenu = $$v
+                    },
+                    expression: "showMenu"
+                  }
+                },
+                [
+                  _c(
+                    "v-list",
+                    _vm._l(_vm.items, function(item, index) {
+                      return _c(
+                        "v-list-tile",
+                        { key: index, on: { click: function($event) {} } },
+                        [_c("v-list-tile-title", [_vm._v(_vm._s(item.title))])],
+                        1
+                      )
+                    })
                   )
                 ],
                 1
@@ -723,7 +559,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-1a481df6", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-3cb2e8fe", module.exports)
   }
 }
 
